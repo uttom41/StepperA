@@ -8,7 +8,7 @@ void main() {
         stepCompleteColor: Colors.blueAccent,
         inactiveColor: Colors.white54,
         currentStepColor: Colors.green,
-        stepperSize: 600,
+        stepperSize:const Size(400,65),
         buttonColor: Colors.blueAccent,
         buttonIconColor: Colors.white54,
         stepperBodyWidget: [

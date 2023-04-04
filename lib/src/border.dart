@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:stepper_a/src/stepper_a.dart';
+import 'package:stepper_a/src/page_helper/enums.dart';
 
 
 class StepperBorder extends StatelessWidget {
