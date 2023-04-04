@@ -36,20 +36,19 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.white,
       appBar: AppBar(title: const Text("Stepper Example"),),
       body: StepperA(
-        stepCompleteColor: Colors.blueAccent,
-        inactiveColor: Colors.black38,
-        currentStepColor: Colors.green,
-        stepperSize: const Size(500,70),
-        buttonColor: Colors.blueAccent,
-        buttonIconColor: Colors.white54,
-        borderShape: BorderShape.rectangle,
-        stepperAxis: Axis.horizontal,
-        formKey: formKey,
-        stepperBodyWidget: [
-        StepOne(),StepTwo(),
-      Container(color: Colors.yellow,child: const Text("Step three"),),
-      Container(color: Colors.pink,child: const Text("Step four"),),
-      Container(color: Colors.purple,child: const Text("Step five"),),]
+          stepCompleteColor: Colors.blueAccent,
+          inactiveColor: Colors.black38,
+          currentStepColor: Colors.green,
+          stepperSize: const Size(500,70),
+          borderShape: BorderShape.rectangle,
+          stepperAxis: Axis.horizontal,
+          formKey: formKey,
+          stepperBodyWidget: [
+            StepOne(),
+            StepTwo(),
+            Container(color: Colors.yellow,child: const Text("Step three"),),
+            Container(color: Colors.pink,child: const Text("Step four"),),
+            Container(color: Colors.purple,child: const Text("Step five"),),]
       ),
     );
   }
@@ -64,24 +63,24 @@ class StepOne extends StatelessWidget {
       backgroundColor:Colors.red ,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Step one"),
-        TextFormField(
-          validator: (String? value){
-            if(value !=null && value.isEmpty) return "is empty";
-            return null;
-          },
-        ),
-        ElevatedButton(
-            onPressed: (){},
-            child: SizedBox(
-              width: double.infinity,
-                child: Text("click Me")
-            ))
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text("Step one"),
+          TextFormField(
+            validator: (String? value){
+              if(value !=null && value.isEmpty) return "is empty";
+              return null;
+            },
+          ),
+          ElevatedButton(
+              onPressed: (){},
+              child: SizedBox(
+                  width: double.infinity,
+                  child: Text("click Me")
+              ))
 
-      ],
-        ),
+        ],
+      ),
     );
   }
 }
@@ -92,8 +91,8 @@ class StepTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.green,
-        child: const Text("Step two"),
+      color: Colors.green,
+      child: const Text("Step two"),
 
     );
   }

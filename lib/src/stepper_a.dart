@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stepper_a/src/button/button.dart';
 import 'package:stepper_a/src/page_helper/enums.dart';
 import 'package:stepper_a/src/page_helper/stepper_body.dart';
 import 'package:stepper_a/src/step_helper/stepper_step.dart';
@@ -11,7 +12,7 @@ import 'line.dart';
 
 
 ///Would you need current Step index please use this typedef.
-typedef CurrentStep = void Function(int index);
+typedef CurrentStepCallBack = void Function(int index);
 
 ///StepperA class is main class
 class StepperA extends StatefulWidget {
@@ -25,12 +26,6 @@ class StepperA extends StatefulWidget {
   ///for define inactive step border and shape[circle] color
   final Color inactiveColor;
 
-  ///for define previous and forward button background color
-  final Color buttonColor;
-
-  ///for define previous and forward button icon color
-  final Color buttonIconColor;
-
   ///for define stepper background color
   final Color stepperBackgroundColor;
 
@@ -39,7 +34,7 @@ class StepperA extends StatefulWidget {
   final List<Widget> stepperBodyWidget;
 
   ///if your need current step index use this field
-  final CurrentStep? currentStep;
+  final CurrentStepCallBack? currentStepCallBack;
 
   ///for your need stepper line thickness use this field
   ///default thickness [2.0] double
@@ -92,7 +87,12 @@ class StepperA extends StatefulWidget {
   ///If your need stepper Axis wise build
   final Axis stepperAxis;
 
+
+  ///If  your need widget form validation
   final GlobalKey<FormState> ? formKey;
+
+  final Button? forwardButton;
+  final Button? previousButton;
 
 
   const StepperA({
@@ -102,11 +102,9 @@ class StepperA extends StatefulWidget {
     required this.currentStepColor,
     this.lineThickness =2,
     required this.stepperSize,
-    required this.buttonColor,
-    required this.buttonIconColor,
     required this.stepperBodyWidget,
     this.stepperBackgroundColor = Colors.white,
-    this.currentStep,
+    this.currentStepCallBack,
     this.padding = const EdgeInsets.all(5),
     this.margin = const EdgeInsets.all(5),
     this.stepPadding = const EdgeInsets.all(5),
@@ -119,6 +117,8 @@ class StepperA extends StatefulWidget {
     this.stepWidth = 50,
     this.stepperAxis = Axis.horizontal,
     this.formKey,
+    this.forwardButton,
+    this.previousButton
   })  :super(key: key);
 
   @override
@@ -164,7 +164,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
       vsync: this,
       formKey: widget.formKey,
       onPageChangeCallback: (int activePageIndex) {
-        widget.currentStep!=null?widget.currentStep!(activePageIndex):null;
+        widget.currentStepCallBack!=null?widget.currentStepCallBack!(activePageIndex):null;
       },
     );
     return AnimatedBuilder(
@@ -190,49 +190,46 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
                     ),
                     Expanded(
                       child: StepperBody(
-                          notifier: notifier,
-                          stepperBodyWidget: widget.stepperBodyWidget,
+                        notifier: notifier,
+                        stepperBodyWidget: widget.stepperBodyWidget,
                       ),
                     )
                   ],
                 ),
-                if(notifier.currentIndex!=0)
+                if(notifier.currentIndex != 0
+                    && widget.previousButton != null
+                )
                   StepperButton(
-                      position: Position(
-                          bottom: 20,
-                          left: 20
-                      ),
-                      buttonColor: widget.buttonColor,
+                      position: widget.previousButton!.position,
+                      buttonColor: widget.previousButton!.backgroundColor,
                       notifier: notifier,
-                      buttonIconColor:  widget.buttonIconColor,
+                      buttonIconColor:  widget.previousButton!.buttonIconColor,
                       onTap: (){
                         StepperIndex(notifier:notifier).back(notifier.currentIndex);
-                      //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
+                        //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
                       },
                       heroTag: "tag1",
                       buttonIcon: widget.stepperAxis== Axis.horizontal
                           ?Icons.arrow_back_ios_sharp
                           :Icons.keyboard_arrow_up
                   ),
-                StepperButton(
-                  position: Position(
-                      bottom: 20,
-                      right: 20
+                if(widget.forwardButton != null)
+                  StepperButton(
+                    position: widget.forwardButton!.position,
+                    buttonColor: widget.forwardButton!.backgroundColor,
+                    notifier: notifier,
+                    buttonIconColor:  widget.forwardButton!.buttonIconColor,
+                    onTap: (){
+                      StepperIndex(notifier:notifier).next(notifier.currentIndex, totalSteps-1);
+                      //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
+                    },
+                    heroTag: "tag2",
+                    buttonIcon:notifier.currentIndex != notifier.totalIndex-1
+                        ? widget.stepperAxis== Axis.horizontal
+                        ?Icons.arrow_forward_ios_sharp
+                        :Icons.keyboard_arrow_down
+                        :Icons.check,
                   ),
-                  buttonColor: widget.buttonColor,
-                  notifier: notifier,
-                  buttonIconColor:  widget.buttonIconColor,
-                  onTap: (){
-                    StepperIndex(notifier:notifier).next(notifier.currentIndex, totalSteps-1);
-                  //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
-                  },
-                  heroTag: "tag2",
-                  buttonIcon:notifier.currentIndex != notifier.totalIndex-1
-                      ? widget.stepperAxis== Axis.horizontal
-                      ?Icons.arrow_forward_ios_sharp
-                      :Icons.keyboard_arrow_down
-                      :Icons.check,
-                ),
               ],
             ):Stack(
               children: [
@@ -252,48 +249,46 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
                     ),
                     Expanded(
                       child: StepperBody(
-                          notifier: notifier,
-                          stepperBodyWidget: widget.stepperBodyWidget,
+                        notifier: notifier,
+                        stepperBodyWidget: widget.stepperBodyWidget,
                       ),
                     )
                   ],
                 ),
-                StepperButton(
-                    position: Position(
-                        top: 40,
-                        left: 8
-                    ),
-                    buttonColor: widget.buttonColor,
-                    notifier: notifier,
-                    buttonIconColor:  widget.buttonIconColor,
-                    onTap: (){
-                      StepperIndex(notifier:notifier).back(notifier.currentIndex);
-                    //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
-                    },
-                    heroTag: "tag1",
-                    buttonIcon: widget.stepperAxis== Axis.horizontal
-                        ?Icons.arrow_back_ios_sharp
-                        :Icons.keyboard_arrow_up
-                ),
-                StepperButton(
-                  position: Position(
-                      bottom: 40,
-                      left: 8
+                if(notifier.currentIndex != 0
+                    && widget.previousButton != null
+                )
+                  StepperButton(
+                      position: widget.previousButton!.position,
+                      buttonColor: widget.previousButton!.backgroundColor,
+                      notifier: notifier,
+                      buttonIconColor:  widget.previousButton!.buttonIconColor,
+                      onTap: (){
+                        StepperIndex(notifier:notifier).back(notifier.currentIndex);
+                        //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
+                      },
+                      heroTag: "tag1",
+                      buttonIcon: widget.stepperAxis== Axis.horizontal
+                          ?Icons.arrow_back_ios_sharp
+                          :Icons.keyboard_arrow_up
                   ),
-                  buttonColor: widget.buttonColor,
-                  notifier: notifier,
-                  buttonIconColor:  widget.buttonIconColor,
-                  onTap: (){
-                    StepperIndex(notifier:notifier).next(notifier.currentIndex, totalSteps-1);
-                  //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
-                  },
-                  heroTag: "tag2",
-                  buttonIcon:notifier.currentIndex != notifier.totalIndex-1
-                      ? widget.stepperAxis== Axis.horizontal
-                      ?Icons.arrow_forward_ios_sharp
-                      :Icons.keyboard_arrow_down
-                      :Icons.check,
-                ),
+                if(widget.forwardButton != null)
+                  StepperButton(
+                    position: widget.forwardButton!.position,
+                    buttonColor: widget.forwardButton!.backgroundColor,
+                    notifier: notifier,
+                    buttonIconColor:  widget.forwardButton!.buttonIconColor,
+                    onTap: (){
+                      StepperIndex(notifier:notifier).next(notifier.currentIndex, totalSteps-1);
+                      //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
+                    },
+                    heroTag: "tag2",
+                    buttonIcon:notifier.currentIndex != notifier.totalIndex-1
+                        ? widget.stepperAxis== Axis.horizontal
+                        ?Icons.arrow_forward_ios_sharp
+                        :Icons.keyboard_arrow_down
+                        :Icons.check,
+                  ),
               ],
             ),
           );

@@ -58,25 +58,25 @@ class StepperNotifier extends ChangeNotifier{
   late TickerProviderStateMixin singleTickerProviderStateMixin;
 
 
-  ///see [CurrentStep]
-  CurrentStep onPageChangeCallback;
+  ///see [CurrentStepCallBack]
+  CurrentStepCallBack onPageChangeCallback;
 
   StepperNotifier({
-        required this.stepCompleteColor,
-        required  this.currentStepColor,
-        required this.inactiveColor,
-        required  this.borderType,
-        required  this.lineType,
-        required this.borderShape,
-        required this.dashPattern,
-        required this.stepperAxis,
-        required this.controller,
-        required int initialPage,
-        required int length,
-        required TickerProviderStateMixin vsync,
-        required this.onPageChangeCallback,
-        this.formKey,
-      }){
+    required this.stepCompleteColor,
+    required  this.currentStepColor,
+    required this.inactiveColor,
+    required  this.borderType,
+    required  this.lineType,
+    required this.borderShape,
+    required this.dashPattern,
+    required this.stepperAxis,
+    required this.controller,
+    required int initialPage,
+    required int length,
+    required TickerProviderStateMixin vsync,
+    required this.onPageChangeCallback,
+    this.formKey,
+  }){
     _currentIndex = initialPage;
     nextPageIndex = initialPage;
     totalIndex = length;
@@ -85,17 +85,16 @@ class StepperNotifier extends ChangeNotifier{
   }
 
   int checkFormKeyValidation(int index){
+
     if(_currentIndex>index)return index;
-    if(formKey != null) {
-      formKey!.currentState?.save();
-      if(formKey!.currentState!=null && formKey!.currentState!.validate()){
-        return index;
-      }else{
-        return _currentIndex;
-      }
-    }else{
-      return index;
-    }
+
+    if(formKey == null)return index;
+
+    formKey!.currentState?.save();
+
+    if(formKey!.currentState!=null && formKey!.currentState!.validate())return index;
+
+    return _currentIndex;
   }
 
   ///Getter for [_currentIndex]

@@ -17,15 +17,15 @@ class StepperBody extends StatelessWidget {
     return Form(
       key: notifier.formKey,
       child: PageView.builder(
-        controller: notifier.controller,
+          controller: notifier.controller,
           scrollDirection: Axis.horizontal,
           itemCount: notifier.totalIndex,
           onPageChanged: (index){
             notifier.currentIndex=index;
           },
           itemBuilder: (BuildContext context, int index){
-          return stepperBodyWidget[index];
-      }),
+            return stepperBodyWidget[index];
+          }),
     );
-}
+  }
 }

@@ -12,7 +12,7 @@ class StepperLine extends StatelessWidget {
   /// Line Axis.
   final Axis axis;
 
-  StepperLine({
+  const StepperLine({
     Key? key,
     required this.lineThickness,
     required this.lineColor,

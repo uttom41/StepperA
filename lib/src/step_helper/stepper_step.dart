@@ -56,43 +56,43 @@ class StepperStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: backgroundColor,
-        height: stepperSize.height,
-        width: stepperSize.width,
-        child: SingleChildScrollView(
-          scrollDirection: notifier.stepperAxis,
-          child: Container(
-            padding: padding,
-            margin: margin,
-            alignment: Alignment.center,
-            child:notifier.stepperAxis == Axis.horizontal? Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: Utils(
-                notifier: notifier,
-                radius: radius,
-                stepperSize: stepperSize.width,
-                stepWidth: stepWidth,
-                stepHeight: stepHeight,
-                padding: stepPadding,
-                lineThickness: lineThickness,
-              ).steps(),
-            ):Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: Utils(
-                notifier: notifier,
-                radius: radius,
-                stepperSize: stepperSize.height,
-                stepWidth: stepWidth,
-                stepHeight: stepHeight,
-                padding: stepPadding,
-                lineThickness: lineThickness,
-              ).steps(),
-            ),
+      color: backgroundColor,
+      height: stepperSize.height,
+      width: stepperSize.width,
+      child: SingleChildScrollView(
+        scrollDirection: notifier.stepperAxis,
+        child: Container(
+          padding: padding,
+          margin: margin,
+          alignment: Alignment.center,
+          child:notifier.stepperAxis == Axis.horizontal? Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: Utils(
+              notifier: notifier,
+              radius: radius,
+              stepperSize: stepperSize.width,
+              stepWidth: stepWidth,
+              stepHeight: stepHeight,
+              padding: stepPadding,
+              lineThickness: lineThickness,
+            ).steps(),
+          ):Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: Utils(
+              notifier: notifier,
+              radius: radius,
+              stepperSize: stepperSize.height,
+              stepWidth: stepWidth,
+              stepHeight: stepHeight,
+              padding: stepPadding,
+              lineThickness: lineThickness,
+            ).steps(),
           ),
         ),
-      );
+      ),
+    );
   }
 
 }
