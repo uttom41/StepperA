@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 
+import '../../stepper_a.dart';
 import '../border.dart';
 import '../line.dart';
 
@@ -102,9 +103,9 @@ class Utils{
  ///Set step border color
  Color _getBorderColor(i) {
    Color color;
-   if (i  < notifier.currentIndex-2) {
+   if (i  < notifier.currentIndex) {
      color = notifier.stepCompleteColor;
-   } else if (i  == notifier.currentIndex-2) {
+   } else if (i  == notifier.currentIndex) {
      color = notifier.currentStepColor;
    } else {
      color = notifier.inactiveColor;
@@ -129,7 +130,8 @@ class Utils{
  Widget _getInnerElementOfStepper(index) {
    Color circleColor  = _getCircleColor(index);
    if (index < notifier.currentIndex) {
-     return  Container(
+     return  AnimatedContainer(
+       duration: Duration(milliseconds: DURATION_TIME),
        decoration: BoxDecoration(
            color: circleColor,
            shape: BoxShape.circle
@@ -141,7 +143,8 @@ class Utils{
        ),
      );
    } else if (index == notifier.currentIndex) {
-     return Container(
+     return AnimatedContainer(
+       duration: Duration(milliseconds: DURATION_TIME),
        decoration: BoxDecoration(
            color: circleColor,
            shape: BoxShape.circle
@@ -154,7 +157,8 @@ class Utils{
        ),
      );
    } else {
-     return Container(
+     return AnimatedContainer(
+       duration: Duration(milliseconds: DURATION_TIME),
        decoration: BoxDecoration(
            color: circleColor,
            shape: BoxShape.circle
@@ -162,7 +166,7 @@ class Utils{
        child: Center(
          child: Text(
            '${index + 1}',
-           style: TextStyle(fontSize: 12,color: notifier.stepCompleteColor),
+           style: const TextStyle(fontSize: 12,color:Colors.white),
          ),
        ),
      );

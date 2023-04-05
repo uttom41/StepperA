@@ -9,8 +9,6 @@ void main() {
         inactiveColor: Colors.white54,
         currentStepColor: Colors.green,
         stepperSize:const Size(400,65),
-        buttonColor: Colors.blueAccent,
-        buttonIconColor: Colors.white54,
         stepperBodyWidget: [
           Container(color: Colors.red,child: const Text("Step one"),),
           Container(color: Colors.green,child: const Text("Step two"),),

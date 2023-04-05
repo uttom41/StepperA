@@ -25,7 +25,12 @@ class StepperLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return buildLine ();
+  }
+
+  Widget buildLine(){
+    return AnimatedContainer(
+      duration:  Duration(milliseconds: DURATION_TIME),
       margin: EdgeInsets.only(top: lineType == LineType.dotted ? dotRadius : 0),
       width: axis == Axis.horizontal
           ? length
@@ -57,6 +62,7 @@ class StepperLine extends StatelessWidget {
     );
   }
 }
+
 
 class _LinePainter extends CustomPainter {
   final double length;
@@ -114,11 +120,16 @@ class CalculateLength{
   double size;
   double width;
   double height;
-  CalculateLength({required this.size,required this.width,required this.height,required this.stepSize});
+  CalculateLength({
+    required this.size,
+    required this.width,
+    required this.height,
+    required this.stepSize
+  });
 
   double length(){
     double stepSiz = width  * stepSize;
     double lineSize = size -stepSiz;
-    return lineSize /(stepSize-1);
+    return (lineSize /(stepSize-1))-10;
   }
 }

@@ -1,3 +1,5 @@
+import 'package:example/steo_two.dart';
+import 'package:example/step_one.dart';
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
@@ -39,61 +41,40 @@ class _MyHomePageState extends State<MyHomePage> {
           stepCompleteColor: Colors.blueAccent,
           inactiveColor: Colors.black38,
           currentStepColor: Colors.green,
-          stepperSize: const Size(500,70),
+          stepperSize: const Size(350,70),
           borderShape: BorderShape.rectangle,
           stepperAxis: Axis.horizontal,
           formKey: formKey,
-          stepperBodyWidget: [
-            StepOne(),
-            StepTwo(),
-            Container(color: Colors.yellow,child: const Text("Step three"),),
-            Container(color: Colors.pink,child: const Text("Step four"),),
-            Container(color: Colors.purple,child: const Text("Step five"),),]
-      ),
-    );
-  }
-}
-
-class StepOne extends StatelessWidget {
-  const StepOne({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor:Colors.red ,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text("Step one"),
-          TextFormField(
-            validator: (String? value){
-              if(value !=null && value.isEmpty) return "is empty";
-              return null;
-            },
+          previousButton: Button(
+              buttonIconColor: Colors.white,
+              backgroundColor:  Colors.blueAccent,
+              position: Position(
+                left: 10,
+                bottom: 20
+              )
           ),
-          ElevatedButton(
-              onPressed: (){},
-              child: SizedBox(
-                  width: double.infinity,
-                  child: Text("click Me")
-              ))
-
-        ],
+          forwardButton: Button(
+              buttonIconColor: Colors.white,
+              backgroundColor:  Colors.blueAccent,
+              position: Position(
+                  right: 10,
+                  bottom: 20
+              )
+          ),
+          stepperBodyWidget: [
+            const StepOne(),
+            const StepTwo(),
+            Container(
+              color: Colors.white,
+              child: const Center(
+                  child: Text("Step four",style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700),
+                  )
+              ),
+            )
+          ]
       ),
-    );
-  }
-}
-
-class StepTwo extends StatelessWidget {
-  const StepTwo({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
-      child: const Text("Step two"),
-
     );
   }
 }

@@ -18,3 +18,6 @@ enum LineType {
   straight,
   dotted,
 }
+
+/// Stepper animation static duration
+  final int DURATION_TIME = 300;
