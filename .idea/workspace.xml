@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/example/lib/steo_two.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/step_one.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/step_helper/stepper_controller.dart" afterDir="false" />
+    <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="ReadMe file updated">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/line.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/line.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/page_helper/enums.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/page_helper/enums.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/stepar_a_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/stepar_a_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,19 +41,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/uttom/Downloads/flutter_carousel_widget-master/flutter_carousel_widget-master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="U:\project\StepperA\lib\src\page_helper" />
@@ -65,17 +63,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
-    <configuration name="main2.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+    <configuration name="main2.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main2.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter.main2.dart" />
+        <item itemvalue="Flutter.main.dart" />
       </list>
     </recent_temporary>
   </component>
@@ -88,6 +86,21 @@
       <option name="presentableId" value="Default" />
       <updated>1678190848417</updated>
     </task>
+    <task id="LOCAL-00001" summary="ReadMe file added">
+      <created>1680754714541</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680754714541</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ReadMe file updated">
+      <created>1680754785596</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680754785596</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,5 +113,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ReadMe file added" />
+    <MESSAGE value="ReadMe file updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="ReadMe file updated" />
   </component>
 </project>
