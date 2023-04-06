@@ -77,18 +77,18 @@ class StepperA extends StatefulWidget {
   ///If your need stepper padding
   final EdgeInsets padding;
 
-  ///If your need stepper margin
+  ///If you need stepper margin
   ///default margin all site 5
   final EdgeInsets margin;
 
-  ///If your need stepper step padding
+  ///If you need stepper step padding
   final EdgeInsets stepPadding;
 
-  ///If your need stepper Axis wise build
+  ///If you need stepper Axis wise build
   final Axis stepperAxis;
 
 
-  ///If  your need widget form validation
+  ///If  you need widget form validation
   final GlobalKey<FormState> ? formKey;
 
   final Button? forwardButton;

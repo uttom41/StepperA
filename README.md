@@ -73,6 +73,10 @@ StepperA(
 
 ```
 
+##ScreenShot
+<img src="https://drive.google.com/file/d/1PutrcZ_Iihge964lr-G3IZitNdiaZhii/view?usp=share_link" alt="Alt text" title="Rectangle Type Step">
+<img src="https://drive.google.com/file/d/10jCqJdlE9J4EeRCtd52vxESwRrj8xeFB/view?usp=share_link" alt="Alt text" title="Circle Type Step">
+
 ## Support
 If this package was useful to you, helped you to easily deliver your app, saved you a lot of time, or you just want to
 support the project, I would be grateful if you give us a rating.

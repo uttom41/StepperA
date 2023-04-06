@@ -1,3 +1,9 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+- Form Validation with FormKey [GlobalKey<FormState>()]
+- Customized Stepper step Shape [Rectangle, Circle]
+- Smooth sliding with Animation
+- Easily Customize UI Color
+- Access your own button press control
+
+
