@@ -41,7 +41,6 @@ class _BorderTypeStyle extends CustomPainter{
   final List<double> dashPattern;
   final Radius radius;
   final Paint p = Paint();
-  final StrokeCap strokeCap;
   final Color borderColor;
 
   _BorderTypeStyle({
@@ -49,7 +48,6 @@ class _BorderTypeStyle extends CustomPainter{
     required this.borderType,
     required this.dashPattern,
     required this.radius,
-    this.strokeCap = StrokeCap.butt,
     required this.borderColor,
   });
 
@@ -59,7 +57,7 @@ class _BorderTypeStyle extends CustomPainter{
     p.strokeWidth = 2;
     p.color = borderColor;
     p.style = PaintingStyle.stroke;
-    p.strokeCap = strokeCap;
+    p.strokeCap = StrokeCap.butt;
 
     Path borderPath ;
     if(borderShape == BorderShape.circle){
@@ -145,7 +143,7 @@ class _BorderTypeStyle extends CustomPainter{
 
 }
 
-enum _DashOffsetType { Absolute, Percentage }
+enum _DashOffsetType { absolute, percentage }
 
 
 class DashOffset {
@@ -155,19 +153,19 @@ class DashOffset {
   /// `percentage` will be clamped between 0.0 and 1.0.
   DashOffset.percentage(double percentage)
       : _rawVal = percentage.clamp(0.0, 1.0),
-        _dashOffsetType = _DashOffsetType.Percentage;
+        _dashOffsetType = _DashOffsetType.percentage;
 
   /// Create a DashOffset that will be measured in terms of absolute pixels
   /// along the length of a [Path] segment.
   const DashOffset.absolute(double start)
       : _rawVal = start,
-        _dashOffsetType = _DashOffsetType.Absolute;
+        _dashOffsetType = _DashOffsetType.absolute;
 
   final double _rawVal;
   final _DashOffsetType _dashOffsetType;
 
   double _calculate(double length) {
-    return _dashOffsetType == _DashOffsetType.Absolute
+    return _dashOffsetType == _DashOffsetType.absolute
         ? _rawVal
         : length * _rawVal;
   }
@@ -198,16 +196,16 @@ class DashOffset {
 /// Note that this does not quite conform to an [Iterable<T>], because it does
 /// not have a moveNext.
 class CircularIntervalList<T> {
-  CircularIntervalList(this._vals);
+  CircularIntervalList(this._val);
 
-  final List<T> _vals;
+  final List<T> _val;
   int _idx = 0;
 
   T get next {
-    if (_idx >= _vals.length) {
+    if (_idx >= _val.length) {
       _idx = 0;
     }
-    return _vals[_idx++];
+    return _val[_idx++];
   }
 }
 

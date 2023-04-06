@@ -5,10 +5,8 @@ import 'package:stepper_a/src/page_helper/stepper_body.dart';
 import 'package:stepper_a/src/step_helper/stepper_step.dart';
 import 'package:stepper_a/src/provider/stepper_index_handler.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
-import 'border.dart';
-import 'button/position.dart';
 import 'button/stepper_button.dart';
-import 'line.dart';
+
 
 
 ///Would you need current Step index please use this typedef.

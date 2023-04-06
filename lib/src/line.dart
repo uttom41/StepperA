@@ -30,7 +30,7 @@ class StepperLine extends StatelessWidget {
 
   Widget buildLine(){
     return AnimatedContainer(
-      duration:  Duration(milliseconds: DURATION_TIME),
+      duration:  const Duration(milliseconds: durationTime),
       margin: EdgeInsets.only(top: lineType == LineType.dotted ? dotRadius : 0),
       width: axis == Axis.horizontal
           ? length

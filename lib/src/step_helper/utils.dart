@@ -131,7 +131,7 @@ class Utils{
    Color circleColor  = _getCircleColor(index);
    if (index < notifier.currentIndex) {
      return  AnimatedContainer(
-       duration: Duration(milliseconds: DURATION_TIME),
+       duration: Duration(milliseconds: durationTime),
        decoration: BoxDecoration(
            color: circleColor,
            shape: BoxShape.circle
@@ -144,7 +144,7 @@ class Utils{
      );
    } else if (index == notifier.currentIndex) {
      return AnimatedContainer(
-       duration: Duration(milliseconds: DURATION_TIME),
+       duration: Duration(milliseconds: durationTime),
        decoration: BoxDecoration(
            color: circleColor,
            shape: BoxShape.circle
@@ -158,7 +158,7 @@ class Utils{
      );
    } else {
      return AnimatedContainer(
-       duration: Duration(milliseconds: DURATION_TIME),
+       duration: Duration(milliseconds: durationTime),
        decoration: BoxDecoration(
            color: circleColor,
            shape: BoxShape.circle

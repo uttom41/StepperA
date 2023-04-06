@@ -20,4 +20,4 @@ enum LineType {
 }
 
 /// Stepper animation static duration
-  final int DURATION_TIME = 300;
+  const int durationTime = 300;
