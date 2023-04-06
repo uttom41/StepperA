@@ -14,26 +14,67 @@ and the Flutter guide for
 TODO: Put a short description of the package here that helps potential users
 know whether this package might be useful for them.
 
-## Features
+##                                   Flutter StepperA
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Key Features
 
-## Getting started
+Stepper A can easily build Stepper facility of you any flutter app. 
+- Form Validation with FormKey [GlobalKey<FormState>()]
+- Customized Stepper step Shape [Rectangle, Circle]
+- Smooth sliding with Animation
+- Easily Customize UI Color
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
+## package.yaml
 ```dart
-const like = 'sample';
+stepper_a: <latest version>
 ```
 
-## Additional information
+## Import
+```dart
+import 'package:stepper_a/stepper_a.dart';
+```
+## Simple Example
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+
+```dart
+
+StepperA(
+    stepCompleteColor: Colors.blueAccent,
+    inactiveColor: Colors.black38,
+    currentStepColor: Colors.green,
+    stepperSize: const Size(350,70),
+    borderShape: BorderShape.rectangle,
+    stepperAxis: Axis.horizontal,
+    formKey: formKey,
+    previousButton: Button(
+        buttonIconColor: Colors.white,
+        backgroundColor:  Colors.blueAccent,
+        position: Position(
+        left: 10,
+        bottom: 20)
+    ),
+    forwardButton: Button(
+        buttonIconColor: Colors.white,
+        backgroundColor:  Colors.blueAccent,
+        position: Position(
+        right: 10,
+        bottom: 20)
+    ),
+    stepperBodyWidget: [
+        const StepOne(),
+        const StepTwo(),
+        Container(
+        color: Colors.white,
+        child: const Center(
+        child: Text("Step four",style: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w700),)),)
+    ]
+    )
+
+```
+
+## Support
+If this package was useful to you, helped you to easily deliver your app, saved you a lot of time, or you just want to
+support the project, I would be grateful if you give us a rating.
