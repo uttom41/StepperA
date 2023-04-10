@@ -9,14 +9,14 @@ import 'drawing_helper.dart';
 
 class PathDrawing{
   final Size _size;
-  final PathType _pathType;
+  final BorderShape _pathType;
   final double _strokeWidth;
   final int _startingPercentage;
   final Radius _radius;
 
   const PathDrawing({
     required Size size,
-    required PathType pathType,
+    required BorderShape pathType,
     double strokeWidth = 2.0,
     Radius radius = const Radius.circular(4.0),
     int startingPercentage = 0,
@@ -29,15 +29,15 @@ class PathDrawing{
 
   Path createPath() {
     switch (_pathType) {
-      case PathType.rect:
+      case BorderShape.rect:
         return _createOriginalPathRect();
-      case PathType.rRect:
+      case BorderShape.rRect:
         return _createOriginalPathRRect();
-      case PathType.circle:
+      case BorderShape.circle:
         return _createOriginalPathCircle();
-      case PathType.diamond:
+      case BorderShape.diamond:
         return _createOriginalPathCircle();
-      case PathType.triangle:
+      case BorderShape.triangle:
         return _createOriginalPathCircle();
     }
   }
@@ -86,7 +86,7 @@ class PathDrawing{
     final firstSubPath = pathMetrics.extractPath(0, pathCutoffPoint);
     final secondSubPath =
     pathMetrics.extractPath(pathCutoffPoint, pathMetrics.length);
-    if (_pathType == PathType.rect) {
+    if (_pathType == BorderShape.rect) {
       Path path = Path()
         ..addPath(secondSubPath, Offset.zero)
         ..lineTo(0, -(_strokeWidth / 2))

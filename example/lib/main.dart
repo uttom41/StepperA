@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderShape: BorderShape.circle,
                 stepperAxis: Axis.horizontal,
                 stepperBackgroundColor: Colors.transparent,
-                formKey: formKey,
+               // formKey: formKey,
                 previousButton: Button(
                     buttonIconColor: Colors.white,
                     backgroundColor:  Colors.blueAccent,

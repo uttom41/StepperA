@@ -1,44 +1,51 @@
 
+/// /*** Uttam kumar mitra ***/
+/// create date 10/04/2023; 11:41 PM
+///
+///
+///
+///
+///
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 
-import '../../stepper_a.dart';
-import '../border.dart';
+import '../drawing/drawing_helper.dart';
+import '../drawing/path_widget.dart';
 import '../line.dart';
 
 class Utils{
   ///for Stepper state management
- final StepperNotifier notifier;
+  final StepperNotifier notifier;
 
- ///for Step border radius
- final Radius radius;
+  ///for Step border radius
+  final Radius radius;
 
- ///for stepper height and width
- final double stepperSize;
+  ///for stepper height and width
+  final double stepperSize;
 
- ///for step width
- final double stepWidth;
+  ///for step width
+  final double stepWidth;
 
- ///for step height
- final double stepHeight;
+  ///for step height
+  final double stepHeight;
 
- ///for step padding
- final EdgeInsets padding;
+  ///for step padding
+  final EdgeInsets padding;
 
- ///for stepper line thickness
- final double lineThickness;
+  ///for stepper line thickness
+  final double lineThickness;
 
- const Utils({
-   required this.notifier,
-   required this.radius,
-   required this.stepperSize,
-   required this.stepWidth,
-   required this.stepHeight,
-   required this.padding,
-   required this.lineThickness,
- });
+  const Utils({
+    required this.notifier,
+    required this.radius,
+    required this.stepperSize,
+    required this.stepWidth,
+    required this.stepHeight,
+    required this.padding,
+    required this.lineThickness,
+  });
 
- /// build all step
+  /// build all step
   List<Widget> steps(){
     var list = <Widget>[];
     for (int i = 0; i < notifier.totalIndex; i++) {
@@ -48,13 +55,17 @@ class Utils{
       list.add(
         Stack(children: [
           Positioned.fill(
-            child: StepperBorder(
-              borderShape: notifier.borderShape,
-              borderType: notifier.borderType,
-              dashPattern: notifier.dashPattern,
-              radius: radius,
-              borderColor: borderColor,
-            ),
+              child: PathWidget(
+                notifier:notifier,
+                borderShape: notifier.borderShape,
+                borderType: notifier.borderType,
+                dashPattern: notifier.dashPattern,
+                radius: radius,
+                pathColor: borderColor,
+                strokeWidth: 3.0,
+                taskType: i==notifier.currentIndex?TaskType.inProgress:TaskType.pending,
+                animationDirection: AnimationDirection.clockwise,
+              )
           ),
           Container(
             height: stepHeight,
@@ -88,88 +99,88 @@ class Utils{
 
 
   ///Set step circle color
- Color _getCircleColor(i) {
-   Color color;
-   if (i  < notifier.currentIndex) {
-     color = notifier.stepCompleteColor;
-   } else if (i  == notifier.currentIndex) {
-     color = notifier.currentStepColor;
-   } else {
-     color = notifier.inactiveColor;
-   }
-   return color;
- }
+  Color _getCircleColor(i) {
+    Color color;
+    if (i  < notifier.currentIndex) {
+      color = notifier.stepCompleteColor;
+    } else if (i  == notifier.currentIndex) {
+      color = notifier.currentStepColor;
+    } else {
+      color = notifier.inactiveColor;
+    }
+    return color;
+  }
 
- ///Set step border color
- Color _getBorderColor(i) {
-   Color color;
-   if (i  < notifier.currentIndex) {
-     color = notifier.stepCompleteColor;
-   } else if (i  == notifier.currentIndex) {
-     color = notifier.currentStepColor;
-   } else {
-     color = notifier.inactiveColor;
-   }
-   return color;
- }
+  ///Set step border color
+  Color _getBorderColor(i) {
+    Color color;
+    if (i  < notifier.currentIndex) {
+      color = notifier.stepCompleteColor;
+    } else if (i  == notifier.currentIndex) {
+      color = notifier.currentStepColor;
+    } else {
+      color = notifier.inactiveColor;
+    }
+    return color;
+  }
 
- ///set stepper line color
- Color _getLineColor(i) {
-   Color color;
-   if (i < notifier.currentIndex-1) {
-     color = notifier.stepCompleteColor;
-   } else if (i  == notifier.currentIndex-1) {
-     color = notifier.currentStepColor;
-   } else {
-     color = notifier.inactiveColor;
-   }
-   return color;
- }
+  ///set stepper line color
+  Color _getLineColor(i) {
+    Color color;
+    if (i < notifier.currentIndex-1) {
+      color = notifier.stepCompleteColor;
+    } else if (i  == notifier.currentIndex-1) {
+      color = notifier.currentStepColor;
+    } else {
+      color = notifier.inactiveColor;
+    }
+    return color;
+  }
 
-///set stepper text and icon
- Widget _getInnerElementOfStepper(index) {
-   Color circleColor  = _getCircleColor(index);
-   if (index < notifier.currentIndex) {
-     return  AnimatedContainer(
-       duration: Duration(milliseconds: durationTime),
-       decoration: BoxDecoration(
-           color: circleColor,
-           shape: BoxShape.circle
-       ),
-       child: const Icon(
-         Icons.check,
-         color: Colors.white,
-         size: 16.0,
-       ),
-     );
-   } else if (index == notifier.currentIndex) {
-     return AnimatedContainer(
-       duration: Duration(milliseconds: durationTime),
-       decoration: BoxDecoration(
-           color: circleColor,
-           shape: BoxShape.circle
-       ),
-       child: Center(
-         child: Text(
-           '${notifier.currentIndex +1}',
-           style: const TextStyle(fontSize: 12,color: Colors.white),
-         ),
-       ),
-     );
-   } else {
-     return AnimatedContainer(
-       duration: Duration(milliseconds: durationTime),
-       decoration: BoxDecoration(
-           color: circleColor,
-           shape: BoxShape.circle
-       ),
-       child: Center(
-         child: Text(
-           '${index + 1}',
-           style: const TextStyle(fontSize: 12,color:Colors.white),
-         ),
-       ),
-     );
-   }
- }
+  ///set stepper text and icon
+  Widget _getInnerElementOfStepper(index) {
+    Color circleColor  = _getCircleColor(index);
+    if (index < notifier.currentIndex) {
+      return  AnimatedContainer(
+        duration: const Duration(milliseconds: durationTime),
+        decoration: BoxDecoration(
+            color: circleColor,
+            shape: BoxShape.circle
+        ),
+        child: const Icon(
+          Icons.check,
+          color: Colors.white,
+          size: 16.0,
+        ),
+      );
+    } else if (index == notifier.currentIndex) {
+      return AnimatedContainer(
+        duration: const Duration(milliseconds: durationTime),
+        decoration: BoxDecoration(
+            color: circleColor,
+            shape: BoxShape.circle
+        ),
+        child: Center(
+          child: Text(
+            '${notifier.currentIndex +1}',
+            style: const TextStyle(fontSize: 12,color: Colors.white),
+          ),
+        ),
+      );
+    } else {
+      return AnimatedContainer(
+        duration: const Duration(milliseconds: durationTime),
+        decoration: BoxDecoration(
+            color: circleColor,
+            shape: BoxShape.circle
+        ),
+        child: Center(
+          child: Text(
+            '${index + 1}',
+            style: const TextStyle(fontSize: 12,color:Colors.white),
+          ),
+        ),
+      );
+    }
+  }
 }

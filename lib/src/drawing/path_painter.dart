@@ -12,20 +12,26 @@ import 'drawing_helper.dart';
 
 class PathPainters extends CustomPainter {
   final Color _lineColor;
-  final Color _completeColor;
+  // final Color _completeColor;
   final BorderType _borderType;
   final Animation<double> _animation;
   final double _strokeWidth;
   final Radius _radius;
   final int _startingPercentage;
-  final PathType _pathType;
+  final BorderShape _pathType;
+  final TaskType _taskType;
+  final AnimationDirection _animationDirection;
+  final List<double> _dashPattern;
 
   PathPainters({
     required lineColor,
-    required completeColor,
-    required circleBorder,
-    required pathType,
+    //   required completeColor,
+    required borderType,
+    required borderShape,
+    required taskType,
+    required animationDirection,
     required animation,
+    required  dashPattern,
     double strokeWidth = 2.0,
     Color strokeColor = Colors.blueGrey,
     Radius radius = const Radius.circular(4.0),
@@ -38,9 +44,12 @@ class PathPainters extends CustomPainter {
         _radius = radius,
         _startingPercentage = startingPercentage,
         _lineColor = lineColor,
-        _completeColor = completeColor,
-        _borderType = circleBorder,
-        _pathType= pathType,
+  //   _completeColor = completeColor,
+        _borderType = borderType,
+        _pathType= borderShape,
+        _taskType = taskType,
+        _animationDirection = animationDirection,
+        _dashPattern = dashPattern,
         super(repaint: animation);
 
 
@@ -60,15 +69,15 @@ class PathPainters extends CustomPainter {
       ..shader = null
       ..strokeWidth = _strokeWidth;
 
-    ///complete line paint drawing.
-    Paint complete = Paint()
-      ..color = _completeColor
-      ..strokeCap = StrokeCap.round
-      ..isAntiAlias = true
-      ..style = PaintingStyle.stroke
-      ..strokeJoin = StrokeJoin.round
-      ..shader = null
-      ..strokeWidth = _strokeWidth;
+//     ///complete line paint drawing.
+//     Paint complete = Paint()
+// //      ..color = _completeColor
+//       ..strokeCap = StrokeCap.round
+//       ..isAntiAlias = true
+//       ..style = PaintingStyle.stroke
+//       ..strokeJoin = StrokeJoin.round
+//       ..shader = null
+//       ..strokeWidth = _strokeWidth;
 
     /// calculate animate current value
     final animationPercent = _animation.value;
@@ -115,7 +124,7 @@ class PathPainters extends CustomPainter {
         percent: animationPercent,
       ).drawAnimation();
 
-      canvas.drawPath(currentPath, complete);
+      canvas.drawPath(currentPath, line);
     }else{
       ///for line shape
       ///
@@ -127,8 +136,8 @@ class PathPainters extends CustomPainter {
         _originalPath = PathDrawing(
             size: size,
             pathType: _pathType,
-          radius: _radius,
-          startingPercentage: _startingPercentage
+            radius: _radius,
+            startingPercentage: _startingPercentage
         ).createPath();
 
       }

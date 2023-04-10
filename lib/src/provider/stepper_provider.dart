@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../stepper_a.dart';
+import '../drawing/drawing_helper.dart';
 
 
 class StepperNotifier extends ChangeNotifier{
@@ -57,6 +58,8 @@ class StepperNotifier extends ChangeNotifier{
   ///Ticker Provider from [StepperA], cause need to use it in [AnimationSlide]
   late TickerProviderStateMixin singleTickerProviderStateMixin;
 
+  late AnimationController stepperController;
+  late Animation<double> animation;
 
   ///see [CurrentStepCallBack]
   CurrentStepCallBack onPageChangeCallback;
@@ -81,7 +84,8 @@ class StepperNotifier extends ChangeNotifier{
     nextPageIndex = initialPage;
     totalIndex = length;
     singleTickerProviderStateMixin = vsync;
-
+    stepperController = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 1000));
+    animation = Tween<double>(begin: 0.0, end: 1.0).animate(stepperController);
   }
 
   int checkFormKeyValidation(int index){
@@ -95,6 +99,12 @@ class StepperNotifier extends ChangeNotifier{
     if(formKey!.currentState!=null && formKey!.currentState!.validate())return index;
 
     return _currentIndex;
+  }
+
+  Animation<double> getAnimation(){
+    stepperController.reset();
+    stepperController.forward();
+    return animation;
   }
 
   ///Getter for [_currentIndex]
@@ -114,6 +124,7 @@ class StepperNotifier extends ChangeNotifier{
   @override
   void dispose() {
     controller.dispose();
+    stepperController.dispose();
     super.dispose();
   }
 }
