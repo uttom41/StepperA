@@ -93,7 +93,7 @@ class PathPainters extends CustomPainter {
       }else{
         ///complete shape
         final currentPath = DrawAnimationPath(
-          animationDirection: AnimationDirection.clockwise,
+          animationDirection: _animationDirection,
           path:  _originalPath,
           percent: animationPercent,
         ).drawAnimation();
@@ -107,7 +107,7 @@ class PathPainters extends CustomPainter {
       }else{
         ///complete shape
         final currentPath = DrawAnimationPath(
-          animationDirection: AnimationDirection.clockwise,
+          animationDirection: _animationDirection,
           path:  _originalPath,
           percent: animationPercent,
         ).drawAnimation();

@@ -36,9 +36,9 @@ class PathDrawing{
       case BorderShape.circle:
         return _createOriginalPathCircle();
       case BorderShape.diamond:
-        return _createOriginalPathCircle();
+        return _createOriginalPathDiamond();
       case BorderShape.triangle:
-        return _createOriginalPathCircle();
+        return _createOriginalPathTriangle();
     }
   }
 
@@ -77,6 +77,26 @@ class PathDrawing{
       return _createPathForStartingPercentage(originalPath);
     }
     return originalPath;
+  }
+
+  Path _createOriginalPathTriangle(){
+    var path = Path();
+    path.moveTo(_size.width/2, _size.height);
+    path.lineTo(0, 0);
+    path.lineTo(_size.width, 0);
+     path.close();
+    return path;
+  }
+
+  Path _createOriginalPathDiamond(){
+    var path = Path();
+ //   path.moveTo(_size.width/2, 0);
+    path.moveTo(_size.width / 2.0, 0);
+    path.lineTo(_size.width, _size.height / 2.0);
+    path.lineTo(_size.width / 2.0, _size.height);
+    path.lineTo(0, _size.height / 2.0);
+    path.close();
+    return path;
   }
 
   Path _createPathForStartingPercentage(Path originalPath) {

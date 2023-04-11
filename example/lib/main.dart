@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 inactiveColor: Colors.black38,
                 currentStepColor: Colors.green,
                 stepperSize: const Size(350,70),
-                borderShape: BorderShape.circle,
+                borderShape: BorderShape.diamond,
                 borderType: BorderType.straight,
                 stepperAxis: Axis.horizontal,
                 stepperBackgroundColor: Colors.transparent,
