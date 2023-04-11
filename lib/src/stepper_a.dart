@@ -25,7 +25,7 @@ class StepperA extends StatefulWidget {
   final List<Widget> stepperBodyWidget;
 
   ///if your need current step index use this field
-  final CurrentStepCallBack? currentStepCallBack;
+ // final CurrentStepCallBack? currentStepCallBack;
 
   ///for your need stepper line thickness use this field
   ///default thickness [2.0] double
@@ -95,7 +95,7 @@ class StepperA extends StatefulWidget {
     required this.stepperSize,
     required this.stepperBodyWidget,
     this.stepperBackgroundColor = Colors.white,
-    this.currentStepCallBack,
+  //  this.currentStepCallBack,
     this.padding = const EdgeInsets.all(5),
     this.margin = const EdgeInsets.all(5),
     this.stepPadding = const EdgeInsets.all(5),
@@ -158,7 +158,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
       vsync: this,
       formKey: widget.formKey,
       onPageChangeCallback: (int activePageIndex) {
-        widget.currentStepCallBack!=null?widget.currentStepCallBack!(activePageIndex):null;
+       // widget.currentStepCallBack!=null?widget.currentStepCallBack!(activePageIndex):null;
       },
     );
     if(widget.stepperAController != null) widget.stepperAController?.setNotifier=notifier;

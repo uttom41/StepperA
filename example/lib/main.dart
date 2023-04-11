@@ -79,6 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   StepOne(controller: controller),
                    StepTwo(controller: controller,),
                    StepTwo(controller: controller,),
+                   StepTwo(controller: controller,),
+                   StepTwo(controller: controller,),
                   Container(
                     color: Colors.white,
                     child: const Center(
