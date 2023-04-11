@@ -153,6 +153,7 @@ class Utils {
     Color circleColor = _getCircleColor(index);
     if (index < _notifier.currentIndex) {
       return AnimatedContainer(
+        margin: EdgeInsets.all(8),
         duration: const Duration(milliseconds: durationTime),
         decoration: BoxDecoration(color: circleColor, shape: BoxShape.circle),
         child: const Icon(
@@ -163,6 +164,7 @@ class Utils {
       );
     } else if (index == _notifier.currentIndex) {
       return AnimatedContainer(
+        margin: EdgeInsets.all(8),
         duration: const Duration(milliseconds: durationTime),
         decoration: BoxDecoration(color: circleColor, shape: BoxShape.circle),
         child: Center(
@@ -174,6 +176,7 @@ class Utils {
       );
     } else {
       return AnimatedContainer(
+        margin: EdgeInsets.all(8),
         duration: const Duration(milliseconds: durationTime),
         decoration: BoxDecoration(color: circleColor, shape: BoxShape.circle),
         child: Center(

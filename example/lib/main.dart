@@ -74,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 stepperBodyWidget: [
                   const StepOne(),
                   const StepTwo(),
+                  const StepTwo(),
                   Container(
                     color: Colors.white,
                     child: const Center(
