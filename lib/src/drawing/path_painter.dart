@@ -24,7 +24,6 @@ class PathPainters extends CustomPainter {
 
   PathPainters({
     required lineColor,
-    //   required completeColor,
     required borderType,
     required borderShape,
     required taskType,
@@ -43,7 +42,6 @@ class PathPainters extends CustomPainter {
         _radius = radius,
         _startingPercentage = startingPercentage,
         _lineColor = lineColor,
-  //   _completeColor = completeColor,
         _borderType = borderType,
         _pathType= borderShape,
         _taskType = taskType,
@@ -68,87 +66,54 @@ class PathPainters extends CustomPainter {
       ..shader = null
       ..strokeWidth = _strokeWidth;
 
-//     ///complete line paint drawing.
-//     Paint complete = Paint()
-// //      ..color = _completeColor
-//       ..strokeCap = StrokeCap.round
-//       ..isAntiAlias = true
-//       ..style = PaintingStyle.stroke
-//       ..strokeJoin = StrokeJoin.round
-//       ..shader = null
-//       ..strokeWidth = _strokeWidth;
-
     /// calculate animate current value
     final animationPercent = _animation.value;
 
+    // Construct original path once when animation starts
+    if (animationPercent == 0.0) {
+      _originalPath = PathDrawing(
+          size: size,
+          pathType: _pathType,
+          radius: _radius,
+          startingPercentage: _startingPercentage
+      ).createPath();
+
+    }
+
     ///solid background line drawing
     if(_borderType== BorderType.dash){
-      final rect =  RRect.fromRectAndRadius(
-        Rect.fromLTWH(
-          0,
-          0,
-          size.width,
-          size.height,
-        ),
-        const Radius.circular(15),
-      );
-      // final rect = Offset.zero & size;
-      final path = Path()
-        ..addRRect(rect)
-        ..close();
 
-      canvas.drawPath(
-        Dash(source: path,
-            dashArray: CircularIntervalList<double>(<double>[10, 15])
-        ).dashDraw(),
-        line,
-      );
+      if(_taskType != TaskType.inProgress){
+        canvas.drawPath(
+          Dash(source: _originalPath,
+              dashArray: CircularIntervalList<double>(_dashPattern)
+          ).dashDraw(),
+          line,
+        );
+      }else{
+        ///complete shape
+        final currentPath = DrawAnimationPath(
+          animationDirection: AnimationDirection.clockwise,
+          path:  _originalPath,
+          percent: animationPercent,
+        ).drawAnimation();
 
-      ///complete shape
-
-      // Construct original path once when animation starts
-      if (animationPercent == 0.0) {
-        _originalPath = PathDrawing(
-            size: size,
-            pathType: _pathType,
-            radius: _radius,
-            startingPercentage: _startingPercentage
-        ).createPath();
-
+        canvas.drawPath(currentPath, line);
       }
-
-      final currentPath = DrawAnimationPath(
-        animationDirection: AnimationDirection.clockwise,
-        path:  _originalPath,
-        percent: animationPercent,
-      ).drawAnimation();
-
-      canvas.drawPath(currentPath, line);
     }else{
       ///for line shape
-      ///
+      if(_taskType != TaskType.inProgress){
+        canvas.drawPath(_originalPath,line);
+      }else{
+        ///complete shape
+        final currentPath = DrawAnimationPath(
+          animationDirection: AnimationDirection.clockwise,
+          path:  _originalPath,
+          percent: animationPercent,
+        ).drawAnimation();
 
-      ///complete shape
-
-      // Construct original path once when animation starts
-      if (animationPercent == 0.0) {
-        _originalPath = PathDrawing(
-            size: size,
-            pathType: _pathType,
-            radius: _radius,
-            startingPercentage: _startingPercentage
-        ).createPath();
-
+        canvas.drawPath(currentPath, line);
       }
-
-      final currentPath = DrawAnimationPath(
-        animationDirection: AnimationDirection.clockwise,
-        path:  _originalPath,
-        percent: animationPercent,
-      ).drawAnimation();
-
-      canvas.drawPath(currentPath, line);
-
     }
   }
 

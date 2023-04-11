@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 currentStepColor: Colors.green,
                 stepperSize: const Size(350,70),
                 borderShape: BorderShape.circle,
+                borderType: BorderType.straight,
                 stepperAxis: Axis.horizontal,
                 stepperBackgroundColor: Colors.transparent,
                // formKey: formKey,

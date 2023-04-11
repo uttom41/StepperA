@@ -1,3 +1,10 @@
+/// /*** Uttam kumar mitra ***/
+/// create date 04/04/2023; 11:41 PM
+///
+///
+///
+///
+///
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 
 /// this class for stepper index calculation

@@ -31,7 +31,11 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-
+.dart_tool/package_config.json
+.dart_tool/package_config_subset
+.idea/libraries/Dart_Packages.xml
+.idea/libraries/Dart_SDK.xml
+.idea/workspace.xml
 # Symbolication related
 app.*.symbols
 
@@ -42,3 +46,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+../.idea
+../.dart_tool

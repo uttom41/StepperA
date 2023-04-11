@@ -76,6 +76,7 @@ class StepperStep extends StatelessWidget {
               stepHeight: stepHeight,
               padding: stepPadding,
               lineThickness: lineThickness,
+              strokeWidth: 3.0
             ).steps(),
           ):Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,6 +89,7 @@ class StepperStep extends StatelessWidget {
               stepHeight: stepHeight,
               padding: stepPadding,
               lineThickness: lineThickness,
+              strokeWidth: 3.0
             ).steps(),
           ),
         ),
