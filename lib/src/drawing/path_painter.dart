@@ -12,7 +12,6 @@ import 'drawing_helper.dart';
 
 class PathPainters extends CustomPainter {
   final Color _lineColor;
-  // final Color _completeColor;
   final BorderType _borderType;
   final Animation<double> _animation;
   final double _strokeWidth;

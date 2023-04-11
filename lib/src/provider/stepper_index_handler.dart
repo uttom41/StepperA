@@ -9,19 +9,17 @@ class StepperIndex{
   void next(int x, int y) {
     if (x < y) {
       notifier.currentIndex = (x + 1);
-      return;
+    }else {
+      notifier.currentIndex = x;
     }
-    notifier.currentIndex = x;
-    return;
   }
 
   /// this method using for stepper previous index update
   void back(int x) {
     if (x > 0) {
       notifier.currentIndex = (x - 1);
-      return;
+    }else {
+      notifier.currentIndex = x;
     }
-    notifier.currentIndex = x;
-    return;
   }
 }

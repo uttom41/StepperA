@@ -64,7 +64,7 @@ class Utils{
                 pathColor: borderColor,
                 strokeWidth: 3.0,
                 taskType: i==notifier.currentIndex?TaskType.inProgress:TaskType.pending,
-                animationDirection: AnimationDirection.clockwise,
+                animationDirection: notifier.direction,
               )
           ),
           Container(

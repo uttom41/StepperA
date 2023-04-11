@@ -42,6 +42,8 @@ class StepperNotifier extends ChangeNotifier{
   ///default index is 0
   int _currentIndex = 0;
 
+  ///Step animation direction
+  AnimationDirection _direction = AnimationDirection.clockwise;
   ///next Page index
   ///default set next page index is 0
   int nextPageIndex = 0;
@@ -110,13 +112,23 @@ class StepperNotifier extends ChangeNotifier{
   ///Getter for [_currentIndex]
   int get currentIndex => _currentIndex;
 
+  ///Getter for [_direction]
+  AnimationDirection get direction => _direction;
+
   ///Setter for [_currentIndex]
   set currentIndex(int index){
+
+    if(_currentIndex > index) {
+      _direction = AnimationDirection.anticlockwise;
+    } else {
+      _direction = AnimationDirection.clockwise;
+    }
+
     _currentIndex = checkFormKeyValidation(index);
     onPageChangeCallback(_currentIndex);
     controller.animateToPage(
         _currentIndex,
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: durationTime),
         curve: Curves.easeOut);
     notifyListeners();
   }
