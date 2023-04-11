@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:stepper_a/stepper_a.dart';
 
 class StepTwo extends StatefulWidget {
-  const StepTwo({Key? key}) : super(key: key);
+  final StepperAController controller;
+  const StepTwo({Key? key,required this.controller}) : super(key: key);
 
   @override
   State<StepTwo> createState() => _StepTwoState();
@@ -48,6 +50,42 @@ class _StepTwoState extends State<StepTwo> {
 
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: (){
+                    widget.controller.back();
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.green
+                    ),
+                    padding: const EdgeInsets.only(left: 18,right: 18,top: 10,bottom: 10),
+
+                    child: const Text("Back",style: TextStyle(fontSize: 18,color: Colors.white),),
+                  ),
+                ),
+                const SizedBox(width: 12,),
+                InkWell(
+                  onTap: (){
+                    widget.controller.next();
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.green
+                    ),
+                    padding: const EdgeInsets.only(left: 18,right: 18,top: 10,bottom: 10),
+
+                    child: const Text("Next",style: TextStyle(fontSize: 18,color: Colors.white),),
+                  ),
+                )
+            ],
+            )
           ],
         ),
       ),

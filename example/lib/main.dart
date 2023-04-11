@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final formKey =  GlobalKey<FormState>();
-
+  final StepperAController controller = StepperAController();
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -51,23 +51,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderType: BorderType.dash,
                 stepperAxis: Axis.horizontal,
                 stepperBackgroundColor: Colors.transparent,
+               stepperAController: controller,
                // formKey: formKey,
-                previousButton: Button(
-                    buttonIconColor: Colors.white,
-                    backgroundColor:  Colors.blueAccent,
-                    position: Position(
-                      left: 10,
-                      bottom: 20
-                    )
-                ),
-                forwardButton: Button(
-                    buttonIconColor: Colors.white,
-                    backgroundColor:  Colors.blueAccent,
-                    position: Position(
-                        right: 10,
-                        bottom: 20
-                    )
-                ),
+               //  previousButton: Button(
+               //      buttonIconColor: Colors.white,
+               //      backgroundColor:  Colors.blueAccent,
+               //      position: Position(
+               //        left: 10,
+               //        bottom: 20
+               //      )
+               //  ),
+               //  forwardButton: Button(
+               //      buttonIconColor: Colors.white,
+               //      backgroundColor:  Colors.blueAccent,
+               //      position: Position(
+               //          right: 10,
+               //          bottom: 20
+               //      )
+               //  ),
             step: const StepA(
                 currentStepColor: Colors.green,
                 completeStepColor: Colors.blueAccent,
@@ -75,9 +76,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 margin: EdgeInsets.all(5)
             ),
                 stepperBodyWidget: [
-                  const StepOne(),
-                  const StepTwo(),
-                  const StepTwo(),
+                  StepOne(controller: controller),
+                   StepTwo(controller: controller,),
+                   StepTwo(controller: controller,),
                   Container(
                     color: Colors.white,
                     child: const Center(

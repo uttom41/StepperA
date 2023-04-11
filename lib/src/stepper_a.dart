@@ -5,6 +5,7 @@ import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/src/step_helper/stepper_step.dart';
 import 'package:stepper_a/src/provider/stepper_index_handler.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
+import 'package:stepper_a/src/stepper_a_controller.dart';
 import 'button/stepper_button.dart';
 import 'drawing/drawing_helper.dart';
 
@@ -86,7 +87,7 @@ class StepperA extends StatefulWidget {
 
   final Button? forwardButton;
   final Button? previousButton;
-
+  final StepperAController? stepperAController;
 
   const StepperA({
     Key? key,
@@ -109,6 +110,7 @@ class StepperA extends StatefulWidget {
     this.formKey,
     this.forwardButton,
     this.previousButton,
+    this.stepperAController,
     required this.step
   })  :super(key: key);
 
@@ -159,7 +161,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
         widget.currentStepCallBack!=null?widget.currentStepCallBack!(activePageIndex):null;
       },
     );
-
+    if(widget.stepperAController != null) widget.stepperAController?.setNotifier=notifier;
     return AnimatedBuilder(
         animation: notifier,
         builder: (BuildContext context,  child) {
