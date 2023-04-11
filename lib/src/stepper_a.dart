@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/button/button.dart';
 import 'package:stepper_a/src/page_helper/stepper_body.dart';
+import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/src/step_helper/stepper_step.dart';
 import 'package:stepper_a/src/provider/stepper_index_handler.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
@@ -14,15 +15,6 @@ typedef CurrentStepCallBack = void Function(int index);
 
 ///StepperA class is main class
 class StepperA extends StatefulWidget {
-
-  ///for define step complete border and shape[circle] color
-  final Color stepCompleteColor;
-
-  ///for define current step border and shape[circle] color
-  final Color currentStepColor;
-
-  ///for define inactive step border and shape[circle] color
-  final Color inactiveColor;
 
   ///for define stepper background color
   final Color stepperBackgroundColor;
@@ -85,6 +77,9 @@ class StepperA extends StatefulWidget {
   ///If you need stepper Axis wise build
   final Axis stepperAxis;
 
+  ///It is Control Step color and icon.
+  final StepA step;
+
 
   ///If  you need widget form validation
   final GlobalKey<FormState> ? formKey;
@@ -95,9 +90,6 @@ class StepperA extends StatefulWidget {
 
   const StepperA({
     Key? key,
-    required this.stepCompleteColor,
-    required this.inactiveColor,
-    required this.currentStepColor,
     this.lineThickness =2,
     required this.stepperSize,
     required this.stepperBodyWidget,
@@ -116,7 +108,8 @@ class StepperA extends StatefulWidget {
     this.stepperAxis = Axis.horizontal,
     this.formKey,
     this.forwardButton,
-    this.previousButton
+    this.previousButton,
+    required this.step
   })  :super(key: key);
 
   @override
@@ -135,6 +128,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
   /// view is scrolled.
   late PageController _pageController;
 
+
   @override
   void initState() {
     ///total steps size update
@@ -148,9 +142,9 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
     _pageController = PageController();
     ///init StepperNotifier
     notifier = StepperNotifier(
-      stepCompleteColor: widget.stepCompleteColor,
-      currentStepColor: widget.currentStepColor,
-      inactiveColor: widget.inactiveColor,
+     // stepCompleteColor: widget.stepCompleteColor,
+     // currentStepColor: widget.currentStepColor,
+    //  inactiveColor: widget.inactiveColor,
       borderType: widget.borderType,
       lineType: widget.lineType,
       borderShape: widget.borderShape,
@@ -165,6 +159,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
         widget.currentStepCallBack!=null?widget.currentStepCallBack!(activePageIndex):null;
       },
     );
+
     return AnimatedBuilder(
         animation: notifier,
         builder: (BuildContext context,  child) {
@@ -183,8 +178,9 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
                       radius: widget.radius,
                       lineThickness: widget.lineThickness,
                       stepWidth: widget.stepWidth,
-                      stepPadding: widget.stepPadding,
+                     // stepPadding: widget.stepPadding,
                       margin: widget.margin,
+                      step: widget.step,
                     ),
                     Expanded(
                       child: StepperBody(
@@ -242,7 +238,8 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
                       radius: widget.radius,
                       lineThickness: widget.lineThickness,
                       stepWidth: widget.stepWidth,
-                      stepPadding: widget.stepPadding,
+                      step: widget.step,
+                      //stepPadding: widget.stepPadding,
                       margin: widget.margin,
                     ),
                     Expanded(
@@ -292,6 +289,8 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin{
           );
         });
   }
+
+
 
   ///Stepper width and height calculation
   Size stepperSizeCalculate(){

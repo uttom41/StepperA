@@ -91,10 +91,14 @@ class PathDrawing{
   Path _createOriginalPathDiamond(){
     var path = Path();
  //   path.moveTo(_size.width/2, 0);
-    path.moveTo(_size.width / 2.0, 0);
-    path.lineTo(_size.width, _size.height / 2.0);
+    path.moveTo(_size.width, _size.height / 2.0);
+   // path.moveTo(_size.width / 2.0, 0);
     path.lineTo(_size.width / 2.0, _size.height);
+    //path.lineTo(_size.width, _size.height / 2.0);
     path.lineTo(0, _size.height / 2.0);
+   // path.lineTo(_size.width / 2.0, _size.height);
+    path.lineTo(_size.width/2, 0);
+   // path.lineTo(0, _size.height / 2.0);
     path.close();
     return path;
   }

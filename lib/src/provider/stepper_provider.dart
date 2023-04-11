@@ -1,20 +1,23 @@
+/// /*** Uttam kumar mitra ***/
+/// create date 04/03/2023; 10:41 PM
+///
+///
 
 import 'package:flutter/material.dart';
 
 import '../../stepper_a.dart';
-import '../drawing/drawing_helper.dart';
 
 
 class StepperNotifier extends ChangeNotifier{
 
-  ///for define step complete border and shape[circle] color
-  final Color stepCompleteColor;
-
-  ///for define current step border and shape[circle] color
-  final Color currentStepColor;
-
-  ///for define inactive step border and shape[circle] color
-  final Color inactiveColor;
+  // ///for define step complete border and shape[circle] color
+  // final Color stepCompleteColor;
+  //
+  // ///for define current step border and shape[circle] color
+  // final Color currentStepColor;
+  //
+  // ///for define inactive step border and shape[circle] color
+  // final Color inactiveColor;
 
   ///IF you need different Step border style
   ///default border style is [straight]
@@ -67,9 +70,9 @@ class StepperNotifier extends ChangeNotifier{
   CurrentStepCallBack onPageChangeCallback;
 
   StepperNotifier({
-    required this.stepCompleteColor,
-    required  this.currentStepColor,
-    required this.inactiveColor,
+  //  required this.stepCompleteColor,
+ //   required  this.currentStepColor,
+   // required this.inactiveColor,
     required  this.borderType,
     required  this.lineType,
     required this.borderShape,

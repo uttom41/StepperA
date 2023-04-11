@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/src/step_helper/utils.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 
@@ -14,8 +15,11 @@ class StepperStep extends StatelessWidget {
   ///default margin all site 5
   final EdgeInsets margin;
 
-  ///If your need stepper step padding
-  final EdgeInsets stepPadding;
+  ///It is Control Step color and icon.
+  final StepA step;
+
+  // ///If your need stepper step padding
+  // final EdgeInsets stepPadding;
 
   ///Stepper Notifier for internal state management
   final StepperNotifier notifier;
@@ -49,7 +53,8 @@ class StepperStep extends StatelessWidget {
     required this.stepWidth,
     required this.stepperSize,
     required this.radius,
-    required this.stepPadding,
+    required this.step,
+ //   required this.stepPadding,
     required this.margin
   }) : super(key: key);
 
@@ -74,8 +79,9 @@ class StepperStep extends StatelessWidget {
               stepperSize: stepperSize.width,
               stepWidth: stepWidth,
               stepHeight: stepHeight,
-              padding: stepPadding,
+            //  padding: stepPadding,
               lineThickness: lineThickness,
+              step: step,
               strokeWidth: 3.0
             ).steps(),
           ):Column(
@@ -87,7 +93,8 @@ class StepperStep extends StatelessWidget {
               stepperSize: stepperSize.height,
               stepWidth: stepWidth,
               stepHeight: stepHeight,
-              padding: stepPadding,
+               step: step,
+             // padding: stepPadding,
               lineThickness: lineThickness,
               strokeWidth: 3.0
             ).steps(),
