@@ -66,8 +66,6 @@ class StepperNotifier extends ChangeNotifier{
   late AnimationController stepperController;
   late Animation<double> animation;
 
-  ///see [CurrentStepCallBack]
-  CurrentStepCallBack onPageChangeCallback;
 
   StepperNotifier({
   //  required this.stepCompleteColor,
@@ -82,7 +80,6 @@ class StepperNotifier extends ChangeNotifier{
     required int initialPage,
     required int length,
     required TickerProviderStateMixin vsync,
-    required this.onPageChangeCallback,
     this.formKey,
   }){
     _currentIndex = initialPage;
@@ -128,7 +125,6 @@ class StepperNotifier extends ChangeNotifier{
     }
 
     _currentIndex = checkFormKeyValidation(index);
-    onPageChangeCallback(_currentIndex);
     controller.animateToPage(
         _currentIndex,
         duration: const Duration(milliseconds: durationTime),
