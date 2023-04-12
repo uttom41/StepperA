@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/button/button.dart';
 import 'package:stepper_a/src/page_helper/stepper_body.dart';
-import 'package:stepper_a/src/scroll_controller.dart';
 import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/src/step_helper/stepper_step.dart';
 import 'package:stepper_a/src/provider/stepper_index_handler.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 import 'package:stepper_a/src/stepper_a_controller.dart';
-import 'package:stepper_a/src/sync_scroll_controller.dart';
 import 'button/stepper_button.dart';
 import 'drawing/drawing_helper.dart';
 
@@ -120,15 +118,6 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
   /// An object that can be used to control the position to which this page
   /// view is scrolled.
   late PageController _pageController;
-  final ScrollControllers scrollControllers = ScrollControllers();
-  late SyncScrollController _horizontalSyncController;
-
-  bool _onHorizontalScrollingNotification({
-    required ScrollNotification notification,
-    required ScrollController controller,
-  }) {
-    return true;
-  }
 
   @override
   void initState() {
@@ -158,10 +147,6 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
     );
     if (widget.stepperAController != null) widget.stepperAController?.setNotifier = notifier;
 
-    _horizontalSyncController = SyncScrollController(
-      scrollControllers.horizontalTitleController,
-      scrollControllers.horizontalBodyController,
-    );
 
     return AnimatedBuilder(
         animation: notifier,
@@ -175,20 +160,22 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
                         children: [
                           stepBuild(),
                           Expanded(
-                            child: NotificationListener<ScrollNotification>(
-                                onNotification: (notification) =>
-                                    _onHorizontalScrollingNotification(
-                                        notification: notification,
-                                        controller:scrollControllers.horizontalBodyController),
-                                child: SingleChildScrollView(
-                                  controller: scrollControllers.horizontalBodyController,
-                                  scrollDirection: notifier.stepperAxis,
-                                  child: Row(children:widget.stepperBodyWidget,),
-                                )
-                                // StepperBody(
-                                //   notifier: notifier,
-                                //   stepperBodyWidget: widget.stepperBodyWidget,
-                                // )
+                            child:
+                            // NotificationListener<ScrollNotification>(
+                            //     onNotification: (notification) =>
+                            //         _onHorizontalScrollingNotification(
+                            //             notification: notification,
+                            //             controller:scrollControllers.horizontalBodyController),
+                            //     child: SingleChildScrollView(
+                            //       controller: scrollControllers.horizontalBodyController,
+                            //       scrollDirection: notifier.stepperAxis,
+                            //       child: Row(children:widget.stepperBodyWidget,),
+                            //     )
+
+                                StepperBody(
+                                  notifier: notifier,
+                                  stepperBodyWidget: widget.stepperBodyWidget,
+
                             ),
                           )
                         ],
@@ -248,7 +235,6 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
                             lineThickness: widget.lineThickness,
                             stepWidth: widget.stepWidth,
                             step: widget.step,
-                            scrollControllers: scrollControllers,
                             //stepPadding: widget.stepPadding,
                             margin: widget.margin,
                           ),
@@ -304,25 +290,17 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
   }
 
   Widget stepBuild(){
-    return NotificationListener<ScrollNotification>(
-      child: StepperStep(
-        backgroundColor: widget.stepperBackgroundColor,
-        padding: widget.padding,
-        notifier: notifier,
-        stepHeight: widget.stepHeight,
-        stepperSize: stepperSizeCalculate(),
-        radius: widget.radius,
-        lineThickness: widget.lineThickness,
-        stepWidth: widget.stepWidth,
-        scrollControllers: scrollControllers,
-        margin: widget.margin,
-        step: widget.step,
-      ),
-      onNotification: (notification) =>
-          _onHorizontalScrollingNotification(
-              notification: notification,
-              controller: scrollControllers.horizontalTitleController
-          ),
+    return StepperStep(
+      backgroundColor: widget.stepperBackgroundColor,
+      padding: widget.padding,
+      notifier: notifier,
+      stepHeight: widget.stepHeight,
+      stepperSize: stepperSizeCalculate(),
+      radius: widget.radius,
+      lineThickness: widget.lineThickness,
+      stepWidth: widget.stepWidth,
+      margin: widget.margin,
+      step: widget.step,
     );
   }
 

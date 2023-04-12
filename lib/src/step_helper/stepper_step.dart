@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stepper_a/src/scroll_controller.dart';
 import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/src/step_helper/utils.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
+
+import '../line.dart';
 
 class StepperStep extends StatelessWidget {
 
@@ -40,8 +41,6 @@ class StepperStep extends StatelessWidget {
   ///default step width is 50.
   final double stepWidth;
 
-  final ScrollControllers scrollControllers;
-
   ///this field stepper step height.
   ///default step height is 50.
   final double stepHeight;
@@ -57,7 +56,6 @@ class StepperStep extends StatelessWidget {
     required this.stepperSize,
     required this.radius,
     required this.step,
-    required this.scrollControllers,
  //   required this.stepPadding,
     required this.margin
   }) : super(key: key);
@@ -70,7 +68,15 @@ class StepperStep extends StatelessWidget {
       width: stepperSize.width,
       child: SingleChildScrollView(
         scrollDirection: notifier.stepperAxis,
-        controller: scrollControllers.horizontalTitleController,
+        controller: notifier.getStepScrollController(
+            itemWidth: stepWidth,
+            lineWidth: CalculateLength(
+                size: stepperSize.width,
+                width: stepWidth,
+                height: stepHeight,
+                stepSize: notifier.totalIndex)
+                .length(),
+            screenWidth: stepperSize.width),
         child: Container(
           padding: padding,
           margin: margin,

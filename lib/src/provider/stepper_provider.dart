@@ -10,15 +10,6 @@ import '../../stepper_a.dart';
 
 class StepperNotifier extends ChangeNotifier{
 
-  // ///for define step complete border and shape[circle] color
-  // final Color stepCompleteColor;
-  //
-  // ///for define current step border and shape[circle] color
-  // final Color currentStepColor;
-  //
-  // ///for define inactive step border and shape[circle] color
-  // final Color inactiveColor;
-
   ///IF you need different Step border style
   ///default border style is [straight]
   final BorderType borderType;
@@ -40,6 +31,10 @@ class StepperNotifier extends ChangeNotifier{
   /// An object that can be used to control the position to which this page
   /// view is scrolled.
   PageController controller;
+
+  /// An object that can be used to control the position to which this Stepper
+  /// view is scrolled.
+  final ScrollController _stepController = ScrollController();
 
   ///Active page index
   ///default index is 0
@@ -68,9 +63,6 @@ class StepperNotifier extends ChangeNotifier{
 
 
   StepperNotifier({
-  //  required this.stepCompleteColor,
- //   required  this.currentStepColor,
-   // required this.inactiveColor,
     required  this.borderType,
     required  this.lineType,
     required this.borderShape,
@@ -130,6 +122,15 @@ class StepperNotifier extends ChangeNotifier{
         duration: const Duration(milliseconds: durationTime),
         curve: Curves.easeOut);
     notifyListeners();
+  }
+
+  ScrollController getStepScrollController({required double itemWidth, required double lineWidth,required double screenWidth}){
+    final double scrollAmount = ((_currentIndex +1) * (lineWidth + itemWidth)) - screenWidth;
+    if (scrollAmount > 0) {
+      _stepController.animateTo(scrollAmount, duration: const Duration(milliseconds: durationTime), curve: Curves.easeIn);
+
+    }
+    return _stepController;
   }
 
   @override
