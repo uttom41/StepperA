@@ -1,3 +1,9 @@
+
+/// /*** Uttam kumar mitra ***/
+/// create date 14/04/2023; 12:41 AM
+///
+///
+
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/src/step_helper/utils.dart';
@@ -8,108 +14,137 @@ import '../line.dart';
 class StepperStep extends StatelessWidget {
 
   ///for define stepper background color
-  final Color backgroundColor;
+  final Color _backgroundColor;
 
   ///If your need stepper padding
-  final EdgeInsets padding;
+  final EdgeInsets _padding;
 
   ///If your need stepper margin
   ///default margin all site 5
-  final EdgeInsets margin;
+  final EdgeInsets _margin;
 
   ///It is Control Step color and icon.
-  final StepA step;
-
-  // ///If your need stepper step padding
-  // final EdgeInsets stepPadding;
+  final StepA _step;
 
   ///Stepper Notifier for internal state management
-  final StepperNotifier notifier;
+  final StepperNotifier _notifier;
 
   ///this field no need for [circle] type border.
   ///if your need [rectangle] type border shape all side radius.
-  final Radius radius;
+  final Radius _radius;
 
   ///for your need stepper line thickness use this field
   ///default thickness [2.0] double
-  final double lineThickness;
+  final double _lineThickness;
 
   ///this field are required for stepper width for[Horizontal Axis] and height for[Vertical Axis]
-  final Size stepperSize;
+  final Size _stepperSize;
 
   ///this field stepper step width.
   ///default step width is 50.
-  final double stepWidth;
+  final double _stepWidth;
 
   ///this field stepper step height.
   ///default step height is 50.
-  final double stepHeight;
+  final double _stepHeight;
+
+  ///Step border show or Not
+  final bool _border;
+
+  /// If your need stepper Axis wise build
+  final Axis _axis;
 
   const StepperStep({
     Key? key,
-    required this.backgroundColor,
-    required this.padding,
-    required this.notifier,
-    required this.lineThickness,
-    required this.stepHeight,
-    required this.stepWidth,
-    required this.stepperSize,
-    required this.radius,
-    required this.step,
- //   required this.stepPadding,
-    required this.margin
-  }) : super(key: key);
+    required backgroundColor,
+    required padding,
+    required notifier,
+    required lineThickness,
+    required stepHeight,
+    required stepWidth,
+    required stepperSize,
+    required radius,
+    required step,
+    required margin,
+    required border,
+    required axis
+  }) :
+        _backgroundColor = backgroundColor,
+        _padding = padding,
+        _notifier = notifier,
+        _lineThickness = lineThickness,
+        _stepHeight = stepHeight,
+        _stepWidth = stepWidth,
+        _stepperSize = stepperSize,
+        _radius = radius,
+        _step = step,
+        _margin = margin,
+        _border = border,
+        _axis = axis,
+        super(key: key);
+
+  Widget buildHorizontalStep(){
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: Utils(
+          notifier: _notifier,
+          radius: _radius,
+          stepperSize: _stepperSize.width,
+          stepWidth: _stepWidth,
+          stepHeight: _stepHeight,
+          axis: _axis,
+          lineThickness: _lineThickness,
+          step: _step,
+          stepBorder: _border,
+          strokeWidth: 3.0
+      ).steps(),
+    );
+  }
+
+  Widget buildVerticalStep(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: Utils(
+          notifier: _notifier,
+          radius: _radius,
+          stepperSize: _stepperSize.height,
+          stepWidth: _stepWidth,
+          stepHeight: _stepHeight,
+          step: _step,
+          axis: _axis,
+          stepBorder: _border,
+          lineThickness: _lineThickness,
+          strokeWidth: 3.0
+      ).steps(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: backgroundColor,
-      height: stepperSize.height,
-      width: stepperSize.width,
+      color: _backgroundColor,
+      height: _stepperSize.height,
+      width: _stepperSize.width,
       child: SingleChildScrollView(
-        scrollDirection: notifier.stepperAxis,
-        controller: notifier.getStepScrollController(
-            itemWidth: stepWidth,
+        scrollDirection: _axis,
+        controller: _notifier.getStepScrollController(
+            itemWidth: _stepWidth,
             lineWidth: CalculateLength(
-                size: stepperSize.width,
-                width: stepWidth,
-                height: stepHeight,
-                stepSize: notifier.totalIndex)
+                size: _stepperSize.width,
+                width: _stepWidth,
+                height: _stepHeight,
+                stepSize: _notifier.totalIndex)
                 .length(),
-            screenWidth: stepperSize.width),
+            screenWidth: _stepperSize.width),
         child: Container(
-          padding: padding,
-          margin: margin,
+          padding: _padding,
+          margin: _margin,
           alignment: Alignment.center,
-          child:notifier.stepperAxis == Axis.horizontal? Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: Utils(
-              notifier: notifier,
-              radius: radius,
-              stepperSize: stepperSize.width,
-              stepWidth: stepWidth,
-              stepHeight: stepHeight,
-            //  padding: stepPadding,
-              lineThickness: lineThickness,
-              step: step,
-              strokeWidth: 3.0
-            ).steps(),
-          ):Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: Utils(
-              notifier: notifier,
-              radius: radius,
-              stepperSize: stepperSize.height,
-              stepWidth: stepWidth,
-              stepHeight: stepHeight,
-               step: step,
-             // padding: stepPadding,
-              lineThickness: lineThickness,
-              strokeWidth: 3.0
-            ).steps(),
-          ),
+          child:_axis== Axis.horizontal
+              ?buildHorizontalStep()
+              :buildVerticalStep(),
         ),
       ),
     );

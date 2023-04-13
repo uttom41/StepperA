@@ -20,7 +20,7 @@ class StepperFloatingButton extends StatelessWidget {
   final Color buttonIconColor;
 
   ///internal state management
-  final StepperNotifier notifier;
+  final Axis axis;
 
   ///button click handle
   final Function onTap;
@@ -35,7 +35,7 @@ class StepperFloatingButton extends StatelessWidget {
     Key? key,
     required this.position,
     required this.buttonColor,
-    required this.notifier,
+    required this.axis,
     required this.buttonIconColor,
     required this.onTap,
     required this.heroTag,
@@ -56,7 +56,7 @@ class StepperFloatingButton extends StatelessWidget {
         onPressed: (){onTap();},
         child: Icon(buttonIcon,
           color: buttonIconColor,
-          size: notifier.stepperAxis== Axis.horizontal?26.0:40.0,
+          size: axis== Axis.horizontal?26.0:40.0,
         ),
       ),
     );

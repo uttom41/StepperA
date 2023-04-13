@@ -50,9 +50,6 @@ class StepperNotifier extends ChangeNotifier{
   ///default page index set is 1
   int totalIndex = 0;
 
-  ///If your need stepper Axis wise build
-  final Axis stepperAxis;
-
   final GlobalKey<FormState> ? formKey;
 
   ///Ticker Provider from [StepperA], cause need to use it in [AnimationSlide]
@@ -67,7 +64,6 @@ class StepperNotifier extends ChangeNotifier{
     required  this.lineType,
     required this.borderShape,
     required this.dashPattern,
-    required this.stepperAxis,
     required this.controller,
     required int initialPage,
     required int length,

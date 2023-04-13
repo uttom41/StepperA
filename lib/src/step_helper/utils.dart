@@ -32,8 +32,9 @@ class Utils {
   ///for step height
   final double _stepHeight;
 
-  // ///for step padding
-  // final EdgeInsets _padding;
+  ///Step border show or Not
+  final bool _border;
+
 
   ///for stepper line thickness
   final double _lineThickness;
@@ -41,25 +42,29 @@ class Utils {
   ///for stepper strokeWidth
   final double _strokeWidth;
 
+  final Axis _axis;
+
   const Utils(
       {required notifier,
         required radius,
         required stepperSize,
         required stepWidth,
         required stepHeight,
-        //required padding,
+        required axis,
         required lineThickness,
         required strokeWidth,
-        required step
+        required step,
+        required stepBorder
       })
       : _notifier = notifier,
         _radius = radius,
         _stepperSize = stepperSize,
         _stepWidth = stepWidth,
         _stepHeight = stepHeight,
-      //  _padding = padding,
+        _axis = axis,
         _lineThickness = lineThickness,
         _strokeWidth = strokeWidth,
+        _border = stepBorder,
         _step = step;
 
   /// build all step
@@ -71,8 +76,9 @@ class Utils {
 
       /// step circles
       list.add(
-        Stack(children: [
-          Positioned.fill(
+        Stack(
+            children: [
+          if(_border)Positioned.fill(
               child: PathWidget(
                 notifier: _notifier,
                 borderShape: _notifier.borderShape,
@@ -107,7 +113,7 @@ class Utils {
                 .length(),
             lineThickness: _lineThickness,
             lineType: _notifier.lineType,
-            axis: _notifier.stepperAxis,
+            axis:_axis,
           ),
         );
       }
@@ -156,64 +162,52 @@ class Utils {
 
   ///set stepper text and icon
   Widget _getInnerElementOfStepper(index) {
-    Color circleColor = _getCircleColor(index);
     if (index < _notifier.currentIndex) {
-      return AnimatedContainer(
-        margin:_step.margin,
-        duration: const Duration(milliseconds: durationTime),
-        decoration: BoxDecoration(
-            color: circleColor,
-            shape: (_notifier.borderShape==BorderShape.rRect
-                || _notifier.borderShape==BorderShape.rect)
-                ?BoxShape.rectangle
-                :BoxShape.circle,
-          borderRadius: BorderRadius.all(_radius)
-        ),
-        child: const Icon(
-          Icons.check,
-          color: Colors.white,
-          size: 16.0,
-        ),
+      return _buildSteps(
+          const Icon(
+            Icons.check,
+            color: Colors.white,
+            size: 16.0,
+          ),
+        index
       );
     } else if (index == _notifier.currentIndex) {
-      return AnimatedContainer(
-        margin: _step.margin,
-        duration: const Duration(milliseconds: durationTime),
-
-        decoration: BoxDecoration(
-            color: circleColor,
-          shape: (_notifier.borderShape==BorderShape.rRect
-              || _notifier.borderShape==BorderShape.rect)
-              ?BoxShape.rectangle
-              :BoxShape.circle,
-            borderRadius: BorderRadius.all(_radius)
-        ),
-        child: Center(
-          child: Text(
-            '${_notifier.currentIndex + 1}',
-            style: const TextStyle(fontSize: 12, color: Colors.white),
+      return _buildSteps(
+          Center(
+            child: Text(
+              '${_notifier.currentIndex + 1}',
+              style: const TextStyle(fontSize: 12, color: Colors.white),
+            ),
           ),
-        ),
+          index
       );
     } else {
-      return AnimatedContainer(
-        margin: _step.margin,
-        duration: const Duration(milliseconds: durationTime),
-        decoration: BoxDecoration(
-            color: circleColor,
+      return _buildSteps(
+          Center(
+            child: Text(
+              '${index + 1}',
+              style: const TextStyle(fontSize: 12, color: Colors.white),
+            ),
+          ),
+          index
+      );
+    }
+  }
+
+  Widget _buildSteps(Widget child,int index){
+    Color circleColor = _getCircleColor(index);
+    return AnimatedContainer(
+      margin:_border?_step.margin:null,
+      duration: const Duration(milliseconds: durationTime),
+      decoration: BoxDecoration(
+          color: circleColor,
           shape: (_notifier.borderShape==BorderShape.rRect
               || _notifier.borderShape==BorderShape.rect)
               ?BoxShape.rectangle
               :BoxShape.circle,
-            borderRadius: BorderRadius.all(_radius)
-        ),
-        child: Center(
-          child: Text(
-            '${index + 1}',
-            style: const TextStyle(fontSize: 12, color: Colors.white),
-          ),
-        ),
-      );
-    }
+          borderRadius: BorderRadius.all(_radius)
+      ),
+      child: child,
+    );
   }
 }

@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 stepperAxis: Axis.horizontal,
                 stepperBackgroundColor: Colors.transparent,
                stepperAController: controller,
+              stepBorder: false,
               floatingButton: false,
               // formKey: formKey,
               //   floatingPreviousButton: FloatingButton(

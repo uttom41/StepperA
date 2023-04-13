@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="step shape update">
-      <change afterPath="$PROJECT_DIR$/lib/src/button/stepper_a_button_style.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/button/stepper_floating_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_40_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_40_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/button/button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/floating_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/button/stepper_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/stepper_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/button/stepper_floating_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/stepper_floating_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/stepper_controller.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/stepper_a.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/stepar_a_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/stepar_a_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

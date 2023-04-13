@@ -7,6 +7,7 @@ void main() {
   test('provide all required field', () {
      StepperA(
         stepperSize:const Size(400,65),
+        stepBorder: true,
         stepperBodyWidget: [
           Container(color: Colors.red,child: const Text("Step one"),),
           Container(color: Colors.green,child: const Text("Step two"),),

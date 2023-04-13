@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:stepper_a/src/button/floating_button.dart';
 import 'package:stepper_a/src/page_helper/stepper_body.dart';
-import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/src/step_helper/stepper_step.dart';
 import 'package:stepper_a/src/provider/stepper_index_handler.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
-import 'package:stepper_a/src/stepper_a_controller.dart';
 import '../stepper_a.dart';
 import 'button/stepper_button.dart';
 import 'button/stepper_floating_button.dart';
-import 'drawing/drawing_helper.dart';
 
 
 ///StepperA class is main class
@@ -86,6 +82,7 @@ class StepperA extends StatefulWidget {
   final StepperAController? stepperAController;
 
   final bool? _floatingButton;
+  final bool stepBorder;
 
   const StepperA(
       {Key? key,
@@ -111,6 +108,7 @@ class StepperA extends StatefulWidget {
         this.previousButton,
         this.stepperAController,
         bool? floatingButton,
+        required this.stepBorder,
         required this.step})
       :
       _floatingButton = floatingButton,
@@ -145,7 +143,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
       children: [
         Column(
           children: [
-            stepBuild(),
+            buildStep(),
             Expanded(
               child: StepperBody(
                 notifier: _notifier,
@@ -159,7 +157,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
           StepperFloatingButton(
               position: widget.floatingPreviousButton!.position,
               buttonColor: widget.floatingPreviousButton!.backgroundColor,
-              notifier: _notifier,
+              axis: widget.stepperAxis,
               buttonIconColor: widget.floatingPreviousButton!.buttonIconColor,
               onTap: () {
                 StepperIndex(notifier: _notifier).back(_notifier.currentIndex);
@@ -171,7 +169,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
           StepperFloatingButton(
             position: widget.floatingForwardButton!.position,
             buttonColor: widget.floatingForwardButton!.backgroundColor,
-            notifier: _notifier,
+            axis: widget.stepperAxis,
             buttonIconColor: widget.floatingForwardButton!.buttonIconColor,
             onTap: () {
               StepperIndex(notifier: _notifier).next(_notifier.currentIndex, totalSteps - 1);
@@ -189,7 +187,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
   Widget buildNormalHorizontalStepper(){
     return Column(
       children: [
-        stepBuild(),
+        buildStep(),
         Expanded(
           child:StepperBody(
             notifier: _notifier,
@@ -239,19 +237,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
       children: [
         Row(
           children: [
-            StepperStep(
-              backgroundColor: widget.stepperBackgroundColor,
-              padding: widget.padding,
-              notifier: _notifier,
-              stepHeight: widget.stepHeight,
-              stepperSize: stepperSizeCalculate(),
-              radius: widget.radius,
-              lineThickness: widget.lineThickness,
-              stepWidth: widget.stepWidth,
-              step: widget.step,
-              //stepPadding: widget.stepPadding,
-              margin: widget.margin,
-            ),
+            buildStep(),
             Expanded(
               child: StepperBody(
                 notifier: _notifier,
@@ -265,7 +251,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
           StepperFloatingButton(
               position: widget.floatingPreviousButton!.position,
               buttonColor: widget.floatingPreviousButton!.backgroundColor,
-              notifier: _notifier,
+              axis: widget.stepperAxis,
               buttonIconColor:
               widget.floatingPreviousButton!.buttonIconColor,
               onTap: () {
@@ -281,7 +267,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
           StepperFloatingButton(
             position: widget.floatingForwardButton!.position,
             buttonColor: widget.floatingForwardButton!.backgroundColor,
-            notifier: _notifier,
+            axis: widget.stepperAxis,
             buttonIconColor:
             widget.floatingForwardButton!.buttonIconColor,
             onTap: () {
@@ -311,7 +297,6 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
       lineType: widget.lineType,
       borderShape: widget.borderShape,
       dashPattern: widget.dashPattern,
-      stepperAxis: widget.stepperAxis,
       initialPage: 0,
       length: totalSteps,
       controller: _pageController,
@@ -338,11 +323,12 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
         :buildVerticalStepper();
   }
 
-  Widget stepBuild(){
+  Widget buildStep(){
     return StepperStep(
       backgroundColor: widget.stepperBackgroundColor,
       padding: widget.padding,
       notifier: _notifier,
+      axis: widget.stepperAxis,
       stepHeight: widget.stepHeight,
       stepperSize: stepperSizeCalculate(),
       radius: widget.radius,
@@ -350,6 +336,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
       stepWidth: widget.stepWidth,
       margin: widget.margin,
       step: widget.step,
+      border: widget.stepBorder,
     );
   }
 
