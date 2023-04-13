@@ -1,7 +1,13 @@
+
+/// /*** Uttam kumar mitra ***/
+/// create date 5/04/2023; 10:36 PM
+///
+///
+///
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/button/position.dart';
 
-class Button{
+class FloatingButton{
   ///for define previous and forward button background color
   final Color backgroundColor;
 
@@ -9,9 +15,10 @@ class Button{
   final Color buttonIconColor;
 
   /// for indicate button position
+  /// if only need for floating button
   Position position;
 
-  Button({
+  FloatingButton({
     required this.buttonIconColor,
     required this.backgroundColor,
     required this.position,

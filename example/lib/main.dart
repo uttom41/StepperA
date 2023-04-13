@@ -52,23 +52,36 @@ class _MyHomePageState extends State<MyHomePage> {
                 stepperAxis: Axis.horizontal,
                 stepperBackgroundColor: Colors.transparent,
                stepperAController: controller,
-               // formKey: formKey,
-               //  previousButton: Button(
-               //      buttonIconColor: Colors.white,
-               //      backgroundColor:  Colors.blueAccent,
-               //      position: Position(
-               //        left: 10,
-               //        bottom: 20
-               //      )
-               //  ),
-               //  forwardButton: Button(
-               //      buttonIconColor: Colors.white,
-               //      backgroundColor:  Colors.blueAccent,
-               //      position: Position(
-               //          right: 10,
-               //          bottom: 20
-               //      )
-               //  ),
+              floatingButton: false,
+              // formKey: formKey,
+              //   floatingPreviousButton: FloatingButton(
+              //       buttonIconColor: Colors.white,
+              //       backgroundColor:  Colors.blueAccent,
+              //       position: Position(
+              //         left: 10,
+              //         bottom: 20
+              //       )
+              //   ),
+              //   floatingForwardButton: FloatingButton(
+              //       buttonIconColor: Colors.white,
+              //       backgroundColor:  Colors.blueAccent,
+              //       position: Position(
+              //           right: 10,
+              //           bottom: 20
+              //       )
+              //   ),
+            // previousButton: StepperAButton(
+            //     width: 90,
+            //     height: 40,
+            //     buttonText: 'Back',
+            //     completeButtonText: ''
+            // ),
+            // forwardButton: StepperAButton(
+            //     width: 90,
+            //     height: 40,
+            //     buttonText: 'Next',
+            //     completeButtonText: 'Complete'
+            // ),
             step: const StepA(
                 currentStepColor: Colors.green,
                 completeStepColor: Colors.blueAccent,

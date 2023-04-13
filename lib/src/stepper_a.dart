@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:stepper_a/src/button/button.dart';
+import 'package:stepper_a/src/button/floating_button.dart';
 import 'package:stepper_a/src/page_helper/stepper_body.dart';
 import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/src/step_helper/stepper_step.dart';
 import 'package:stepper_a/src/provider/stepper_index_handler.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 import 'package:stepper_a/src/stepper_a_controller.dart';
+import '../stepper_a.dart';
 import 'button/stepper_button.dart';
+import 'button/stepper_floating_button.dart';
 import 'drawing/drawing_helper.dart';
 
 
@@ -76,33 +78,43 @@ class StepperA extends StatefulWidget {
   ///If  you need widget form validation
   final GlobalKey<FormState>? formKey;
 
-  final Button? forwardButton;
-  final Button? previousButton;
+
+  final FloatingButton? floatingForwardButton;
+  final FloatingButton? floatingPreviousButton;
+  final StepperAButton? previousButton;
+  final StepperAButton? forwardButton;
   final StepperAController? stepperAController;
+
+  final bool? _floatingButton;
 
   const StepperA(
       {Key? key,
-      this.lineThickness = 2,
-      required this.stepperSize,
-      required this.stepperBodyWidget,
-      this.stepperBackgroundColor = Colors.white,
-      this.padding = const EdgeInsets.all(5),
-      this.margin = const EdgeInsets.all(5),
-      this.stepPadding = const EdgeInsets.all(5),
-      this.radius = const Radius.circular(10),
-      this.borderType = BorderType.straight,
-      this.lineType = LineType.straight,
-      this.borderShape = BorderShape.circle,
-      this.dashPattern = const <double>[3, 5],
-      this.stepHeight = 50,
-      this.stepWidth = 50,
-      this.stepperAxis = Axis.horizontal,
-      this.formKey,
-      this.forwardButton,
-      this.previousButton,
-      this.stepperAController,
-      required this.step})
-      : super(key: key);
+        this.lineThickness = 2,
+        required this.stepperSize,
+        required this.stepperBodyWidget,
+        this.stepperBackgroundColor = Colors.white,
+        this.padding = const EdgeInsets.all(5),
+        this.margin = const EdgeInsets.all(5),
+        this.stepPadding = const EdgeInsets.all(5),
+        this.radius = const Radius.circular(10),
+        this.borderType = BorderType.straight,
+        this.lineType = LineType.straight,
+        this.borderShape = BorderShape.circle,
+        this.dashPattern = const <double>[3, 5],
+        this.stepHeight = 50,
+        this.stepWidth = 50,
+        this.stepperAxis = Axis.horizontal,
+        this.formKey,
+        this.floatingForwardButton,
+        this.floatingPreviousButton,
+        this.forwardButton,
+        this.previousButton,
+        this.stepperAController,
+        bool? floatingButton,
+        required this.step})
+      :
+      _floatingButton = floatingButton,
+        super(key: key);
 
   @override
   State<StepperA> createState() => _StepperAState();
@@ -113,7 +125,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
   int totalSteps = 0;
 
   ///Stepper Notifier for internal state management
-  late StepperNotifier notifier;
+  late StepperNotifier _notifier;
 
   /// An object that can be used to control the position to which this page
   /// view is scrolled.
@@ -128,12 +140,173 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
     super.initState();
   }
 
+  Widget buildFloatingHorizontalStepper(){
+    return Stack(
+      children: [
+        Column(
+          children: [
+            stepBuild(),
+            Expanded(
+              child: StepperBody(
+                notifier: _notifier,
+                stepperBodyWidget: widget.stepperBodyWidget,
+              ),
+            )
+          ],
+        ),
+        if (_notifier.currentIndex != 0
+            && widget.floatingPreviousButton != null)
+          StepperFloatingButton(
+              position: widget.floatingPreviousButton!.position,
+              buttonColor: widget.floatingPreviousButton!.backgroundColor,
+              notifier: _notifier,
+              buttonIconColor: widget.floatingPreviousButton!.buttonIconColor,
+              onTap: () {
+                StepperIndex(notifier: _notifier).back(_notifier.currentIndex);
+              },
+              heroTag: "tag1",
+              buttonIcon: Icons.arrow_back_ios_sharp),
+
+        if (widget.floatingForwardButton != null)
+          StepperFloatingButton(
+            position: widget.floatingForwardButton!.position,
+            buttonColor: widget.floatingForwardButton!.backgroundColor,
+            notifier: _notifier,
+            buttonIconColor: widget.floatingForwardButton!.buttonIconColor,
+            onTap: () {
+              StepperIndex(notifier: _notifier).next(_notifier.currentIndex, totalSteps - 1);
+            },
+            heroTag: "tag2",
+            buttonIcon:
+            _notifier.currentIndex != _notifier.totalIndex - 1
+                ? Icons.arrow_forward_ios_sharp
+                : Icons.check,
+          ),
+      ],
+    );
+  }
+
+  Widget buildNormalHorizontalStepper(){
+    return Column(
+      children: [
+        stepBuild(),
+        Expanded(
+          child:StepperBody(
+            notifier: _notifier,
+            stepperBodyWidget: widget.stepperBodyWidget,
+
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            if (_notifier.currentIndex != 0 &&
+                widget.previousButton != null)
+              StepperAButtonWidget(
+                onTap: () {
+                  StepperIndex(notifier: _notifier)
+                      .back(_notifier.currentIndex);
+                },
+                stepperAButton: widget.previousButton!,
+                text: widget.previousButton!.buttonText,
+              ),
+            Container(),
+            if (widget.forwardButton != null)
+              StepperAButtonWidget(
+                onTap: () {
+                  StepperIndex(notifier: _notifier).next(_notifier.currentIndex, totalSteps - 1);
+                },
+                stepperAButton:  widget.forwardButton!,
+                text: _notifier.currentIndex != _notifier.totalIndex - 1
+                    ? widget.forwardButton!.buttonText
+                    : widget.forwardButton!.completeButtonText,
+              ),
+          ],
+        )
+      ],
+    );
+  }
+
+  Widget buildHorizontalStepper(){
+    if(widget._floatingButton != null && widget._floatingButton == true) {
+      return buildFloatingHorizontalStepper();
+    }
+    return buildNormalHorizontalStepper();
+  }
+
+  Widget  buildVerticalStepper(){
+    return Stack(
+      children: [
+        Row(
+          children: [
+            StepperStep(
+              backgroundColor: widget.stepperBackgroundColor,
+              padding: widget.padding,
+              notifier: _notifier,
+              stepHeight: widget.stepHeight,
+              stepperSize: stepperSizeCalculate(),
+              radius: widget.radius,
+              lineThickness: widget.lineThickness,
+              stepWidth: widget.stepWidth,
+              step: widget.step,
+              //stepPadding: widget.stepPadding,
+              margin: widget.margin,
+            ),
+            Expanded(
+              child: StepperBody(
+                notifier: _notifier,
+                stepperBodyWidget: widget.stepperBodyWidget,
+              ),
+            )
+          ],
+        ),
+        if (_notifier.currentIndex != 0 &&
+            widget.floatingPreviousButton != null)
+          StepperFloatingButton(
+              position: widget.floatingPreviousButton!.position,
+              buttonColor: widget.floatingPreviousButton!.backgroundColor,
+              notifier: _notifier,
+              buttonIconColor:
+              widget.floatingPreviousButton!.buttonIconColor,
+              onTap: () {
+                StepperIndex(notifier: _notifier)
+                    .back(_notifier.currentIndex);
+                //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
+              },
+              heroTag: "tag1",
+              buttonIcon: widget.stepperAxis == Axis.horizontal
+                  ? Icons.arrow_back_ios_sharp
+                  : Icons.keyboard_arrow_up),
+        if (widget.floatingForwardButton != null)
+          StepperFloatingButton(
+            position: widget.floatingForwardButton!.position,
+            buttonColor: widget.floatingForwardButton!.backgroundColor,
+            notifier: _notifier,
+            buttonIconColor:
+            widget.floatingForwardButton!.buttonIconColor,
+            onTap: () {
+              StepperIndex(notifier: _notifier)
+                  .next(_notifier.currentIndex, totalSteps - 1);
+              //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
+            },
+            heroTag: "tag2",
+            buttonIcon:
+            _notifier.currentIndex != _notifier.totalIndex - 1
+                ? widget.stepperAxis == Axis.horizontal
+                ? Icons.arrow_forward_ios_sharp
+                : Icons.keyboard_arrow_down
+                : Icons.check,
+          ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     _pageController = PageController();
 
     ///init StepperNotifier
-    notifier = StepperNotifier(
+    _notifier = StepperNotifier(
       borderType: widget.borderType,
       lineType: widget.lineType,
       borderShape: widget.borderShape,
@@ -145,155 +318,31 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
       vsync: this,
       formKey: widget.formKey,
     );
-    if (widget.stepperAController != null) widget.stepperAController?.setNotifier = notifier;
-
+    if (widget.stepperAController != null) widget.stepperAController?.setNotifier = _notifier;
 
     return AnimatedBuilder(
-        animation: notifier,
+        animation: _notifier,
         builder: (BuildContext context, child) {
           return Scaffold(
-            backgroundColor: Colors.transparent,
-            body: widget.stepperAxis == Axis.horizontal
-                ? Stack(
-                    children: [
-                      Column(
-                        children: [
-                          stepBuild(),
-                          Expanded(
-                            child:
-                            // NotificationListener<ScrollNotification>(
-                            //     onNotification: (notification) =>
-                            //         _onHorizontalScrollingNotification(
-                            //             notification: notification,
-                            //             controller:scrollControllers.horizontalBodyController),
-                            //     child: SingleChildScrollView(
-                            //       controller: scrollControllers.horizontalBodyController,
-                            //       scrollDirection: notifier.stepperAxis,
-                            //       child: Row(children:widget.stepperBodyWidget,),
-                            //     )
-
-                                StepperBody(
-                                  notifier: notifier,
-                                  stepperBodyWidget: widget.stepperBodyWidget,
-
-                            ),
-                          )
-                        ],
-                      ),
-                      if (notifier.currentIndex != 0 &&
-                          widget.previousButton != null)
-                        StepperButton(
-                            position: widget.previousButton!.position,
-                            buttonColor: widget.previousButton!.backgroundColor,
-                            notifier: notifier,
-                            buttonIconColor:
-                                widget.previousButton!.buttonIconColor,
-                            onTap: () {
-                              StepperIndex(notifier: notifier)
-                                  .back(notifier.currentIndex);
-                              //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
-                            },
-                            heroTag: "tag1",
-                            buttonIcon: widget.stepperAxis == Axis.horizontal
-                                ? Icons.arrow_back_ios_sharp
-                                : Icons.keyboard_arrow_up),
-                      if (widget.forwardButton != null)
-                        StepperButton(
-                          position: widget.forwardButton!.position,
-                          buttonColor: widget.forwardButton!.backgroundColor,
-                          notifier: notifier,
-                          buttonIconColor:
-                              widget.forwardButton!.buttonIconColor,
-                          onTap: () {
-                            StepperIndex(notifier: notifier)
-                                .next(notifier.currentIndex, totalSteps - 1);
-                            //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
-                          },
-                          heroTag: "tag2",
-                          buttonIcon:
-                              notifier.currentIndex != notifier.totalIndex - 1
-                                  ? widget.stepperAxis == Axis.horizontal
-                                      ? Icons.arrow_forward_ios_sharp
-                                      : Icons.keyboard_arrow_down
-                                  : Icons.check,
-                        ),
-                    ],
-                  )
-
-            ////for vertical Stepper
-                : Stack(
-                    children: [
-                      Row(
-                        children: [
-                          StepperStep(
-                            backgroundColor: widget.stepperBackgroundColor,
-                            padding: widget.padding,
-                            notifier: notifier,
-                            stepHeight: widget.stepHeight,
-                            stepperSize: stepperSizeCalculate(),
-                            radius: widget.radius,
-                            lineThickness: widget.lineThickness,
-                            stepWidth: widget.stepWidth,
-                            step: widget.step,
-                            //stepPadding: widget.stepPadding,
-                            margin: widget.margin,
-                          ),
-                          Expanded(
-                            child: StepperBody(
-                              notifier: notifier,
-                              stepperBodyWidget: widget.stepperBodyWidget,
-                            ),
-                          )
-                        ],
-                      ),
-                      if (notifier.currentIndex != 0 &&
-                          widget.previousButton != null)
-                        StepperButton(
-                            position: widget.previousButton!.position,
-                            buttonColor: widget.previousButton!.backgroundColor,
-                            notifier: notifier,
-                            buttonIconColor:
-                                widget.previousButton!.buttonIconColor,
-                            onTap: () {
-                              StepperIndex(notifier: notifier)
-                                  .back(notifier.currentIndex);
-                              //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
-                            },
-                            heroTag: "tag1",
-                            buttonIcon: widget.stepperAxis == Axis.horizontal
-                                ? Icons.arrow_back_ios_sharp
-                                : Icons.keyboard_arrow_up),
-                      if (widget.forwardButton != null)
-                        StepperButton(
-                          position: widget.forwardButton!.position,
-                          buttonColor: widget.forwardButton!.backgroundColor,
-                          notifier: notifier,
-                          buttonIconColor:
-                              widget.forwardButton!.buttonIconColor,
-                          onTap: () {
-                            StepperIndex(notifier: notifier)
-                                .next(notifier.currentIndex, totalSteps - 1);
-                            //  widget.currentStep!=null?widget.currentStep!(notifier.currentIndex):null;
-                          },
-                          heroTag: "tag2",
-                          buttonIcon:
-                              notifier.currentIndex != notifier.totalIndex - 1
-                                  ? widget.stepperAxis == Axis.horizontal
-                                      ? Icons.arrow_forward_ios_sharp
-                                      : Icons.keyboard_arrow_down
-                                  : Icons.check,
-                        ),
-                    ],
-                  ),
+              backgroundColor: Colors.transparent,
+              body:buildStepper()
           );
-        });
+        }
+    );
+  }
+
+  ///Has been separated into horizontal and vertical stepper.
+  Widget  buildStepper(){
+    return widget.stepperAxis == Axis.horizontal
+        ?buildHorizontalStepper()
+        :buildVerticalStepper();
   }
 
   Widget stepBuild(){
     return StepperStep(
       backgroundColor: widget.stepperBackgroundColor,
       padding: widget.padding,
-      notifier: notifier,
+      notifier: _notifier,
       stepHeight: widget.stepHeight,
       stepperSize: stepperSizeCalculate(),
       radius: widget.radius,
@@ -315,9 +364,9 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
       width = widget.stepperSize.width > 300 ? widget.stepperSize.width : 300;
     } else {
       height =
-          widget.stepperSize.height > 300 ? widget.stepperSize.height : 300;
+      widget.stepperSize.height > 300 ? widget.stepperSize.height : 300;
       width =
-          widget.stepperSize.width > width ? widget.stepperSize.width : width;
+      widget.stepperSize.width > width ? widget.stepperSize.width : width;
     }
     return Size(width, height);
   }
