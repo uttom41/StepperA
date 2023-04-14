@@ -11,6 +11,7 @@ import 'package:stepper_a/src/step_helper/step.dart';
 
 import '../drawing/drawing_helper.dart';
 import '../drawing/path_widget.dart';
+import '../drawing/shape_widget.dart';
 import '../line.dart';
 
 class Utils {
@@ -195,19 +196,19 @@ class Utils {
   }
 
   Widget _buildSteps(Widget child,int index){
-    Color circleColor = _getCircleColor(index);
+    Color shapeColor = _getCircleColor(index);
     return AnimatedContainer(
       margin:_border?_step.margin:null,
       duration: const Duration(milliseconds: durationTime),
-      decoration: BoxDecoration(
-          color: circleColor,
-          shape: (_notifier.borderShape==BorderShape.rRect
-              || _notifier.borderShape==BorderShape.rect)
-              ?BoxShape.rectangle
-              :BoxShape.circle,
-          borderRadius: BorderRadius.all(_radius)
+      child: ShapeWidget(
+          shapeColor: shapeColor,
+        borderShape: _notifier.borderShape,
+        radius: _radius,
+        taskType: index == _notifier.currentIndex
+            ? TaskType.inProgress
+            : TaskType.pending,
+          child:child,
       ),
-      child: child,
     );
   }
 }

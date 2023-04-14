@@ -47,12 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
         bottom: 0,
         child: StepperA(
                 stepperSize: const Size(350,70),
-                borderShape: BorderShape.rRect,
+                borderShape: BorderShape.diamond,
                 borderType: BorderType.dash,
                 stepperAxis: Axis.horizontal,
                 stepperBackgroundColor: Colors.transparent,
                stepperAController: controller,
-              stepBorder: false,
+              stepBorder: true,
               floatingButton: false,
               // formKey: formKey,
               //   floatingPreviousButton: FloatingButton(
