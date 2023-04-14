@@ -7,9 +7,7 @@
 ///
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
-import 'package:stepper_a/src/step_helper/step.dart';
-
-import '../drawing/drawing_helper.dart';
+import '../../stepper_a.dart';
 import '../drawing/path_widget.dart';
 import '../drawing/shape_widget.dart';
 import '../line.dart';
@@ -122,6 +120,72 @@ class Utils {
     return list;
   }
 
+  List<Widget>customSteps(List<CustomSteps> stepsList){
+    List<Widget> widgetList=[];
+    for(int i = 0; i < stepsList.length; i++){
+      var borderColor = _getBorderColor(i);
+      var lineColor = _getLineColor(i);
+      Widget steps = Column(
+        children: [
+          Row(
+            children: [
+              Stack(
+                  children: [
+                    if(_border)Positioned.fill(
+                        child: PathWidget(
+                          notifier: _notifier,
+                          borderShape: _notifier.borderShape,
+                          borderType: _notifier.borderType,
+                          dashPattern: _notifier.dashPattern,
+                          radius: _radius,
+                          pathColor: borderColor,
+                          strokeWidth: _strokeWidth,
+                          taskType: i == _notifier.currentIndex
+                              ? TaskType.inProgress
+                              : TaskType.pending,
+                          animationDirection: _notifier.direction,
+                        )),
+                    SizedBox(
+                      height: _stepHeight,
+                      width: _stepWidth,
+                      child: buildChild(stepsList[i].stepsIcon,i),
+                    )
+                  ]),
+              if (i != _notifier.totalIndex - 1)StepperLine(
+                lineColor: lineColor,
+                length: CalculateLength(
+                    size: _stepperSize,
+                    width: _stepWidth,
+                    height: _stepHeight,
+                    stepSize: _notifier.totalIndex)
+                    .length(),
+                lineThickness: _lineThickness,
+                lineType: _notifier.lineType,
+                axis:_axis,
+              ),
+            ],
+          ),
+          Center(
+            child: Text(stepsList[i].title,
+              softWrap: true,
+              style:  TextStyle(fontSize: 14, color: borderColor),
+            ),
+          )
+        ],
+      );
+      widgetList.add(steps);
+    }
+    return widgetList;
+  }
+
+  Widget buildChild(IconData icon,int i){
+    return _buildSteps( Icon(
+      icon,
+      color: Colors.white,
+      size: 16.0,
+    ),i);
+
+  }
   ///Set step circle color
   Color _getCircleColor(i) {
     Color color;
@@ -177,7 +241,7 @@ class Utils {
           Center(
             child: Text(
               '${_notifier.currentIndex + 1}',
-              style: const TextStyle(fontSize: 12, color: Colors.white),
+              style: const TextStyle(fontSize: 14, color: Colors.white),
             ),
           ),
           index
@@ -187,7 +251,7 @@ class Utils {
           Center(
             child: Text(
               '${index + 1}',
-              style: const TextStyle(fontSize: 12, color: Colors.white),
+              style: const TextStyle(fontSize: 14, color: Colors.white),
             ),
           ),
           index

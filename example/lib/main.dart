@@ -46,13 +46,13 @@ class _MyHomePageState extends State<MyHomePage> {
           right: 0,
           bottom: 0,//MediaQuery.of(context).size.height-240
           child: StepperA(
-              stepperSize: Size(70,350),
+              stepperSize: Size(350,90),
               borderShape: BorderShape.diamond,
               borderType: BorderType.dash,
-              stepperAxis: Axis.vertical,
+              stepperAxis: Axis.horizontal,
              // stepperBackgroundColor: Colors.red,
               stepperAController: controller,
-              stepBorder: false,
+              stepBorder: true,
               floatingButton: false,
               // formKey: formKey,
               //   floatingPreviousButton: FloatingButton(
@@ -71,18 +71,38 @@ class _MyHomePageState extends State<MyHomePage> {
               //           bottom: 20
               //       )
               //   ),
-              previousButton: StepperAButton(
-                  width: 90,
-                  height: 40,
-                  buttonText: 'Back',
-                  completeButtonText: ''
-              ),
-              forwardButton: StepperAButton(
-                  width: 90,
-                  height: 40,
-                  buttonText: 'Next',
-                  completeButtonText: 'Complete'
-              ),
+              // previousButton: StepperAButton(
+              //     width: 90,
+              //     height: 40,
+              //     buttonText: 'Back',
+              //     completeButtonText: ''
+              // ),
+              // forwardButton: StepperAButton(
+              //     width: 90,
+              //     height: 40,
+              //     buttonText: 'Next',
+              //     completeButtonText: 'Complete'
+              // ),
+              customSteps: const [
+                CustomSteps(
+                    stepsIcon: Icons.ac_unit_outlined,
+                    title: "steps one"),
+                CustomSteps(
+                    stepsIcon: Icons.ac_unit_outlined,
+                    title: "steps two"),
+                CustomSteps(
+                    stepsIcon: Icons.ac_unit_outlined,
+                    title: "steps three"),
+                CustomSteps(
+                    stepsIcon: Icons.ac_unit_outlined,
+                    title: "steps four"),
+                CustomSteps(
+                    stepsIcon: Icons.ac_unit_outlined,
+                    title: "steps five"),
+                CustomSteps(
+                    stepsIcon: Icons.ac_unit_outlined,
+                    title: "steps six"),
+              ],
               step: const StepA(
                   currentStepColor: Colors.green,
                   completeStepColor: Colors.blueAccent,

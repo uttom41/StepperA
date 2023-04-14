@@ -5,16 +5,16 @@
 ///
 
 import 'package:flutter/material.dart';
-import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/src/step_helper/utils.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 
+import '../../stepper_a.dart';
 import '../line.dart';
 
 class StepperStep extends StatelessWidget {
 
   ///for define stepper background color
-  final Color _backgroundColor;
+ // final Color _backgroundColor;
 
   ///If your need stepper padding
   final EdgeInsets _padding;
@@ -54,6 +54,8 @@ class StepperStep extends StatelessWidget {
   /// If your need stepper Axis wise build
   final Axis _axis;
 
+  final List<CustomSteps>? customSteps;
+
   const StepperStep({
     Key? key,
     required backgroundColor,
@@ -67,9 +69,10 @@ class StepperStep extends StatelessWidget {
     required step,
     required margin,
     required border,
-    required axis
+    required axis,
+    this.customSteps,
   }) :
-        _backgroundColor = backgroundColor,
+      //  _backgroundColor = backgroundColor,
         _padding = padding,
         _notifier = notifier,
         _lineThickness = lineThickness,
@@ -84,7 +87,7 @@ class StepperStep extends StatelessWidget {
         super(key: key);
 
   Widget buildHorizontalStep(){
-    return Row(
+    return customSteps==null?Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: Utils(
@@ -99,11 +102,26 @@ class StepperStep extends StatelessWidget {
           stepBorder: _border,
           strokeWidth: 3.0
       ).steps(),
+    ):Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: Utils(
+          notifier: _notifier,
+          radius: _radius,
+          stepperSize: _stepperSize.width,
+          stepWidth: _stepWidth,
+          stepHeight: _stepHeight,
+          axis: _axis,
+          lineThickness: _lineThickness,
+          step: _step,
+          stepBorder: _border,
+          strokeWidth: 3.0
+      ).customSteps(customSteps!),
     );
   }
 
   Widget buildVerticalStep(){
-    return Column(
+    return customSteps==null? Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: Utils(
@@ -118,6 +136,21 @@ class StepperStep extends StatelessWidget {
           lineThickness: _lineThickness,
           strokeWidth: 3.0
       ).steps(),
+    ):Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: Utils(
+          notifier: _notifier,
+          radius: _radius,
+          stepperSize: _stepperSize.height,
+          stepWidth: _stepWidth,
+          stepHeight: _stepHeight,
+          step: _step,
+          axis: _axis,
+          stepBorder: _border,
+          lineThickness: _lineThickness,
+          strokeWidth: 3.0
+      ).customSteps(customSteps!),
     );
   }
 

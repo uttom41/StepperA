@@ -80,6 +80,7 @@ class StepperA extends StatefulWidget {
   final StepperAButton? previousButton;
   final StepperAButton? forwardButton;
   final StepperAController? stepperAController;
+  final List<CustomSteps>? customSteps;
 
   final bool? _floatingButton;
   final bool stepBorder;
@@ -109,6 +110,7 @@ class StepperA extends StatefulWidget {
         this.stepperAController,
         bool? floatingButton,
         required this.stepBorder,
+        this.customSteps,
         required this.step})
       :
         _floatingButton = floatingButton,
@@ -359,7 +361,9 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
         builder: (BuildContext context, child) {
           return Scaffold(
               backgroundColor: Colors.transparent,
-              body:buildStepper()
+              body: (widget.customSteps !=null && widget.stepperBodyWidget.length != widget.customSteps?.length)
+                  ?throw("customSteps and stepperBodyWidget length must be provide equals")
+                  :buildStepper()
           );
         }
     );
@@ -386,6 +390,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
       margin: widget.margin,
       step: widget.step,
       border: widget.stepBorder,
+      customSteps: widget.customSteps,
     );
   }
 
