@@ -123,8 +123,8 @@ class StepperStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: _backgroundColor,
+    return SizedBox(
+     // color: _backgroundColor,
       height: _stepperSize.height,
       width: _stepperSize.width,
       child: SingleChildScrollView(
@@ -137,7 +137,7 @@ class StepperStep extends StatelessWidget {
                 height: _stepHeight,
                 stepSize: _notifier.totalIndex)
                 .length(),
-            screenWidth: _stepperSize.width),
+            screenWidth: _axis==Axis.horizontal?_stepperSize.width:_stepperSize.height),
         child: Container(
           padding: _padding,
           margin: _margin,
