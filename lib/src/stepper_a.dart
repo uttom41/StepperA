@@ -74,12 +74,23 @@ class StepperA extends StatefulWidget {
   ///If  you need widget form validation
   final GlobalKey<FormState>? formKey;
 
-
+  /// If you need a floating button than use this.
   final FloatingButton? floatingForwardButton;
+
+   /// If you need a floating button than use this.
   final FloatingButton? floatingPreviousButton;
+
+   /// If you need a custom button than use this.
   final StepperAButton? previousButton;
+
+   /// If you need a custom button than use this.
   final StepperAButton? forwardButton;
+
+   /// If you need a own button than use this.
+   /// and control your button click
   final StepperAController? stepperAController;
+
+  ///
   final List<CustomSteps>? customSteps;
 
   final bool? _floatingButton;
