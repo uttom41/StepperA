@@ -5,34 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="step shape update">
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_221146.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_221243.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_221347.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_221534.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_221733.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_222026.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_222135.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_222245.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_222359.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/Media_230415_222459.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/formkey.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/horizontal_circle.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/horizontal_circle_border.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/horizontal_circle_dash.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/horizontal_triangle.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/horizontal_tringle_border.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/tringle.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/assets/pic/vertical_circle.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/step_four.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/step_three.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/step_one.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/step_one.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/step_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/step_two.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/button/stepper_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/stepper_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

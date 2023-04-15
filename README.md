@@ -18,9 +18,12 @@ and the Flutter guide for
 
 Stepper A can easily build Stepper facility of you any flutter app. 
 - Form Validation with FormKey [GlobalKey<FormState>()]
-- Customized Stepper step Shape [Rectangle, Circle]
+- Support Horizontal and Vertical Stepper
+- Customized Stepper step Shape [Rectangle, Circle,Diamond,Triangle]
+- Customized Stepper step border [Dash, Straight]
+- Customized Stepper line  [Dash, Straight]
 - Smooth sliding with Animation
-- Easily Customize UI Color
+- Easily Customize Step
 
 
 ## package.yaml
@@ -36,47 +39,86 @@ import 'package:stepper_a/stepper_a.dart';
 
 
 ```dart
-
 StepperA(
-    stepCompleteColor: Colors.blueAccent,
-    inactiveColor: Colors.black38,
-    currentStepColor: Colors.green,
-    stepperSize: const Size(350,70),
-    borderShape: BorderShape.rectangle,
+    stepperSize: const Size(300,90),
+    // stepperSize: const Size(100,350),
+    borderShape: BorderShape.diamond,
+    borderType: BorderType.straight,
     stepperAxis: Axis.horizontal,
-    formKey: formKey,
-    previousButton: Button(
-        buttonIconColor: Colors.white,
-        backgroundColor:  Colors.blueAccent,
-        position: Position(
-        left: 10,
-        bottom: 20)
+    stepperBackgroundColor: Colors.transparent,
+    stepperAController: controller,
+    stepHeight: 40,
+    stepWidth: 40,
+    stepBorder: true,
+    floatingButton: false,
+    previousButton: StepperAButton(
+        width: 90,
+        height: 40,
+        buttonText: 'Back',
+        completeButtonText: ''
     ),
-    forwardButton: Button(
-        buttonIconColor: Colors.white,
-        backgroundColor:  Colors.blueAccent,
-        position: Position(
-        right: 10,
-        bottom: 20)
+    forwardButton: StepperAButton(
+        width: 90,
+        height: 40,
+        buttonText: 'Next',
+        completeButtonText: 'Complete'
+    ),
+    customSteps: const [
+        CustomSteps(
+        stepsIcon: Icons.login,
+        title: "LogIn"),
+        CustomSteps(
+        stepsIcon: Icons.location_on,
+        title: "Location"),
+        CustomSteps(
+        stepsIcon: Icons.home,
+        title: "Home"),
+        CustomSteps(
+        stepsIcon: Icons.account_circle,
+        title: "Account"),
+    
+    ],
+    step: const StepA(
+        currentStepColor: Colors.green,
+        completeStepColor: Colors.indigo,
+        inactiveStepColor: Colors.black12,
+        margin: EdgeInsets.all(5)
     ),
     stepperBodyWidget: [
-        const StepOne(),
-        const StepTwo(),
-        Container(
-        color: Colors.white,
-        child: const Center(
-        child: Text("Step four",style: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w700),)),)
+        StepOne(controller: controller),
+        StepTwo(controller: controller,),
+        StepThree(controller: controller,),
+        StepFour(controller: controller,),
     ]
-    )
-
+)
 ```
 
-##ScreenShot
-[](example/assets/pic/formkey.gif)
-![Rectangle Type Step] (https://drive.google.com/file/d/1PutrcZ_Iihge964lr-G3IZitNdiaZhii/view?usp=share_link)
-![Circle Type Step] (https://drive.google.com/file/d/10jCqJdlE9J4EeRCtd52vxESwRrj8xeFB/view?usp=share_link)
+## ScreenShot
+
+## FormKey validation
+![](example/assets/pic/formkey.gif)
+
+## Custom Steps
+![](example/assets/pic/Media_230415_222459.gif)
+
+## vertical stepper
+![](example/assets/pic/vertical_circle.gif)
+
+![](example/assets/pic/horizontal_circle.gif)
+![](example/assets/pic/horizontal_circle_border.gif)
+![](example/assets/pic/horizontal_circle_dash.gif)
+![](example/assets/pic/horizontal_triangle.gif)
+![](example/assets/pic/horizontal_tringle_border.gif)
+![](example/assets/pic/Media_230415_221146.gif)
+![](example/assets/pic/Media_230415_221243.gif)
+![](example/assets/pic/Media_230415_221534.gif)
+![](example/assets/pic/Media_230415_221733.gif)
+![](example/assets/pic/tringle.gif)
+![](example/assets/pic/Media_230415_222359.gif)
+![](example/assets/pic/Media_230415_222245.gif)
+![](example/assets/pic/Media_230415_222135.gif)
+
+
 
 ## Support
 If this package was useful to you, helped you to easily deliver your app, saved you a lot of time, or you just want to
