@@ -13,10 +13,10 @@ class _StepOneState extends State<StepOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
         margin: const EdgeInsets.all(10),
         alignment: Alignment.center,
-        color: const Color(0xFFF6F8F9),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -60,21 +60,21 @@ class _StepOneState extends State<StepOne> {
               ),
             ),
 
-            InkWell(
-              onTap: (){
-                widget.controller.next();
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.green
-                ),
-                padding: const EdgeInsets.only(left: 18,right: 18,top: 10,bottom: 10),
-
-                child: const Text("Next",style: TextStyle(fontSize: 18,color: Colors.white),),
-              ),
-            )
+            // InkWell(
+            //   onTap: (){
+            //     widget.controller.next();
+            //   },
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       shape: BoxShape.rectangle,
+            //       borderRadius: BorderRadius.circular(10),
+            //       color: Colors.green
+            //     ),
+            //     padding: const EdgeInsets.only(left: 18,right: 18,top: 10,bottom: 10),
+            //
+            //     child: const Text("Next",style: TextStyle(fontSize: 18,color: Colors.white),),
+            //   ),
+            // )
           ],
         ),
       ),

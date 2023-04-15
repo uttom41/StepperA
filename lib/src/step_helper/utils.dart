@@ -125,7 +125,8 @@ class Utils {
     for(int i = 0; i < stepsList.length; i++){
       var borderColor = _getBorderColor(i);
       var lineColor = _getLineColor(i);
-      Widget steps = Column(
+      Widget steps = _axis==Axis.horizontal
+          ?Column(
         children: [
           Row(
             children: [
@@ -168,11 +169,65 @@ class Utils {
           Center(
             child: Text(stepsList[i].title,
               softWrap: true,
-              style:  TextStyle(fontSize:i==_notifier.currentIndex? 16:14, color:i==_notifier.currentIndex? borderColor:_step.inactiveStepColor),
+              style:  TextStyle(fontSize:i==_notifier.currentIndex? 14:12, color:i==_notifier.currentIndex? borderColor:_step.inactiveStepColor),
+            ),
+          )
+        ],
+      )
+          :Row(
+        children: [
+          Column(
+            children: [
+              Stack(
+                  children: [
+                    if(_border)Positioned.fill(
+                        child: PathWidget(
+                          notifier: _notifier,
+                          borderShape: _notifier.borderShape,
+                          borderType: _notifier.borderType,
+                          dashPattern: _notifier.dashPattern,
+                          radius: _radius,
+                          pathColor: borderColor,
+                          strokeWidth: _strokeWidth,
+                          taskType: i == _notifier.currentIndex
+                              ? TaskType.inProgress
+                              : TaskType.pending,
+                          animationDirection: _notifier.direction,
+                        )),
+                    SizedBox(
+                      height: _stepHeight,
+                      width: _stepWidth,
+                      child: buildChild(stepsList[i].stepsIcon,i),
+                    )
+                  ]),
+              if (i != _notifier.totalIndex - 1)StepperLine(
+                lineColor: lineColor,
+                length: CalculateLength(
+                    size: _stepperSize,
+                    width: _stepWidth,
+                    height: _stepHeight,
+                    stepSize: _notifier.totalIndex)
+                    .length(),
+                lineThickness: _lineThickness,
+                lineType: _notifier.lineType,
+                axis:_axis,
+              ),
+            ],
+          ),
+          Expanded(
+            child: Center(
+              child: Text(stepsList[i].title,
+                softWrap: true,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                style:  TextStyle(fontSize:i==_notifier.currentIndex? 14:12, color:i==_notifier.currentIndex? borderColor:_step.inactiveStepColor),
+              ),
             ),
           )
         ],
       );
+
+
       widgetList.add(steps);
     }
     return widgetList;

@@ -11,7 +11,7 @@ import 'button/stepper_floating_button.dart';
 ///StepperA class is main class
 class StepperA extends StatefulWidget {
   ///for define stepper background color
-  // final Color stepperBackgroundColor;
+   final Color stepperBackgroundColor;
 
   ///for define stepper body list of page
   ///this list of page length is stepper length
@@ -90,7 +90,7 @@ class StepperA extends StatefulWidget {
         this.lineThickness = 2,
         required this.stepperSize,
         required this.stepperBodyWidget,
-        //  this.stepperBackgroundColor = Colors.white,
+        this.stepperBackgroundColor = Colors.white,
         this.padding = const EdgeInsets.all(5),
         this.margin = const EdgeInsets.all(5),
         this.stepPadding = const EdgeInsets.all(5),
@@ -378,7 +378,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
 
   Widget buildStep(){
     return StepperStep(
-      backgroundColor: Colors.transparent,//widget.stepperBackgroundColor,
+      backgroundColor: widget.stepperBackgroundColor,
       padding: widget.padding,
       notifier: _notifier,
       axis: widget.stepperAxis,

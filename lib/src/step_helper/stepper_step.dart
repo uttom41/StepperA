@@ -14,7 +14,7 @@ import '../line.dart';
 class StepperStep extends StatelessWidget {
 
   ///for define stepper background color
- // final Color _backgroundColor;
+  final Color _backgroundColor;
 
   ///If your need stepper padding
   final EdgeInsets _padding;
@@ -72,7 +72,7 @@ class StepperStep extends StatelessWidget {
     required axis,
     this.customSteps,
   }) :
-      //  _backgroundColor = backgroundColor,
+        _backgroundColor = backgroundColor,
         _padding = padding,
         _notifier = notifier,
         _lineThickness = lineThickness,
@@ -156,8 +156,8 @@ class StepperStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-     // color: _backgroundColor,
+    return Container(
+      color: _backgroundColor,
       height: _stepperSize.height,
       width: _stepperSize.width,
       child: SingleChildScrollView(
