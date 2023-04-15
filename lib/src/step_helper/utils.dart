@@ -168,7 +168,7 @@ class Utils {
           Center(
             child: Text(stepsList[i].title,
               softWrap: true,
-              style:  TextStyle(fontSize: 14, color: borderColor),
+              style:  TextStyle(fontSize:i==_notifier.currentIndex? 16:14, color:i==_notifier.currentIndex? borderColor:_step.inactiveStepColor),
             ),
           )
         ],

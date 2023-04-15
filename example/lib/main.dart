@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
               step: const StepA(
                   currentStepColor: Colors.green,
                   completeStepColor: Colors.blueAccent,
-                  inactiveStepColor: Colors.purple,
+                  inactiveStepColor: Colors.blueGrey,
                   margin: EdgeInsets.all(5)
               ),
               stepperBodyWidget: [

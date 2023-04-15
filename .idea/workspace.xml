@@ -7,13 +7,7 @@
     <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="step shape update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/page_helper/stepper_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/page_helper/stepper_body.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/custom_steps.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/custom_steps.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/stepper_a.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
