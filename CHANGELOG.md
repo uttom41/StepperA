@@ -1,9 +1,8 @@
-## 1.0.0
+## 1.1.0
 
-- Form Validation with FormKey [GlobalKey<FormState>()]
-- Customized Stepper step Shape [Rectangle, Circle]
+- Support Horizontal and Vertical Stepper
+- Customized Stepper step Shape [Rectangle, Circle,Diamond,Triangle]
+- Customized Stepper step border [Dash, Straight]
+- Customized Stepper line  [Dash, Straight]
 - Smooth sliding with Animation
-- Easily Customize UI Color
-- Access your own button press control
-
-
+- Easily Customize Step
