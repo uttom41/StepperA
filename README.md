@@ -96,7 +96,7 @@ StepperA(
 ## ScreenShot
 
 ## FormKey validation
-![](example/assets/pic/formkey.gif)
+![formkey](https://user-images.githubusercontent.com/44666275/232333587-c807f95a-b8db-454e-865e-98dd26304b58.gif)
 
 ## Custom Steps
 ![](example/assets/pic/Media_230415_222459.gif)
