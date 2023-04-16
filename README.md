@@ -99,22 +99,22 @@ StepperA(
 ![formkey](https://user-images.githubusercontent.com/44666275/232333587-c807f95a-b8db-454e-865e-98dd26304b58.gif)
 
 ## Custom Steps
-![](example/assets/pic/Media_230415_222459.gif)
+![custom_steps](https://user-images.githubusercontent.com/44666275/232333845-f29e33b6-8030-445d-9ee3-94130386736d.gif)
 
 ## vertical stepper
-![](example/assets/pic/vertical_circle.gif)
+![vertical_circle](https://user-images.githubusercontent.com/44666275/232333904-d2f2cf64-e80b-45a5-b5ed-6cd3e268c0e4.gif)
 
-![](example/assets/pic/horizontal_circle.gif)
-![](example/assets/pic/horizontal_circle_border.gif)
-![](example/assets/pic/horizontal_circle_dash.gif)
-![](example/assets/pic/horizontal_triangle.gif)
-![](example/assets/pic/horizontal_tringle_border.gif)
-![](example/assets/pic/Media_230415_221146.gif)
+## Others
+![horizontal_circle](https://user-images.githubusercontent.com/44666275/232333995-0027ac88-519c-4eb0-b416-ccc4ec3d9f58.gif)
+
+![horizontal_circle_border](https://user-images.githubusercontent.com/44666275/232334075-bef4e0d6-2645-4e06-ac09-1f0495ac18f2.gif)
+![horizontal_circle_dash](https://user-images.githubusercontent.com/44666275/232334106-10b9c0d3-9a41-4cbf-bbb7-ee9e926ce040.gif)
+![vertical custom step](https://user-images.githubusercontent.com/44666275/232334159-f293ab1b-cd41-4b92-acf6-19b720abb13d.gif)
+![vertical_step_withbutton](https://user-images.githubusercontent.com/44666275/232334218-28dc3dca-56a7-42dd-8de5-0b7c1e76bb09.gif)
+![Media_230415_221534](https://user-images.githubusercontent.com/44666275/232334295-466295cb-730a-4cf0-a708-5d3dccb58705.gif)
 ![](example/assets/pic/Media_230415_221243.gif)
-![](example/assets/pic/Media_230415_221534.gif)
 ![](example/assets/pic/Media_230415_221733.gif)
 ![](example/assets/pic/tringle.gif)
-![](example/assets/pic/Media_230415_222359.gif)
 ![](example/assets/pic/Media_230415_222245.gif)
 ![](example/assets/pic/Media_230415_222135.gif)
 

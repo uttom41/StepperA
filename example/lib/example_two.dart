@@ -39,6 +39,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
               borderShape: BorderShape.diamond,
               borderType: BorderType.straight,
               stepperAxis: Axis.horizontal,
+              lineType:  LineType.dotted ,
               stepperBackgroundColor: Colors.transparent,
               stepperAController: controller,
               stepHeight: 40,
