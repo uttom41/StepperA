@@ -3,7 +3,7 @@ import 'package:stepper_a/stepper_a.dart';
 
 class StepFour extends StatefulWidget {
   final StepperAController controller;
-  const StepFour({Key? key,required this.controller}) : super(key: key);
+  const StepFour({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<StepFour> createState() => _StepFourState();
@@ -24,10 +24,7 @@ class _StepFourState extends State<StepFour> {
             Text(
               "Steps four",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
             ),
           ],
         ),

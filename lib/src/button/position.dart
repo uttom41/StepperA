@@ -5,7 +5,7 @@
 ///
 /// This class provide floating button position set
 /// EX: Stack Position
-class Position{
+class Position {
   ///Floating button top position set
   final double? top;
 
@@ -18,10 +18,5 @@ class Position{
   ///Floating button right position set
   final double? right;
 
-  Position({
-    this.top ,
-    this.bottom,
-    this.left,
-    this.right
-});
+  Position({this.top, this.bottom, this.left, this.right});
 }

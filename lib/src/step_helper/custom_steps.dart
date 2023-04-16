@@ -13,6 +13,4 @@ class CustomSteps {
     required this.stepsIcon,
     required this.title,
   });
-
-
 }

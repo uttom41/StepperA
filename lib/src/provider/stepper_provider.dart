@@ -7,9 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../stepper_a.dart';
 
-
-class StepperNotifier extends ChangeNotifier{
-
+class StepperNotifier extends ChangeNotifier {
   ///IF you need different Step border style
   ///default border style is [straight]
   final BorderType borderType;
@@ -42,6 +40,7 @@ class StepperNotifier extends ChangeNotifier{
 
   ///Step animation direction
   AnimationDirection _direction = AnimationDirection.clockwise;
+
   ///next Page index
   ///default set next page index is 0
   int nextPageIndex = 0;
@@ -50,7 +49,7 @@ class StepperNotifier extends ChangeNotifier{
   ///default page index set is 1
   int totalIndex = 0;
 
-  final GlobalKey<FormState> ? formKey;
+  final GlobalKey<FormState>? formKey;
 
   ///Ticker Provider from [StepperA], cause need to use it in [AnimationSlide]
   late TickerProviderStateMixin singleTickerProviderStateMixin;
@@ -58,10 +57,9 @@ class StepperNotifier extends ChangeNotifier{
   late AnimationController stepperController;
   late Animation<double> animation;
 
-
   StepperNotifier({
-    required  this.borderType,
-    required  this.lineType,
+    required this.borderType,
+    required this.lineType,
     required this.borderShape,
     required this.dashPattern,
     required this.controller,
@@ -69,29 +67,30 @@ class StepperNotifier extends ChangeNotifier{
     required int length,
     required TickerProviderStateMixin vsync,
     this.formKey,
-  }){
+  }) {
     _currentIndex = initialPage;
     nextPageIndex = initialPage;
     totalIndex = length;
     singleTickerProviderStateMixin = vsync;
-    stepperController = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 1000));
+    stepperController = AnimationController(
+        vsync: vsync, duration: const Duration(milliseconds: 1000));
     animation = Tween<double>(begin: 0.0, end: 1.0).animate(stepperController);
   }
 
-  int checkFormKeyValidation(int index){
+  int checkFormKeyValidation(int index) {
+    if (_currentIndex > index) return index;
 
-    if(_currentIndex>index)return index;
-
-    if(formKey == null)return index;
+    if (formKey == null) return index;
 
     formKey!.currentState?.save();
 
-    if(formKey!.currentState!=null && formKey!.currentState!.validate())return index;
+    if (formKey!.currentState != null && formKey!.currentState!.validate())
+      return index;
 
     return _currentIndex;
   }
 
-  Animation<double> getAnimation(){
+  Animation<double> getAnimation() {
     stepperController.reset();
     stepperController.forward();
     return animation;
@@ -104,27 +103,30 @@ class StepperNotifier extends ChangeNotifier{
   AnimationDirection get direction => _direction;
 
   ///Setter for [_currentIndex]
-  set currentIndex(int index){
-
-    if(_currentIndex > index) {
+  set currentIndex(int index) {
+    if (_currentIndex > index) {
       _direction = AnimationDirection.anticlockwise;
     } else {
       _direction = AnimationDirection.clockwise;
     }
 
     _currentIndex = checkFormKeyValidation(index);
-    controller.animateToPage(
-        _currentIndex,
+    controller.animateToPage(_currentIndex,
         duration: const Duration(milliseconds: durationTime),
         curve: Curves.easeOut);
     notifyListeners();
   }
 
-  ScrollController getStepScrollController({required double itemWidth, required double lineWidth,required double screenWidth}){
-    final double scrollAmount = ((_currentIndex +1) * (lineWidth + itemWidth)) - screenWidth;
+  ScrollController getStepScrollController(
+      {required double itemWidth,
+      required double lineWidth,
+      required double screenWidth}) {
+    final double scrollAmount =
+        ((_currentIndex + 1) * (lineWidth + itemWidth)) - screenWidth;
     if (scrollAmount > 0) {
-      _stepController.animateTo(scrollAmount, duration: const Duration(milliseconds: durationTime), curve: Curves.easeIn);
-
+      _stepController.animateTo(scrollAmount,
+          duration: const Duration(milliseconds: durationTime),
+          curve: Curves.easeIn);
     }
     return _stepController;
   }

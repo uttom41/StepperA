@@ -24,10 +24,10 @@ class StepperBody extends StatelessWidget {
           controller: notifier.controller,
           scrollDirection: Axis.horizontal,
           itemCount: notifier.totalIndex,
-          onPageChanged: (index){
-            notifier.currentIndex=index;
+          onPageChanged: (index) {
+            notifier.currentIndex = index;
           },
-          itemBuilder: (BuildContext context, int index){
+          itemBuilder: (BuildContext context, int index) {
             return stepperBodyWidget[index];
           }),
     );

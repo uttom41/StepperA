@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final formKey =  GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   final StepperAController controller = StepperAController();
   @override
   Widget build(BuildContext context) {
@@ -40,17 +40,21 @@ class _MyHomePageState extends State<MyHomePage> {
       children: [
         Scaffold(
           backgroundColor: Colors.white,
-          appBar: PreferredSize( preferredSize: const Size.fromHeight(82),
-              child: AppBar(title: const Text("Stepper Example"),)),),
+          appBar: PreferredSize(
+              preferredSize: const Size.fromHeight(82),
+              child: AppBar(
+                title: const Text("Stepper Example"),
+              )),
+        ),
         Positioned(
           //top: 115,
           top: 85,
           left: 0,
           right: 0,
-          bottom: 0,//MediaQuery.of(context).size.height-240
+          bottom: 0, //MediaQuery.of(context).size.height-240
           child: StepperA(
-              stepperSize: const Size(300,90),
-             // stepperSize: const Size(100,350),
+              stepperSize: const Size(300, 90),
+              // stepperSize: const Size(100,350),
               borderShape: BorderShape.diamond,
               borderType: BorderType.straight,
               stepperAxis: Axis.horizontal,
@@ -81,42 +85,35 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 90,
                   height: 40,
                   buttonText: 'Back',
-                  completeButtonText: ''
-              ),
+                  completeButtonText: ''),
               forwardButton: StepperAButton(
                   width: 90,
                   height: 40,
                   buttonText: 'Next',
-                  completeButtonText: 'Complete'
-              ),
+                  completeButtonText: 'Complete'),
               customSteps: const [
-                CustomSteps(
-                    stepsIcon: Icons.login,
-                    title: "LogIn"),
-                CustomSteps(
-                    stepsIcon: Icons.location_on,
-                    title: "Location"),
-                CustomSteps(
-                    stepsIcon: Icons.home,
-                    title: "Home"),
-                CustomSteps(
-                    stepsIcon: Icons.account_circle,
-                    title: "Account"),
-
+                CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
+                CustomSteps(stepsIcon: Icons.location_on, title: "Location"),
+                CustomSteps(stepsIcon: Icons.home, title: "Home"),
+                CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
               ],
               step: const StepA(
                   currentStepColor: Colors.green,
                   completeStepColor: Colors.indigo,
                   inactiveStepColor: Colors.black12,
-                  margin: EdgeInsets.all(5)
-              ),
+                  margin: EdgeInsets.all(5)),
               stepperBodyWidget: [
                 StepOne(controller: controller),
-                StepTwo(controller: controller,),
-                StepThree(controller: controller,),
-                StepFour(controller: controller,),
-              ]
-          ),
+                StepTwo(
+                  controller: controller,
+                ),
+                StepThree(
+                  controller: controller,
+                ),
+                StepFour(
+                  controller: controller,
+                ),
+              ]),
         ),
       ],
     );

@@ -34,7 +34,6 @@ class Utils {
   ///Step border show or Not
   final bool _border;
 
-
   ///for stepper line thickness
   final double _lineThickness;
 
@@ -45,16 +44,15 @@ class Utils {
 
   const Utils(
       {required notifier,
-        required radius,
-        required stepperSize,
-        required stepWidth,
-        required stepHeight,
-        required axis,
-        required lineThickness,
-        required strokeWidth,
-        required step,
-        required stepBorder
-      })
+      required radius,
+      required stepperSize,
+      required stepWidth,
+      required stepHeight,
+      required axis,
+      required lineThickness,
+      required strokeWidth,
+      required step,
+      required stepBorder})
       : _notifier = notifier,
         _radius = radius,
         _stepperSize = stepperSize,
@@ -75,22 +73,22 @@ class Utils {
 
       /// step circles
       list.add(
-        Stack(
-            children: [
-          if(_border)Positioned.fill(
-              child: PathWidget(
-                notifier: _notifier,
-                borderShape: _notifier.borderShape,
-                borderType: _notifier.borderType,
-                dashPattern: _notifier.dashPattern,
-                radius: _radius,
-                pathColor: borderColor,
-                strokeWidth: _strokeWidth,
-                taskType: i == _notifier.currentIndex
-                    ? TaskType.inProgress
-                    : TaskType.pending,
-                animationDirection: _notifier.direction,
-              )),
+        Stack(children: [
+          if (_border)
+            Positioned.fill(
+                child: PathWidget(
+              notifier: _notifier,
+              borderShape: _notifier.borderShape,
+              borderType: _notifier.borderType,
+              dashPattern: _notifier.dashPattern,
+              radius: _radius,
+              pathColor: borderColor,
+              strokeWidth: _strokeWidth,
+              taskType: i == _notifier.currentIndex
+                  ? TaskType.inProgress
+                  : TaskType.pending,
+              animationDirection: _notifier.direction,
+            )),
           SizedBox(
             height: _stepHeight,
             width: _stepWidth,
@@ -105,14 +103,14 @@ class Utils {
           StepperLine(
             lineColor: lineColor,
             length: CalculateLength(
-                size: _stepperSize,
-                width: _stepWidth,
-                height: _stepHeight,
-                stepSize: _notifier.totalIndex)
+                    size: _stepperSize,
+                    width: _stepWidth,
+                    height: _stepHeight,
+                    stepSize: _notifier.totalIndex)
                 .length(),
             lineThickness: _lineThickness,
             lineType: _notifier.lineType,
-            axis:_axis,
+            axis: _axis,
           ),
         );
       }
@@ -120,20 +118,20 @@ class Utils {
     return list;
   }
 
-  List<Widget>customSteps(List<CustomSteps> stepsList){
-    List<Widget> widgetList=[];
-    for(int i = 0; i < stepsList.length; i++){
+  List<Widget> customSteps(List<CustomSteps> stepsList) {
+    List<Widget> widgetList = [];
+    for (int i = 0; i < stepsList.length; i++) {
       var borderColor = _getBorderColor(i);
       var lineColor = _getLineColor(i);
-      Widget steps = _axis==Axis.horizontal
-          ?Column(
-        children: [
-          Row(
-            children: [
-              Stack(
+      Widget steps = _axis == Axis.horizontal
+          ? Column(
+              children: [
+                Row(
                   children: [
-                    if(_border)Positioned.fill(
-                        child: PathWidget(
+                    Stack(children: [
+                      if (_border)
+                        Positioned.fill(
+                            child: PathWidget(
                           notifier: _notifier,
                           borderShape: _notifier.borderShape,
                           borderType: _notifier.borderType,
@@ -146,42 +144,48 @@ class Utils {
                               : TaskType.pending,
                           animationDirection: _notifier.direction,
                         )),
-                    SizedBox(
-                      height: _stepHeight,
-                      width: _stepWidth,
-                      child: buildChild(stepsList[i].stepsIcon,i),
-                    )
-                  ]),
-              if (i != _notifier.totalIndex - 1)StepperLine(
-                lineColor: lineColor,
-                length: CalculateLength(
-                    size: _stepperSize,
-                    width: _stepWidth,
-                    height: _stepHeight,
-                    stepSize: _notifier.totalIndex)
-                    .length(),
-                lineThickness: _lineThickness,
-                lineType: _notifier.lineType,
-                axis:_axis,
-              ),
-            ],
-          ),
-          Center(
-            child: Text(stepsList[i].title,
-              softWrap: true,
-              style:  TextStyle(fontSize:i==_notifier.currentIndex? 14:12, color:i==_notifier.currentIndex? borderColor:_step.inactiveStepColor),
-            ),
-          )
-        ],
-      )
-          :Row(
-        children: [
-          Column(
-            children: [
-              Stack(
+                      SizedBox(
+                        height: _stepHeight,
+                        width: _stepWidth,
+                        child: buildChild(stepsList[i].stepsIcon, i),
+                      )
+                    ]),
+                    if (i != _notifier.totalIndex - 1)
+                      StepperLine(
+                        lineColor: lineColor,
+                        length: CalculateLength(
+                                size: _stepperSize,
+                                width: _stepWidth,
+                                height: _stepHeight,
+                                stepSize: _notifier.totalIndex)
+                            .length(),
+                        lineThickness: _lineThickness,
+                        lineType: _notifier.lineType,
+                        axis: _axis,
+                      ),
+                  ],
+                ),
+                Center(
+                  child: Text(
+                    stepsList[i].title,
+                    softWrap: true,
+                    style: TextStyle(
+                        fontSize: i == _notifier.currentIndex ? 14 : 12,
+                        color: i == _notifier.currentIndex
+                            ? borderColor
+                            : _step.inactiveStepColor),
+                  ),
+                )
+              ],
+            )
+          : Row(
+              children: [
+                Column(
                   children: [
-                    if(_border)Positioned.fill(
-                        child: PathWidget(
+                    Stack(children: [
+                      if (_border)
+                        Positioned.fill(
+                            child: PathWidget(
                           notifier: _notifier,
                           borderShape: _notifier.borderShape,
                           borderType: _notifier.borderType,
@@ -194,53 +198,60 @@ class Utils {
                               : TaskType.pending,
                           animationDirection: _notifier.direction,
                         )),
-                    SizedBox(
-                      height: _stepHeight,
-                      width: _stepWidth,
-                      child: buildChild(stepsList[i].stepsIcon,i),
-                    )
-                  ]),
-              if (i != _notifier.totalIndex - 1)StepperLine(
-                lineColor: lineColor,
-                length: CalculateLength(
-                    size: _stepperSize,
-                    width: _stepWidth,
-                    height: _stepHeight,
-                    stepSize: _notifier.totalIndex)
-                    .length(),
-                lineThickness: _lineThickness,
-                lineType: _notifier.lineType,
-                axis:_axis,
-              ),
-            ],
-          ),
-          Expanded(
-            child: Center(
-              child: Text(stepsList[i].title,
-                softWrap: true,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style:  TextStyle(fontSize:i==_notifier.currentIndex? 14:12, color:i==_notifier.currentIndex? borderColor:_step.inactiveStepColor),
-              ),
-            ),
-          )
-        ],
-      );
-
+                      SizedBox(
+                        height: _stepHeight,
+                        width: _stepWidth,
+                        child: buildChild(stepsList[i].stepsIcon, i),
+                      )
+                    ]),
+                    if (i != _notifier.totalIndex - 1)
+                      StepperLine(
+                        lineColor: lineColor,
+                        length: CalculateLength(
+                                size: _stepperSize,
+                                width: _stepWidth,
+                                height: _stepHeight,
+                                stepSize: _notifier.totalIndex)
+                            .length(),
+                        lineThickness: _lineThickness,
+                        lineType: _notifier.lineType,
+                        axis: _axis,
+                      ),
+                  ],
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      stepsList[i].title,
+                      softWrap: true,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          fontSize: i == _notifier.currentIndex ? 14 : 12,
+                          color: i == _notifier.currentIndex
+                              ? borderColor
+                              : _step.inactiveStepColor),
+                    ),
+                  ),
+                )
+              ],
+            );
 
       widgetList.add(steps);
     }
     return widgetList;
   }
 
-  Widget buildChild(IconData icon,int i){
-    return _buildSteps( Icon(
-      icon,
-      color: Colors.white,
-      size: 16.0,
-    ),i);
-
+  Widget buildChild(IconData icon, int i) {
+    return _buildSteps(
+        Icon(
+          icon,
+          color: Colors.white,
+          size: 16.0,
+        ),
+        i);
   }
+
   ///Set step circle color
   Color _getCircleColor(i) {
     Color color;
@@ -289,8 +300,7 @@ class Utils {
             color: Colors.white,
             size: 16.0,
           ),
-        index
-      );
+          index);
     } else if (index == _notifier.currentIndex) {
       return _buildSteps(
           Center(
@@ -299,8 +309,7 @@ class Utils {
               style: const TextStyle(fontSize: 14, color: Colors.white),
             ),
           ),
-          index
-      );
+          index);
     } else {
       return _buildSteps(
           Center(
@@ -309,24 +318,23 @@ class Utils {
               style: const TextStyle(fontSize: 14, color: Colors.white),
             ),
           ),
-          index
-      );
+          index);
     }
   }
 
-  Widget _buildSteps(Widget child,int index){
+  Widget _buildSteps(Widget child, int index) {
     Color shapeColor = _getCircleColor(index);
     return AnimatedContainer(
-      margin:_border?_step.margin:null,
+      margin: _border ? _step.margin : null,
       duration: const Duration(milliseconds: durationTime),
       child: ShapeWidget(
-          shapeColor: shapeColor,
+        shapeColor: shapeColor,
         borderShape: _notifier.borderShape,
         radius: _radius,
         taskType: index == _notifier.currentIndex
             ? TaskType.inProgress
             : TaskType.pending,
-          child:child,
+        child: child,
       ),
     );
   }

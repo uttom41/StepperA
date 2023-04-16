@@ -10,7 +10,6 @@ import 'package:stepper_a/src/drawing/shape_painter.dart';
 import '../../stepper_a.dart';
 
 class ShapeWidget extends StatelessWidget {
-
   ///It is steps child widget.
   final Widget _child;
 
@@ -36,7 +35,7 @@ class ShapeWidget extends StatelessWidget {
     required borderShape,
     required radius,
     required taskType,
-  }) : _child = child,
+  })  : _child = child,
         _shapeColor = shapeColor,
         _borderShape = borderShape,
         _radius = radius,
@@ -49,7 +48,7 @@ class ShapeWidget extends StatelessWidget {
       painter: ShapePainter(
         shapeColor: _shapeColor,
         radius: _radius,
-        borderShape:_borderShape,
+        borderShape: _borderShape,
         taskType: _taskType,
       ),
       child: _child,

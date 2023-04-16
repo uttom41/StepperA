@@ -8,11 +8,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:stepper_a/src/drawing/path_draw.dart';
 import '../../stepper_a.dart';
 
-
-class ShapePainter extends CustomPainter{
-
+class ShapePainter extends CustomPainter {
   ///It is only used for shape color.
-  final  Color _shapeColor;
+  final Color _shapeColor;
 
   /// A complex, one-dimensional subset of a plane.
   ///
@@ -35,15 +33,14 @@ class ShapePainter extends CustomPainter{
   ///default borderShape is [circle]
   final BorderShape _pathType;
 
-
-   ShapePainter({
+  ShapePainter({
     required shapeColor,
     required borderShape,
     required taskType,
     Radius radius = const Radius.circular(4.0),
-  }):_radius = radius,
+  })  : _radius = radius,
         _shapeColor = shapeColor,
-        _pathType= borderShape;
+        _pathType = borderShape;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -57,9 +54,9 @@ class ShapePainter extends CustomPainter{
       ..shader = null;
 
     shape = PathDrawing(
-        size: size,
-        pathType: _pathType,
-        radius: _radius,
+      size: size,
+      pathType: _pathType,
+      radius: _radius,
     ).createPath();
 
     canvas.drawPath(shape, line);
@@ -67,5 +64,4 @@ class ShapePainter extends CustomPainter{
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
-
 }

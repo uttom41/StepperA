@@ -3,7 +3,7 @@ import 'package:stepper_a/stepper_a.dart';
 
 class StepTwo extends StatefulWidget {
   final StepperAController controller;
-  const StepTwo({Key? key,required this.controller}) : super(key: key);
+  const StepTwo({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<StepTwo> createState() => _StepTwoState();
@@ -24,14 +24,10 @@ class _StepTwoState extends State<StepTwo> {
             const Text(
               "Address info",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
             ),
             Padding(
-              padding:
-              const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
                 minLines: 3,
                 maxLines: 4,
@@ -41,13 +37,12 @@ class _StepTwoState extends State<StepTwo> {
             ),
 
             Padding(
-              padding:
-              const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
                 obscureText: true,
                 decoration: const InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Permanent Address"),
-
+                    border: OutlineInputBorder(),
+                    labelText: "Permanent Address"),
               ),
             ),
             // Row(

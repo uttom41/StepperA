@@ -35,14 +35,14 @@ class StepperAButtonWidget extends StatelessWidget {
         onTap();
       },
       child: Container(
-        margin: const EdgeInsets.only(bottom: 12,left: 12,right:12),
+        margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12),
         width: _stepperAButton.width,
         height: _stepperAButton.height,
         alignment: Alignment.center,
         decoration: _stepperAButton.boxDecoration ??
             const BoxDecoration(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+              color: Colors.blueAccent,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
         child: Text(text, style: _stepperAButton.textStyle),
       ),
