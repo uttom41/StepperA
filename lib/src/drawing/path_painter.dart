@@ -49,10 +49,11 @@ class PathPainters extends CustomPainter {
         _dashPattern = dashPattern,
         super(repaint: animation);
 
-  late Path _originalPath;
+
 
   @override
   void paint(Canvas canvas, Size size) {
+  //  Path _originalPath;
     ///background line paint drawing.
     Paint line = Paint()
       ..color = _lineColor
@@ -67,21 +68,21 @@ class PathPainters extends CustomPainter {
     final animationPercent = _animation.value;
 
     // Construct original path once when animation starts
-    if (animationPercent == 0.0) {
-      _originalPath = PathDrawing(
+   // if (animationPercent == 0.0) {
+    Path   originalPath = PathDrawing(
               size: size,
               pathType: _pathType,
               radius: _radius,
               startingPercentage: _startingPercentage)
           .createPath();
-    }
+  //  }
 
     ///solid background line drawing
     if (_borderType == BorderType.dash) {
       if (_taskType != TaskType.inProgress) {
         canvas.drawPath(
           Dash(
-                  source: _originalPath,
+                  source: originalPath,
                   dashArray: CircularIntervalList<double>(_dashPattern))
               .dashDraw(),
           line,
@@ -90,7 +91,7 @@ class PathPainters extends CustomPainter {
         ///complete shape
         final currentPath = DrawAnimationPath(
           animationDirection: _animationDirection,
-          path: _originalPath,
+          path: originalPath,
           percent: animationPercent,
         ).drawAnimation();
 
@@ -99,12 +100,12 @@ class PathPainters extends CustomPainter {
     } else {
       ///for line shape
       if (_taskType != TaskType.inProgress) {
-        canvas.drawPath(_originalPath, line);
+        canvas.drawPath(originalPath, line);
       } else {
         ///complete shape
         final currentPath = DrawAnimationPath(
           animationDirection: _animationDirection,
-          path: _originalPath,
+          path: originalPath,
           percent: animationPercent,
         ).drawAnimation();
 

@@ -5,6 +5,9 @@ import 'package:example/step_one.dart';
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
+import 'example_one.dart';
+import 'example_two.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -19,103 +22,62 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const StepperExample(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+
+class StepperExample extends StatefulWidget {
+  const StepperExample({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<StepperExample> createState() => _StepperExampleState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  final formKey = GlobalKey<FormState>();
-  final StepperAController controller = StepperAController();
+class _StepperExampleState extends State<StepperExample> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Scaffold(
-          backgroundColor: Colors.white,
-          appBar: PreferredSize(
-              preferredSize: const Size.fromHeight(82),
-              child: AppBar(
-                title: const Text("Stepper Example"),
-              )),
-        ),
-        Positioned(
-          //top: 115,
-          top: 85,
-          left: 0,
-          right: 0,
-          bottom: 0, //MediaQuery.of(context).size.height-240
-          child: StepperA(
-              stepperSize: const Size(300, 90),
-              // stepperSize: const Size(100,350),
-              borderShape: BorderShape.diamond,
-              borderType: BorderType.straight,
-              stepperAxis: Axis.horizontal,
-              stepperBackgroundColor: Colors.transparent,
-              stepperAController: controller,
-              stepHeight: 40,
-              stepWidth: 40,
-              stepBorder: true,
-              floatingButton: false,
-              // formKey: formKey,
-              //   floatingPreviousButton: FloatingButton(
-              //       buttonIconColor: Colors.white,
-              //       backgroundColor:  Colors.blueAccent,
-              //       position: Position(
-              //         left: 10,
-              //         top: 10
-              //       )
-              //   ),
-              //   floatingForwardButton: FloatingButton(
-              //       buttonIconColor: Colors.white,
-              //       backgroundColor:  Colors.blueAccent,
-              //       position: Position(
-              //           left: 10,
-              //           bottom: 20
-              //       )
-              //   ),
-              previousButton: StepperAButton(
-                  width: 90,
-                  height: 40,
-                  buttonText: 'Back',
-                  completeButtonText: ''),
-              forwardButton: StepperAButton(
-                  width: 90,
-                  height: 40,
-                  buttonText: 'Next',
-                  completeButtonText: 'Complete'),
-              customSteps: const [
-                CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
-                CustomSteps(stepsIcon: Icons.location_on, title: "Location"),
-                CustomSteps(stepsIcon: Icons.home, title: "Home"),
-                CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
-              ],
-              step: const StepA(
-                  currentStepColor: Colors.green,
-                  completeStepColor: Colors.indigo,
-                  inactiveStepColor: Colors.black12,
-                  margin: EdgeInsets.all(5)),
-              stepperBodyWidget: [
-                StepOne(controller: controller),
-                StepTwo(
-                  controller: controller,
+    return Scaffold(
+        appBar: AppBar(title: const Text("Stepper Example"),),
+        body:Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ExampleOne()));
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 30),
+                  decoration: const BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: const Text("Example One"),
                 ),
-                StepThree(
-                  controller: controller,
+              ),
+              const SizedBox(height: 10,),
+              InkWell(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ExampleTwo()));
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 30),
+                  decoration: const BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: const Text("Example Two"),
                 ),
-                StepFour(
-                  controller: controller,
-                ),
-              ]),
-        ),
-      ],
+              )
+            ],
+          ),
+        )
     );
   }
 }
