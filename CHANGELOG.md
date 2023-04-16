@@ -1,4 +1,4 @@
-## 1.1.0
+## 1.1.1
 
 - Support Horizontal and Vertical Stepper
 - Customized Stepper step Shape [Rectangle, Circle,Diamond,Triangle]
