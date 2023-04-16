@@ -6,7 +6,6 @@
 import 'package:flutter/material.dart';
 import 'drawing/drawing_helper.dart';
 
-
 class StepperLine extends StatelessWidget {
   final double lineThickness;
   final double length;
@@ -14,6 +13,7 @@ class StepperLine extends StatelessWidget {
   final double dotRadius;
   final double spacing;
   final LineType lineType;
+
   /// Line Axis.
   final Axis axis;
 
@@ -30,44 +30,45 @@ class StepperLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return buildLine ();
+    return buildLine();
   }
 
-  Widget buildLine(){
+  Widget buildLine() {
     return AnimatedContainer(
-      duration:  const Duration(milliseconds: durationTime),
+      duration: const Duration(milliseconds: durationTime),
       margin: EdgeInsets.only(top: lineType == LineType.dotted ? dotRadius : 0),
       width: axis == Axis.horizontal
           ? length
           : lineType == LineType.straight
-          ? dotRadius * lineThickness
-          : 0,
+              ? dotRadius * lineThickness
+              : 0,
       height: axis == Axis.vertical
           ? length
           : lineType == LineType.straight
-          ? dotRadius * lineThickness
-          : 0,
+              ? dotRadius * lineThickness
+              : 0,
       decoration: lineType == LineType.straight
           ? BoxDecoration(
-        color: lineColor,
-        borderRadius: BorderRadius.circular(100),
-      )
+              color: lineColor,
+              borderRadius: BorderRadius.circular(100),
+            )
           : null,
       child: lineType == LineType.dotted
           ? CustomPaint(
-        painter: _LinePainter(
-          brush: Paint()..color = lineColor..strokeWidth=20,
-          length: length,
-          dotRadius: dotRadius,
-          spacing: lineType == LineType.straight ? 0.0 : spacing,
-          axis: axis,
-        ),
-      )
+              painter: _LinePainter(
+                brush: Paint()
+                  ..color = lineColor
+                  ..strokeWidth = 20,
+                length: length,
+                dotRadius: dotRadius,
+                spacing: lineType == LineType.straight ? 0.0 : spacing,
+                axis: axis,
+              ),
+            )
           : null,
     );
   }
 }
-
 
 class _LinePainter extends CustomPainter {
   final double length;
@@ -120,21 +121,22 @@ class _LinePainter extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
 
-class CalculateLength{
+class CalculateLength {
   int stepSize;
   double size;
   double width;
   double height;
-  CalculateLength({
-    required this.size,
-    required this.width,
-    required this.height,
-    required this.stepSize
-  });
+  CalculateLength(
+      {required this.size,
+      required this.width,
+      required this.height,
+      required this.stepSize});
 
-  double length(){
-    double stepSiz = width  * stepSize;
-    double lineSize = size -stepSiz;
-    return 40<(lineSize /(stepSize-1))-10?(lineSize /(stepSize-1))-10:40;
+  double length() {
+    double stepSiz = width * stepSize;
+    double lineSize = size - stepSiz;
+    return 40 < (lineSize / (stepSize - 1)) - 10
+        ? (lineSize / (stepSize - 1)) - 10
+        : 40;
   }
 }

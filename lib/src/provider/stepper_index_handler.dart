@@ -8,7 +8,7 @@
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 
 /// this class for stepper index calculation
-class StepperIndex{
+class StepperIndex {
   final StepperNotifier notifier;
   StepperIndex({required this.notifier});
 
@@ -16,7 +16,7 @@ class StepperIndex{
   void next(int x, int y) {
     if (x < y) {
       notifier.currentIndex = (x + 1);
-    }else {
+    } else {
       notifier.currentIndex = x;
     }
   }
@@ -25,7 +25,7 @@ class StepperIndex{
   void back(int x) {
     if (x > 0) {
       notifier.currentIndex = (x - 1);
-    }else {
+    } else {
       notifier.currentIndex = x;
     }
   }

@@ -7,16 +7,13 @@ import 'dart:ui';
 
 import 'calculate_perfect_size.dart';
 
-
-class Dash{
+class Dash {
   Path source;
   CircularIntervalList<double> dashArray;
 
-  Dash({required this.source,required this.dashArray});
+  Dash({required this.source, required this.dashArray});
 
-  Path dashDraw(){
-
-
+  Path dashDraw() {
     final Path dest = Path();
     for (final PathMetric metric in source.computeMetrics()) {
       double distance = 0.0;
@@ -24,7 +21,8 @@ class Dash{
       while (distance < metric.length) {
         final double len = dashArray.next;
         if (draw) {
-          dest.addPath(metric.extractPath(distance, distance + len), Offset.zero);
+          dest.addPath(
+              metric.extractPath(distance, distance + len), Offset.zero);
         }
         distance += len;
         draw = !draw;
@@ -32,5 +30,4 @@ class Dash{
     }
     return dest;
   }
-
 }

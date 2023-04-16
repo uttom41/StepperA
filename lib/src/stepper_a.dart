@@ -9,7 +9,6 @@ import 'package:stepper_a/src/stepper_a_controller.dart';
 import 'button/stepper_button.dart';
 import 'drawing/drawing_helper.dart';
 
-
 ///StepperA class is main class
 class StepperA extends StatefulWidget {
   ///for define stepper background color
@@ -145,8 +144,9 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
       vsync: this,
       formKey: widget.formKey,
     );
-    if (widget.stepperAController != null) widget.stepperAController?.setNotifier = notifier;
-
+    if (widget.stepperAController != null) {
+      widget.stepperAController?.setNotifier = notifier;
+    }
 
     return AnimatedBuilder(
         animation: notifier,
@@ -161,21 +161,20 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
                           stepBuild(),
                           Expanded(
                             child:
-                            // NotificationListener<ScrollNotification>(
-                            //     onNotification: (notification) =>
-                            //         _onHorizontalScrollingNotification(
-                            //             notification: notification,
-                            //             controller:scrollControllers.horizontalBodyController),
-                            //     child: SingleChildScrollView(
-                            //       controller: scrollControllers.horizontalBodyController,
-                            //       scrollDirection: notifier.stepperAxis,
-                            //       child: Row(children:widget.stepperBodyWidget,),
-                            //     )
+                                // NotificationListener<ScrollNotification>(
+                                //     onNotification: (notification) =>
+                                //         _onHorizontalScrollingNotification(
+                                //             notification: notification,
+                                //             controller:scrollControllers.horizontalBodyController),
+                                //     child: SingleChildScrollView(
+                                //       controller: scrollControllers.horizontalBodyController,
+                                //       scrollDirection: notifier.stepperAxis,
+                                //       child: Row(children:widget.stepperBodyWidget,),
+                                //     )
 
                                 StepperBody(
-                                  notifier: notifier,
-                                  stepperBodyWidget: widget.stepperBodyWidget,
-
+                              notifier: notifier,
+                              stepperBodyWidget: widget.stepperBodyWidget,
                             ),
                           )
                         ],
@@ -220,7 +219,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
                     ],
                   )
 
-            ////for vertical Stepper
+                ////for vertical Stepper
                 : Stack(
                     children: [
                       Row(
@@ -289,7 +288,7 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
         });
   }
 
-  Widget stepBuild(){
+  Widget stepBuild() {
     return StepperStep(
       backgroundColor: widget.stepperBackgroundColor,
       padding: widget.padding,

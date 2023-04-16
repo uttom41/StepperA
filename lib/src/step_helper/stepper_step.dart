@@ -6,7 +6,6 @@ import 'package:stepper_a/src/provider/stepper_provider.dart';
 import '../line.dart';
 
 class StepperStep extends StatelessWidget {
-
   ///for define stepper background color
   final Color backgroundColor;
 
@@ -45,20 +44,20 @@ class StepperStep extends StatelessWidget {
   ///default step height is 50.
   final double stepHeight;
 
-  const StepperStep({
-    Key? key,
-    required this.backgroundColor,
-    required this.padding,
-    required this.notifier,
-    required this.lineThickness,
-    required this.stepHeight,
-    required this.stepWidth,
-    required this.stepperSize,
-    required this.radius,
-    required this.step,
- //   required this.stepPadding,
-    required this.margin
-  }) : super(key: key);
+  const StepperStep(
+      {Key? key,
+      required this.backgroundColor,
+      required this.padding,
+      required this.notifier,
+      required this.lineThickness,
+      required this.stepHeight,
+      required this.stepWidth,
+      required this.stepperSize,
+      required this.radius,
+      required this.step,
+      //   required this.stepPadding,
+      required this.margin})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -71,48 +70,49 @@ class StepperStep extends StatelessWidget {
         controller: notifier.getStepScrollController(
             itemWidth: stepWidth,
             lineWidth: CalculateLength(
-                size: stepperSize.width,
-                width: stepWidth,
-                height: stepHeight,
-                stepSize: notifier.totalIndex)
+                    size: stepperSize.width,
+                    width: stepWidth,
+                    height: stepHeight,
+                    stepSize: notifier.totalIndex)
                 .length(),
             screenWidth: stepperSize.width),
         child: Container(
           padding: padding,
           margin: margin,
           alignment: Alignment.center,
-          child:notifier.stepperAxis == Axis.horizontal? Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: Utils(
-              notifier: notifier,
-              radius: radius,
-              stepperSize: stepperSize.width,
-              stepWidth: stepWidth,
-              stepHeight: stepHeight,
-            //  padding: stepPadding,
-              lineThickness: lineThickness,
-              step: step,
-              strokeWidth: 3.0
-            ).steps(),
-          ):Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: Utils(
-              notifier: notifier,
-              radius: radius,
-              stepperSize: stepperSize.height,
-              stepWidth: stepWidth,
-              stepHeight: stepHeight,
-               step: step,
-             // padding: stepPadding,
-              lineThickness: lineThickness,
-              strokeWidth: 3.0
-            ).steps(),
-          ),
+          child: notifier.stepperAxis == Axis.horizontal
+              ? Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: Utils(
+                          notifier: notifier,
+                          radius: radius,
+                          stepperSize: stepperSize.width,
+                          stepWidth: stepWidth,
+                          stepHeight: stepHeight,
+                          //  padding: stepPadding,
+                          lineThickness: lineThickness,
+                          step: step,
+                          strokeWidth: 3.0)
+                      .steps(),
+                )
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: Utils(
+                          notifier: notifier,
+                          radius: radius,
+                          stepperSize: stepperSize.height,
+                          stepWidth: stepWidth,
+                          stepHeight: stepHeight,
+                          step: step,
+                          // padding: stepPadding,
+                          lineThickness: lineThickness,
+                          strokeWidth: 3.0)
+                      .steps(),
+                ),
         ),
       ),
     );
   }
-
 }

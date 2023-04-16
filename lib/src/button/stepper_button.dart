@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:stepper_a/src/button/position.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 
-
 ///Stepper button design
 class StepperButton extends StatelessWidget {
   final Position position;
@@ -12,16 +11,16 @@ class StepperButton extends StatelessWidget {
   final Function onTap;
   final String heroTag;
   final IconData buttonIcon;
-  const StepperButton({
-    Key? key,
-    required this.position,
-    required this.buttonColor,
-    required this.notifier,
-    required this.buttonIconColor,
-    required this.onTap,
-    required this.heroTag,
-    required this.buttonIcon
-  }) : super(key: key);
+  const StepperButton(
+      {Key? key,
+      required this.position,
+      required this.buttonColor,
+      required this.notifier,
+      required this.buttonIconColor,
+      required this.onTap,
+      required this.heroTag,
+      required this.buttonIcon})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +33,13 @@ class StepperButton extends StatelessWidget {
         mini: true,
         backgroundColor: buttonColor,
         heroTag: heroTag,
-        onPressed: (){onTap();},
-        child: Icon(buttonIcon,
+        onPressed: () {
+          onTap();
+        },
+        child: Icon(
+          buttonIcon,
           color: buttonIconColor,
-          size: notifier.stepperAxis== Axis.horizontal?26.0:40.0,
+          size: notifier.stepperAxis == Axis.horizontal ? 26.0 : 40.0,
         ),
       ),
     );

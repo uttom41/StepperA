@@ -3,7 +3,7 @@ import 'package:stepper_a/stepper_a.dart';
 
 class StepOne extends StatefulWidget {
   final StepperAController controller;
-  const StepOne({Key? key,required this.controller}) : super(key: key);
+  const StepOne({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<StepOne> createState() => _StepOneState();
@@ -24,14 +24,10 @@ class _StepOneState extends State<StepOne> {
             const Text(
               "Log In",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 18,
-                fontWeight: FontWeight.w700
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
             ),
             Padding(
-              padding:
-              const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), labelText: "Email"),
@@ -43,10 +39,8 @@ class _StepOneState extends State<StepOne> {
                 },
               ),
             ),
-
             Padding(
-              padding:
-              const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
                 obscureText: true,
                 decoration: const InputDecoration(
@@ -59,20 +53,21 @@ class _StepOneState extends State<StepOne> {
                 },
               ),
             ),
-
             InkWell(
-              onTap: (){
+              onTap: () {
                 widget.controller.next();
               },
               child: Container(
                 decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.green
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.green),
+                padding: const EdgeInsets.only(
+                    left: 18, right: 18, top: 10, bottom: 10),
+                child: const Text(
+                  "Next",
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
-                padding: const EdgeInsets.only(left: 18,right: 18,top: 10,bottom: 10),
-
-                child: const Text("Next",style: TextStyle(fontSize: 18,color: Colors.white),),
               ),
             )
           ],

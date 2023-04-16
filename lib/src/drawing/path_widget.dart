@@ -30,9 +30,8 @@ class PathWidget extends StatelessWidget {
     required radius,
     required taskType,
     required animationDirection,
-    required  dashPattern,
-  }) :
-        _notifier = notifier,
+    required dashPattern,
+  })  : _notifier = notifier,
         _pathColor = pathColor,
         _strokeWidth = strokeWidth,
         _borderShape = borderShape,
@@ -43,22 +42,20 @@ class PathWidget extends StatelessWidget {
         _dashPattern = dashPattern,
         super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-        foregroundPainter: PathPainters(
+      foregroundPainter: PathPainters(
           lineColor: _pathColor,
           animation: _notifier.getAnimation(),
           strokeWidth: _strokeWidth,
           borderType: _borderType,
           startingPercentage: 50,
           radius: _radius,
-          borderShape:_borderShape,
+          borderShape: _borderShape,
           animationDirection: _animationDirection,
           taskType: _taskType,
-          dashPattern: _dashPattern
-        ),
+          dashPattern: _dashPattern),
     );
   }
 }

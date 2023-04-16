@@ -43,21 +43,20 @@ class Utils {
 
   const Utils(
       {required notifier,
-        required radius,
-        required stepperSize,
-        required stepWidth,
-        required stepHeight,
-        //required padding,
-        required lineThickness,
-        required strokeWidth,
-        required step
-      })
+      required radius,
+      required stepperSize,
+      required stepWidth,
+      required stepHeight,
+      //required padding,
+      required lineThickness,
+      required strokeWidth,
+      required step})
       : _notifier = notifier,
         _radius = radius,
         _stepperSize = stepperSize,
         _stepWidth = stepWidth,
         _stepHeight = stepHeight,
-      //  _padding = padding,
+        //  _padding = padding,
         _lineThickness = lineThickness,
         _strokeWidth = strokeWidth,
         _step = step;
@@ -74,18 +73,18 @@ class Utils {
         Stack(children: [
           Positioned.fill(
               child: PathWidget(
-                notifier: _notifier,
-                borderShape: _notifier.borderShape,
-                borderType: _notifier.borderType,
-                dashPattern: _notifier.dashPattern,
-                radius: _radius,
-                pathColor: borderColor,
-                strokeWidth: _strokeWidth,
-                taskType: i == _notifier.currentIndex
-                    ? TaskType.inProgress
-                    : TaskType.pending,
-                animationDirection: _notifier.direction,
-              )),
+            notifier: _notifier,
+            borderShape: _notifier.borderShape,
+            borderType: _notifier.borderType,
+            dashPattern: _notifier.dashPattern,
+            radius: _radius,
+            pathColor: borderColor,
+            strokeWidth: _strokeWidth,
+            taskType: i == _notifier.currentIndex
+                ? TaskType.inProgress
+                : TaskType.pending,
+            animationDirection: _notifier.direction,
+          )),
           SizedBox(
             height: _stepHeight,
             width: _stepWidth,
@@ -100,10 +99,10 @@ class Utils {
           StepperLine(
             lineColor: lineColor,
             length: CalculateLength(
-                size: _stepperSize,
-                width: _stepWidth,
-                height: _stepHeight,
-                stepSize: _notifier.totalIndex)
+                    size: _stepperSize,
+                    width: _stepWidth,
+                    height: _stepHeight,
+                    stepSize: _notifier.totalIndex)
                 .length(),
             lineThickness: _lineThickness,
             lineType: _notifier.lineType,
@@ -159,16 +158,15 @@ class Utils {
     Color circleColor = _getCircleColor(index);
     if (index < _notifier.currentIndex) {
       return AnimatedContainer(
-        margin:_step.margin,
+        margin: _step.margin,
         duration: const Duration(milliseconds: durationTime),
         decoration: BoxDecoration(
             color: circleColor,
-            shape: (_notifier.borderShape==BorderShape.rRect
-                || _notifier.borderShape==BorderShape.rect)
-                ?BoxShape.rectangle
-                :BoxShape.circle,
-          borderRadius: BorderRadius.all(_radius)
-        ),
+            shape: (_notifier.borderShape == BorderShape.rRect ||
+                    _notifier.borderShape == BorderShape.rect)
+                ? BoxShape.rectangle
+                : BoxShape.circle,
+            borderRadius: BorderRadius.all(_radius)),
         child: const Icon(
           Icons.check,
           color: Colors.white,
@@ -179,15 +177,13 @@ class Utils {
       return AnimatedContainer(
         margin: _step.margin,
         duration: const Duration(milliseconds: durationTime),
-
         decoration: BoxDecoration(
             color: circleColor,
-          shape: (_notifier.borderShape==BorderShape.rRect
-              || _notifier.borderShape==BorderShape.rect)
-              ?BoxShape.rectangle
-              :BoxShape.circle,
-            borderRadius: BorderRadius.all(_radius)
-        ),
+            shape: (_notifier.borderShape == BorderShape.rRect ||
+                    _notifier.borderShape == BorderShape.rect)
+                ? BoxShape.rectangle
+                : BoxShape.circle,
+            borderRadius: BorderRadius.all(_radius)),
         child: Center(
           child: Text(
             '${_notifier.currentIndex + 1}',
@@ -201,12 +197,11 @@ class Utils {
         duration: const Duration(milliseconds: durationTime),
         decoration: BoxDecoration(
             color: circleColor,
-          shape: (_notifier.borderShape==BorderShape.rRect
-              || _notifier.borderShape==BorderShape.rect)
-              ?BoxShape.rectangle
-              :BoxShape.circle,
-            borderRadius: BorderRadius.all(_radius)
-        ),
+            shape: (_notifier.borderShape == BorderShape.rRect ||
+                    _notifier.borderShape == BorderShape.rect)
+                ? BoxShape.rectangle
+                : BoxShape.circle,
+            borderRadius: BorderRadius.all(_radius)),
         child: Center(
           child: Text(
             '${index + 1}',

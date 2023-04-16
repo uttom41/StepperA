@@ -4,11 +4,9 @@
 ///
 import 'package:flutter/cupertino.dart';
 
-
 ///This class ensure steps Color and IconData user provided or not.
 ///if IconData not provided than showed steps number ,
-class StepA{
-
+class StepA {
   ///It is use for current step widget and step border color.
   final Color currentStepColor;
 
@@ -34,14 +32,12 @@ class StepA{
   ///This field is required for border and widget spacing.
   final EdgeInsets margin;
 
-  const StepA({
-    required this.currentStepColor,
-    required this.completeStepColor,
-    required this.inactiveStepColor,
-    required this.margin,
-    this.completeStepIcon,
-    this.currentStepIcon,
-    this.inactiveStepIcon
-});
-
+  const StepA(
+      {required this.currentStepColor,
+      required this.completeStepColor,
+      required this.inactiveStepColor,
+      required this.margin,
+      this.completeStepIcon,
+      this.currentStepIcon,
+      this.inactiveStepIcon});
 }

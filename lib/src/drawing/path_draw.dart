@@ -1,4 +1,3 @@
-
 /// Uttam kumar mitra
 /// create date 10/04/2023; 12:46 AM
 ///
@@ -7,7 +6,7 @@ import 'dart:ui';
 
 import 'drawing_helper.dart';
 
-class PathDrawing{
+class PathDrawing {
   final Size _size;
   final BorderShape _pathType;
   final double _strokeWidth;
@@ -20,12 +19,11 @@ class PathDrawing{
     double strokeWidth = 2.0,
     Radius radius = const Radius.circular(4.0),
     int startingPercentage = 0,
-  }):_size = size,
-        _pathType= pathType,
+  })  : _size = size,
+        _pathType = pathType,
         _strokeWidth = strokeWidth,
         _radius = radius,
         _startingPercentage = startingPercentage;
-
 
   Path createPath() {
     switch (_pathType) {
@@ -79,26 +77,26 @@ class PathDrawing{
     return originalPath;
   }
 
-  Path _createOriginalPathTriangle(){
+  Path _createOriginalPathTriangle() {
     var path = Path();
-    path.moveTo(_size.width/2, _size.height);
+    path.moveTo(_size.width / 2, _size.height);
     path.lineTo(0, 0);
     path.lineTo(_size.width, 0);
-     path.close();
+    path.close();
     return path;
   }
 
-  Path _createOriginalPathDiamond(){
+  Path _createOriginalPathDiamond() {
     var path = Path();
- //   path.moveTo(_size.width/2, 0);
+    //   path.moveTo(_size.width/2, 0);
     path.moveTo(_size.width, _size.height / 2.0);
-   // path.moveTo(_size.width / 2.0, 0);
+    // path.moveTo(_size.width / 2.0, 0);
     path.lineTo(_size.width / 2.0, _size.height);
     //path.lineTo(_size.width, _size.height / 2.0);
     path.lineTo(0, _size.height / 2.0);
-   // path.lineTo(_size.width / 2.0, _size.height);
-    path.lineTo(_size.width/2, 0);
-   // path.lineTo(0, _size.height / 2.0);
+    // path.lineTo(_size.width / 2.0, _size.height);
+    path.lineTo(_size.width / 2, 0);
+    // path.lineTo(0, _size.height / 2.0);
     path.close();
     return path;
   }
@@ -109,7 +107,7 @@ class PathDrawing{
     final pathCutoffPoint = (_startingPercentage / 100) * pathMetrics.length;
     final firstSubPath = pathMetrics.extractPath(0, pathCutoffPoint);
     final secondSubPath =
-    pathMetrics.extractPath(pathCutoffPoint, pathMetrics.length);
+        pathMetrics.extractPath(pathCutoffPoint, pathMetrics.length);
     if (_pathType == BorderShape.rect) {
       Path path = Path()
         ..addPath(secondSubPath, Offset.zero)
@@ -133,5 +131,4 @@ class PathDrawing{
       ..addPath(secondSubPath, Offset.zero)
       ..addPath(firstSubPath, Offset.zero);
   }
-
 }

@@ -29,33 +29,30 @@ class PathPainters extends CustomPainter {
     required taskType,
     required animationDirection,
     required animation,
-    required  dashPattern,
+    required dashPattern,
     double strokeWidth = 2.0,
     Color strokeColor = Colors.blueGrey,
     Radius radius = const Radius.circular(4.0),
     int startingPercentage = 0,
-  }): assert(strokeWidth > 0, 'strokeWidth must be greater than 0.'),
+  })  : assert(strokeWidth > 0, 'strokeWidth must be greater than 0.'),
         assert(startingPercentage >= 0 && startingPercentage <= 100,
-        'startingPercentage must lie between 0 and 100.'),
+            'startingPercentage must lie between 0 and 100.'),
         _animation = animation,
         _strokeWidth = strokeWidth,
         _radius = radius,
         _startingPercentage = startingPercentage,
         _lineColor = lineColor,
         _borderType = borderType,
-        _pathType= borderShape,
+        _pathType = borderShape,
         _taskType = taskType,
         _animationDirection = animationDirection,
         _dashPattern = dashPattern,
         super(repaint: animation);
 
-
-
   late Path _originalPath;
 
   @override
   void paint(Canvas canvas, Size size) {
-
     ///background line paint drawing.
     Paint line = Paint()
       ..color = _lineColor
@@ -72,43 +69,42 @@ class PathPainters extends CustomPainter {
     // Construct original path once when animation starts
     if (animationPercent == 0.0) {
       _originalPath = PathDrawing(
-          size: size,
-          pathType: _pathType,
-          radius: _radius,
-          startingPercentage: _startingPercentage
-      ).createPath();
-
+              size: size,
+              pathType: _pathType,
+              radius: _radius,
+              startingPercentage: _startingPercentage)
+          .createPath();
     }
 
     ///solid background line drawing
-    if(_borderType== BorderType.dash){
-
-      if(_taskType != TaskType.inProgress){
+    if (_borderType == BorderType.dash) {
+      if (_taskType != TaskType.inProgress) {
         canvas.drawPath(
-          Dash(source: _originalPath,
-              dashArray: CircularIntervalList<double>(_dashPattern)
-          ).dashDraw(),
+          Dash(
+                  source: _originalPath,
+                  dashArray: CircularIntervalList<double>(_dashPattern))
+              .dashDraw(),
           line,
         );
-      }else{
+      } else {
         ///complete shape
         final currentPath = DrawAnimationPath(
           animationDirection: _animationDirection,
-          path:  _originalPath,
+          path: _originalPath,
           percent: animationPercent,
         ).drawAnimation();
 
         canvas.drawPath(currentPath, line);
       }
-    }else{
+    } else {
       ///for line shape
-      if(_taskType != TaskType.inProgress){
-        canvas.drawPath(_originalPath,line);
-      }else{
+      if (_taskType != TaskType.inProgress) {
+        canvas.drawPath(_originalPath, line);
+      } else {
         ///complete shape
         final currentPath = DrawAnimationPath(
           animationDirection: _animationDirection,
-          path:  _originalPath,
+          path: _originalPath,
           percent: animationPercent,
         ).drawAnimation();
 
@@ -122,5 +118,4 @@ class PathPainters extends CustomPainter {
 
   @override
   bool shouldRebuildSemantics(PathPainters oldDelegate) => false;
-
 }

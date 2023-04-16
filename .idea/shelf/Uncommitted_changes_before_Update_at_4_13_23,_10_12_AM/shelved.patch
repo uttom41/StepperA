@@ -1,0 +1,1433 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_5_4_23_10_17_AM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_23_10_17_AM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_23_10_17_AM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_23_10_17_AM_[Changes]/shelved.patch	(revision 2bbb007c9b715b3962ad17a59abd8e16149e8326)
++++ /dev/null	(revision 2bbb007c9b715b3962ad17a59abd8e16149e8326)
+@@ -1,692 +0,0 @@
+-Index: .idea/libraries/Dart_Packages.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/libraries/Dart_Packages.xml b/.idea/libraries/Dart_Packages.xml
+-deleted file mode 100644
+---- a/.idea/libraries/Dart_Packages.xml	(revision 87bba44488fb9198a8c1f3eac37a319ed8637449)
+-+++ /dev/null	(revision 87bba44488fb9198a8c1f3eac37a319ed8637449)
+-@@ -1,196 +0,0 @@
+--<component name="libraryTable">
+--  <library name="Dart Packages" type="DartPackagesLibraryType">
+--    <properties>
+--      <option name="packageNameToDirsMap">
+--        <entry key="async">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="boolean_selector">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="characters">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="clock">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="collection">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="cupertino_icons">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="fake_async">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="flutter">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/packages/flutter/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="flutter_lints">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="flutter_test">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/packages/flutter_test/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="lints">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="matcher">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="material_color_utilities">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="meta">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="path">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="sky_engine">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/bin/cache/pkg/sky_engine/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="source_span">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="stack_trace">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="stream_channel">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="string_scanner">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="term_glyph">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="test_api">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="vector_math">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--      </option>
+--    </properties>
+--    <CLASSES>
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib" />
+--      <root url="file://C:/src/flutter/bin/cache/pkg/sky_engine/lib" />
+--      <root url="file://C:/src/flutter/packages/flutter/lib" />
+--      <root url="file://C:/src/flutter/packages/flutter_test/lib" />
+--    </CLASSES>
+--    <JAVADOC />
+--    <SOURCES />
+--  </library>
+--</component>
+-\ No newline at end of file
+-Index: .dart_tool/package_config_subset
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>async\n2.14\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib/\nboolean_selector\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib/\ncharacters\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib/\nclock\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib/\ncollection\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib/\nfake_async\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib/\nflutter_lints\n2.17\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib/\nlints\n2.17\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib/\nmatcher\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib/\nmaterial_color_utilities\n2.13\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib/\nmeta\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib/\npath\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib/\nsource_span\n2.14\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib/\nstack_trace\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib/\nstream_channel\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib/\nstring_scanner\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib/\nterm_glyph\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib/\ntest_api\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib/\nvector_math\n2.14\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib/\nsky_engine\n2.12\nfile:///C:/src/flutter/bin/cache/pkg/sky_engine/\nfile:///C:/src/flutter/bin/cache/pkg/sky_engine/lib/\nflutter\n2.17\nfile:///C:/src/flutter/packages/flutter/\nfile:///C:/src/flutter/packages/flutter/lib/\nflutter_test\n2.17\nfile:///C:/src/flutter/packages/flutter_test/\nfile:///C:/src/flutter/packages/flutter_test/lib/\nstepper_a\n2.18\nfile:///U:/project/StepperA/\nfile:///U:/project/StepperA/lib/\n2\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.dart_tool/package_config_subset b/.dart_tool/package_config_subset
+---- a/.dart_tool/package_config_subset	(revision 87bba44488fb9198a8c1f3eac37a319ed8637449)
+-+++ b/.dart_tool/package_config_subset	(date 1680630312905)
+-@@ -1,93 +1,93 @@
+-+stepper_a
+-+2.18
+-+file:///Users/amit/Documents/StepperA/
+-+file:///Users/amit/Documents/StepperA/lib/
+- async
+- 2.14
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib/
+- boolean_selector
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib/
+- characters
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib/
+- clock
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib/
+- collection
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib/
+- fake_async
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib/
+- flutter_lints
+- 2.17
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib/
+- lints
+- 2.17
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib/
+- matcher
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib/
+- material_color_utilities
+- 2.13
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib/
+- meta
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib/
+- path
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib/
+- source_span
+- 2.14
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib/
+- stack_trace
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib/
+- stream_channel
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib/
+- string_scanner
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib/
+- term_glyph
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib/
+- test_api
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib/
+- vector_math
+- 2.14
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib/
+- sky_engine
+- 2.12
+--file:///C:/src/flutter/bin/cache/pkg/sky_engine/
+--file:///C:/src/flutter/bin/cache/pkg/sky_engine/lib/
+-+file:///Users/amit/Documents/flutter/bin/cache/pkg/sky_engine/
+-+file:///Users/amit/Documents/flutter/bin/cache/pkg/sky_engine/lib/
+- flutter
+- 2.17
+--file:///C:/src/flutter/packages/flutter/
+--file:///C:/src/flutter/packages/flutter/lib/
+-+file:///Users/amit/Documents/flutter/packages/flutter/
+-+file:///Users/amit/Documents/flutter/packages/flutter/lib/
+- flutter_test
+- 2.17
+--file:///C:/src/flutter/packages/flutter_test/
+--file:///C:/src/flutter/packages/flutter_test/lib/
+--stepper_a
+--2.18
+--file:///U:/project/StepperA/
+--file:///U:/project/StepperA/lib/
+-+file:///Users/amit/Documents/flutter/packages/flutter_test/
+-+file:///Users/amit/Documents/flutter/packages/flutter_test/lib/
+- 2
+-Index: .dart_tool/version
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>3.3.10
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.dart_tool/version b/.dart_tool/version
+---- a/.dart_tool/version	(revision 87bba44488fb9198a8c1f3eac37a319ed8637449)
+-+++ b/.dart_tool/version	(date 1680630312902)
+-@@ -1,1 +1,1 @@
+--3.3.10
+-\ No newline at end of file
+-+3.3.0
+-\ No newline at end of file
+-Index: .idea/libraries/Dart_SDK.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><component name=\"libraryTable\">\n  <library name=\"Dart SDK\">\n    <CLASSES>\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/async\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/cli\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/collection\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/convert\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/core\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/developer\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/ffi\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/html\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/indexed_db\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/io\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/isolate\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/js\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/js_util\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/math\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/mirrors\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/svg\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/typed_data\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/web_audio\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/web_gl\" />\n    </CLASSES>\n    <JAVADOC />\n    <SOURCES />\n  </library>\n</component>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/libraries/Dart_SDK.xml b/.idea/libraries/Dart_SDK.xml
+---- a/.idea/libraries/Dart_SDK.xml	(revision 87bba44488fb9198a8c1f3eac37a319ed8637449)
+-+++ b/.idea/libraries/Dart_SDK.xml	(date 1680630269615)
+-@@ -1,25 +1,25 @@
+- <component name="libraryTable">
+-   <library name="Dart SDK">
+-     <CLASSES>
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/async" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/cli" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/collection" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/convert" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/core" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/developer" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/ffi" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/html" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/indexed_db" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/io" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/isolate" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/js" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/js_util" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/math" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/mirrors" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/svg" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/typed_data" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/web_audio" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/web_gl" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/async" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/cli" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/collection" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/convert" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/core" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/developer" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/ffi" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/html" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/indexed_db" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/io" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/isolate" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/js" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/js_util" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/math" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/mirrors" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/svg" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/typed_data" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/web_audio" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/web_gl" />
+-     </CLASSES>
+-     <JAVADOC />
+-     <SOURCES />
+-Index: .dart_tool/package_config.json
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>{\n  \"configVersion\": 2,\n  \"packages\": [\n    {\n      \"name\": \"async\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.14\"\n    },\n    {\n      \"name\": \"boolean_selector\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"characters\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"clock\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"collection\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"fake_async\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"flutter\",\n      \"rootUri\": \"file:///C:/src/flutter/packages/flutter\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.17\"\n    },\n    {\n      \"name\": \"flutter_lints\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.17\"\n    },\n    {\n      \"name\": \"flutter_test\",\n      \"rootUri\": \"file:///C:/src/flutter/packages/flutter_test\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.17\"\n    },\n    {\n      \"name\": \"lints\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.17\"\n    },\n    {\n      \"name\": \"matcher\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"material_color_utilities\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.13\"\n    },\n    {\n      \"name\": \"meta\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"path\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"sky_engine\",\n      \"rootUri\": \"file:///C:/src/flutter/bin/cache/pkg/sky_engine\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"source_span\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.14\"\n    },\n    {\n      \"name\": \"stack_trace\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"stream_channel\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"string_scanner\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"term_glyph\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"test_api\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"vector_math\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.14\"\n    },\n    {\n      \"name\": \"stepper_a\",\n      \"rootUri\": \"../\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.18\"\n    }\n  ],\n  \"generated\": \"2023-03-31T19:09:56.329499Z\",\n  \"generator\": \"pub\",\n  \"generatorVersion\": \"2.18.6\"\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.dart_tool/package_config.json b/.dart_tool/package_config.json
+---- a/.dart_tool/package_config.json	(revision 87bba44488fb9198a8c1f3eac37a319ed8637449)
+-+++ b/.dart_tool/package_config.json	(date 1680630312858)
+-@@ -3,133 +3,133 @@
+-   "packages": [
+-     {
+-       "name": "async",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.14"
+-     },
+-     {
+-       "name": "boolean_selector",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "characters",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "clock",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "collection",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "fake_async",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "flutter",
+--      "rootUri": "file:///C:/src/flutter/packages/flutter",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/packages/flutter",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.17"
+-     },
+-     {
+-       "name": "flutter_lints",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.17"
+-     },
+-     {
+-       "name": "flutter_test",
+--      "rootUri": "file:///C:/src/flutter/packages/flutter_test",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/packages/flutter_test",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.17"
+-     },
+-     {
+-       "name": "lints",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.17"
+-     },
+-     {
+-       "name": "matcher",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "material_color_utilities",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.13"
+-     },
+-     {
+-       "name": "meta",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "path",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "sky_engine",
+--      "rootUri": "file:///C:/src/flutter/bin/cache/pkg/sky_engine",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/bin/cache/pkg/sky_engine",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "source_span",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.14"
+-     },
+-     {
+-       "name": "stack_trace",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "stream_channel",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "string_scanner",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "term_glyph",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "test_api",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "vector_math",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.14"
+-     },
+-@@ -140,7 +140,7 @@
+-       "languageVersion": "2.18"
+-     }
+-   ],
+--  "generated": "2023-03-31T19:09:56.329499Z",
+-+  "generated": "2023-04-04T17:45:12.854597Z",
+-   "generator": "pub",
+--  "generatorVersion": "2.18.6"
+-+  "generatorVersion": "2.18.0"
+- }
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"NONE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"0ea8df3b-0688-4257-bfe5-8f8530d592d5\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/lib/src/button/position.dart\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/lib/src/button/stepper_button.dart\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/lib/src/page_helper/enums.dart\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/lib/src/page_helper/stepper_body.dart\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/lib/src/provider/stepper_index_handler.dart\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/lib/src/provider/stepper_provider.dart\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/lib/src/step_helper/utils.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.dart_tool/package_config.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.dart_tool/package_config.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/example/lib/main.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/example/lib/main.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/lib/src/border.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lib/src/border.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/lib/src/line.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lib/src/line.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/lib/src/stepper_a.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lib/src/stepper_a.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/lib/stepper_a.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lib/stepper_a.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/test/stepar_a_test.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/test/stepar_a_test.dart\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Dart File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2MgYm9fg1fxUmFw41FGkyxWHt93\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,\n    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,\n    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,\n    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/uttom/Downloads/flutter_carousel_widget-master/flutter_carousel_widget-master&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,\n    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\page_helper\" />\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\provider\" />\n      <recent name=\"U:\\project\\StepperA\\lib\\src\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\step_helper\" />\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\provider\" />\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\page_helper\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Flutter.main.dart\">\n    <configuration name=\"main2.dart\" type=\"FlutterRunConfigurationType\" factoryName=\"Flutter\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"filePath\" value=\"$PROJECT_DIR$/example/lib/main2.dart\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"main.dart\" type=\"FlutterRunConfigurationType\" factoryName=\"Flutter\">\n      <option name=\"filePath\" value=\"$PROJECT_DIR$/example/lib/main.dart\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Flutter.main2.dart\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"0ea8df3b-0688-4257-bfe5-8f8530d592d5\" name=\"Changes\" comment=\"\" />\n      <created>1678190848417</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1678190848417</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 87bba44488fb9198a8c1f3eac37a319ed8637449)
+-+++ b/.idea/workspace.xml	(date 1680630590122)
+-@@ -5,23 +5,12 @@
+-   </component>
+-   <component name="ChangeListManager">
+-     <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="">
+--      <change afterPath="$PROJECT_DIR$/lib/src/button/position.dart" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/lib/src/button/stepper_button.dart" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/lib/src/page_helper/enums.dart" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/lib/src/page_helper/stepper_body.dart" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/lib/src/provider/stepper_index_handler.dart" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/lib/src/border.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/border.dart" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/lib/src/line.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/line.dart" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/lib/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/stepper_a.dart" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/test/stepar_a_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/stepar_a_test.dart" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -47,19 +36,15 @@
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+--  <component name="PropertiesComponent">{
+--  &quot;keyToString&quot;: {
+--    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+--    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+--    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+--    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+--    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+--    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+--    &quot;last_opened_file_path&quot;: &quot;C:/Users/uttom/Downloads/flutter_carousel_widget-master/flutter_carousel_widget-master&quot;,
+--    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
+--    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+--  }
+--}</component>
+-+  <component name="PropertiesComponent">
+-+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+-+    <property name="cidr.known.project.marker" value="true" />
+-+    <property name="dart.analysis.tool.window.visible" value="false" />
+-+    <property name="io.flutter.reload.alreadyRun" value="true" />
+-+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+-+    <property name="settings.editor.selected.configurable" value="dart.settings" />
+-+    <property name="show.migrate.to.gradle.popup" value="false" />
+-+  </component>
+-   <component name="RecentsManager">
+-     <key name="CopyFile.RECENT_KEYS">
+-       <recent name="U:\project\StepperA\lib\src\page_helper" />
+-@@ -73,17 +58,17 @@
+-     </key>
+-   </component>
+-   <component name="RunManager" selected="Flutter.main.dart">
+--    <configuration name="main2.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+-+    <configuration name="main2.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
+-       <option name="filePath" value="$PROJECT_DIR$/example/lib/main2.dart" />
+-       <method v="2" />
+-     </configuration>
+--    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+-+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true">
+-       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
+-       <method v="2" />
+-     </configuration>
+-     <recent_temporary>
+-       <list>
+--        <item itemvalue="Flutter.main2.dart" />
+-+        <item itemvalue="Flutter.main.dart" />
+-       </list>
+-     </recent_temporary>
+-   </component>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM_[Changes]/shelved.patch	(revision 2bbb007c9b715b3962ad17a59abd8e16149e8326)
++++ /dev/null	(revision 2bbb007c9b715b3962ad17a59abd8e16149e8326)
+@@ -1,703 +0,0 @@
+-Index: test/stepar_a_test.dart
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import 'package:flutter/material.dart';\nimport 'package:flutter_test/flutter_test.dart';\nimport 'package:stepper_a/stepper_a.dart';\n\nvoid main() {\n  test('provide all required field', () {\n     StepperA(\n        stepCompleteColor: Colors.blueAccent,\n        inactiveColor: Colors.white54,\n        currentStepColor: Colors.green,\n        stepperSize:const Size(400,65),\n        buttonColor: Colors.blueAccent,\n        buttonIconColor: Colors.white54,\n        stepperBodyWidget: [\n          Container(color: Colors.red,child: const Text(\"Step one\"),),\n          Container(color: Colors.green,child: const Text(\"Step two\"),),\n          Container(color: Colors.yellow,child: const Text(\"Step three\"),),\n          Container(color: Colors.pink,child: const Text(\"Step four\"),),\n          Container(color: Colors.purple,child: const Text(\"Step five\"),),\n        ]);\n\n  });\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/test/stepar_a_test.dart b/test/stepar_a_test.dart
+---- a/test/stepar_a_test.dart	(revision 142fb053cb7f7d2eec520bcdfcc2ce4e009d2ec3)
+-+++ b/test/stepar_a_test.dart	(date 1680668276206)
+-@@ -9,8 +9,6 @@
+-         inactiveColor: Colors.white54,
+-         currentStepColor: Colors.green,
+-         stepperSize:const Size(400,65),
+--        buttonColor: Colors.blueAccent,
+--        buttonIconColor: Colors.white54,
+-         stepperBodyWidget: [
+-           Container(color: Colors.red,child: const Text("Step one"),),
+-           Container(color: Colors.green,child: const Text("Step two"),),
+-Index: .idea/libraries/Dart_Packages.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/libraries/Dart_Packages.xml b/.idea/libraries/Dart_Packages.xml
+-deleted file mode 100644
+---- a/.idea/libraries/Dart_Packages.xml	(revision 142fb053cb7f7d2eec520bcdfcc2ce4e009d2ec3)
+-+++ /dev/null	(revision 142fb053cb7f7d2eec520bcdfcc2ce4e009d2ec3)
+-@@ -1,196 +0,0 @@
+--<component name="libraryTable">
+--  <library name="Dart Packages" type="DartPackagesLibraryType">
+--    <properties>
+--      <option name="packageNameToDirsMap">
+--        <entry key="async">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="boolean_selector">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="characters">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="clock">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="collection">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="cupertino_icons">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="fake_async">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="flutter">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/packages/flutter/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="flutter_lints">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="flutter_test">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/packages/flutter_test/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="lints">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="matcher">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="material_color_utilities">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="meta">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="path">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="sky_engine">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/bin/cache/pkg/sky_engine/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="source_span">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="stack_trace">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="stream_channel">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="string_scanner">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="term_glyph">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="test_api">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--        <entry key="vector_math">
+--          <value>
+--            <list>
+--              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib" />
+--            </list>
+--          </value>
+--        </entry>
+--      </option>
+--    </properties>
+--    <CLASSES>
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib" />
+--      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib" />
+--      <root url="file://C:/src/flutter/bin/cache/pkg/sky_engine/lib" />
+--      <root url="file://C:/src/flutter/packages/flutter/lib" />
+--      <root url="file://C:/src/flutter/packages/flutter_test/lib" />
+--    </CLASSES>
+--    <JAVADOC />
+--    <SOURCES />
+--  </library>
+--</component>
+-\ No newline at end of file
+-Index: .dart_tool/package_config_subset
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>async\n2.14\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib/\nboolean_selector\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib/\ncharacters\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib/\nclock\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib/\ncollection\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib/\nfake_async\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib/\nflutter_lints\n2.17\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib/\nlints\n2.17\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib/\nmatcher\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib/\nmaterial_color_utilities\n2.13\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib/\nmeta\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib/\npath\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib/\nsource_span\n2.14\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib/\nstack_trace\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib/\nstream_channel\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib/\nstring_scanner\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib/\nterm_glyph\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib/\ntest_api\n2.12\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib/\nvector_math\n2.14\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/\nfile:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib/\nsky_engine\n2.12\nfile:///C:/src/flutter/bin/cache/pkg/sky_engine/\nfile:///C:/src/flutter/bin/cache/pkg/sky_engine/lib/\nflutter\n2.17\nfile:///C:/src/flutter/packages/flutter/\nfile:///C:/src/flutter/packages/flutter/lib/\nflutter_test\n2.17\nfile:///C:/src/flutter/packages/flutter_test/\nfile:///C:/src/flutter/packages/flutter_test/lib/\nstepper_a\n2.18\nfile:///U:/project/StepperA/\nfile:///U:/project/StepperA/lib/\n2\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.dart_tool/package_config_subset b/.dart_tool/package_config_subset
+---- a/.dart_tool/package_config_subset	(revision 142fb053cb7f7d2eec520bcdfcc2ce4e009d2ec3)
+-+++ b/.dart_tool/package_config_subset	(date 1680668238263)
+-@@ -1,93 +1,93 @@
+-+stepper_a
+-+2.18
+-+file:///Users/amit/Documents/StepperA/
+-+file:///Users/amit/Documents/StepperA/lib/
+- async
+- 2.14
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/lib/
+- boolean_selector
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib/
+- characters
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib/
+- clock
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/lib/
+- collection
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0/lib/
+- fake_async
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1/lib/
+- flutter_lints
+- 2.17
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib/
+- lints
+- 2.17
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/lib/
+- matcher
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib/
+- material_color_utilities
+- 2.13
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib/
+- meta
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib/
+- path
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib/
+- source_span
+- 2.14
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib/
+- stack_trace
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib/
+- stream_channel
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib/
+- string_scanner
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib/
+- term_glyph
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1/lib/
+- test_api
+- 2.12
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12/lib/
+- vector_math
+- 2.14
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/
+--file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/
+-+file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib/
+- sky_engine
+- 2.12
+--file:///C:/src/flutter/bin/cache/pkg/sky_engine/
+--file:///C:/src/flutter/bin/cache/pkg/sky_engine/lib/
+-+file:///Users/amit/Documents/flutter/bin/cache/pkg/sky_engine/
+-+file:///Users/amit/Documents/flutter/bin/cache/pkg/sky_engine/lib/
+- flutter
+- 2.17
+--file:///C:/src/flutter/packages/flutter/
+--file:///C:/src/flutter/packages/flutter/lib/
+-+file:///Users/amit/Documents/flutter/packages/flutter/
+-+file:///Users/amit/Documents/flutter/packages/flutter/lib/
+- flutter_test
+- 2.17
+--file:///C:/src/flutter/packages/flutter_test/
+--file:///C:/src/flutter/packages/flutter_test/lib/
+--stepper_a
+--2.18
+--file:///U:/project/StepperA/
+--file:///U:/project/StepperA/lib/
+-+file:///Users/amit/Documents/flutter/packages/flutter_test/
+-+file:///Users/amit/Documents/flutter/packages/flutter_test/lib/
+- 2
+-Index: .idea/libraries/Dart_SDK.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><component name=\"libraryTable\">\n  <library name=\"Dart SDK\">\n    <CLASSES>\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/async\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/cli\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/collection\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/convert\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/core\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/developer\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/ffi\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/html\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/indexed_db\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/io\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/isolate\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/js\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/js_util\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/math\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/mirrors\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/svg\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/typed_data\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/web_audio\" />\n      <root url=\"file://C:/src/flutter/bin/cache/dart-sdk/lib/web_gl\" />\n    </CLASSES>\n    <JAVADOC />\n    <SOURCES />\n  </library>\n</component>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/libraries/Dart_SDK.xml b/.idea/libraries/Dart_SDK.xml
+---- a/.idea/libraries/Dart_SDK.xml	(revision 142fb053cb7f7d2eec520bcdfcc2ce4e009d2ec3)
+-+++ b/.idea/libraries/Dart_SDK.xml	(date 1680668238271)
+-@@ -1,25 +1,25 @@
+- <component name="libraryTable">
+-   <library name="Dart SDK">
+-     <CLASSES>
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/async" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/cli" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/collection" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/convert" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/core" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/developer" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/ffi" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/html" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/indexed_db" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/io" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/isolate" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/js" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/js_util" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/math" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/mirrors" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/svg" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/typed_data" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/web_audio" />
+--      <root url="file://C:/src/flutter/bin/cache/dart-sdk/lib/web_gl" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/async" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/cli" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/collection" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/convert" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/core" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/developer" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/ffi" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/html" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/indexed_db" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/io" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/isolate" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/js" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/js_util" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/math" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/mirrors" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/svg" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/typed_data" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/web_audio" />
+-+      <root url="file://$PROJECT_DIR$/../flutter/bin/cache/dart-sdk/lib/web_gl" />
+-     </CLASSES>
+-     <JAVADOC />
+-     <SOURCES />
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"NONE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"0ea8df3b-0688-4257-bfe5-8f8530d592d5\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/lib/src/button/button.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/lib/src/line.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lib/src/line.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/lib/src/provider/stepper_provider.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lib/src/provider/stepper_provider.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/lib/src/stepper_a.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lib/src/stepper_a.dart\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/lib/stepper_a.dart\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lib/stepper_a.dart\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Dart File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2MgYm9fg1fxUmFw41FGkyxWHt93\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,\n    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,\n    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,\n    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/uttom/Downloads/flutter_carousel_widget-master/flutter_carousel_widget-master&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,\n    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\page_helper\" />\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\provider\" />\n      <recent name=\"U:\\project\\StepperA\\lib\\src\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\step_helper\" />\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\provider\" />\n      <recent name=\"U:\\project\\StepperA\\lib\\src\\page_helper\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Flutter.main.dart\">\n    <configuration name=\"main2.dart\" type=\"FlutterRunConfigurationType\" factoryName=\"Flutter\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"filePath\" value=\"$PROJECT_DIR$/example/lib/main2.dart\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"main.dart\" type=\"FlutterRunConfigurationType\" factoryName=\"Flutter\">\n      <option name=\"filePath\" value=\"$PROJECT_DIR$/example/lib/main.dart\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Flutter.main2.dart\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"0ea8df3b-0688-4257-bfe5-8f8530d592d5\" name=\"Changes\" comment=\"\" />\n      <created>1678190848417</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1678190848417</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 142fb053cb7f7d2eec520bcdfcc2ce4e009d2ec3)
+-+++ b/.idea/workspace.xml	(date 1680753309683)
+-@@ -5,12 +5,13 @@
+-   </component>
+-   <component name="ChangeListManager">
+-     <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="">
+--      <change afterPath="$PROJECT_DIR$/lib/src/button/button.dart" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/lib/src/line.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/line.dart" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/lib/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/stepper_a.dart" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/test/stepar_a_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/stepar_a_test.dart" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -36,19 +37,15 @@
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+--  <component name="PropertiesComponent">{
+--  &quot;keyToString&quot;: {
+--    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+--    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+--    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+--    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+--    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+--    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+--    &quot;last_opened_file_path&quot;: &quot;C:/Users/uttom/Downloads/flutter_carousel_widget-master/flutter_carousel_widget-master&quot;,
+--    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
+--    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+--  }
+--}</component>
+-+  <component name="PropertiesComponent">
+-+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+-+    <property name="cidr.known.project.marker" value="true" />
+-+    <property name="dart.analysis.tool.window.visible" value="false" />
+-+    <property name="io.flutter.reload.alreadyRun" value="true" />
+-+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+-+    <property name="settings.editor.selected.configurable" value="dart.settings" />
+-+    <property name="show.migrate.to.gradle.popup" value="false" />
+-+  </component>
+-   <component name="RecentsManager">
+-     <key name="CopyFile.RECENT_KEYS">
+-       <recent name="U:\project\StepperA\lib\src\page_helper" />
+-@@ -62,17 +59,17 @@
+-     </key>
+-   </component>
+-   <component name="RunManager" selected="Flutter.main.dart">
+--    <configuration name="main2.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+-+    <configuration name="main2.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
+-       <option name="filePath" value="$PROJECT_DIR$/example/lib/main2.dart" />
+-       <method v="2" />
+-     </configuration>
+--    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+-+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true">
+-       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
+-       <method v="2" />
+-     </configuration>
+-     <recent_temporary>
+-       <list>
+--        <item itemvalue="Flutter.main2.dart" />
+-+        <item itemvalue="Flutter.main.dart" />
+-       </list>
+-     </recent_temporary>
+-   </component>
+-Index: .dart_tool/version
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>3.3.10
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.dart_tool/version b/.dart_tool/version
+---- a/.dart_tool/version	(revision 142fb053cb7f7d2eec520bcdfcc2ce4e009d2ec3)
+-+++ b/.dart_tool/version	(date 1680668238268)
+-@@ -1,1 +1,1 @@
+--3.3.10
+-\ No newline at end of file
+-+3.3.0
+-\ No newline at end of file
+-Index: .dart_tool/package_config.json
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>{\n  \"configVersion\": 2,\n  \"packages\": [\n    {\n      \"name\": \"async\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.14\"\n    },\n    {\n      \"name\": \"boolean_selector\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"characters\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"clock\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"collection\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"fake_async\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"flutter\",\n      \"rootUri\": \"file:///C:/src/flutter/packages/flutter\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.17\"\n    },\n    {\n      \"name\": \"flutter_lints\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.17\"\n    },\n    {\n      \"name\": \"flutter_test\",\n      \"rootUri\": \"file:///C:/src/flutter/packages/flutter_test\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.17\"\n    },\n    {\n      \"name\": \"lints\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.17\"\n    },\n    {\n      \"name\": \"matcher\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"material_color_utilities\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.13\"\n    },\n    {\n      \"name\": \"meta\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"path\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"sky_engine\",\n      \"rootUri\": \"file:///C:/src/flutter/bin/cache/pkg/sky_engine\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"source_span\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.14\"\n    },\n    {\n      \"name\": \"stack_trace\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"stream_channel\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"string_scanner\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"term_glyph\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"test_api\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.12\"\n    },\n    {\n      \"name\": \"vector_math\",\n      \"rootUri\": \"file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.14\"\n    },\n    {\n      \"name\": \"stepper_a\",\n      \"rootUri\": \"../\",\n      \"packageUri\": \"lib/\",\n      \"languageVersion\": \"2.18\"\n    }\n  ],\n  \"generated\": \"2023-03-31T19:09:56.329499Z\",\n  \"generator\": \"pub\",\n  \"generatorVersion\": \"2.18.6\"\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.dart_tool/package_config.json b/.dart_tool/package_config.json
+---- a/.dart_tool/package_config.json	(revision 142fb053cb7f7d2eec520bcdfcc2ce4e009d2ec3)
+-+++ b/.dart_tool/package_config.json	(date 1680668238274)
+-@@ -3,133 +3,133 @@
+-   "packages": [
+-     {
+-       "name": "async",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.14"
+-     },
+-     {
+-       "name": "boolean_selector",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "characters",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "clock",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "collection",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "fake_async",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "flutter",
+--      "rootUri": "file:///C:/src/flutter/packages/flutter",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/packages/flutter",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.17"
+-     },
+-     {
+-       "name": "flutter_lints",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.17"
+-     },
+-     {
+-       "name": "flutter_test",
+--      "rootUri": "file:///C:/src/flutter/packages/flutter_test",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/packages/flutter_test",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.17"
+-     },
+-     {
+-       "name": "lints",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.17"
+-     },
+-     {
+-       "name": "matcher",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "material_color_utilities",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.13"
+-     },
+-     {
+-       "name": "meta",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "path",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "sky_engine",
+--      "rootUri": "file:///C:/src/flutter/bin/cache/pkg/sky_engine",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/bin/cache/pkg/sky_engine",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "source_span",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.14"
+-     },
+-     {
+-       "name": "stack_trace",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "stream_channel",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "string_scanner",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "term_glyph",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "test_api",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.12",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.12"
+-     },
+-     {
+-       "name": "vector_math",
+--      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2",
+-+      "rootUri": "file:///Users/amit/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2",
+-       "packageUri": "lib/",
+-       "languageVersion": "2.14"
+-     },
+-@@ -140,7 +140,7 @@
+-       "languageVersion": "2.18"
+-     }
+-   ],
+--  "generated": "2023-03-31T19:09:56.329499Z",
+-+  "generated": "2023-04-04T17:45:12.854597Z",
+-   "generator": "pub",
+--  "generatorVersion": "2.18.6"
+-+  "generatorVersion": "2.18.0"
+- }
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM__Changes_.xml	(revision 2bbb007c9b715b3962ad17a59abd8e16149e8326)
++++ /dev/null	(revision 2bbb007c9b715b3962ad17a59abd8e16149e8326)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_6_4_23_9_55_AM_[Changes]" date="1680753322842" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_23_9_55_AM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/4/23 9:55 AM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_5_4_23_10_17_AM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_23_10_17_AM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_23_10_17_AM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_23_10_17_AM__Changes_.xml	(revision 2bbb007c9b715b3962ad17a59abd8e16149e8326)
++++ /dev/null	(revision 2bbb007c9b715b3962ad17a59abd8e16149e8326)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_5_4_23_10_17_AM_[Changes]" date="1680668250065" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_23_10_17_AM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 5/4/23 10:17 AM [Changes]" />
+-</changelist>
+\ No newline at end of file
