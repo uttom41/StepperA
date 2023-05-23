@@ -9,7 +9,7 @@ import '../../provider/stepper_provider.dart';
 import '../../step_helper/stepper_step.dart';
 import 'i_main_page.dart';
 
-mixin MainStyle on IMainPage{
+mixin MainStyle on IMainPage {
 
   @override
   Widget buildFloatingHorizontalStepper(StepperNotifier notifier) {
@@ -17,7 +17,11 @@ mixin MainStyle on IMainPage{
       children: [
         Column(
           children: [
-            buildStep(notifier),
+            SizedBox(
+              height: 80,
+                width: 350,
+                child: buildStep(notifier)
+            ),
             Expanded(
               child: StepperBody(
                 notifier: notifier,
@@ -63,7 +67,11 @@ mixin MainStyle on IMainPage{
       children: [
         Row(
           children: [
-            buildStep(notifier),
+            SizedBox(
+                height: 350,
+                width: 80,
+                child: buildStep(notifier)
+            ),
             Expanded(
               child: StepperBody(
                 notifier: notifier,
@@ -111,7 +119,11 @@ mixin MainStyle on IMainPage{
   Widget buildNormalHorizontalStepper(StepperNotifier notifier) {
     return Column(
       children: [
-        buildStep(notifier),
+        SizedBox(
+            height: 80,
+            width: 350,
+            child: buildStep(notifier)
+        ),
         Expanded(
           child: StepperBody(
             notifier: notifier,
@@ -168,7 +180,11 @@ mixin MainStyle on IMainPage{
               const SizedBox(
                 height: 8,
               ),
-            buildStep(notifier),
+            SizedBox(
+                height: 350,
+                width: 80,
+                child: buildStep(notifier)
+            ),
             if ( StepperModel().forwardButton != null)
               const SizedBox(
                 height: 8,
@@ -197,21 +213,7 @@ mixin MainStyle on IMainPage{
   }
 
   Widget buildStep(StepperNotifier notifier) {
-    return StepperStep(
-      backgroundColor:  StepperModel().stepperBackgroundColor,
-      padding:  StepperModel().padding,
-      notifier: notifier,
-      axis:  StepperModel().stepperAxis,
-      stepHeight:  StepperModel().stepHeight,
-      stepperSize: stepperSizeCalculate(),
-      radius:  StepperModel().radius,
-      lineThickness:  StepperModel().lineThickness,
-      stepWidth:  StepperModel().stepWidth,
-      margin:  StepperModel().margin,
-      step:  StepperModel().step,
-      border:  StepperModel().stepBorder,
-      customSteps:  StepperModel().customSteps,
-    );
+    return StepperStep(notifier: notifier);
   }
 
   Size stepperSizeCalculate() {

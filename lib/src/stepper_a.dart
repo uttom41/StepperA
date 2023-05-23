@@ -130,7 +130,7 @@ class StepperA extends StatefulWidget {
 
 abstract class _StepperAState <TWidget extends StepperA> extends State<TWidget> implements IMainPage{}
 
-class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,MainStyle{
+class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,MainStyle {
   ///default set total step size in stepper.
   int totalSteps = 0;
 

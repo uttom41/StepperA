@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../../provider/stepper_provider.dart';
 
-abstract class IMainPage{
+abstract class IMainPage {
 
   Widget buildFloatingHorizontalStepper(StepperNotifier notifier);
   Widget buildFloatingVerticalStepper(StepperNotifier notifier);
