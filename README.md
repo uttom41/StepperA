@@ -24,6 +24,9 @@ Stepper A can easily build Stepper facility of you any flutter app.
 - Customized Stepper line  [Dash, Straight]
 - Smooth sliding with Animation
 - Easily Customize Step
+- New Features *******
+- Image support step
+- Code refactor
 
 
 ## package.yaml

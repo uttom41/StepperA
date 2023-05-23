@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stepper_a/src/page_helper/stepper_body.dart';
-import 'package:stepper_a/src/step_helper/stepper_step.dart';
-import 'package:stepper_a/src/provider/stepper_index_handler.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
+import 'package:stepper_a/src/utils/stepper_model.dart';
 import '../stepper_a.dart';
-import 'button/stepper_button.dart';
-import 'button/stepper_floating_button.dart';
+import 'interface/main_page/i_main_page.dart';
+import 'interface/main_page/main_style.dart';
 
 ///StepperA class is main class
 class StepperA extends StatefulWidget {
@@ -92,7 +90,7 @@ class StepperA extends StatefulWidget {
   ///
   final List<CustomSteps>? customSteps;
 
-  final bool? _floatingButton;
+  final bool _floatingButton;
   final bool stepBorder;
 
   const StepperA(
@@ -122,14 +120,17 @@ class StepperA extends StatefulWidget {
       required this.stepBorder,
       this.customSteps,
       required this.step})
-      : _floatingButton = floatingButton,
+      : _floatingButton = floatingButton??false,
         super(key: key);
 
-  @override
-  State<StepperA> createState() => _StepperAState();
+   @override
+   State<StepperA> createState() => _StepperAStateModel();
 }
 
-class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
+
+abstract class _StepperAState <TWidget extends StepperA> extends State<TWidget> implements IMainPage{}
+
+class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,MainStyle{
   ///default set total step size in stepper.
   int totalSteps = 0;
 
@@ -146,203 +147,50 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
     ///
     totalSteps = widget.stepperBodyWidget.length;
 
+    StepperModel.init(
+        lineThickness: widget.lineThickness,
+        stepperSize:  widget.stepperSize,
+        stepperBodyWidget:  widget.stepperBodyWidget,
+        stepperBackgroundColor:  widget.stepperBackgroundColor,
+        padding:  widget.padding,
+        margin:  widget.margin,
+        stepPadding:  widget.stepPadding,
+        radius:  widget.radius,
+        borderType:  widget.borderType,
+        lineType:  widget.lineType,
+        borderShape:  widget.borderShape,
+        dashPattern:  widget.dashPattern,
+        stepHeight:  widget.stepHeight,
+        stepWidth:  widget.stepWidth,
+        stepperAxis:  widget.stepperAxis,
+        formKey: widget.formKey,
+        floatingForwardButton: widget.floatingForwardButton,
+        floatingPreviousButton: widget.floatingPreviousButton,
+        forwardButton: widget.forwardButton,
+        previousButton: widget.previousButton,
+        stepperAController: widget.stepperAController,
+        floatingButton:  widget._floatingButton,
+        stepBorder:  widget.stepBorder,
+        customSteps: widget.customSteps,
+        step:  widget.step,
+        totalSteps: totalSteps
+    );
     super.initState();
   }
 
-  Widget buildFloatingHorizontalStepper() {
-    return Stack(
-      children: [
-        Column(
-          children: [
-            buildStep(),
-            Expanded(
-              child: StepperBody(
-                notifier: _notifier,
-                stepperBodyWidget: widget.stepperBodyWidget,
-              ),
-            )
-          ],
-        ),
-        if (_notifier.currentIndex != 0 &&
-            widget.floatingPreviousButton != null)
-          StepperFloatingButton(
-              position: widget.floatingPreviousButton!.position,
-              buttonColor: widget.floatingPreviousButton!.backgroundColor,
-              axis: widget.stepperAxis,
-              buttonIconColor: widget.floatingPreviousButton!.buttonIconColor,
-              onTap: () {
-                StepperIndex(notifier: _notifier).back(_notifier.currentIndex);
-              },
-              heroTag: "tag1",
-              buttonIcon: Icons.arrow_back_ios_sharp),
-        if (widget.floatingForwardButton != null)
-          StepperFloatingButton(
-            position: widget.floatingForwardButton!.position,
-            buttonColor: widget.floatingForwardButton!.backgroundColor,
-            axis: widget.stepperAxis,
-            buttonIconColor: widget.floatingForwardButton!.buttonIconColor,
-            onTap: () {
-              StepperIndex(notifier: _notifier)
-                  .next(_notifier.currentIndex, totalSteps - 1);
-            },
-            heroTag: "tag2",
-            buttonIcon: _notifier.currentIndex != _notifier.totalIndex - 1
-                ? Icons.arrow_forward_ios_sharp
-                : Icons.check,
-          ),
-      ],
-    );
-  }
-
-  Widget buildFloatingVerticalStepper() {
-    return Stack(
-      children: [
-        Row(
-          children: [
-            buildStep(),
-            Expanded(
-              child: StepperBody(
-                notifier: _notifier,
-                stepperBodyWidget: widget.stepperBodyWidget,
-              ),
-            )
-          ],
-        ),
-        if (_notifier.currentIndex != 0 &&
-            widget.floatingPreviousButton != null)
-          StepperFloatingButton(
-              position: widget.floatingPreviousButton!.position,
-              buttonColor: widget.floatingPreviousButton!.backgroundColor,
-              axis: widget.stepperAxis,
-              buttonIconColor: widget.floatingPreviousButton!.buttonIconColor,
-              onTap: () {
-                StepperIndex(notifier: _notifier).back(_notifier.currentIndex);
-              },
-              heroTag: "tag1",
-              buttonIcon: widget.stepperAxis == Axis.horizontal
-                  ? Icons.arrow_back_ios_sharp
-                  : Icons.keyboard_arrow_up),
-        if (widget.floatingForwardButton != null)
-          StepperFloatingButton(
-            position: widget.floatingForwardButton!.position,
-            buttonColor: widget.floatingForwardButton!.backgroundColor,
-            axis: widget.stepperAxis,
-            buttonIconColor: widget.floatingForwardButton!.buttonIconColor,
-            onTap: () {
-              StepperIndex(notifier: _notifier)
-                  .next(_notifier.currentIndex, totalSteps - 1);
-            },
-            heroTag: "tag2",
-            buttonIcon: _notifier.currentIndex != _notifier.totalIndex - 1
-                ? widget.stepperAxis == Axis.horizontal
-                    ? Icons.arrow_forward_ios_sharp
-                    : Icons.keyboard_arrow_down
-                : Icons.check,
-          ),
-      ],
-    );
-  }
-
-  Widget buildNormalHorizontalStepper() {
-    return Column(
-      children: [
-        buildStep(),
-        Expanded(
-          child: StepperBody(
-            notifier: _notifier,
-            stepperBodyWidget: widget.stepperBodyWidget,
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            if (_notifier.currentIndex != 0 && widget.previousButton != null)
-              StepperAButtonWidget(
-                onTap: () {
-                  StepperIndex(notifier: _notifier)
-                      .back(_notifier.currentIndex);
-                },
-                stepperAButton: widget.previousButton!,
-                text: widget.previousButton!.buttonText,
-              ),
-            Container(),
-            if (widget.forwardButton != null)
-              StepperAButtonWidget(
-                onTap: () {
-                  StepperIndex(notifier: _notifier)
-                      .next(_notifier.currentIndex, totalSteps - 1);
-                },
-                stepperAButton: widget.forwardButton!,
-                text: _notifier.currentIndex != _notifier.totalIndex - 1
-                    ? widget.forwardButton!.buttonText
-                    : widget.forwardButton!.completeButtonText,
-              ),
-          ],
-        )
-      ],
-    );
-  }
-
-  Widget buildNormalVerticalStepper() {
-    return Row(
-      children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (_notifier.currentIndex != 0 && widget.previousButton != null)
-              StepperAButtonWidget(
-                onTap: () {
-                  StepperIndex(notifier: _notifier)
-                      .back(_notifier.currentIndex);
-                },
-                stepperAButton: widget.previousButton!,
-                text: widget.previousButton!.buttonText,
-              ),
-            if (_notifier.currentIndex != 0 && widget.previousButton != null)
-              const SizedBox(
-                height: 8,
-              ),
-            buildStep(),
-            if (widget.forwardButton != null)
-              const SizedBox(
-                height: 8,
-              ),
-            if (widget.forwardButton != null)
-              StepperAButtonWidget(
-                onTap: () {
-                  StepperIndex(notifier: _notifier)
-                      .next(_notifier.currentIndex, totalSteps - 1);
-                },
-                stepperAButton: widget.forwardButton!,
-                text: _notifier.currentIndex != _notifier.totalIndex - 1
-                    ? widget.forwardButton!.buttonText
-                    : widget.forwardButton!.completeButtonText,
-              ),
-          ],
-        ),
-        Expanded(
-          child: StepperBody(
-            notifier: _notifier,
-            stepperBodyWidget: widget.stepperBodyWidget,
-          ),
-        )
-      ],
-    );
-  }
-
   Widget buildHorizontalStepper() {
-    if (widget._floatingButton != null && widget._floatingButton == true) {
-      return buildFloatingHorizontalStepper();
+    if (widget._floatingButton == true) {
+      return buildFloatingHorizontalStepper(_notifier);
     } else {
-      return buildNormalHorizontalStepper();
+      return buildNormalHorizontalStepper(_notifier);
     }
   }
 
   Widget buildVerticalStepper() {
-    if (widget._floatingButton != null && widget._floatingButton == true) {
-      return buildFloatingVerticalStepper();
+    if (widget._floatingButton == true) {
+      return buildFloatingVerticalStepper(_notifier);
     } else {
-      return buildNormalVerticalStepper();
+      return buildNormalVerticalStepper(_notifier);
     }
   }
 
@@ -362,8 +210,9 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
       vsync: this,
       formKey: widget.formKey,
     );
-    if (widget.stepperAController != null)
+    if (widget.stepperAController != null) {
       widget.stepperAController?.setNotifier = _notifier;
+    }
 
     return AnimatedBuilder(
         animation: _notifier,
@@ -385,39 +234,4 @@ class _StepperAState extends State<StepperA> with TickerProviderStateMixin {
         : buildVerticalStepper();
   }
 
-  Widget buildStep() {
-    return StepperStep(
-      backgroundColor: widget.stepperBackgroundColor,
-      padding: widget.padding,
-      notifier: _notifier,
-      axis: widget.stepperAxis,
-      stepHeight: widget.stepHeight,
-      stepperSize: stepperSizeCalculate(),
-      radius: widget.radius,
-      lineThickness: widget.lineThickness,
-      stepWidth: widget.stepWidth,
-      margin: widget.margin,
-      step: widget.step,
-      border: widget.stepBorder,
-      customSteps: widget.customSteps,
-    );
-  }
-
-  ///Stepper width and height calculation
-  Size stepperSizeCalculate() {
-    double height = widget.stepHeight + 10;
-    double width = widget.stepWidth + 10;
-    if (widget.stepperAxis == Axis.horizontal) {
-      height = widget.stepperSize.height > height
-          ? widget.stepperSize.height
-          : height;
-      width = widget.stepperSize.width > 300 ? widget.stepperSize.width : 300;
-    } else {
-      height =
-          widget.stepperSize.height > 300 ? widget.stepperSize.height : 300;
-      width =
-          widget.stepperSize.width > width ? widget.stepperSize.width : width;
-    }
-    return Size(width, height);
-  }
 }

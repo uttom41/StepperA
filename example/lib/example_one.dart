@@ -17,36 +17,27 @@ class _ExampleOneState extends State<ExampleOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          appBar: AppBar(title: const Text("Stepper Example One"),),
-          body: Stack(
-            children: [
-              Positioned(
-                top: 5,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                child: StepperA(
-                stepperSize: const Size(350, 70),
-                stepperAxis: Axis.horizontal,
-              //  borderShape: BorderShape.rRect,
-              //  borderType: BorderType.straight,
-                floatingButton: false,
-                stepperBodyWidget: [
-                  StepOne(controller: controller,),
-                  StepTwo(controller: controller,),
-                  StepThree(controller: controller,),
-                ],
-                stepBorder: true,
-                step: const StepA(
-                    currentStepColor: Colors.purpleAccent,
-                    completeStepColor: Colors.green,
-                    inactiveStepColor: Colors.black38,
-                    margin: EdgeInsets.all(5)
-                ),
+      appBar: AppBar(title: const Text("Stepper Example One"),),
+      body: StepperA(
+        stepperSize: const Size(70, 350),
+        stepperAxis: Axis.vertical,
+        borderShape: BorderShape.rRect,
+        borderType: BorderType.straight,
+        floatingButton: false,
+        stepperBodyWidget: [
+          StepOne(controller: controller,),
+          StepTwo(controller: controller,),
+          StepThree(controller: controller,),
+        ],
+        stepBorder: true,
+        step: const StepA(
+            currentStepColor: Colors.purpleAccent,
+            completeStepColor: Colors.green,
+            inactiveStepColor: Colors.black38,
+            margin: EdgeInsets.all(5)
+        ),
 
-              ),)
-            ]
-          ),
-        );
+      ),
+    );
   }
 }

@@ -36,7 +36,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
           child: StepperA(
               stepperSize: const Size(300, 90),
               // stepperSize: const Size(100,350),
-              borderShape: BorderShape.diamond,
+              borderShape: BorderShape.rRect,
               borderType: BorderType.straight,
               stepperAxis: Axis.horizontal,
               lineType:  LineType.dotted ,
@@ -47,22 +47,23 @@ class _ExampleTwoState extends State<ExampleTwo> {
               stepBorder: true,
               floatingButton: false,
               // formKey: formKey,
-              //   floatingPreviousButton: FloatingButton(
-              //       buttonIconColor: Colors.white,
-              //       backgroundColor:  Colors.blueAccent,
-              //       position: Position(
-              //         left: 10,
-              //         top: 10
-              //       )
-              //   ),
-              //   floatingForwardButton: FloatingButton(
-              //       buttonIconColor: Colors.white,
-              //       backgroundColor:  Colors.blueAccent,
-              //       position: Position(
-              //           left: 10,
-              //           bottom: 20
-              //       )
-              //   ),
+
+                floatingPreviousButton: FloatingButton(
+                    buttonIconColor: Colors.white,
+                    backgroundColor:  Colors.blueAccent,
+                    position: Position(
+                      left: 10,
+                      top: 10
+                    )
+                ),
+                floatingForwardButton: FloatingButton(
+                    buttonIconColor: Colors.white,
+                    backgroundColor:  Colors.blueAccent,
+                    position: Position(
+                        left: 10,
+                        bottom: 20
+                    )
+                ),
               previousButton: StepperAButton(
                   width: 90,
                   height: 40,
