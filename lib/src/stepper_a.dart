@@ -90,6 +90,8 @@ class StepperA extends StatefulWidget {
   ///
   final List<CustomSteps>? customSteps;
 
+  final double strokeWidth;
+
   final bool _floatingButton;
   final bool stepBorder;
 
@@ -116,6 +118,7 @@ class StepperA extends StatefulWidget {
       this.forwardButton,
       this.previousButton,
       this.stepperAController,
+        this.strokeWidth = 3.0,
       bool? floatingButton,
       required this.stepBorder,
       this.customSteps,
@@ -186,43 +189,31 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
         customSteps: widget.customSteps,
         step:  widget.step,
         totalSteps: totalSteps,
-      notifier: _notifier
+      notifier: _notifier,
+      strokeWidth: widget.strokeWidth
     );
     super.initState();
   }
 
   Widget buildHorizontalStepper() {
     if (widget._floatingButton == true) {
-      return buildFloatingHorizontalStepper(_notifier);
+      return buildFloatingHorizontalStepper();
     } else {
-      return buildNormalHorizontalStepper(_notifier);
+      return buildNormalHorizontalStepper();
     }
   }
 
   Widget buildVerticalStepper() {
     if (widget._floatingButton == true) {
-      return buildFloatingVerticalStepper(_notifier);
+      return buildFloatingVerticalStepper();
     } else {
-      return buildNormalVerticalStepper(_notifier);
+      return buildNormalVerticalStepper();
     }
   }
 
   @override
   Widget build(BuildContext context) {
 
-
-    ///init StepperNotifier
-    // _notifier = StepperNotifier(
-    //   borderType: widget.borderType,
-    //   lineType: widget.lineType,
-    //   borderShape: widget.borderShape,
-    //   dashPattern: widget.dashPattern,
-    //   initialPage: 0,
-    //   length: totalSteps,
-    //   controller: _pageController,
-    //   vsync: this,
-    //   formKey: widget.formKey,
-    // );
     if (widget.stepperAController != null) {
       widget.stepperAController?.setNotifier = _notifier;
     }

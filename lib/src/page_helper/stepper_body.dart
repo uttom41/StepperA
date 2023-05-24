@@ -4,31 +4,25 @@
 ///
 ///
 import 'package:flutter/material.dart';
-import '../provider/stepper_provider.dart';
+import '../utils/stepper_model.dart';
 
 class StepperBody extends StatelessWidget {
-  final StepperNotifier notifier;
-  final List<Widget> stepperBodyWidget;
 
-  const StepperBody({
-    Key? key,
-    required this.notifier,
-    required this.stepperBodyWidget,
-  }) : super(key: key);
+  const StepperBody({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: notifier.formKey,
+      key: StepperModel().notifier.formKey,
       child: PageView.builder(
-          controller: notifier.controller,
+          controller: StepperModel().notifier.controller,
           scrollDirection: Axis.horizontal,
-          itemCount: notifier.totalIndex,
+          itemCount: StepperModel().notifier.totalIndex,
           onPageChanged: (index) {
-            notifier.currentIndex = index;
+            StepperModel().notifier.currentIndex = index;
           },
           itemBuilder: (BuildContext context, int index) {
-            return stepperBodyWidget[index];
+            return StepperModel().stepperBodyWidget[index];
           }),
     );
   }

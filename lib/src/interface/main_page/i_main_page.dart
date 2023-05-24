@@ -4,9 +4,9 @@ import '../../provider/stepper_provider.dart';
 
 abstract class IMainPage {
 
-  Widget buildFloatingHorizontalStepper(StepperNotifier notifier);
-  Widget buildFloatingVerticalStepper(StepperNotifier notifier);
-  Widget buildNormalHorizontalStepper(StepperNotifier notifier);
-  Widget buildNormalVerticalStepper(StepperNotifier notifier);
+  Widget buildFloatingHorizontalStepper();
+  Widget buildFloatingVerticalStepper();
+  Widget buildNormalHorizontalStepper();
+  Widget buildNormalVerticalStepper();
 
 }

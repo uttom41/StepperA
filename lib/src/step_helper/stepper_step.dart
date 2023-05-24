@@ -4,9 +4,11 @@
 ///
 
 import 'package:flutter/material.dart';
-import 'package:stepper_a/src/provider/stepper_provider.dart';
+import '../interface/calculate.dart';
 import '../interface/step_page/i_step_page.dart';
 import '../interface/step_page/step_style.dart';
+import '../interface/step_page/style_mixin.dart';
+import '../interface/step_page/widget_mixin.dart';
 import '../line.dart';
 import '../utils/stepper_model.dart';
 
@@ -15,35 +17,30 @@ abstract class AStepperStep extends StatelessWidget implements IStepPage {
   
 }
 
-class StepperStep extends AStepperStep with StepStyle {
+class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,WidgetMixin {
 
-  ///Stepper Notifier for internal state management
-  final StepperNotifier notifier;
-  
-   StepperStep({super.key,
-    required this.notifier,
-  });
+   StepperStep({super.key});
 
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color:  StepperModel().stepperBackgroundColor,
-      height:  StepperModel().stepperSize.height,
-      width: StepperModel().stepperSize.width,
+      height: stepperSizeCalculate().height,
+      width:  stepperSizeCalculate().width,
       child: SingleChildScrollView(
         scrollDirection: StepperModel().stepperAxis,
-        controller: notifier.getStepScrollController(
+        controller: StepperModel().notifier.getStepScrollController(
             itemWidth: StepperModel().stepWidth,
             lineWidth: CalculateLength(
-                    size: StepperModel().stepperSize.width,
+                    size:  stepperSizeCalculate().width,
                     width: StepperModel().stepWidth,
                     height: StepperModel().stepHeight,
-                    stepSize: notifier.totalIndex)
+                    stepSize: StepperModel().notifier.totalIndex)
                 .length(),
             screenWidth: StepperModel().stepperAxis == Axis.horizontal
-                ? StepperModel().stepperSize.width
-                : StepperModel().stepperSize.height),
+                ? stepperSizeCalculate().width
+                :  stepperSizeCalculate().height),
         child: Container(
           padding: StepperModel().padding,
           margin: StepperModel().margin,
@@ -58,15 +55,13 @@ class StepperStep extends AStepperStep with StepStyle {
 
   Widget buildHorizontal() {
     return StepperModel().customSteps == null
-        ? buildHorizontalStep(notifier) :
-    StepperModel().customSteps![0].image == null ?  buildHorizontalCustomStep(notifier)
-        : buildHorizontalCustomStep(notifier);
+        ? buildHorizontalStep()
+        : buildHorizontalCustomStep();
   }
 
   Widget buildVertical() {
     return StepperModel().customSteps == null
-        ? buildVerticalStep(notifier) :
-        StepperModel().customSteps![0].image == null ? buildVerticalCustomStep(notifier) :
-        buildVerticalCustomStep(notifier);
+        ? buildVerticalStep()
+        : buildVerticalCustomStep();
   }
 }

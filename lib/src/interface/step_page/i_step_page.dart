@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:stepper_a/src/interface/step_page/style_mixin.dart';
+import 'package:stepper_a/src/interface/step_page/widget_mixin.dart';
 
-import '../../provider/stepper_provider.dart';
+import 'a_widget.dart';
 
-abstract class IStepPage {
+abstract class IStepPageComponent extends IWidget {}
 
-  Widget buildHorizontalStep(StepperNotifier notifier);
-  Widget buildVerticalStep(StepperNotifier notifier);
-  Widget buildVerticalCustomStep(StepperNotifier notifier);
-  Widget buildHorizontalCustomStep(StepperNotifier notifier);
+abstract class IStepPage extends IStepPageComponent with WidgetMixin{
 
+  Widget buildHorizontalStep();
+  Widget buildHorizontalCustomStep();
+//  Widget buildHorizontalIconStep();
+ // Widget buildHorizontalImageStep();
+ // Widget buildHorizontalProgressStep();
+  Widget buildVerticalStep();
+  Widget buildVerticalCustomStep();
+ // Widget buildVerticalIconStep();
+  //Widget buildVerticalImageStep();
+  //Widget buildVerticalProgressStep();
 
-}
-
-abstract class ISingleStep with StyleMixin{
-  Widget buildSingleIconStep(int index);
-  Widget buildSingleImageStep(int index);
-  Widget buildNormalStep(int index);
 }

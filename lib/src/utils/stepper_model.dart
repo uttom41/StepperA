@@ -91,7 +91,7 @@ class StepperModel {
   int totalSteps;
   bool floatingButton;
   bool stepBorder;
-
+  double strokeWidth;
   StepperNotifier notifier;
 
   static StepperModel? _instance;
@@ -123,7 +123,8 @@ class StepperModel {
     this.customSteps,
     required this.step,
     required this.totalSteps,
-    required this.notifier
+    required this.notifier,
+    required this.strokeWidth
 });
 
   factory StepperModel.init({
@@ -153,7 +154,8 @@ class StepperModel {
     required bool stepBorder,
     List<CustomSteps>? customSteps,
     required StepA step,
-    required int totalSteps
+    required int totalSteps,
+    required double strokeWidth
   }) {
     _instance = StepperModel._(
       lineThickness: lineThickness,
@@ -182,7 +184,8 @@ class StepperModel {
       customSteps: customSteps,
       step: step,
       totalSteps: totalSteps,
-      notifier: notifier
+      notifier: notifier,
+      strokeWidth: strokeWidth
     );
 
     return _instance!;

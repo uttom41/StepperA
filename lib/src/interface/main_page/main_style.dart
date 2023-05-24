@@ -5,28 +5,24 @@ import '../../button/stepper_button.dart';
 import '../../button/stepper_floating_button.dart';
 import '../../page_helper/stepper_body.dart';
 import '../../provider/stepper_index_handler.dart';
-import '../../provider/stepper_provider.dart';
 import '../../step_helper/stepper_step.dart';
 import 'i_main_page.dart';
 
 mixin MainStyle on IMainPage {
 
   @override
-  Widget buildFloatingHorizontalStepper(StepperNotifier notifier) {
+  Widget buildFloatingHorizontalStepper() {
     return Stack(
       children: [
         Column(
           children: [
-            buildStep(notifier),
-            Expanded(
-              child: StepperBody(
-                notifier: notifier,
-                stepperBodyWidget:  StepperModel().stepperBodyWidget,
-              ),
+            StepperStep(),
+            const Expanded(
+              child: StepperBody(),
             )
           ],
         ),
-        if (notifier.currentIndex != 0 &&
+        if (StepperModel().notifier.currentIndex != 0 &&
              StepperModel().floatingPreviousButton != null)
           StepperFloatingButton(
               position:  StepperModel().floatingPreviousButton!.position,
@@ -34,7 +30,7 @@ mixin MainStyle on IMainPage {
               axis:  StepperModel().stepperAxis,
               buttonIconColor:  StepperModel().floatingPreviousButton!.buttonIconColor,
               onTap: () {
-                StepperIndex(notifier:notifier).back(notifier.currentIndex);
+                StepperIndex(notifier:StepperModel().notifier).back(StepperModel().notifier.currentIndex);
               },
               heroTag: "tag1",
               buttonIcon: Icons.arrow_back_ios_sharp),
@@ -45,11 +41,11 @@ mixin MainStyle on IMainPage {
             axis:  StepperModel().stepperAxis,
             buttonIconColor:  StepperModel().floatingForwardButton!.buttonIconColor,
             onTap: () {
-              StepperIndex(notifier: notifier)
-                  .next(notifier.currentIndex,  StepperModel().totalSteps - 1);
+              StepperIndex(notifier: StepperModel().notifier)
+                  .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
             },
             heroTag: "tag2",
-            buttonIcon: notifier.currentIndex != notifier.totalIndex - 1
+            buttonIcon: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
                 ? Icons.arrow_forward_ios_sharp
                 : Icons.check,
           ),
@@ -58,21 +54,18 @@ mixin MainStyle on IMainPage {
   }
 
   @override
-  Widget buildFloatingVerticalStepper(StepperNotifier notifier) {
+  Widget buildFloatingVerticalStepper() {
     return Stack(
       children: [
         Row(
           children: [
-            buildStep(notifier),
-            Expanded(
-              child: StepperBody(
-                notifier: notifier,
-                stepperBodyWidget:  StepperModel().stepperBodyWidget,
-              ),
+            StepperStep(),
+            const Expanded(
+              child: StepperBody(),
             )
           ],
         ),
-        if (notifier.currentIndex != 0 &&
+        if (StepperModel().notifier.currentIndex != 0 &&
              StepperModel().floatingPreviousButton != null)
           StepperFloatingButton(
               position:  StepperModel().floatingPreviousButton!.position,
@@ -80,7 +73,7 @@ mixin MainStyle on IMainPage {
               axis:  StepperModel().stepperAxis,
               buttonIconColor:  StepperModel().floatingPreviousButton!.buttonIconColor,
               onTap: () {
-                StepperIndex(notifier: notifier).back(notifier.currentIndex);
+                StepperIndex(notifier: StepperModel().notifier).back(StepperModel().notifier.currentIndex);
               },
               heroTag: "tag1",
               buttonIcon:  StepperModel().stepperAxis == Axis.horizontal
@@ -93,11 +86,11 @@ mixin MainStyle on IMainPage {
             axis:  StepperModel().stepperAxis,
             buttonIconColor:  StepperModel().floatingForwardButton!.buttonIconColor,
             onTap: () {
-              StepperIndex(notifier: notifier)
-                  .next(notifier.currentIndex,  StepperModel().totalSteps - 1);
+              StepperIndex(notifier: StepperModel().notifier)
+                  .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
             },
             heroTag: "tag2",
-            buttonIcon: notifier.currentIndex != notifier.totalIndex - 1
+            buttonIcon: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
                 ?  StepperModel().stepperAxis == Axis.horizontal
                 ? Icons.arrow_forward_ios_sharp
                 : Icons.keyboard_arrow_down
@@ -108,24 +101,21 @@ mixin MainStyle on IMainPage {
   }
 
   @override
-  Widget buildNormalHorizontalStepper(StepperNotifier notifier) {
+  Widget buildNormalHorizontalStepper() {
     return Column(
       children: [
-        buildStep(notifier),
-        Expanded(
-          child: StepperBody(
-            notifier: notifier,
-            stepperBodyWidget:  StepperModel().stepperBodyWidget,
-          ),
+        StepperStep(),
+        const Expanded(
+          child: StepperBody(),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            if (notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
+            if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex(notifier: notifier)
-                      .back(notifier.currentIndex);
+                  StepperIndex(notifier: StepperModel().notifier)
+                      .back(StepperModel().notifier.currentIndex);
                 },
                 stepperAButton:  StepperModel().previousButton!,
                 text:  StepperModel().previousButton!.buttonText,
@@ -134,11 +124,11 @@ mixin MainStyle on IMainPage {
             if ( StepperModel().forwardButton != null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex(notifier: notifier)
-                      .next(notifier.currentIndex,  StepperModel().totalSteps - 1);
+                  StepperIndex(notifier: StepperModel().notifier)
+                      .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
                 },
                 stepperAButton:  StepperModel().forwardButton!,
-                text: notifier.currentIndex != notifier.totalIndex - 1
+                text: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
                     ?  StepperModel().forwardButton!.buttonText
                     :  StepperModel().forwardButton!.completeButtonText,
               ),
@@ -149,71 +139,44 @@ mixin MainStyle on IMainPage {
   }
 
   @override
-  Widget buildNormalVerticalStepper(StepperNotifier notifier) {
+  Widget buildNormalVerticalStepper() {
     return Row(
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
+            if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex(notifier: notifier)
-                      .back(notifier.currentIndex);
+                  StepperIndex(notifier: StepperModel().notifier)
+                      .back(StepperModel().notifier.currentIndex);
                 },
                 stepperAButton:  StepperModel().previousButton!,
                 text:  StepperModel().previousButton!.buttonText,
               ),
-            if (notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
-              const SizedBox(
-                height: 8,
-              ),
-            buildStep(notifier),
+            if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
+              const SizedBox(height: 8),
+            StepperStep(),
             if ( StepperModel().forwardButton != null)
-              const SizedBox(
-                height: 8,
-              ),
+              const SizedBox(height: 8),
             if ( StepperModel().forwardButton != null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex(notifier: notifier)
-                      .next(notifier.currentIndex,  StepperModel().totalSteps - 1);
+                  StepperIndex(notifier: StepperModel().notifier)
+                      .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
                 },
                 stepperAButton:  StepperModel().forwardButton!,
-                text: notifier.currentIndex != notifier.totalIndex - 1
+                text: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
                     ?  StepperModel().forwardButton!.buttonText
                     :  StepperModel().forwardButton!.completeButtonText,
               ),
           ],
         ),
-        Expanded(
-          child: StepperBody(
-            notifier: notifier,
-            stepperBodyWidget:  StepperModel().stepperBodyWidget,
-          ),
+        const Expanded(
+          child: StepperBody(),
         )
       ],
     );
   }
 
-  Widget buildStep(StepperNotifier notifier) {
-    return StepperStep(notifier: notifier);
-  }
-
-  Size stepperSizeCalculate() {
-    double height =  StepperModel().stepHeight + 10;
-    double width =  StepperModel().stepWidth + 10;
-    if ( StepperModel().stepperAxis == Axis.horizontal) {
-      height =  StepperModel().stepperSize.height > height
-          ?  StepperModel().stepperSize.height
-          : height;
-      width =  StepperModel().stepperSize.width > 300 ?  StepperModel().stepperSize.width : 300;
-    } else {
-      height =
-       StepperModel().stepperSize.height > 300 ?  StepperModel().stepperSize.height : 300;
-      width =
-       StepperModel().stepperSize.width > width ?  StepperModel().stepperSize.width : width;
-    }
-    return Size(width, height);
-  }
 }
