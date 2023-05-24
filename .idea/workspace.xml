@@ -4,15 +4,33 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="step shape update">
-      <change afterPath="$PROJECT_DIR$/lib/src/interface/step_page/i_step_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/interface/step_page/step_style.dart" afterDir="false" />
+    <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="version changed">
+      <change afterPath="$PROJECT_DIR$/example/assets/pic/minimize.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/assets/pic/os.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/interface/step_page/single_step_mixin.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/interface/step_page/style_mixin.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/step_helper/single_step.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/main_page/i_main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/main_page/i_main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/example_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/example_two.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/drawing/path_painter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/drawing/path_painter.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/interface/main_page/main_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/main_page/main_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/i_step_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/i_step_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/step_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/step_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/custom_steps.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/custom_steps.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/utils/stepper_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/utils/stepper_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,26 +56,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;U:/project/StepperA/example/lib&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="U:\project\StepperA\example\lib" />
       <recent name="U:\project\StepperA\example\assets\pic" />
       <recent name="U:\project\StepperA\lib\src" />
       <recent name="U:\project\StepperA\lib\src\page_helper" />
       <recent name="U:\project\StepperA\lib\src\provider" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example/assets/pic" />
       <recent name="U:\project\StepperA\lib\src\step_helper" />
       <recent name="U:\project\StepperA\lib\src\provider" />
       <recent name="U:\project\StepperA\lib\src\page_helper" />
@@ -108,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681191654529</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="version changed">
+      <created>1681619624477</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681619624477</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +147,7 @@
     <MESSAGE value="ReadMe file added" />
     <MESSAGE value="ReadMe file updated" />
     <MESSAGE value="Stepper step update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stepper step update" />
+    <MESSAGE value="version changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="version changed" />
   </component>
 </project>

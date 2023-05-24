@@ -87,7 +87,8 @@ class Utils {
       var borderColor = _getBorderColor(i);
       var lineColor = _getLineColor(i);
       Widget steps = StepperModel().stepperAxis == Axis.horizontal
-          ? Column(
+          ?
+      Column(
               children: [
                 Row(
                   children: [
@@ -110,7 +111,7 @@ class Utils {
                       SizedBox(
                         height: StepperModel().stepHeight,
                         width: StepperModel().stepWidth,
-                        child: buildChild(stepsList[i].stepsIcon, i),
+                        child: buildChild(stepsList[i].stepsIcon!, i),
                       )
                     ]),
                     if (i != _notifier.totalIndex - 1)
@@ -130,7 +131,7 @@ class Utils {
                 ),
                 Center(
                   child: Text(
-                    stepsList[i].title,
+                    stepsList[i].title??"",
                     softWrap: true,
                     style: TextStyle(
                         fontSize: i == _notifier.currentIndex ? 14 : 12,
@@ -141,7 +142,8 @@ class Utils {
                 )
               ],
             )
-          : Row(
+          :
+      Row(
               children: [
                 Column(
                   children: [
@@ -164,7 +166,7 @@ class Utils {
                       SizedBox(
                         height: StepperModel().stepHeight,
                         width: StepperModel().stepWidth,
-                        child: buildChild(stepsList[i].stepsIcon, i),
+                        child: buildChild(stepsList[i].stepsIcon!, i),
                       )
                     ]),
                     if (i != _notifier.totalIndex - 1)
@@ -185,7 +187,7 @@ class Utils {
                 Expanded(
                   child: Center(
                     child: Text(
-                      stepsList[i].title,
+                      stepsList[i].title??"",
                       softWrap: true,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
@@ -203,6 +205,134 @@ class Utils {
       widgetList.add(steps);
     }
     return widgetList;
+  }
+
+  List<Widget> imageSteps(List<CustomSteps> imageStepList) {
+    List<Widget> widgetList = [];
+    for (int i = 0; i < imageStepList.length; i++) {
+      var borderColor = _getBorderColor(i);
+      var lineColor = _getLineColor(i);
+      Widget steps = StepperModel().stepperAxis == Axis.horizontal
+          ? Column(
+        children: [
+          Row(
+            children: [
+              Stack(children: [
+                if (StepperModel().stepBorder)
+                  Positioned.fill(
+                      child: PathWidget(
+                        notifier: _notifier,
+                        borderShape: _notifier.borderShape,
+                        borderType: _notifier.borderType,
+                        dashPattern: _notifier.dashPattern,
+                        radius: StepperModel().radius,
+                        pathColor: borderColor,
+                        strokeWidth: _strokeWidth,
+                        taskType: i == _notifier.currentIndex
+                            ? TaskType.inProgress
+                            : TaskType.pending,
+                        animationDirection: _notifier.direction,
+                      )),
+                SizedBox(
+                  height: StepperModel().stepHeight,
+                  width: StepperModel().stepWidth,
+                  child: buildImageChild(imageStepList[i].image!, i),
+                )
+              ]),
+              if (i != _notifier.totalIndex - 1)
+                StepperLine(
+                  lineColor: lineColor,
+                  length: CalculateLength(
+                      size: StepperModel().stepperSize.height,///////////////////////////
+                      width: StepperModel().stepWidth,
+                      height: StepperModel().stepHeight,
+                      stepSize: _notifier.totalIndex)
+                      .length(),
+                  lineThickness: StepperModel().lineThickness,
+                  lineType: _notifier.lineType,
+                  axis: StepperModel().stepperAxis,
+                ),
+            ],
+          ),
+          Center(
+            child: Text(
+              imageStepList[i].title??"",
+              softWrap: true,
+              style: TextStyle(
+                  fontSize: i == _notifier.currentIndex ? 14 : 12,
+                  color: i == _notifier.currentIndex
+                      ? borderColor
+                      : StepperModel().step.inactiveStepColor),
+            ),
+          )
+        ],
+      )
+          : Row(
+        children: [
+          Column(
+            children: [
+              Stack(children: [
+                if (StepperModel().stepBorder)
+                  Positioned.fill(
+                      child: PathWidget(
+                        notifier: _notifier,
+                        borderShape: _notifier.borderShape,
+                        borderType: _notifier.borderType,
+                        dashPattern: _notifier.dashPattern,
+                        radius: StepperModel().radius,
+                        pathColor: borderColor,
+                        strokeWidth: _strokeWidth,
+                        taskType: i == _notifier.currentIndex
+                            ? TaskType.inProgress
+                            : TaskType.pending,
+                        animationDirection: _notifier.direction,
+                      )),
+                SizedBox(
+                  height: StepperModel().stepHeight,
+                  width: StepperModel().stepWidth,
+                  child: buildImageChild(imageStepList[i].image!, i),
+                )
+              ]),
+              if (i != _notifier.totalIndex - 1)
+                StepperLine(
+                  lineColor: lineColor,
+                  length: CalculateLength(
+                      size: StepperModel().stepperSize.height,////////////////////////
+                      width: StepperModel().stepWidth,
+                      height: StepperModel().stepHeight,
+                      stepSize: _notifier.totalIndex)
+                      .length(),
+                  lineThickness: StepperModel().lineThickness,
+                  lineType: _notifier.lineType,
+                  axis: StepperModel().stepperAxis,
+                ),
+            ],
+          ),
+          Expanded(
+            child: Center(
+              child: Text(
+                imageStepList[i].title??"",
+                softWrap: true,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                    fontSize: i == _notifier.currentIndex ? 14 : 12,
+                    color: i == _notifier.currentIndex
+                        ? borderColor
+                        : StepperModel().step.inactiveStepColor),
+              ),
+            ),
+          )
+        ],
+      );
+
+      widgetList.add(steps);
+    }
+    return widgetList;
+  }
+
+  Widget buildImageChild(Image image, int i) {
+    return _buildSteps(image, i);
   }
 
   Widget buildChild(IconData icon, int i) {

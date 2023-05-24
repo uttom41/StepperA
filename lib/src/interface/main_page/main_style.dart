@@ -17,11 +17,7 @@ mixin MainStyle on IMainPage {
       children: [
         Column(
           children: [
-            SizedBox(
-              height: 80,
-                width: 350,
-                child: buildStep(notifier)
-            ),
+            buildStep(notifier),
             Expanded(
               child: StepperBody(
                 notifier: notifier,
@@ -67,11 +63,7 @@ mixin MainStyle on IMainPage {
       children: [
         Row(
           children: [
-            SizedBox(
-                height: 350,
-                width: 80,
-                child: buildStep(notifier)
-            ),
+            buildStep(notifier),
             Expanded(
               child: StepperBody(
                 notifier: notifier,
@@ -119,11 +111,7 @@ mixin MainStyle on IMainPage {
   Widget buildNormalHorizontalStepper(StepperNotifier notifier) {
     return Column(
       children: [
-        SizedBox(
-            height: 80,
-            width: 350,
-            child: buildStep(notifier)
-        ),
+        buildStep(notifier),
         Expanded(
           child: StepperBody(
             notifier: notifier,
@@ -180,11 +168,7 @@ mixin MainStyle on IMainPage {
               const SizedBox(
                 height: 8,
               ),
-            SizedBox(
-                height: 350,
-                width: 80,
-                child: buildStep(notifier)
-            ),
+            buildStep(notifier),
             if ( StepperModel().forwardButton != null)
               const SizedBox(
                 height: 8,

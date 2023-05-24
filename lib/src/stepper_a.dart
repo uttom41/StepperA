@@ -143,10 +143,22 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
 
   @override
   void initState() {
+    _pageController = PageController();
     ///total steps size update
     ///
     totalSteps = widget.stepperBodyWidget.length;
-
+    ///init StepperNotifier
+    _notifier = StepperNotifier(
+      borderType: widget.borderType,
+      lineType: widget.lineType,
+      borderShape: widget.borderShape,
+      dashPattern: widget.dashPattern,
+      initialPage: 0,
+      length: totalSteps,
+      controller: _pageController,
+      vsync: this,
+      formKey: widget.formKey,
+    );
     StepperModel.init(
         lineThickness: widget.lineThickness,
         stepperSize:  widget.stepperSize,
@@ -173,7 +185,8 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
         stepBorder:  widget.stepBorder,
         customSteps: widget.customSteps,
         step:  widget.step,
-        totalSteps: totalSteps
+        totalSteps: totalSteps,
+      notifier: _notifier
     );
     super.initState();
   }
@@ -196,20 +209,20 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
 
   @override
   Widget build(BuildContext context) {
-    _pageController = PageController();
+
 
     ///init StepperNotifier
-    _notifier = StepperNotifier(
-      borderType: widget.borderType,
-      lineType: widget.lineType,
-      borderShape: widget.borderShape,
-      dashPattern: widget.dashPattern,
-      initialPage: 0,
-      length: totalSteps,
-      controller: _pageController,
-      vsync: this,
-      formKey: widget.formKey,
-    );
+    // _notifier = StepperNotifier(
+    //   borderType: widget.borderType,
+    //   lineType: widget.lineType,
+    //   borderShape: widget.borderShape,
+    //   dashPattern: widget.dashPattern,
+    //   initialPage: 0,
+    //   length: totalSteps,
+    //   controller: _pageController,
+    //   vsync: this,
+    //   formKey: widget.formKey,
+    // );
     if (widget.stepperAController != null) {
       widget.stepperAController?.setNotifier = _notifier;
     }

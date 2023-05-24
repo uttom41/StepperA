@@ -49,11 +49,9 @@ class PathPainters extends CustomPainter {
         _dashPattern = dashPattern,
         super(repaint: animation);
 
-
-
   @override
   void paint(Canvas canvas, Size size) {
-  //  Path _originalPath;
+    //  Path _originalPath;
     ///background line paint drawing.
     Paint line = Paint()
       ..color = _lineColor
@@ -68,14 +66,14 @@ class PathPainters extends CustomPainter {
     final animationPercent = _animation.value;
 
     // Construct original path once when animation starts
-   // if (animationPercent == 0.0) {
-    Path   originalPath = PathDrawing(
-              size: size,
-              pathType: _pathType,
-              radius: _radius,
-              startingPercentage: _startingPercentage)
-          .createPath();
-  //  }
+    // if (animationPercent == 0.0) {
+    Path originalPath = PathDrawing(
+            size: size,
+            pathType: _pathType,
+            radius: _radius,
+            startingPercentage: _startingPercentage)
+        .createPath();
+    //  }
 
     ///solid background line drawing
     if (_borderType == BorderType.dash) {

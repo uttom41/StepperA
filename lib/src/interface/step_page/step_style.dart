@@ -32,19 +32,7 @@ mixin StepStyle on IStepPage {
   }
 
   @override
-  Widget buildHorizontalIconStep(StepperNotifier notifier) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: Utils(
-          notifier: notifier,
-          strokeWidth: 3.0)
-          .customSteps(StepperModel().customSteps!),
-    );
-  }
-
-  @override
-  Widget buildVerticalIconStep(StepperNotifier notifier) {
+  Widget buildVerticalCustomStep(StepperNotifier notifier) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -56,9 +44,16 @@ mixin StepStyle on IStepPage {
   }
 
   @override
-  Widget buildHorizontalImageStep(StepperNotifier notifier);
+  Widget buildHorizontalCustomStep(StepperNotifier notifier) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: Utils(
+          notifier: notifier,
+          strokeWidth: 3.0)
+          .imageSteps(StepperModel().customSteps!),
+    );
+  }
 
-  @override
-  Widget buildVerticalImageStep(StepperNotifier notifier);
 
 }

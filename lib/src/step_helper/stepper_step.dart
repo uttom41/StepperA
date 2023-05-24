@@ -24,15 +24,6 @@ class StepperStep extends AStepperStep with StepStyle {
     required this.notifier,
   });
 
-  @override
-  Widget buildHorizontalStep(StepperNotifier notifier) {
-    return buildHorizontalStep(notifier);
-  }
-
-  @override
-  Widget buildVerticalStep(StepperNotifier notifier) {
-    return buildVerticalStep(notifier);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,50 +49,24 @@ class StepperStep extends AStepperStep with StepStyle {
           margin: StepperModel().margin,
           alignment: Alignment.center,
           child: StepperModel().stepperAxis == Axis.horizontal
-              ? SizedBox(
-            width: 350,
-              height: 80,
-              child: buildHorizontal()
-          )
-              : SizedBox(
-            width: 80,
-              height: 350,
-              child: buildVertical()
-          ),
+              ? buildHorizontal()
+              : buildVertical(),
         ),
       ),
     );
   }
 
-  @override
-  Widget buildHorizontalIconStep(StepperNotifier notifier) {
-   return buildHorizontalIconStep(notifier);
-  }
-
-  @override
-  Widget buildHorizontalImageStep(StepperNotifier notifier) {
-    return buildHorizontalImageStep(notifier);
-  }
-
-  @override
-  Widget buildVerticalIconStep(StepperNotifier notifier) {
-    return buildVerticalIconStep(notifier);
-  }
-
-  @override
-  Widget buildVerticalImageStep(StepperNotifier notifier) {
-    return buildVerticalImageStep(notifier);
-  }
-
   Widget buildHorizontal() {
     return StepperModel().customSteps == null
-        ? buildHorizontalStep(notifier)
-        : buildHorizontalIconStep(notifier);
+        ? buildHorizontalStep(notifier) :
+    StepperModel().customSteps![0].image == null ?  buildHorizontalCustomStep(notifier)
+        : buildHorizontalCustomStep(notifier);
   }
 
   Widget buildVertical() {
     return StepperModel().customSteps == null
-        ? buildVerticalStep(notifier)
-        : buildVerticalIconStep(notifier);
+        ? buildVerticalStep(notifier) :
+        StepperModel().customSteps![0].image == null ? buildVerticalCustomStep(notifier) :
+        buildVerticalCustomStep(notifier);
   }
 }

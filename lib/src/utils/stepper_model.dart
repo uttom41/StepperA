@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stepper_a/src/provider/stepper_provider.dart';
 
 import './../../stepper_a.dart';
 
@@ -91,6 +92,8 @@ class StepperModel {
   bool floatingButton;
   bool stepBorder;
 
+  StepperNotifier notifier;
+
   static StepperModel? _instance;
 
   StepperModel._({
@@ -119,7 +122,8 @@ class StepperModel {
     required this.stepBorder,
     this.customSteps,
     required this.step,
-    required this.totalSteps
+    required this.totalSteps,
+    required this.notifier
 });
 
   factory StepperModel.init({
@@ -138,6 +142,7 @@ class StepperModel {
     required double stepHeight,
     required double stepWidth,
     required Axis stepperAxis,
+    required StepperNotifier notifier,
     GlobalKey<FormState>? formKey,
     FloatingButton? floatingForwardButton,
     FloatingButton? floatingPreviousButton,
@@ -176,7 +181,8 @@ class StepperModel {
       stepBorder: stepBorder ,
       customSteps: customSteps,
       step: step,
-      totalSteps: totalSteps
+      totalSteps: totalSteps,
+      notifier: notifier
     );
 
     return _instance!;

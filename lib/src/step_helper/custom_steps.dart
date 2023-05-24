@@ -6,11 +6,13 @@ import 'package:flutter/cupertino.dart';
 ///
 
 class CustomSteps {
-  final IconData stepsIcon;
-  final String title;
+  final IconData? stepsIcon;
+  final Image? image;
+  final String? title;
 
   const CustomSteps({
-    required this.stepsIcon,
-    required this.title,
+    this.stepsIcon,
+    this.image,
+    this.title,
   });
 }
