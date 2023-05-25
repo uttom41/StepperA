@@ -64,4 +64,37 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
         ? buildVerticalStep()
         : buildVerticalCustomStep();
   }
+
+  Widget buildHorizontalStep() {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: buildNumberStep()
+    );
+  }
+
+  Widget buildVerticalStep() {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: buildNumberStep()
+    );
+  }
+
+  Widget buildHorizontalCustomStep() {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: buildCustomStep(),
+    );
+  }
+
+  Widget buildVerticalCustomStep() {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: buildCustomStep()
+    );
+  }
+
 }
