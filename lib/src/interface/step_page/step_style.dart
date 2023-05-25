@@ -51,7 +51,7 @@ mixin StepStyle on IStepPage {
               if (index != StepperModel().notifier.totalIndex - 1)buildLine(index, StepperModel().stepperSize.width),
             ],
           ),
-          Center(
+          if(StepperModel().customSteps![index].title != null)Center(
             child: Text(
               StepperModel().customSteps![index].title??"",
               softWrap: true,
@@ -71,7 +71,10 @@ mixin StepStyle on IStepPage {
   @override
   Widget buildCustomInnerElementOfStepper(index) {
     if(StepperModel().customSteps![index].image == null && StepperModel().customSteps![index].stepsIcon == null){
-      throw("Please Step Icon or Image provide");
+     return throw("Please Step Icon or Image provide");
+    }
+    if (index ==  StepperModel().notifier.currentIndex &&  StepperModel().customSteps![index].loadingWidget != null) {
+      return buildWidget(index, StepperModel().customSteps![index].loadingWidget!);
     }
     return buildWidget(index, StepperModel().customSteps![index].image?? Icon(
       StepperModel().customSteps![index].stepsIcon!,
@@ -84,23 +87,23 @@ mixin StepStyle on IStepPage {
   @override
   Widget buildInnerElementOfStepper(index) {
     if (index < StepperModel().notifier.currentIndex) {
-      return buildWidget(index,const Icon(
-        Icons.check,
+      return buildWidget(index, Icon(
+        StepperModel().step.completeStepIcon??Icons.check,
         color: Colors.white,
         size: 16.0,
       ));
     } else if (index ==  StepperModel().notifier.currentIndex) {
       return buildWidget(index, Center(
-        child: Text(
+        child: StepperModel().step.loadingWidget??Text(
           '${ StepperModel().notifier.currentIndex + 1}',
-          style: const TextStyle(fontSize: 14, color: Colors.white),
+          style: StepperModel().step.numberStepTextStyle??const TextStyle(fontSize: 14, color: Colors.white),
         ),
       ));
     } else {
       return buildWidget(index,Center(
         child: Text(
           '${index + 1}',
-          style: const TextStyle(fontSize: 14, color: Colors.white),
+          style: StepperModel().step.numberStepTextStyle??const TextStyle(fontSize: 14, color: Colors.white),
         ),
       ));
     }

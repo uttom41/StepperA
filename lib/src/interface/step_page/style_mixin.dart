@@ -1,6 +1,7 @@
 
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
 import 'package:stepper_a/src/utils/stepper_model.dart';
 
 mixin StyleMixin {
@@ -11,7 +12,9 @@ mixin StyleMixin {
     if (i < StepperModel().notifier.currentIndex) {
       color = StepperModel().step.completeStepColor;
     } else if (i == StepperModel().notifier.currentIndex) {
-      color = StepperModel().step.currentStepColor;
+      color = (StepperModel().step.loadingWidget != null && StepperModel().customSteps == null)
+          ?Colors.transparent
+          :StepperModel().step.currentStepColor;
     } else {
       color = StepperModel().step.inactiveStepColor;
     }

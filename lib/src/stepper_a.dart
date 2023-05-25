@@ -65,6 +65,9 @@ class StepperA extends StatefulWidget {
   ///If you need stepper Axis wise build
   final Axis stepperAxis;
 
+  ///[StepA] Default step Number type, this field provide step color is required.
+  ///If you need number step text style then use testStyle.
+  ///If your need default step complete icon then you use completeStep Icon.
   ///It is Control Step color and icon.
   final StepA step;
 

@@ -50,7 +50,7 @@ mixin WidgetMixin on IWidget {
       margin: StepperModel().stepBorder ? StepperModel().step.margin : null,
       duration: const Duration(milliseconds: durationTime),
       child: ShapeWidget(
-        shapeColor:  getCircleColor(index),
+        shapeColor: getCircleColor(index),
         borderShape: StepperModel().notifier.borderShape,
         radius: StepperModel().radius,
         taskType: index == StepperModel().notifier.currentIndex

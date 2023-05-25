@@ -16,17 +16,13 @@ class StepA {
   ///It is use for inactive step widget and step border color.
   final Color inactiveStepColor;
 
-  ///It is use for current step widget icon.
-  ///If IconData is not provided which shows the number of steps,
-  final IconData? currentStepIcon;
-
   ///It is use for complete step widget icon.
   ///If IconData is not provided which shows the number of steps,
+  ///This field change number step complete step icon.
   final IconData? completeStepIcon;
 
-  ///It is use for inactive step widget icon.
-  ///If IconData is not provided which shows the number of steps,
-  final IconData? inactiveStepIcon;
+  final TextStyle? numberStepTextStyle;
+  final Widget? loadingWidget;
 
   ///It is used for step icons and border margins,
   ///This field is required for border and widget spacing.
@@ -38,6 +34,7 @@ class StepA {
       required this.inactiveStepColor,
       required this.margin,
       this.completeStepIcon,
-      this.currentStepIcon,
-      this.inactiveStepIcon});
+        this.numberStepTextStyle,
+        this.loadingWidget
+      });
 }
