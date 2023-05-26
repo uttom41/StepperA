@@ -34,7 +34,8 @@ class _ExampleOneState extends State<ExampleOne> {
             currentStepColor: Colors.purpleAccent,
             completeStepColor: Colors.green,
             inactiveStepColor: Colors.black38,
-            margin: EdgeInsets.all(5)
+            margin: EdgeInsets.all(5),
+          numberStepTextStyle: TextStyle(fontSize: 16,color: Colors.white)
         ),
 
       ),

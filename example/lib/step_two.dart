@@ -39,10 +39,10 @@ class _StepTwoState extends State<StepTwo> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
-                obscureText: true,
+                obscureText: false,
                 validator:  (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
+                    return 'Please enter your Address';
                   }
                   return null;
                 },

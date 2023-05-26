@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="step shape update">
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/step.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/assets/pic/pay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/assets/pic/properties.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/example_one.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/example_one.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/example_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/example_two.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/step_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/step_two.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/step_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/step_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/widget_mixin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/widget_mixin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +46,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;ScreenRecorder.SavePath&quot;: &quot;C:\\Users\\uttom\\device-2023-05-26-174223.webm&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;U:/project/StepperA/example/lib&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/uttom&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
@@ -52,6 +64,7 @@
       <recent name="U:\project\StepperA\lib\src\provider" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="U:\project\StepperA\example\assets\pic" />
       <recent name="U:\project\StepperA\lib\src\step_helper" />
       <recent name="U:\project\StepperA\lib\src\provider" />
       <recent name="U:\project\StepperA\lib\src\page_helper" />

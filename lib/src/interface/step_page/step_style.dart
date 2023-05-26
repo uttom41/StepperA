@@ -86,7 +86,7 @@ mixin StepStyle on IStepPage {
     return buildWidget(index, StepperModel().customSteps![index].image?? Icon(
       StepperModel().customSteps![index].stepsIcon!,
       color: Colors.white,
-      size: 16.0,
+      size: 18.0,
     ));
   }
 

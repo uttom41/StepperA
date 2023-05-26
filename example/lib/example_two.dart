@@ -77,17 +77,17 @@ class _ExampleTwoState extends State<ExampleTwo> {
               customSteps: [
                 // CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
                 // CustomSteps(stepsIcon: Icons.location_on, title: "Location"),
-                // CustomSteps(stepsIcon: Icons.home, title: "Home"),
+                const CustomSteps(stepsIcon: Icons.home, title: "Home"),
                 const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
                 // CustomSteps(image: Image.asset("assets/pic/minimize.png"), title: "Test"),
-                CustomSteps(image: Image.asset("assets/pic/os.jpeg"), title: "Test"),
-                CustomSteps(image: Image.asset("assets/pic/os.jpeg"), title: "Test"),
-                CustomSteps(image: Image.asset("assets/pic/os.jpeg"), title: "Test"),
+                CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
+                CustomSteps(image: Image.asset("assets/pic/properties.png"), title: "Test"),
+                //CustomSteps(image: Image.asset("assets/pic/os.jpeg"), title: "Test"),
               ],
               step: const StepA(
                   currentStepColor: Colors.green,
                   completeStepColor: Colors.indigo,
-                  inactiveStepColor: Colors.black87,
+                  inactiveStepColor: Colors.black45,
                   loadingWidget: CircularProgressIndicator(color: Colors.green,),
                   margin: EdgeInsets.all(5)),
               stepperBodyWidget: [
