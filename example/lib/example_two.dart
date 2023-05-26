@@ -45,26 +45,25 @@ class _ExampleTwoState extends State<ExampleTwo> {
               stepHeight: 40,
               stepWidth: 40,
               stepBorder: true,
-              floatingButton: false,
-             // pageSwipe: true,
+              // pageSwipe: true,
               formKey: formKey,
 
-                floatingPreviousButton: FloatingButton(
-                    buttonIconColor: Colors.white,
-                    backgroundColor:  Colors.blueAccent,
-                    position: Position(
-                      left: 10,
-                      bottom: 10
-                    )
-                ),
-                floatingForwardButton: FloatingButton(
-                    buttonIconColor: Colors.white,
-                    backgroundColor:  Colors.blueAccent,
-                    position: Position(
-                        right: 10,
-                        bottom: 20
-                    )
-                ),
+              // floatingPreviousButton: FloatingButton(
+              //     buttonIconColor: Colors.white,
+              //     backgroundColor:  Colors.blueAccent,
+              //     position: Position(
+              //         left: 10,
+              //         bottom: 10
+              //     )
+              // ),
+              // floatingForwardButton: FloatingButton(
+              //     buttonIconColor: Colors.white,
+              //     backgroundColor:  Colors.blueAccent,
+              //     position: Position(
+              //         right: 10,
+              //         bottom: 20
+              //     )
+              // ),
               previousButton: StepperAButton(
                   width: 90,
                   height: 40,
@@ -79,8 +78,8 @@ class _ExampleTwoState extends State<ExampleTwo> {
                 // CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
                 // CustomSteps(stepsIcon: Icons.location_on, title: "Location"),
                 // CustomSteps(stepsIcon: Icons.home, title: "Home"),
-                 const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
-               // CustomSteps(image: Image.asset("assets/pic/minimize.png"), title: "Test"),
+                const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
+                // CustomSteps(image: Image.asset("assets/pic/minimize.png"), title: "Test"),
                 CustomSteps(image: Image.asset("assets/pic/os.jpeg"), title: "Test"),
                 CustomSteps(image: Image.asset("assets/pic/os.jpeg"), title: "Test"),
                 CustomSteps(image: Image.asset("assets/pic/os.jpeg"), title: "Test"),

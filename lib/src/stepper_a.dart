@@ -7,27 +7,28 @@ import 'interface/main_page/main_style.dart';
 
 ///StepperA class is main class
 class StepperA extends StatefulWidget {
-  ///for define stepper background color
+  ///for define stepper background color.
+  ///[stepperBackgroundColor] this attribute provide step build area background color.
   final Color stepperBackgroundColor;
 
-  ///for define stepper body list of page
-  ///this list of page length is stepper length
+  ///for define stepper body list of page.
+  ///this list of page length is stepper length.
   final List<Widget> stepperBodyWidget;
 
-  ///for your need stepper line thickness use this field
-  ///default thickness [2.0] double
+  ///for your need stepper line thickness use this field.
+  ///default thickness [2.0] double.
   final double lineThickness;
 
-  ///IF you need different Step border style
-  ///default border style is [straight]
+  ///IF you need different Step border style.
+  ///default border style is [straight].
   final BorderType borderType;
 
-  ///If need different Stepper line style
-  ///default stepper line style is [straight]
+  ///If need different Stepper line style.
+  ///default stepper line style is [straight].
   final LineType lineType;
 
-  ///If you need different BorderShape
-  ///default borderShape is [circle]
+  ///If you need different BorderShape.
+  ///default borderShape is [circle].
   final BorderShape borderShape;
 
   /// A circular array of dash offsets and lengths.
@@ -67,75 +68,90 @@ class StepperA extends StatefulWidget {
 
   ///[StepA] Default step Number type, this field provide step color is required.
   ///If you need number step text style then use testStyle.
-  ///If your need default step complete icon then you use completeStep Icon.
+  ///If your need change default step complete icon then you use completeStep Icon.
   ///It is Control Step color and icon.
+  ///All style current step is loading widget that provide [loadingWidget].
   final StepA step;
 
   ///If  you need widget form validation
+  ///This uniquely identifies the Form, and allows validation of the form in a later step.
   final GlobalKey<FormState>? formKey;
 
   /// If you need a floating button than use this.
+  /// This Button pass all time provided traverse forward page.
+  ///This button is shown on the page by provided  "[Position]".
   final FloatingButton? floatingForwardButton;
 
   /// If you need a floating button than use this.
+  /// This Button pass all time provided traverse previous page.
+  /// This button is shown on the page by provided  "[Position]".
   final FloatingButton? floatingPreviousButton;
 
   /// If you need a custom button than use this.
+  /// This Button pass all time provided traverse previous page.
+  ///This button is shown always left side on the page.
   final StepperAButton? previousButton;
 
   /// If you need a custom button than use this.
+  /// This Button pass all time provided traverse forward page.
+  /// This button is shown always right side on the page.
   final StepperAButton? forwardButton;
 
   /// If you need a own button than use this.
   /// and control your button click
+  /// [StepperAController] method helps user to
+  /// switch previous and forward page on button press.
   final StepperAController? stepperAController;
 
-  ///
+  ///"[CustomSteps]" provide image,icon type step style.
+  ///Our default step style is number type step.
+  ///But [customSteps] allows you to change the default style. And helps to give your own style.
   final List<CustomSteps>? customSteps;
 
-  final double strokeWidth;
-
+  ///check floating button show or not .
   final bool _floatingButton;
 
+  ///If you want to give step border.
+  ///Then provide [stepBorder] = true.
   final bool stepBorder;
 
+  ///Page left right swiped can be controlled with this parameter.
+  ///[pageSwipe] = true that's mean swipe on.
   final bool pageSwipe;
 
   const StepperA(
       {Key? key,
-      this.lineThickness = 2,
-      required this.stepperSize,
-      required this.stepperBodyWidget,
-      this.stepperBackgroundColor = Colors.white,
-      this.padding = const EdgeInsets.all(5),
-      this.margin = const EdgeInsets.all(5),
-      this.stepPadding = const EdgeInsets.all(5),
-      this.radius = const Radius.circular(10),
-      this.borderType = BorderType.straight,
-      this.lineType = LineType.straight,
-      this.borderShape = BorderShape.circle,
-      this.dashPattern = const <double>[3, 5],
-      this.stepHeight = 50,
-      this.stepWidth = 50,
-      this.stepperAxis = Axis.horizontal,
-      this.formKey,
-      this.floatingForwardButton,
-      this.floatingPreviousButton,
-      this.forwardButton,
-      this.previousButton,
-      this.stepperAController,
-        this.strokeWidth = 3.0,
-      bool? floatingButton,
-      required this.stepBorder,
-      this.customSteps,
-      required this.step,
+        this.lineThickness = 2,
+        required this.stepperSize,
+        required this.stepperBodyWidget,
+        this.stepperBackgroundColor = Colors.white,
+        this.padding = const EdgeInsets.all(5),
+        this.margin = const EdgeInsets.all(5),
+        this.stepPadding = const EdgeInsets.all(5),
+        this.radius = const Radius.circular(10),
+        this.borderType = BorderType.straight,
+        this.lineType = LineType.straight,
+        this.borderShape = BorderShape.circle,
+        this.dashPattern = const <double>[3, 5],
+        this.stepHeight = 50,
+        this.stepWidth = 50,
+        this.stepperAxis = Axis.horizontal,
+        this.formKey,
+        this.floatingForwardButton,
+        this.floatingPreviousButton,
+        this.forwardButton,
+        this.previousButton,
+        this.stepperAController,
+        required this.stepBorder,
+        this.customSteps,
+        required this.step,
         this.pageSwipe = false
       })
-      : _floatingButton = floatingButton??false,
+      : _floatingButton = (floatingForwardButton != null && floatingPreviousButton != null),
         super(key: key);
 
-   @override
-   State<StepperA> createState() => _StepperAStateModel();
+  @override
+  State<StepperA> createState() => _StepperAStateModel();
 }
 
 
@@ -145,7 +161,7 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
   ///default set total step size in stepper.
   int totalSteps = 0;
 
-  ///Stepper Notifier for internal state management
+  ///Stepper Notifier for internal state management.
   late StepperNotifier _notifier;
 
   /// An object that can be used to control the position to which this page
@@ -198,7 +214,6 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
         step:  widget.step,
         totalSteps: totalSteps,
         notifier: _notifier,
-        strokeWidth: widget.strokeWidth,
         pageSwipe:widget.pageSwipe
     );
     super.initState();
@@ -233,8 +248,8 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
           return Scaffold(
               backgroundColor: Colors.transparent,
               body: (widget.customSteps != null &&
-                      widget.stepperBodyWidget.length !=
-                          widget.customSteps?.length)
+                  widget.stepperBodyWidget.length !=
+                      widget.customSteps?.length)
                   ? throw ("customSteps and stepperBodyWidget length must be provide equals")
                   : buildStepper());
         });

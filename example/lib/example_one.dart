@@ -23,7 +23,7 @@ class _ExampleOneState extends State<ExampleOne> {
         stepperAxis: Axis.vertical,
         borderShape: BorderShape.rRect,
         borderType: BorderType.straight,
-        floatingButton: false,
+        lineThickness: 2,
         stepperBodyWidget: [
           StepOne(controller: controller,),
           StepTwo(controller: controller,),

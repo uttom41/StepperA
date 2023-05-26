@@ -5,6 +5,9 @@
 import 'package:stepper_a/src/provider/stepper_index_handler.dart';
 import 'package:stepper_a/src/provider/stepper_provider.dart';
 
+///[StepperAController] class helps user to
+/// switch previous and forward page on button press.
+///
 class StepperAController {
   late StepperNotifier _notifier;
   set setNotifier(StepperNotifier notifier) {
