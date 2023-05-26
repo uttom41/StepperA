@@ -46,35 +46,35 @@ class _ExampleTwoState extends State<ExampleTwo> {
               stepWidth: 40,
               stepBorder: true,
               floatingButton: false,
-              pageSwipe: true,
-              // formKey: formKey,
+             // pageSwipe: true,
+              formKey: formKey,
 
                 floatingPreviousButton: FloatingButton(
                     buttonIconColor: Colors.white,
                     backgroundColor:  Colors.blueAccent,
                     position: Position(
                       left: 10,
-                      top: 10
+                      bottom: 10
                     )
                 ),
                 floatingForwardButton: FloatingButton(
                     buttonIconColor: Colors.white,
                     backgroundColor:  Colors.blueAccent,
                     position: Position(
-                        left: 10,
+                        right: 10,
                         bottom: 20
                     )
                 ),
               previousButton: StepperAButton(
                   width: 90,
                   height: 40,
-                  buttonText: 'Back',
-                  completeButtonText: ''),
+                  buttonWidget: const Icon(Icons.arrow_back,color: Colors.white,),
+                  completeButtonWidget:  const Text('',style: TextStyle(fontSize: 14,color: Colors.white))),
               forwardButton: StepperAButton(
                   width: 90,
                   height: 40,
-                  buttonText: 'Next',
-                  completeButtonText: 'Complete'),
+                  buttonWidget: const Text('Next',style: TextStyle(fontSize: 14,color: Colors.white),),
+                  completeButtonWidget: const Text('Complete',style: TextStyle(fontSize: 14,color: Colors.white))),
               customSteps: [
                 // CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
                 // CustomSteps(stepsIcon: Icons.location_on, title: "Location"),

@@ -18,13 +18,13 @@ class StepperAButtonWidget extends StatelessWidget {
 
   ///button text
   ///
-  final String text;
+  final Widget child;
 
   const StepperAButtonWidget(
       {Key? key,
       required StepperAButton stepperAButton,
       required this.onTap,
-      required this.text})
+      required this.child})
       : _stepperAButton = stepperAButton,
         super(key: key);
 
@@ -44,7 +44,7 @@ class StepperAButtonWidget extends StatelessWidget {
               color: Colors.blueAccent,
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
-        child: Text(text, style: _stepperAButton.textStyle),
+        child: child,
       ),
     );
   }

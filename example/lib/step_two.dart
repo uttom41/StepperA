@@ -40,6 +40,12 @@ class _StepTwoState extends State<StepTwo> {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
                 obscureText: true,
+                validator:  (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your password';
+                  }
+                  return null;
+                },
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Permanent Address"),

@@ -19,20 +19,15 @@ class StepperAButton {
 
   ///
   /// Button text for back and next
-  final String buttonText;
+  final Widget buttonWidget;
 
   /// Button text EX: submit,complete state
-  final String completeButtonText;
-
-  ///Button text style
-  final TextStyle textStyle;
+  final Widget completeButtonWidget;
 
   StepperAButton(
       {required this.width,
       required this.height,
       this.boxDecoration,
-      this.textStyle = const TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w500, color: Colors.white),
-      required this.buttonText,
-      required this.completeButtonText});
+      required this.buttonWidget,
+      required this.completeButtonWidget});
 }

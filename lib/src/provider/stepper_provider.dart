@@ -84,8 +84,9 @@ class StepperNotifier extends ChangeNotifier {
 
     formKey!.currentState?.save();
 
-    if (formKey!.currentState != null && formKey!.currentState!.validate())
+    if (formKey!.currentState != null && formKey!.currentState!.validate()) {
       return index;
+    }
 
     return _currentIndex;
   }

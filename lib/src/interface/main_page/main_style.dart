@@ -118,7 +118,7 @@ mixin MainStyle on IMainPage {
                       .back(StepperModel().notifier.currentIndex);
                 },
                 stepperAButton:  StepperModel().previousButton!,
-                text:  StepperModel().previousButton!.buttonText,
+                child:  StepperModel().previousButton!.buttonWidget,
               ),
             Container(),
             if ( StepperModel().forwardButton != null)
@@ -128,9 +128,9 @@ mixin MainStyle on IMainPage {
                       .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
                 },
                 stepperAButton:  StepperModel().forwardButton!,
-                text: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
-                    ?  StepperModel().forwardButton!.buttonText
-                    :  StepperModel().forwardButton!.completeButtonText,
+                child: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
+                    ?  StepperModel().forwardButton!.buttonWidget
+                    :  StepperModel().forwardButton!.completeButtonWidget,
               ),
           ],
         )
@@ -152,7 +152,7 @@ mixin MainStyle on IMainPage {
                       .back(StepperModel().notifier.currentIndex);
                 },
                 stepperAButton:  StepperModel().previousButton!,
-                text:  StepperModel().previousButton!.buttonText,
+                child:  StepperModel().previousButton!.buttonWidget,
               ),
             if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
               const SizedBox(height: 8),
@@ -166,9 +166,9 @@ mixin MainStyle on IMainPage {
                       .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
                 },
                 stepperAButton:  StepperModel().forwardButton!,
-                text: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
-                    ?  StepperModel().forwardButton!.buttonText
-                    :  StepperModel().forwardButton!.completeButtonText,
+                child: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
+                    ?  StepperModel().forwardButton!.buttonWidget
+                    :  StepperModel().forwardButton!.completeButtonWidget,
               ),
           ],
         ),
