@@ -14,13 +14,14 @@ class StepperBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       key: StepperModel().notifier.formKey,
+      autovalidateMode: AutovalidateMode.always,
       child: PageView.builder(
           physics: StepperModel().pageSwipe?const NeverScrollableScrollPhysics():null,
           controller: StepperModel().notifier.controller,
           scrollDirection: Axis.horizontal,
           itemCount: StepperModel().notifier.totalIndex,
           onPageChanged: (index) {
-            StepperModel().notifier.currentIndex = index;
+            Future.delayed(Duration.zero,()=>StepperModel().notifier.currentIndex = index);
           },
           itemBuilder: (BuildContext context, int index) {
             return StepperModel().stepperBodyWidget[index];

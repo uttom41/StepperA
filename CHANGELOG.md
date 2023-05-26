@@ -20,3 +20,7 @@
 - Easily Customize Step [Image, IconData]
 - Current step Loading widget provision.
 - Bug fix
+
+## 1.2.1
+
+- Bug fix

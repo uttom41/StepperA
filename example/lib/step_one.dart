@@ -46,12 +46,12 @@ class _StepOneState extends State<StepOne> {
                 obscureText: true,
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), labelText: "Password"),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
-                  }
-                  return null;
-                },
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'Please enter your password';
+                //   }
+                //   return null;
+                // },
               ),
             ),
 
