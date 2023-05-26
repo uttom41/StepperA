@@ -56,7 +56,7 @@ mixin WidgetMixin on IWidget {
         taskType: index == StepperModel().notifier.currentIndex
             ? TaskType.inProgress
             : TaskType.pending,
-        child: child,
+        child: FittedBox(child: child),
       ),
     );
   }

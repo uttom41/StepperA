@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="step shape update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/example_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/example_two.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/step_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/step_style.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/style_mixin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/style_mixin.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/widget_mixin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/widget_mixin.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/step_helper/custom_steps.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/custom_steps.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/step.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/utils.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -73,8 +73,8 @@ mixin StepStyle on IStepPage {
     if(StepperModel().customSteps![index].image == null && StepperModel().customSteps![index].stepsIcon == null){
      return throw("Please Step Icon or Image provide");
     }
-    if (index ==  StepperModel().notifier.currentIndex &&  StepperModel().customSteps![index].loadingWidget != null) {
-      return buildWidget(index, StepperModel().customSteps![index].loadingWidget!);
+    if (index ==  StepperModel().notifier.currentIndex &&  StepperModel().step.loadingWidget != null) {
+      return buildWidget(index, StepperModel().step.loadingWidget!);
     }
     return buildWidget(index, StepperModel().customSteps![index].image?? Icon(
       StepperModel().customSteps![index].stepsIcon!,

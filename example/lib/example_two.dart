@@ -87,7 +87,8 @@ class _ExampleTwoState extends State<ExampleTwo> {
               step: const StepA(
                   currentStepColor: Colors.green,
                   completeStepColor: Colors.indigo,
-                  inactiveStepColor: Colors.black12,
+                  inactiveStepColor: Colors.black87,
+                  loadingWidget: CircularProgressIndicator(color: Colors.green,),
                   margin: EdgeInsets.all(5)),
               stepperBodyWidget: [
                 StepOne(controller: controller),
