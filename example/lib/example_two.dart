@@ -46,6 +46,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
               stepWidth: 40,
               stepBorder: true,
               floatingButton: false,
+              pageSwipe: true,
               // formKey: formKey,
 
                 floatingPreviousButton: FloatingButton(

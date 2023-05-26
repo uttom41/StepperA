@@ -93,7 +93,7 @@ class StepperModel {
   bool stepBorder;
   double strokeWidth;
   StepperNotifier notifier;
-
+  bool pageSwipe;
   static StepperModel? _instance;
 
   StepperModel._({
@@ -112,6 +112,7 @@ class StepperModel {
     required this.stepHeight,
     required this.stepWidth,
     required this.stepperAxis,
+    required this.pageSwipe,
     this.formKey,
     this.floatingForwardButton,
     this.floatingPreviousButton,
@@ -155,7 +156,8 @@ class StepperModel {
     List<CustomSteps>? customSteps,
     required StepA step,
     required int totalSteps,
-    required double strokeWidth
+    required double strokeWidth,
+    required bool pageSwipe
   }) {
     _instance = StepperModel._(
       lineThickness: lineThickness,
@@ -185,7 +187,8 @@ class StepperModel {
       step: step,
       totalSteps: totalSteps,
       notifier: notifier,
-      strokeWidth: strokeWidth
+      strokeWidth: strokeWidth,
+      pageSwipe: pageSwipe,
     );
 
     return _instance!;

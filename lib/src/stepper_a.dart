@@ -96,7 +96,10 @@ class StepperA extends StatefulWidget {
   final double strokeWidth;
 
   final bool _floatingButton;
+
   final bool stepBorder;
+
+  final bool pageSwipe;
 
   const StepperA(
       {Key? key,
@@ -125,7 +128,9 @@ class StepperA extends StatefulWidget {
       bool? floatingButton,
       required this.stepBorder,
       this.customSteps,
-      required this.step})
+      required this.step,
+        this.pageSwipe = false
+      })
       : _floatingButton = floatingButton??false,
         super(key: key);
 
@@ -192,8 +197,9 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
         customSteps: widget.customSteps,
         step:  widget.step,
         totalSteps: totalSteps,
-      notifier: _notifier,
-      strokeWidth: widget.strokeWidth
+        notifier: _notifier,
+        strokeWidth: widget.strokeWidth,
+        pageSwipe:widget.pageSwipe
     );
     super.initState();
   }

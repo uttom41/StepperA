@@ -15,6 +15,7 @@ class StepperBody extends StatelessWidget {
     return Form(
       key: StepperModel().notifier.formKey,
       child: PageView.builder(
+        physics: StepperModel().pageSwipe?const NeverScrollableScrollPhysics():null,
           controller: StepperModel().notifier.controller,
           scrollDirection: Axis.horizontal,
           itemCount: StepperModel().notifier.totalIndex,

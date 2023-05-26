@@ -10,9 +10,10 @@ mixin StyleMixin {
   Color getCircleColor(i) {
     Color color;
     if (i < StepperModel().notifier.currentIndex) {
-      color = (StepperModel().customSteps != null && StepperModel().customSteps![i].image != null)
-          ?Colors.transparent
-          :StepperModel().step.completeStepColor;
+      color = StepperModel().step.completeStepColor;
+      // (StepperModel().customSteps != null && StepperModel().customSteps![i].image != null)
+      //     ?Colors.transparent
+      //     :StepperModel().step.completeStepColor;
 
     } else if (i == StepperModel().notifier.currentIndex) {
       color = (StepperModel().step.loadingWidget != null)
