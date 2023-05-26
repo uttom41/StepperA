@@ -1,3 +1,10 @@
+
+/// /*** Uttam kumar mitra ***/
+/// create date 25/05/2023; 10:36 PM
+///
+///
+///
+///
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/utils/stepper_model.dart';
 
@@ -23,7 +30,7 @@ mixin MainStyle on IMainPage {
           ],
         ),
         if (StepperModel().notifier.currentIndex != 0 &&
-             StepperModel().floatingPreviousButton != null)
+            StepperModel().floatingPreviousButton != null)
           StepperFloatingButton(
               position:  StepperModel().floatingPreviousButton!.position,
               buttonColor:  StepperModel().floatingPreviousButton!.backgroundColor,
@@ -66,7 +73,7 @@ mixin MainStyle on IMainPage {
           ],
         ),
         if (StepperModel().notifier.currentIndex != 0 &&
-             StepperModel().floatingPreviousButton != null)
+            StepperModel().floatingPreviousButton != null)
           StepperFloatingButton(
               position:  StepperModel().floatingPreviousButton!.position,
               buttonColor:  StepperModel().floatingPreviousButton!.backgroundColor,

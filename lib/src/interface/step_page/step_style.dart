@@ -1,3 +1,10 @@
+
+/// /*** Uttam kumar mitra ***/
+/// create date 25/05/2023; 10:36 PM
+///
+///
+///
+///
 import 'package:flutter/material.dart';
 
 import 'i_step_page.dart';
@@ -10,7 +17,7 @@ mixin StepStyle on IStepPage {
     List<Widget> steps = [];
     for (int index = 0; index < StepperModel().notifier.totalIndex; index++) {
       /// step circles
-   steps.add(
+      steps.add(
         Stack(children: [
           if (StepperModel().stepBorder)buildBorder(index),
           SizedBox(
@@ -24,11 +31,11 @@ mixin StepStyle on IStepPage {
       ///line between step circles
       if (index != StepperModel().notifier.totalIndex - 1) {
         steps.add(
-          buildLine(index, StepperModel().stepperSize.width)
+            buildLine(index, StepperModel().stepperSize.width)
         );
       }
     }
-   return steps;
+    return steps;
   }
 
 
@@ -71,7 +78,7 @@ mixin StepStyle on IStepPage {
   @override
   Widget buildCustomInnerElementOfStepper(index) {
     if(StepperModel().customSteps![index].image == null && StepperModel().customSteps![index].stepsIcon == null){
-     return throw("Please Step Icon or Image provide");
+      return throw("Please Step Icon or Image provide");
     }
     if (index ==  StepperModel().notifier.currentIndex &&  StepperModel().step.loadingWidget != null) {
       return buildWidget(index, StepperModel().step.loadingWidget!);

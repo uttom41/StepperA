@@ -22,9 +22,9 @@ class StepperAButtonWidget extends StatelessWidget {
 
   const StepperAButtonWidget(
       {Key? key,
-      required StepperAButton stepperAButton,
-      required this.onTap,
-      required this.child})
+        required StepperAButton stepperAButton,
+        required this.onTap,
+        required this.child})
       : _stepperAButton = stepperAButton,
         super(key: key);
 

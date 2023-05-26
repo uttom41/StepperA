@@ -14,12 +14,12 @@ import '../utils/stepper_model.dart';
 
 abstract class AStepperStep extends StatelessWidget implements IStepPage {
   const AStepperStep({super.key});
-  
+
 }
 
 class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,WidgetMixin {
 
-   StepperStep({super.key});
+  StepperStep({super.key});
 
 
   @override
@@ -33,10 +33,10 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
         controller: StepperModel().notifier.getStepScrollController(
             itemWidth: StepperModel().stepWidth,
             lineWidth: CalculateLength(
-                    size:  stepperSizeCalculate().width,
-                    width: StepperModel().stepWidth,
-                    height: StepperModel().stepHeight,
-                    stepSize: StepperModel().notifier.totalIndex)
+                size:  stepperSizeCalculate().width,
+                width: StepperModel().stepWidth,
+                height: StepperModel().stepHeight,
+                stepSize: StepperModel().notifier.totalIndex)
                 .length(),
             screenWidth: StepperModel().stepperAxis == Axis.horizontal
                 ? stepperSizeCalculate().width
@@ -67,9 +67,9 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
 
   Widget buildHorizontalStep() {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: buildNumberStep()
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: buildNumberStep()
     );
   }
 

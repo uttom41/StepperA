@@ -120,8 +120,8 @@ class StepperNotifier extends ChangeNotifier {
 
   ScrollController getStepScrollController(
       {required double itemWidth,
-      required double lineWidth,
-      required double screenWidth}) {
+        required double lineWidth,
+        required double screenWidth}) {
     final double scrollAmount =
         ((_currentIndex + 1) * (lineWidth + itemWidth)) - screenWidth;
     if (scrollAmount > 0) {

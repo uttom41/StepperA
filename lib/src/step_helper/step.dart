@@ -21,7 +21,10 @@ class StepA {
   ///This field change number step complete step icon.
   final IconData? completeStepIcon;
 
+  ///This feature helps to change the default number type step text style.
   final TextStyle? numberStepTextStyle;
+
+  ///All style current step is loading widget that provide [loadingWidget].
   final Widget? loadingWidget;
 
   ///It is used for step icons and border margins,
@@ -30,10 +33,10 @@ class StepA {
 
   const StepA(
       {required this.currentStepColor,
-      required this.completeStepColor,
-      required this.inactiveStepColor,
-      required this.margin,
-      this.completeStepIcon,
+        required this.completeStepColor,
+        required this.inactiveStepColor,
+        required this.margin,
+        this.completeStepIcon,
         this.numberStepTextStyle,
         this.loadingWidget
       });
