@@ -24,3 +24,5 @@
 ## 1.2.1
 
 - Bug fix
+- Forward and previous button style update.
+- Form validation check new attribute add bool type [formValidation] 
