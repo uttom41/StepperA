@@ -12,20 +12,18 @@ class StepperBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: StepperModel().notifier.formKey,
-      autovalidateMode: AutovalidateMode.always,
-      child: PageView.builder(
-          physics: StepperModel().pageSwipe?const NeverScrollableScrollPhysics():null,
-          controller: StepperModel().notifier.controller,
-          scrollDirection: Axis.horizontal,
-          itemCount: StepperModel().notifier.totalIndex,
-          onPageChanged: (index) {
-            Future.delayed(Duration.zero,()=>StepperModel().notifier.currentIndex = index);
-          },
-          itemBuilder: (BuildContext context, int index) {
-            return StepperModel().stepperBodyWidget[index];
-          }),
-    );
+    return PageView.builder(
+        physics: StepperModel().pageSwipe?const NeverScrollableScrollPhysics():null,
+        controller: StepperModel().notifier.controller,
+        scrollDirection: Axis.horizontal,
+        itemCount: StepperModel().notifier.totalIndex,
+        onPageChanged: (index) {
+          Future.delayed(Duration.zero,()=>StepperModel().notifier.currentIndex = index);
+        },
+        itemBuilder: (BuildContext context, int index) {
+          return Form(
+            key:StepperModel().globalKeyList[index] ,
+              child: StepperModel().stepperBodyWidget[index]);
+        });
   }
 }

@@ -22,12 +22,13 @@ class StepperAButton {
   final Widget buttonWidget;
 
   /// Button text EX: submit,complete state
-  final Widget completeButtonWidget;
+  //final Widget completeButtonWidget;
 
   StepperAButton(
       {required this.width,
       required this.height,
       this.boxDecoration,
       required this.buttonWidget,
-      required this.completeButtonWidget});
+     // required this.completeButtonWidget
+      });
 }

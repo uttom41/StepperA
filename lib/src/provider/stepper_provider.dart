@@ -4,6 +4,7 @@
 ///
 
 import 'package:flutter/material.dart';
+import 'package:stepper_a/src/utils/stepper_model.dart';
 
 import '../../stepper_a.dart';
 
@@ -49,7 +50,7 @@ class StepperNotifier extends ChangeNotifier {
   ///default page index set is 1
   int totalIndex = 0;
 
-  final GlobalKey<FormState>? formKey;
+  final bool formValidation;
 
   ///Ticker Provider from [StepperA], cause need to use it in [AnimationSlide]
   late TickerProviderStateMixin singleTickerProviderStateMixin;
@@ -66,7 +67,7 @@ class StepperNotifier extends ChangeNotifier {
     required int initialPage,
     required int length,
     required TickerProviderStateMixin vsync,
-    this.formKey,
+    required this.formValidation,
   }) {
     _currentIndex = initialPage;
     nextPageIndex = initialPage;
@@ -80,11 +81,11 @@ class StepperNotifier extends ChangeNotifier {
   int checkFormKeyValidation(int index) {
     if (_currentIndex > index) return index;
 
-    if (formKey == null) return index;
+    if (!formValidation) return index;
 
-    formKey!.currentState?.save();
+    StepperModel().globalKeyList[_currentIndex].currentState?.save();
 
-    if (formKey!.currentState != null && formKey!.currentState!.validate()) {
+    if (StepperModel().globalKeyList[_currentIndex].currentState != null && StepperModel().globalKeyList[_currentIndex].currentState!.validate()) {
       return index;
     }
 

@@ -44,6 +44,7 @@ mixin StepStyle on IStepPage {
     List<Widget> steps = [];
     for (int index = 0; index < StepperModel().notifier.totalIndex; index++) {
       steps.add(Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [

@@ -110,6 +110,7 @@ mixin MainStyle on IMainPage {
   @override
   Widget buildNormalHorizontalStepper() {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         StepperStep(),
         const Expanded(
@@ -124,8 +125,8 @@ mixin MainStyle on IMainPage {
                   StepperIndex(notifier: StepperModel().notifier)
                       .back(StepperModel().notifier.currentIndex);
                 },
-                stepperAButton:  StepperModel().previousButton!,
-                child:  StepperModel().previousButton!.buttonWidget,
+                stepperAButton:  StepperModel().previousButton!(StepperModel().notifier.currentIndex),
+                child:  StepperModel().previousButton!(StepperModel().notifier.currentIndex).buttonWidget,
               ),
             Container(),
             if ( StepperModel().forwardButton != null)
@@ -134,10 +135,11 @@ mixin MainStyle on IMainPage {
                   StepperIndex(notifier: StepperModel().notifier)
                       .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
                 },
-                stepperAButton:  StepperModel().forwardButton!,
-                child: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
-                    ?  StepperModel().forwardButton!.buttonWidget
-                    :  StepperModel().forwardButton!.completeButtonWidget,
+                stepperAButton:  StepperModel().forwardButton!(StepperModel().notifier.currentIndex),
+                child: StepperModel().forwardButton!(StepperModel().notifier.currentIndex).buttonWidget
+                // StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
+                //     ?  StepperModel().forwardButton!.buttonWidget
+                //     :  StepperModel().forwardButton!.completeButtonWidget,
               ),
           ],
         )
@@ -158,8 +160,8 @@ mixin MainStyle on IMainPage {
                   StepperIndex(notifier: StepperModel().notifier)
                       .back(StepperModel().notifier.currentIndex);
                 },
-                stepperAButton:  StepperModel().previousButton!,
-                child:  StepperModel().previousButton!.buttonWidget,
+                stepperAButton:  StepperModel().previousButton!(StepperModel().notifier.currentIndex),
+                child:  StepperModel().previousButton!(StepperModel().notifier.currentIndex).buttonWidget,
               ),
             if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
               const SizedBox(height: 8),
@@ -172,10 +174,11 @@ mixin MainStyle on IMainPage {
                   StepperIndex(notifier: StepperModel().notifier)
                       .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
                 },
-                stepperAButton:  StepperModel().forwardButton!,
-                child: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
-                    ?  StepperModel().forwardButton!.buttonWidget
-                    :  StepperModel().forwardButton!.completeButtonWidget,
+                stepperAButton:  StepperModel().forwardButton!(StepperModel().notifier.currentIndex),
+                child: StepperModel().forwardButton!(StepperModel().notifier.currentIndex).buttonWidget
+                // StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
+                //     ?  StepperModel().forwardButton!.buttonWidget
+                //     :  StepperModel().forwardButton!.completeButtonWidget,
               ),
           ],
         ),

@@ -73,7 +73,8 @@ class StepperModel {
 
   ///If  you need widget form validation
   ///This uniquely identifies the Form, and allows validation of the form in a later step.
-  GlobalKey<FormState>? formKey;
+ // @Deprecated("This features not available")
+ // GlobalKey<FormState>? formKey;
 
   /// If you need a floating button than use this.
   /// This Button pass all time provided traverse forward page.
@@ -88,12 +89,12 @@ class StepperModel {
   /// If you need a custom button than use this.
   /// This Button pass all time provided traverse previous page.
   ///This button is shown always left side on the page.
-  StepperAButton? previousButton;
+  final StepperAButton Function (int index)? previousButton;
 
   /// If you need a custom button than use this.
   /// This Button pass all time provided traverse forward page.
   /// This button is shown always right side on the page.
-  StepperAButton? forwardButton;
+  final StepperAButton Function (int index)? forwardButton;
 
   /// If you need a own button than use this.
   /// and control your button click
@@ -123,6 +124,8 @@ class StepperModel {
   ///[pageSwipe] = true that's mean swipe on.
   bool pageSwipe;
 
+  List<GlobalKey<FormState>> globalKeyList =[];
+
   ///This Class current instance .
   static StepperModel? _instance;
 
@@ -143,7 +146,7 @@ class StepperModel {
     required this.stepWidth,
     required this.stepperAxis,
     required this.pageSwipe,
-    this.formKey,
+   // this.formKey,
     this.floatingForwardButton,
     this.floatingPreviousButton,
     this.forwardButton,
@@ -235,15 +238,15 @@ class StepperModel {
     /// This button is shown on the page by provided  "[Position]".
     FloatingButton? floatingPreviousButton,
 
-    /// If you need a custom button than use this.
-    /// This Button pass all time provided traverse previous page.
-    ///This button is shown always left side on the page.
-    StepperAButton? forwardButton,
+  /// If you need a custom button than use this.
+  /// This Button pass all time provided traverse previous page.
+  ///This button is shown always left side on the page.
+  final StepperAButton Function (int index)? previousButton,
 
-    /// If you need a custom button than use this.
-    /// This Button pass all time provided traverse forward page.
-    /// This button is shown always right side on the page.
-    StepperAButton? previousButton,
+  /// If you need a custom button than use this.
+  /// This Button pass all time provided traverse forward page.
+  /// This button is shown always right side on the page.
+  final StepperAButton Function (int index)? forwardButton,
 
     /// If you need a own button than use this.
     /// and control your button click
@@ -277,6 +280,7 @@ class StepperModel {
     ///[pageSwipe] = true that's mean swipe on.
     required bool pageSwipe
   }) {
+
     _instance = StepperModel._(
       lineThickness: lineThickness,
       stepperSize:stepperSize,
@@ -293,7 +297,7 @@ class StepperModel {
       stepHeight: stepHeight,
       stepWidth: stepWidth,
       stepperAxis: stepperAxis,
-      formKey: formKey,
+    //  formKey: formKey,
       floatingForwardButton: floatingForwardButton,
       floatingPreviousButton: floatingPreviousButton,
       forwardButton: forwardButton,
@@ -307,8 +311,14 @@ class StepperModel {
       notifier: notifier,
       pageSwipe: pageSwipe,
     );
-
+    _instance?.keyList();
     return _instance!;
+  }
+
+  void keyList(){
+    for(int i =1;i <= totalSteps; i++){
+      globalKeyList.add(GlobalKey<FormState>());
+    }
   }
 
   factory StepperModel(){

@@ -25,6 +25,7 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       color:  StepperModel().stepperBackgroundColor,
       height: stepperSizeCalculate().height,
       width:  stepperSizeCalculate().width,

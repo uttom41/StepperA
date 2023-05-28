@@ -1,4 +1,3 @@
-import 'package:example/step_four.dart';
 import 'package:example/step_one.dart';
 import 'package:example/step_three.dart';
 import 'package:example/step_two.dart';
@@ -15,6 +14,7 @@ class ExampleTwo extends StatefulWidget {
 class _ExampleTwoState extends State<ExampleTwo> {
   final formKey = GlobalKey<FormState>();
   final StepperAController controller = StepperAController();
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -46,12 +46,12 @@ class _ExampleTwoState extends State<ExampleTwo> {
               stepWidth: 40,
               stepBorder: true,
               // pageSwipe: true,
-              formKey: formKey,
+              formValidation: true,
 
               // floatingPreviousButton: FloatingButton(
               //     buttonIconColor: Colors.white,
               //     backgroundColor:  Colors.blueAccent,
-              //     position: Position(
+              //     position: Position(//
               //         left: 10,
               //         bottom: 10
               //     )
@@ -64,16 +64,25 @@ class _ExampleTwoState extends State<ExampleTwo> {
               //         bottom: 20
               //     )
               // ),
-              previousButton: StepperAButton(
-                  width: 90,
-                  height: 40,
-                  buttonWidget: const Icon(Icons.arrow_back,color: Colors.white,),
-                  completeButtonWidget:  const Text('',style: TextStyle(fontSize: 14,color: Colors.white))),
-              forwardButton: StepperAButton(
-                  width: 90,
-                  height: 40,
-                  buttonWidget: const Text('Next',style: TextStyle(fontSize: 14,color: Colors.white),),
-                  completeButtonWidget: const Text('Complete',style: TextStyle(fontSize: 14,color: Colors.white))),
+              previousButton: (int index) => StepperAButton(
+                    width: 90,
+                    height: 40,
+                    buttonWidget: const Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    ),
+                  ),
+              forwardButton: (index) => StepperAButton(
+                    width: index == 0 ? 200 : 90,
+                    height: 40,
+                    buttonWidget: index == 3
+                        ? const Text('Complete',
+                            style: TextStyle(fontSize: 14, color: Colors.white))
+                        : const Text(
+                            'Next',
+                            style: TextStyle(fontSize: 14, color: Colors.white),
+                          ),
+                  ),
               customSteps: [
                 // CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
                 // CustomSteps(stepsIcon: Icons.location_on, title: "Location"),
@@ -88,7 +97,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                   currentStepColor: Colors.green,
                   completeStepColor: Colors.indigo,
                   inactiveStepColor: Colors.black45,
-                  loadingWidget: CircularProgressIndicator(color: Colors.green,),
+                  // loadingWidget: CircularProgressIndicator(color: Colors.green,),
                   margin: EdgeInsets.all(5)),
               stepperBodyWidget: [
                 StepOne(controller: controller),
@@ -98,9 +107,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                 StepThree(
                   controller: controller,
                 ),
-                StepFour(
-                  controller: controller,
-                ),
+                // StepFour(controller: controller,),
               ]),
         ),
       ],

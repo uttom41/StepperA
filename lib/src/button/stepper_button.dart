@@ -11,7 +11,7 @@ import 'package:stepper_a/src/button/stepper_a_button_style.dart';
 class StepperAButtonWidget extends StatelessWidget {
   ///It is used to create stepper custom buttons Style,
   ///
-  final StepperAButton _stepperAButton;
+  final StepperAButton  _stepperAButton;
 
   ///click event handle
   final Function onTap;
@@ -30,6 +30,7 @@ class StepperAButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return InkWell(
       onTap: () {
         onTap();

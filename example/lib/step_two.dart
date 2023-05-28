@@ -33,6 +33,12 @@ class _StepTwoState extends State<StepTwo> {
                 maxLines: 4,
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), labelText: "Present Address"),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your email';
+                  }
+                  return null;
+                },
               ),
             ),
 
