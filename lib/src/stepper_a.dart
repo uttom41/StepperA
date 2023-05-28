@@ -145,7 +145,7 @@ class StepperA extends StatefulWidget {
         required this.stepBorder,
         this.customSteps,
         required this.step,
-        this.pageSwipe = false
+        this.pageSwipe = true
       })
       : _floatingButton = (floatingForwardButton != null && floatingPreviousButton != null),
         super(key: key);

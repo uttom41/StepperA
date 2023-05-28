@@ -1,3 +1,4 @@
+import 'package:example/step_four.dart';
 import 'package:example/step_one.dart';
 import 'package:example/step_three.dart';
 import 'package:example/step_two.dart';
@@ -12,7 +13,7 @@ class ExampleTwo extends StatefulWidget {
 }
 
 class _ExampleTwoState extends State<ExampleTwo> {
-  final formKey = GlobalKey<FormState>();
+
   final StepperAController controller = StepperAController();
 
   @override
@@ -35,7 +36,6 @@ class _ExampleTwoState extends State<ExampleTwo> {
           bottom: 0, //MediaQuery.of(context).size.height-240
           child: StepperA(
               stepperSize: const Size(300, 90),
-              // stepperSize: const Size(100,350),
               borderShape: BorderShape.rRect,
               borderType: BorderType.straight,
               stepperAxis: Axis.horizontal,
@@ -45,7 +45,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
               stepHeight: 40,
               stepWidth: 40,
               stepBorder: true,
-              // pageSwipe: true,
+              pageSwipe: true,
               formValidation: true,
 
               // floatingPreviousButton: FloatingButton(
@@ -76,22 +76,14 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     width: index == 0 ? 200 : 90,
                     height: 40,
                     buttonWidget: index == 3
-                        ? const Text('Complete',
-                            style: TextStyle(fontSize: 14, color: Colors.white))
-                        : const Text(
-                            'Next',
-                            style: TextStyle(fontSize: 14, color: Colors.white),
-                          ),
+                        ? const Text('Complete', style: TextStyle(fontSize: 14, color: Colors.white))
+                        : const Text('Next', style: TextStyle(fontSize: 14, color: Colors.white)),
                   ),
               customSteps: [
-                // CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
-                // CustomSteps(stepsIcon: Icons.location_on, title: "Location"),
+                const CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
                 const CustomSteps(stepsIcon: Icons.home, title: "Home"),
                 const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
-                // CustomSteps(image: Image.asset("assets/pic/minimize.png"), title: "Test"),
                 CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
-                CustomSteps(image: Image.asset("assets/pic/properties.png"), title: "Test"),
-                //CustomSteps(image: Image.asset("assets/pic/os.jpeg"), title: "Test"),
               ],
               step: const StepA(
                   currentStepColor: Colors.green,
@@ -101,13 +93,9 @@ class _ExampleTwoState extends State<ExampleTwo> {
                   margin: EdgeInsets.all(5)),
               stepperBodyWidget: [
                 StepOne(controller: controller),
-                StepTwo(
-                  controller: controller,
-                ),
-                StepThree(
-                  controller: controller,
-                ),
-                // StepFour(controller: controller,),
+                StepTwo(controller: controller),
+                StepThree(controller: controller),
+                StepFour(controller: controller),
               ]),
         ),
       ],
