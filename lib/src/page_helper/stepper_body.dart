@@ -13,7 +13,7 @@ class StepperBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-        physics: StepperModel().pageSwipe?const NeverScrollableScrollPhysics():null,
+        physics: !StepperModel().pageSwipe?const NeverScrollableScrollPhysics():null,
         controller: StepperModel().notifier.controller,
         scrollDirection: Axis.horizontal,
         itemCount: StepperModel().notifier.totalIndex,

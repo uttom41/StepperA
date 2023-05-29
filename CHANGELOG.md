@@ -23,6 +23,6 @@
 
 ## 1.2.1
 
+- Form validation check new attribute added [formValidation = true] .
+- Forward and previous button style change for more dynamic.
 - Bug fix
-- Forward and previous button style update.
-- Form validation check new attribute add bool type [formValidation] 

@@ -26,6 +26,7 @@ Stepper A can easily build Stepper facility of you any flutter app.
 - Number step text style provision added.
 - Stepper page swipe
 - Easily Customize Step [Image, IconData]
+- Forward and previous button custom style .
 
 
 ## package.yaml
@@ -41,64 +42,80 @@ import 'package:stepper_a/stepper_a.dart';
 
 
 ```dart
-StepperA(
-    stepperSize: const Size(300,90),
-    // stepperSize: const Size(100,350),
-    borderShape: BorderShape.diamond,
-    borderType: BorderType.straight,
-    stepperAxis: Axis.horizontal,
-    stepperBackgroundColor: Colors.transparent,
-    stepperAController: controller,
-    stepHeight: 40,
-    stepWidth: 40,
-    stepBorder: true,
-    floatingButton: false,
-    previousButton: StepperAButton(
-        width: 90,
-        height: 40,
-        buttonText: 'Back',
-        completeButtonText: ''
-    ),
-    forwardButton: StepperAButton(
-        width: 90,
-        height: 40,
-        buttonText: 'Next',
-        completeButtonText: 'Complete'
-    ),
-    customSteps: const [
-        CustomSteps(
-        stepsIcon: Icons.login,
-        title: "LogIn"),
-        CustomSteps(
-        stepsIcon: Icons.location_on,
-        title: "Location"),
-        CustomSteps(
-        stepsIcon: Icons.home,
-        title: "Home"),
-        CustomSteps(
-        stepsIcon: Icons.account_circle,
-        title: "Account"),
-    
-    ],
-    step: const StepA(
-        currentStepColor: Colors.green,
-        completeStepColor: Colors.indigo,
-        inactiveStepColor: Colors.black12,
-        margin: EdgeInsets.all(5)
-    ),
-    stepperBodyWidget: [
-        StepOne(controller: controller),
-        StepTwo(controller: controller,),
-        StepThree(controller: controller,),
-        StepFour(controller: controller,),
-    ]
+ StepperA(
+        stepperSize: const Size(300, 90),
+        borderShape: BorderShape.rRect,
+        borderType: BorderType.straight,
+        stepperAxis: Axis.horizontal,
+        lineType: LineType.dotted,
+        stepperBackgroundColor: Colors.transparent,
+        stepperAController: controller,
+        stepHeight: 40,
+        stepWidth: 40,
+        stepBorder: true,
+        pageSwipe: false,
+        formValidation: true,
+
+        // floatingPreviousButton: FloatingButton(
+        //     buttonIconColor: Colors.white,
+        //     backgroundColor:  Colors.blueAccent,
+        //     position: Position(//
+        //         left: 10,
+        //         bottom: 10
+        //     )
+        // ),
+        // floatingForwardButton: FloatingButton(
+        //     buttonIconColor: Colors.white,
+        //     backgroundColor:  Colors.blueAccent,
+        //     position: Position(
+        //         right: 10,
+        //         bottom: 20
+        //     )
+        // ),
+        previousButton: (int index) => StepperAButton(
+            width: 90,
+            height: 40,
+            buttonWidget: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+           ),
+        ),
+        forwardButton: (index) => StepperAButton(
+            width: index == 0 ? 200 : 90,
+            height: 40,
+            buttonWidget: index == 3
+            ? const Text('Complete', style: TextStyle(fontSize: 14, color: Colors.white))
+                : const Text('Next', style: TextStyle(fontSize: 14, color: Colors.white)),
+        ),
+        customSteps: [
+            const CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
+            const CustomSteps(stepsIcon: Icons.home, title: "Home"),
+            const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
+            CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
+        ],
+        step: const StepA(
+            currentStepColor: Colors.green,
+            completeStepColor: Colors.indigo,
+            inactiveStepColor: Colors.black45,
+            // loadingWidget: CircularProgressIndicator(color: Colors.green,),
+            margin: EdgeInsets.all(5)
+      ),
+      stepperBodyWidget: [
+            StepOne(controller: controller),
+            StepTwo(controller: controller),
+            StepThree(controller: controller),
+            StepFour(controller: controller),
+      ]
 )
 ```
 
 ## ScreenShot
 
 ## FormKey validation
-!https://youtu.be/Gbn6Dsj8AWI[](Youtube Link)
+![video link ](https://github.com/salim-lachdhaf/searchable_dropdown/assets/44666275/313222d5-a527-4374-8592-91949550007b)
+
+## Youtube link
+![Youtube](https://youtu.be/Gbn6Dsj8AWI)
 
 ![formkey](https://user-images.githubusercontent.com/44666275/232333587-c807f95a-b8db-454e-865e-98dd26304b58.gif)
 
