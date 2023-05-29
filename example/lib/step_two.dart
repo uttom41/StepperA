@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
+import 'example_two.dart';
+
 class StepTwo extends StatefulWidget {
   final StepperAController controller;
-  const StepTwo({Key? key, required this.controller}) : super(key: key);
+  ExampleNotifier notifier;
+  StepTwo({Key? key, required this.controller,required this.notifier}) : super(key: key);
 
   @override
   State<StepTwo> createState() => _StepTwoState();
@@ -31,6 +34,9 @@ class _StepTwoState extends State<StepTwo> {
               child: TextFormField(
                 minLines: 3,
                 maxLines: 4,
+                onChanged: (c){
+                //  widget.notifier.onUpdate();
+                },
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), labelText: "Present Address"),
                 validator: (value) {

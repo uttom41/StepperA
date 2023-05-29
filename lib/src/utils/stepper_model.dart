@@ -89,12 +89,12 @@ class StepperModel {
   /// If you need a custom button than use this.
   /// This Button pass all time provided traverse previous page.
   ///This button is shown always left side on the page.
-  final StepperAButton Function (int index)? previousButton;
+   StepperAButton Function (int index)? previousButton;
 
   /// If you need a custom button than use this.
   /// This Button pass all time provided traverse forward page.
   /// This button is shown always right side on the page.
-  final StepperAButton Function (int index)? forwardButton;
+  StepperAButton Function (int index)? forwardButton;
 
   /// If you need a own button than use this.
   /// and control your button click
@@ -124,7 +124,8 @@ class StepperModel {
   ///[pageSwipe] = true that's mean swipe on.
   bool pageSwipe;
 
-  List<GlobalKey<FormState>> globalKeyList =[];
+  final bool formValidation;
+
 
   ///This Class current instance .
   static StepperModel? _instance;
@@ -158,6 +159,7 @@ class StepperModel {
     required this.step,
     required this.totalSteps,
     required this.notifier,
+    required this.formValidation
 });
 
   factory StepperModel.init({
@@ -226,7 +228,7 @@ class StepperModel {
 
     ///If  you need widget form validation
     ///This uniquely identifies the Form, and allows validation of the form in a later step.
-    GlobalKey<FormState>? formKey,
+  //  GlobalKey<FormState>? formKey,
 
     /// If you need a floating button than use this.
     /// This Button pass all time provided traverse forward page.
@@ -278,7 +280,9 @@ class StepperModel {
 
     ///Page left right swiped can be controlled with this parameter.
     ///[pageSwipe] = true that's mean swipe on.
-    required bool pageSwipe
+    required bool pageSwipe,
+
+    required bool formValidation
   }) {
 
     _instance = StepperModel._(
@@ -310,16 +314,11 @@ class StepperModel {
       totalSteps: totalSteps,
       notifier: notifier,
       pageSwipe: pageSwipe,
+      formValidation: formValidation,
     );
-    _instance?.keyList();
     return _instance!;
   }
 
-  void keyList(){
-    for(int i =1;i <= totalSteps; i++){
-      globalKeyList.add(GlobalKey<FormState>());
-    }
-  }
 
   factory StepperModel(){
     return _instance!;

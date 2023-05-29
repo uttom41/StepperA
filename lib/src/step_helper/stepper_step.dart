@@ -37,7 +37,7 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
                 size:  stepperSizeCalculate().width,
                 width: StepperModel().stepWidth,
                 height: StepperModel().stepHeight,
-                stepSize: StepperModel().notifier.totalIndex)
+                stepSize: StepperModel().notifier.getTotalSteps)
                 .length(),
             screenWidth: StepperModel().stepperAxis == Axis.horizontal
                 ? stepperSizeCalculate().width

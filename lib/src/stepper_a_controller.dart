@@ -16,7 +16,7 @@ class StepperAController {
 
   void next() {
     StepperIndex(notifier: _notifier)
-        .next(_notifier.currentIndex, _notifier.totalIndex);
+        .next(_notifier.currentIndex, _notifier.getTotalSteps);
   }
 
   void back() {

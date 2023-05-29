@@ -19,14 +19,17 @@ class _ExampleOneState extends State<ExampleOne> {
     return Scaffold(
       appBar: AppBar(title: const Text("Stepper Example One"),),
       body: StepperA(
-        stepperSize: const Size(70, 350),
-        stepperAxis: Axis.vertical,
+        stepperSize: const Size(300, 75),
+        stepperAxis: Axis.horizontal,
         borderShape: BorderShape.rRect,
         borderType: BorderType.straight,
         lineThickness: 2,
         stepperBodyWidget: [
-          StepOne(controller: controller,),
-          StepTwo(controller: controller,),
+         // StepOne(controller: controller,),
+          //StepTwo(controller: controller,),
+         // StepTwo(controller: controller,),
+          StepThree(controller: controller,),
+          StepThree(controller: controller,),
           StepThree(controller: controller,),
         ],
         stepBorder: true,

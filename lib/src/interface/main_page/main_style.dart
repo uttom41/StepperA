@@ -24,8 +24,8 @@ mixin MainStyle on IMainPage {
         Column(
           children: [
             StepperStep(),
-            const Expanded(
-              child: StepperBody(),
+            Expanded(
+              child: StepperBody().build(),
             )
           ],
         ),
@@ -52,7 +52,7 @@ mixin MainStyle on IMainPage {
                   .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
             },
             heroTag: "tag2",
-            buttonIcon: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
+            buttonIcon: StepperModel().notifier.currentIndex != StepperModel().notifier.getTotalSteps - 1
                 ? Icons.arrow_forward_ios_sharp
                 : Icons.check,
           ),
@@ -67,8 +67,8 @@ mixin MainStyle on IMainPage {
         Row(
           children: [
             StepperStep(),
-            const Expanded(
-              child: StepperBody(),
+             Expanded(
+              child: StepperBody().build(),
             )
           ],
         ),
@@ -97,7 +97,7 @@ mixin MainStyle on IMainPage {
                   .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
             },
             heroTag: "tag2",
-            buttonIcon: StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
+            buttonIcon: StepperModel().notifier.currentIndex != StepperModel().notifier.getTotalSteps - 1
                 ?  StepperModel().stepperAxis == Axis.horizontal
                 ? Icons.arrow_forward_ios_sharp
                 : Icons.keyboard_arrow_down
@@ -113,8 +113,8 @@ mixin MainStyle on IMainPage {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         StepperStep(),
-        const Expanded(
-          child: StepperBody(),
+         Expanded(
+          child: StepperBody().build(),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -182,8 +182,8 @@ mixin MainStyle on IMainPage {
               ),
           ],
         ),
-        const Expanded(
-          child: StepperBody(),
+         Expanded(
+          child: StepperBody().build(),
         )
       ],
     );
