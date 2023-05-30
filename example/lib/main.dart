@@ -47,8 +47,8 @@ class _StepperExampleState extends State<StepperExample> {
               )),
         ),
         Positioned(
-          //top: 115,
-          top: 75,
+          top: 98,
+          //top: 75,
           left: 0,
           right: 0,
           bottom: 0,
@@ -84,7 +84,7 @@ class _StepperExampleState extends State<StepperExample> {
               //     )
               // ),
               previousButton: (int index) => StepperAButton(
-                    width: 40,
+                    width: 90,
                     height: 40,
                     buttonWidget: const Icon(
                       Icons.arrow_back,
@@ -92,7 +92,7 @@ class _StepperExampleState extends State<StepperExample> {
                     ),
                   ),
               forwardButton: (index) => StepperAButton(
-                    width: index == 0 ? MediaQuery.of(context).size.width : 40,
+                    width: index == 0 ? MediaQuery.of(context).size.width-40 : MediaQuery.of(context).size.width-120,
                     height: 40,
                     boxDecoration: BoxDecoration(
                       color: index == 3?Colors.indigo: Colors.green,
@@ -107,16 +107,9 @@ class _StepperExampleState extends State<StepperExample> {
                   ),
               customSteps: [
                 const CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
-                const CustomSteps(
-                    stepsIcon: Icons.home, title: "Home"),
-                const CustomSteps(
-                    stepsIcon: Icons.account_circle, title: "Account"),
-                CustomSteps(
-                    image: Image.asset(
-                      "assets/pic/pay.png",
-                      color: Colors.white,
-                    ),
-                    title: "Payment"),
+                const CustomSteps(stepsIcon: Icons.home, title: "Home"),
+                const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
+                CustomSteps(image: Image.asset("assets/pic/pay.png", color: Colors.white), title: "Payment"),
               ],
               step: const StepA(
                   currentStepColor: Colors.green,
@@ -126,12 +119,11 @@ class _StepperExampleState extends State<StepperExample> {
                   margin: EdgeInsets.all(5)),
               stepperBodyWidget: [
                 StepOne(controller: controller),
-                StepTwo(
-                  controller: controller,
-                ),
+                StepTwo(controller: controller),
                 StepThree(controller: controller),
                 StepFour(controller: controller),
-              ]),
+              ],
+          ),
         ),
       ],
     );
