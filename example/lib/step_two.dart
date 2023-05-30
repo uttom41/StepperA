@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
-import 'example_two.dart';
 
 class StepTwo extends StatefulWidget {
   final StepperAController controller;
-  ExampleNotifier notifier;
-  StepTwo({Key? key, required this.controller,required this.notifier}) : super(key: key);
+
+  const StepTwo({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<StepTwo> createState() => _StepTwoState();
