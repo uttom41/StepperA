@@ -14,6 +14,7 @@ import '../../line.dart';
 import '../../utils/stepper_model.dart';
 import 'a_widget.dart';
 
+/// Todo:Page Loading State wise Step animation control.
 mixin WidgetMixin on IWidget {
 
   @override
@@ -21,9 +22,9 @@ mixin WidgetMixin on IWidget {
     return Positioned.fill(
         child: PathWidget(
           notifier: StepperModel().notifier,
-          borderShape: StepperModel().notifier.borderShape,
-          borderType: StepperModel().notifier.borderType,
-          dashPattern: StepperModel().notifier.dashPattern,
+          borderShape: StepperModel().borderShape,
+          borderType: StepperModel().borderType,
+          dashPattern: StepperModel().dashPattern,
           radius: StepperModel().radius,
           pathColor: getBorderColor(index),
           strokeWidth: 3.0,
@@ -35,17 +36,17 @@ mixin WidgetMixin on IWidget {
   }
 
   @override
-  Widget buildLine(int index, double size) {
+  Widget buildLine(int index, double size,Color color) {
     return StepperLine(
-      lineColor: getLineColor(index),
+      lineColor: color,
       length: CalculateLength(
           size: size,
           width: StepperModel().stepWidth,
           height: StepperModel().stepHeight,
-          stepSize: StepperModel().notifier.totalIndex)
+          stepSize: StepperModel().notifier.getTotalSteps)
           .length(),
       lineThickness: StepperModel().lineThickness,
-      lineType: StepperModel().notifier.lineType,
+      lineType: StepperModel().lineType,
       axis: StepperModel().stepperAxis,
     );
   }
@@ -57,7 +58,7 @@ mixin WidgetMixin on IWidget {
       duration: const Duration(milliseconds: durationTime),
       child: ShapeWidget(
         shapeColor: getCircleColor(index),
-        borderShape: StepperModel().notifier.borderShape,
+        borderShape: StepperModel().borderShape,
         radius: StepperModel().radius,
         taskType: index == StepperModel().notifier.currentIndex
             ? TaskType.inProgress

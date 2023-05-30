@@ -9,23 +9,6 @@ import 'package:stepper_a/src/utils/stepper_model.dart';
 import '../../stepper_a.dart';
 
 class StepperNotifier extends ChangeNotifier {
-  ///IF you need different Step border style
-  ///default border style is [straight]
-  final BorderType borderType;
-
-  ///If need different Stepper line style
-  ///default stepper line style is [straight]
-  final LineType lineType;
-
-  ///If you need different BorderShape
-  ///default borderShape is [circle]
-  final BorderShape borderShape;
-
-  /// A circular array of dash offsets and lengths.
-  ///
-  /// For example, the array `[5, 10]` would result in dashes 5 pixels long
-  /// default the array [3,5]
-  final List<double> dashPattern;
 
   /// An object that can be used to control the position to which this page
   /// view is scrolled.
@@ -39,6 +22,8 @@ class StepperNotifier extends ChangeNotifier {
   ///default index is 0
   int _currentIndex = 0;
 
+  bool loadingPage = false;
+
   ///Step animation direction
   AnimationDirection _direction = AnimationDirection.clockwise;
 
@@ -48,9 +33,9 @@ class StepperNotifier extends ChangeNotifier {
 
   ///Total page length
   ///default page index set is 1
-  int totalIndex = 0;
+  int _totalIndex = 0;
 
-  final bool formValidation;
+  List<GlobalKey<FormState>> globalKeyList =[];
 
   ///Ticker Provider from [StepperA], cause need to use it in [AnimationSlide]
   late TickerProviderStateMixin singleTickerProviderStateMixin;
@@ -59,37 +44,30 @@ class StepperNotifier extends ChangeNotifier {
   late Animation<double> animation;
 
   StepperNotifier({
-    required this.borderType,
-    required this.lineType,
-    required this.borderShape,
-    required this.dashPattern,
     required this.controller,
     required int initialPage,
-    required int length,
     required TickerProviderStateMixin vsync,
-    required this.formValidation,
   }) {
     _currentIndex = initialPage;
     nextPageIndex = initialPage;
-    totalIndex = length;
     singleTickerProviderStateMixin = vsync;
     stepperController = AnimationController(
         vsync: vsync, duration: const Duration(milliseconds: 1000));
     animation = Tween<double>(begin: 0.0, end: 1.0).animate(stepperController);
   }
 
-  int checkFormKeyValidation(int index) {
-    if (_currentIndex > index) return index;
+  bool checkFormKeyValidation(int index) {
+    if (_currentIndex > index) return true;
 
-    if (!formValidation) return index;
+    if (!StepperModel().formValidation) return true;
 
-    StepperModel().globalKeyList[_currentIndex].currentState?.save();
+     globalKeyList[_currentIndex].currentState?.save();
 
-    if (StepperModel().globalKeyList[_currentIndex].currentState != null && StepperModel().globalKeyList[_currentIndex].currentState!.validate()) {
-      return index;
+    if (globalKeyList[_currentIndex].currentState != null && globalKeyList[_currentIndex].currentState!.validate()) {
+      return true;
     }
 
-    return _currentIndex;
+    return false;
   }
 
   Animation<double> getAnimation() {
@@ -112,11 +90,20 @@ class StepperNotifier extends ChangeNotifier {
       _direction = AnimationDirection.clockwise;
     }
 
-    _currentIndex = checkFormKeyValidation(index);
-    controller.animateToPage(_currentIndex,
-        duration: const Duration(milliseconds: durationTime),
-        curve: Curves.easeOut);
-    notifyListeners();
+    if(checkFormKeyValidation(index)){
+      _currentIndex = index;
+      controller.animateToPage(_currentIndex,
+          duration: const Duration(milliseconds: durationTime),
+          curve: Curves.easeOut);
+      loadingPage = true;
+      notifyListeners();
+    }else {
+      controller.animateToPage(_currentIndex,
+          duration: const Duration(milliseconds: durationTime),
+          curve: Curves.easeOut);
+      notifyListeners();
+    }
+
   }
 
   ScrollController getStepScrollController(
@@ -131,6 +118,27 @@ class StepperNotifier extends ChangeNotifier {
           curve: Curves.easeIn);
     }
     return _stepController;
+  }
+
+  void keyList(){
+    for(int i =1;i <= getTotalSteps; i++){
+      globalKeyList.add(GlobalKey<FormState>());
+    }
+  }
+
+  int get getTotalSteps {
+    if(StepperModel().totalSteps == _totalIndex) {
+      return _totalIndex;
+    } else {
+      _totalIndex =StepperModel().totalSteps;
+      if(globalKeyList.isEmpty) {
+        keyList();
+      }else{
+        keyList();
+       // notifyListeners();
+      }
+      return _totalIndex;
+    }
   }
 
   @override

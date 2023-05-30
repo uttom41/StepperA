@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
+
 class StepOne extends StatefulWidget {
+
   final StepperAController controller;
+
   const StepOne({Key? key, required this.controller}) : super(key: key);
 
   @override
@@ -29,6 +32,9 @@ class _StepOneState extends State<StepOne> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
+                onChanged: (c){
+                 // widget.notifier.onUpdate();
+                },
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), labelText: "Email"),
                 validator: (value) {
@@ -57,9 +63,6 @@ class _StepOneState extends State<StepOne> {
 
             // InkWell(
             //   onTap: (){
-            //     setState(() {
-            //
-            //     });
             //    // widget.controller.next();
             //   },
             //   child: Container(
