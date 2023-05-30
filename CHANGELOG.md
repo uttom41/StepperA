@@ -26,3 +26,9 @@
 - Form validation check new attribute added [formValidation = true] .
 - Forward and previous button style change for more dynamic.
 - Bug fix
+
+## 1.2.2
+
+- Vertical stepper code refactoring.
+- Bug fix.
+

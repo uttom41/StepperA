@@ -110,13 +110,13 @@ class StepperNotifier extends ChangeNotifier {
       {required double itemWidth,
         required double lineWidth,
         required double screenWidth}) {
-    final double scrollAmount =
-        ((_currentIndex + 1) * (lineWidth + itemWidth)) - screenWidth;
-    if (scrollAmount > 0) {
+     double scrollAmount =
+        ((_currentIndex + 1) * (lineWidth + lineWidth  +16+ itemWidth)) - screenWidth;
+    if (scrollAmount < 0) scrollAmount=0.0;
       _stepController.animateTo(scrollAmount,
           duration: const Duration(milliseconds: durationTime),
           curve: Curves.easeIn);
-    }
+
     return _stepController;
   }
 

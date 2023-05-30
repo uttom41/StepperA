@@ -47,17 +47,17 @@ class _StepperExampleState extends State<StepperExample> {
               )),
         ),
         Positioned(
-          top: 98,
-          //top: 75,
+          //top: 110,
+          top: 145,
           left: 0,
           right: 0,
           bottom: 0,
           //MediaQuery.of(context).size.height-240
           child: StepperA(
-              stepperSize: const Size(300, 95),
+              stepperSize: const Size(70, 350),
               borderShape: BorderShape.circle,
               borderType: BorderType.straight,
-              stepperAxis: Axis.horizontal,
+              stepperAxis: Axis.vertical,
               lineType: LineType.dotted,
               stepperBackgroundColor: Colors.transparent,
               stepperAController: controller,
@@ -65,7 +65,7 @@ class _StepperExampleState extends State<StepperExample> {
               stepWidth: 40,
               stepBorder: true,
               pageSwipe: true,
-              formValidation: true,
+              formValidation: false,
 
               // floatingPreviousButton: FloatingButton(
               //     buttonIconColor: Colors.white,
@@ -84,7 +84,7 @@ class _StepperExampleState extends State<StepperExample> {
               //     )
               // ),
               previousButton: (int index) => StepperAButton(
-                    width: 90,
+                    width: 40,
                     height: 40,
                     buttonWidget: const Icon(
                       Icons.arrow_back,
@@ -92,18 +92,24 @@ class _StepperExampleState extends State<StepperExample> {
                     ),
                   ),
               forwardButton: (index) => StepperAButton(
-                    width: index == 0 ? MediaQuery.of(context).size.width-40 : MediaQuery.of(context).size.width-120,
+                    width: 40,
+                   // width: index == 0 ? MediaQuery.of(context).size.width-25 : MediaQuery.of(context).size.width-140,
                     height: 40,
                     boxDecoration: BoxDecoration(
                       color: index == 3?Colors.indigo: Colors.green,
                       borderRadius: const BorderRadius.all(Radius.circular(10))
                     ),
-                    buttonWidget: index == 3
-                        ? const Text('Complete',
-                            style: TextStyle(fontSize: 14, color: Colors.white))
-                        : const Text('Next',
-                            style:
-                                TextStyle(fontSize: 14, color: Colors.white)),
+                    buttonWidget:
+                  const Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                    ),
+                    // index == 3
+                    //     ? const Text('Complete',
+                    //         style: TextStyle(fontSize: 14, color: Colors.white))
+                    //     : const Text('Next',
+                    //         style:
+                    //             TextStyle(fontSize: 14, color: Colors.white)),
                   ),
               customSteps: [
                 const CustomSteps(stepsIcon: Icons.login, title: "LogIn"),

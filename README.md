@@ -112,32 +112,20 @@ import 'package:stepper_a/stepper_a.dart';
 ## ScreenShot
 
 ## FormKey validation
-![video link ](https://github.com/salim-lachdhaf/searchable_dropdown/assets/44666275/313222d5-a527-4374-8592-91949550007b)
-
-## Youtube link
-![Youtube](https://youtu.be/Gbn6Dsj8AWI)
-
-![formkey](https://user-images.githubusercontent.com/44666275/232333587-c807f95a-b8db-454e-865e-98dd26304b58.gif)
+![Horizontal rectangle ](https://github.com/amit-hassan/Basic-Task/assets/23728430/b706bb85-5421-43ed-901a-f323a3a62dd0.gif)
 
 ## Custom Steps
-![custom_steps](https://user-images.githubusercontent.com/44666275/232333845-f29e33b6-8030-445d-9ee3-94130386736d.gif)
 
-## vertical stepper
-![vertical_circle](https://user-images.githubusercontent.com/44666275/232333904-d2f2cf64-e80b-45a5-b5ed-6cd3e268c0e4.gif)
+![vertical circle](https://github.com/amit-hassan/Basic-Task/assets/23728430/3babe4f6-541c-4df7-964f-fe2b64b4d679.gif)
 
 ## Others
-![horizontal_circle](https://user-images.githubusercontent.com/44666275/232333995-0027ac88-519c-4eb0-b416-ccc4ec3d9f58.gif)
+![vertical circle](https://github.com/amit-hassan/Basic-Task/assets/23728430/1d788024-9a96-494e-9568-e44e062fbec5.gif)
 
-![horizontal_circle_border](https://user-images.githubusercontent.com/44666275/232334075-bef4e0d6-2645-4e06-ac09-1f0495ac18f2.gif)
-![horizontal_circle_dash](https://user-images.githubusercontent.com/44666275/232334106-10b9c0d3-9a41-4cbf-bbb7-ee9e926ce040.gif)
-![vertical custom step](https://user-images.githubusercontent.com/44666275/232334159-f293ab1b-cd41-4b92-acf6-19b720abb13d.gif)
-![vertical_step_withbutton](https://user-images.githubusercontent.com/44666275/232334218-28dc3dca-56a7-42dd-8de5-0b7c1e76bb09.gif)
-![Media_230415_221534](https://user-images.githubusercontent.com/44666275/232334295-466295cb-730a-4cf0-a708-5d3dccb58705.gif)
-![](example/assets/pic/Media_230415_221243.gif)
-![](example/assets/pic/Media_230415_221733.gif)
-![](example/assets/pic/tringle.gif)
-![](example/assets/pic/Media_230415_222245.gif)
-![](example/assets/pic/Media_230415_222135.gif)
+![Horizontal circle](https://github.com/amit-hassan/Basic-Task/assets/23728430/284ea3b1-7d8e-431a-8efa-fc29f93c5c60.gif)
+
+![Horizontal rectangle](https://github.com/amit-hassan/Basic-Task/assets/23728430/29347e50-7523-4f44-b88e-3892a83b07f6.gif)
+
+
 
 
 
