@@ -36,9 +36,9 @@ mixin WidgetMixin on IWidget {
   }
 
   @override
-  Widget buildLine(int index, double size) {
+  Widget buildLine(int index, double size,Color color) {
     return StepperLine(
-      lineColor: getLineColor(index),
+      lineColor: color,
       length: CalculateLength(
           size: size,
           width: StepperModel().stepWidth,

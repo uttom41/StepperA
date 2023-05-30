@@ -38,10 +38,10 @@ class _ExampleTwoState extends State<ExampleTwo> {
                 right: 0,
                 bottom: 0, //MediaQuery.of(context).size.height-240
                 child: StepperA(
-                    stepperSize: const Size(90, 300),
-                    borderShape: BorderShape.rRect,
+                    stepperSize: const Size(300, 95),
+                    borderShape: BorderShape.circle,
                     borderType: BorderType.straight,
-                    stepperAxis: Axis.vertical,
+                    stepperAxis: Axis.horizontal,
                     lineType: LineType.dotted,
                     stepperBackgroundColor: Colors.transparent,
                     stepperAController: controller,
@@ -49,7 +49,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     stepWidth: 40,
                     stepBorder: true,
                     pageSwipe: true,
-                    formValidation: true,
+                    formValidation: false,
 
                     // floatingPreviousButton: FloatingButton(
                     //     buttonIconColor: Colors.white,
@@ -68,7 +68,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     //     )
                     // ),
                     previousButton: (int index) => StepperAButton(
-                      width: 90,
+                      width: 40,
                       height: 40,
                       buttonWidget: const Icon(
                         Icons.arrow_back,
@@ -76,15 +76,19 @@ class _ExampleTwoState extends State<ExampleTwo> {
                       ),
                     ),
                     forwardButton: (index) => StepperAButton(
-                      width: index == 0 ? 90 : 90,
-                      height: 40,
-                      buttonWidget: index == 3
-                          ? const Text('Complete', style: TextStyle(fontSize: 14, color: Colors.white))
-                          : const Text('Next', style: TextStyle(fontSize: 14, color: Colors.white)),
+                        width: index == 0 ? 40 : 40,
+                        height: 40,
+                        buttonWidget: const Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                        )
+                        // index == 3
+                      //     ? const Text('Complete', style: TextStyle(fontSize: 14, color: Colors.white))
+                      //     : const Text('Next', style: TextStyle(fontSize: 14, color: Colors.white)),
                     ),
                     customSteps: [
                       const CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
-                      const CustomSteps(stepsIcon: Icons.home, title: "Home"),
+                      const CustomSteps(stepsIcon: Icons.home, title: "Home sdsfdsfdsf"),
                       const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
                       if(_notifier.index) CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
                     ],

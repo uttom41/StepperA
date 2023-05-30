@@ -135,8 +135,8 @@ class CalculateLength {
   double length() {
     double stepSiz = width * stepSize;
     double lineSize = size - stepSiz;
-    return 40 < (lineSize / (stepSize - 1)) - 10
+    return 30 < (lineSize / (stepSize - 1)) - 10
         ? (lineSize / (stepSize - 1)) - 10
-        : 40;
+        : 30;
   }
 }

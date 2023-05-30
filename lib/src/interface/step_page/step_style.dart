@@ -31,14 +31,14 @@ mixin StepStyle on IStepPage {
       ///line between step circles
       if (index != StepperModel().notifier.getTotalSteps - 1) {
         steps.add(
-            buildLine(index, StepperModel().stepperSize.width)
+            buildLine(index, StepperModel().stepperSize.width,getLineColor(index))
         );
       }
     }
     return steps;
   }
 
-
+///todo: horizontal step text field alignment update
   @override
   List<Widget> buildCustomStep() {
     List<Widget> steps = [];
@@ -58,13 +58,18 @@ mixin StepStyle on IStepPage {
                   child: buildCustomInnerElementOfStepper(index),
                 )
               ]),
-              if (index != StepperModel().notifier.getTotalSteps - 1)buildLine(index, StepperModel().stepperSize.width),
+              if (index != StepperModel().notifier.getTotalSteps - 1)buildLine(index, StepperModel().stepperSize.width,getLineColor(index)),
             ],
           ),
-          if(StepperModel().customSteps![index].title != null)Center(
+          if(StepperModel().customSteps![index].title != null)Container(
+            padding: const EdgeInsets.only(top: 3),
+            alignment: Alignment.center,
+           // width: StepperModel().stepWidth +10,
             child: Text(
               StepperModel().customSteps![index].title??"",
               softWrap: true,
+
+              maxLines: 1,
               style: TextStyle(
                   fontSize: index ==  StepperModel().notifier.currentIndex ? 14 : 12,
                   color: index ==  StepperModel().notifier.currentIndex
@@ -75,7 +80,7 @@ mixin StepStyle on IStepPage {
         ],
       )
       :Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Stack(children: [
               if (StepperModel().stepBorder)buildBorder(index),
@@ -85,24 +90,28 @@ mixin StepStyle on IStepPage {
                 child: buildCustomInnerElementOfStepper(index),
               )
             ]),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if (index != StepperModel().notifier.getTotalSteps - 1)buildLine(index, StepperModel().stepperSize.width),
-                if(StepperModel().customSteps![index].title != null)Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 2.0),
-                    child: Text(
-                      StepperModel().customSteps![index].title??"",
-                      softWrap: true,
-                      style: TextStyle(
-                          fontSize: index ==  StepperModel().notifier.currentIndex ? 14 : 12,
-                          color: index ==  StepperModel().notifier.currentIndex
-                              ? getBorderColor(index)
-                              : StepperModel().step.inactiveStepColor),
-                    ),
+                //if (index != StepperModel().notifier.getTotalSteps - 1)
+                  buildLine(index, StepperModel().stepperSize.width,
+                      index ==  StepperModel().notifier.currentIndex
+                          ? StepperModel().step.currentStepColor
+                          : getBorderColor(index)
                   ),
-                )
+                if(StepperModel().customSteps![index].title != null)Text(
+                  StepperModel().customSteps![index].title??"",
+                  maxLines: 2,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: true,
+                  style: TextStyle(
+                      fontSize: index ==  StepperModel().notifier.currentIndex ? 14 : 12,
+                      color: index ==  StepperModel().notifier.currentIndex
+                          ? getBorderColor(index)
+                          : StepperModel().step.inactiveStepColor),
+                ),
+                if (index != StepperModel().notifier.getTotalSteps - 1)buildLine(index, StepperModel().stepperSize.width,getLineColor(index)),
               ],
             ),
 
