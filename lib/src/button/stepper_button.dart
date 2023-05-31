@@ -38,9 +38,10 @@ class StepperAButtonWidget extends StatelessWidget {
         onTap();
       },
       child: Container(
-        margin: Platform.isAndroid
-            ?const EdgeInsets.only(bottom: 12, left: 12, right: 12)
-            :const EdgeInsets.only(bottom: 20, left: 12, right: 12),
+        margin:_stepperAButton.margin,
+        // Platform.isAndroid
+        //     ?const EdgeInsets.only(bottom: 12, left: 12, right: 12)
+        //     :const EdgeInsets.only(bottom: 20, left: 12, right: 12),
         width: _stepperAButton.width,
         height: _stepperAButton.height,
         alignment: Alignment.center,

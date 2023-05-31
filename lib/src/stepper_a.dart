@@ -224,6 +224,7 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
   @override
   void didUpdateWidget(covariant StepperA oldWidget) {
     totalSteps = widget.stepperBodyWidget.length;
+    _pageController = PageController();
     StepperModel.init(
         lineThickness: widget.lineThickness,
         stepperSize:  widget.stepperSize,
@@ -255,15 +256,13 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
         pageSwipe:widget.pageSwipe
     );
 
-    if (widget.stepperAController != null) {
-      widget.stepperAController?.setNotifier = _notifier;
-    }
     super.didUpdateWidget(oldWidget);
   }
 
   @override
   void didChangeDependencies() {
     totalSteps = widget.stepperBodyWidget.length;
+    _pageController = PageController();
     StepperModel.init(
         lineThickness: widget.lineThickness,
         stepperSize:  widget.stepperSize,
@@ -295,9 +294,6 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
         pageSwipe:widget.pageSwipe
     );
 
-    if (widget.stepperAController != null) {
-      widget.stepperAController?.setNotifier = _notifier;
-    }
     super.didChangeDependencies();
   }
 

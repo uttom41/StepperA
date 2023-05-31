@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/utils/stepper_model.dart';
 
+import '../../../stepper_a.dart';
 import '../../button/stepper_button.dart';
 import '../../button/stepper_floating_button.dart';
 import '../../page_helper/stepper_body.dart';
@@ -19,6 +20,16 @@ mixin MainStyle on IMainPage {
 
   @override
   Widget buildFloatingHorizontalStepper() {
+    FloatingButton? prevBtn;
+    FloatingButton? forWardBtn;
+    if (StepperModel().notifier.currentIndex != 0 &&
+        StepperModel().floatingPreviousButton != null){
+      prevBtn = StepperModel().floatingPreviousButton;
+    }
+    if(StepperModel().floatingForwardButton != null){
+      forWardBtn = StepperModel().floatingForwardButton;
+    }
+
     return Stack(
       children: [
         Column(
@@ -29,27 +40,31 @@ mixin MainStyle on IMainPage {
             )
           ],
         ),
-        if (StepperModel().notifier.currentIndex != 0 &&
-            StepperModel().floatingPreviousButton != null)
+
+        if (prevBtn != null)
           StepperFloatingButton(
-              position:  StepperModel().floatingPreviousButton!.position,
-              buttonColor:  StepperModel().floatingPreviousButton!.backgroundColor,
+              position:  prevBtn.position,
+              buttonColor:  prevBtn.backgroundColor,
               axis:  StepperModel().stepperAxis,
-              buttonIconColor:  StepperModel().floatingPreviousButton!.buttonIconColor,
+              buttonIconColor:  prevBtn.buttonIconColor,
               onTap: () {
-                StepperIndex(notifier:StepperModel().notifier).back(StepperModel().notifier.currentIndex);
+                if(StepperIndex(
+                    notifier:StepperModel().notifier)
+                    .back(StepperModel().notifier.currentIndex))prevBtn?.onTap(StepperModel().notifier.currentIndex);
               },
               heroTag: "tag1",
               buttonIcon: Icons.arrow_back_ios_sharp),
-        if ( StepperModel().floatingForwardButton != null)
+        if ( forWardBtn != null)
           StepperFloatingButton(
-            position:  StepperModel().floatingForwardButton!.position,
-            buttonColor:  StepperModel().floatingForwardButton!.backgroundColor,
+            position:  forWardBtn.position,
+            buttonColor: forWardBtn.backgroundColor,
             axis:  StepperModel().stepperAxis,
-            buttonIconColor:  StepperModel().floatingForwardButton!.buttonIconColor,
+            buttonIconColor:  forWardBtn.buttonIconColor,
             onTap: () {
-              StepperIndex(notifier: StepperModel().notifier)
-                  .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
+              if(StepperIndex(
+                  notifier: StepperModel().notifier)
+                  .next(StepperModel().notifier.currentIndex,
+                  StepperModel().totalSteps - 1))forWardBtn?.onTap(StepperModel().notifier.currentIndex);
             },
             heroTag: "tag2",
             buttonIcon: StepperModel().notifier.currentIndex != StepperModel().notifier.getTotalSteps - 1
@@ -109,6 +124,14 @@ mixin MainStyle on IMainPage {
 
   @override
   Widget buildNormalHorizontalStepper() {
+    StepperAButton? prevBtn;
+    StepperAButton? forwardBtn;
+    if ( StepperModel().forwardButton != null){
+      forwardBtn =  StepperModel().forwardButton!(StepperModel().notifier.currentIndex);
+    }
+    if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null){
+      prevBtn = StepperModel().previousButton!(StepperModel().notifier.currentIndex);
+    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -119,24 +142,22 @@ mixin MainStyle on IMainPage {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
+            if (prevBtn != null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex(notifier: StepperModel().notifier)
-                      .back(StepperModel().notifier.currentIndex);
+                  if(StepperIndex(notifier: StepperModel().notifier).back(StepperModel().notifier.currentIndex))prevBtn?.onTap(StepperModel().notifier.currentIndex);
                 },
-                stepperAButton:  StepperModel().previousButton!(StepperModel().notifier.currentIndex),
-                child:  StepperModel().previousButton!(StepperModel().notifier.currentIndex).buttonWidget,
+                stepperAButton:  prevBtn,
+                child:  prevBtn.buttonWidget,
               ),
             Container(),
-            if ( StepperModel().forwardButton != null)
+            if ( forwardBtn != null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex(notifier: StepperModel().notifier)
-                      .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
+                  if(StepperIndex(notifier: StepperModel().notifier).next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1))forwardBtn?.onTap(StepperModel().notifier.currentIndex);
                 },
-                stepperAButton:  StepperModel().forwardButton!(StepperModel().notifier.currentIndex),
-                child: StepperModel().forwardButton!(StepperModel().notifier.currentIndex).buttonWidget
+                stepperAButton:  forwardBtn,
+                child: forwardBtn.buttonWidget
                 // StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
                 //     ?  StepperModel().forwardButton!.buttonWidget
                 //     :  StepperModel().forwardButton!.completeButtonWidget,
@@ -149,33 +170,45 @@ mixin MainStyle on IMainPage {
 
   @override
   Widget buildNormalVerticalStepper() {
+    StepperAButton? prevBtn;
+    StepperAButton? forwardBtn;
+    if ( StepperModel().forwardButton != null){
+      forwardBtn =  StepperModel().forwardButton!(StepperModel().notifier.currentIndex);
+    }
+    if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null){
+       prevBtn = StepperModel().previousButton!(StepperModel().notifier.currentIndex);
+    }
     return Row(
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
+            if(prevBtn !=null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex(notifier: StepperModel().notifier)
-                      .back(StepperModel().notifier.currentIndex);
+                  if(StepperIndex(notifier: StepperModel().notifier).next(
+                      StepperModel().notifier.currentIndex,
+                      StepperModel().notifier.getTotalSteps)) prevBtn?.onTap(StepperModel().notifier.currentIndex);
+                  //StepperIndex(notifier: StepperModel().notifier).back(StepperModel().notifier.currentIndex);
                 },
-                stepperAButton:  StepperModel().previousButton!(StepperModel().notifier.currentIndex),
-                child:  StepperModel().previousButton!(StepperModel().notifier.currentIndex).buttonWidget,
+                stepperAButton:  prevBtn,
+                child:  prevBtn.buttonWidget,
               ),
-            if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
-              const SizedBox(height: 8),
+            //if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
+            //  const SizedBox(height: 8),
             StepperStep(),
-            if ( StepperModel().forwardButton != null)
-              const SizedBox(height: 8),
-            if ( StepperModel().forwardButton != null)
+            //if ( StepperModel().forwardButton != null)
+             // const SizedBox(height: 8),
+            if (forwardBtn != null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex(notifier: StepperModel().notifier)
-                      .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
+                  if(StepperIndex(
+                      notifier: StepperModel().notifier)
+                      .next(StepperModel().notifier.currentIndex,
+                      StepperModel().totalSteps - 1))prevBtn?.onTap(StepperModel().notifier.currentIndex);
                 },
                 stepperAButton:  StepperModel().forwardButton!(StepperModel().notifier.currentIndex),
-                child: StepperModel().forwardButton!(StepperModel().notifier.currentIndex).buttonWidget
+                child: forwardBtn.buttonWidget
                 // StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
                 //     ?  StepperModel().forwardButton!.buttonWidget
                 //     :  StepperModel().forwardButton!.completeButtonWidget,

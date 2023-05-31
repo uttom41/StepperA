@@ -17,9 +17,13 @@ class FloatingButton {
   /// if only need for floating button
   Position position;
 
+  /// Button onTap provide current index for build your functionality.
+  final Function (int currentIndex) onTap;
+
   FloatingButton({
     required this.buttonIconColor,
     required this.backgroundColor,
     required this.position,
+    required this.onTap
   });
 }

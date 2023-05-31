@@ -3,23 +3,18 @@
 ///
 ///
 import 'package:stepper_a/src/provider/stepper_index_handler.dart';
-import 'package:stepper_a/src/provider/stepper_provider.dart';
+import 'package:stepper_a/src/utils/stepper_model.dart';
 
 ///[StepperAController] class helps user to
 /// switch previous and forward page on button press.
 ///
 class StepperAController {
-  late StepperNotifier _notifier;
-  set setNotifier(StepperNotifier notifier) {
-    _notifier = notifier;
+
+  void next({required Function(int currentIndex) onTap}) {
+    if(StepperIndex(notifier: StepperModel().notifier).next(StepperModel().notifier.currentIndex, StepperModel().notifier.getTotalSteps)) onTap(StepperModel().notifier.currentIndex);
   }
 
-  void next() {
-    StepperIndex(notifier: _notifier)
-        .next(_notifier.currentIndex, _notifier.getTotalSteps);
-  }
-
-  void back() {
-    StepperIndex(notifier: _notifier).back(_notifier.currentIndex);
+  void back({required Function(int currentIndex) onTap}) {
+    if(StepperIndex(notifier: StepperModel().notifier).back(StepperModel().notifier.currentIndex))onTap(StepperModel().notifier.currentIndex);
   }
 }

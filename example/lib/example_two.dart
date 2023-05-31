@@ -14,7 +14,7 @@ class ExampleTwo extends StatefulWidget {
 
 class _ExampleTwoState extends State<ExampleTwo> {
   late final ExampleNotifier _notifier = ExampleNotifier();
-  final StepperAController controller = StepperAController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     stepperAxis: Axis.horizontal,
                     lineType: LineType.dotted,
                     stepperBackgroundColor: Colors.transparent,
-                    stepperAController: controller,
+                    stepperAController: _notifier.controller,
                     stepHeight: 40,
                     stepWidth: 40,
                     stepBorder: true,
@@ -74,15 +74,19 @@ class _ExampleTwoState extends State<ExampleTwo> {
                         Icons.arrow_back,
                         color: Colors.white,
                       ),
+                      onTap: (int currentIndex){
+                        print(currentIndex);
+                      },
+                        margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12)
                     ),
                     forwardButton: (index) => StepperAButton(
-                        width: index == 0 ? 40 : 40,
-                        height: 40,
-                        buttonWidget: const Icon(
-                          Icons.arrow_forward,
-                          color: Colors.white,
-                        )
-                        // index == 3
+                      width: index == 0 ? MediaQuery.of(context).size.width-24 : 40,
+                      height: 40, buttonWidget: const Icon(Icons.arrow_forward, color: Colors.white),
+                      onTap: (int currentIndex){
+                        print(currentIndex);
+                      },
+                      margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12)
+                      // index == 3
                       //     ? const Text('Complete', style: TextStyle(fontSize: 14, color: Colors.white))
                       //     : const Text('Next', style: TextStyle(fontSize: 14, color: Colors.white)),
                     ),
@@ -99,10 +103,10 @@ class _ExampleTwoState extends State<ExampleTwo> {
                         // loadingWidget: CircularProgressIndicator(color: Colors.green,),
                         margin: EdgeInsets.all(5)),
                     stepperBodyWidget: [
-                      StepOne(controller: controller),
-                      StepTwo(controller: controller),
-                      StepThree(controller: controller),
-                      if(_notifier.index) StepFour(controller: controller),
+                      StepTwo(controller: _notifier.controller),
+                      StepThree(controller: _notifier.controller),
+                      StepOne(controller: _notifier.controller,notifier: _notifier,),
+                      if(_notifier.index) StepFour(controller: _notifier.controller),
 
                     ]),
               ),
@@ -115,7 +119,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
 }
 
 class ExampleNotifier extends ChangeNotifier{
-
+  final StepperAController controller = StepperAController();
   bool index = false;
   void onUpdate(){
     index = !index;

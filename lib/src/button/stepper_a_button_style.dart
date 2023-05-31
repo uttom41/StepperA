@@ -17,6 +17,12 @@ class StepperAButton {
   ///Button custom decoration
   final BoxDecoration? boxDecoration;
 
+  ///Button margin set
+  final EdgeInsets? margin;
+
+  /// Button onTap provide current index for build your functionality.
+  final Function (int currentIndex) onTap;
+
   ///
   /// Button text for back and next
   final Widget buttonWidget;
@@ -26,9 +32,12 @@ class StepperAButton {
 
   StepperAButton(
       {required this.width,
-      required this.height,
-      this.boxDecoration,
-      required this.buttonWidget,
-     // required this.completeButtonWidget
+        required this.height,
+        this.boxDecoration,
+        this.margin,
+        required this.buttonWidget,
+        required this.onTap
+
+        // required this.completeButtonWidget
       });
 }

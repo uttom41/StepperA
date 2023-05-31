@@ -13,20 +13,24 @@ class StepperIndex {
   StepperIndex({required this.notifier});
 
   /// this method  using  for stepper forward index update.
-  void next(int x, int y) {
+  bool next(int x, int y) {
     if (x < y) {
       notifier.currentIndex = (x + 1);
+      return true;
     } else {
       notifier.currentIndex = x;
+      return false;
     }
   }
 
   /// this method using for stepper previous index update
-  void back(int x) {
+  bool back(int x) {
     if (x > 0) {
       notifier.currentIndex = (x - 1);
+      return true;
     } else {
       notifier.currentIndex = x;
+      return false;
     }
   }
 }
