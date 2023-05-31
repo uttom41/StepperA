@@ -5,32 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="step shape update">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_5_23_10_27_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_5_23_10_27_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_5_23_10_48_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_5_23_10_48_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_5_23_2_22_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_5_23_2_22_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_5_23_3_10_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_5_23_3_10_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2023_9_47_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2023_9_47_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_29_23__3_58_PM.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_29_23__3_58_PM.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_30_23__11_25_AM.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_30_23__11_25_AM.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/example_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/example_two.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/step_one.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/step_one.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/button/floating_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/floating_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/button/stepper_a_button_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/stepper_a_button_style.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/button/stepper_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/stepper_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/main_page/main_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/main_page/main_style.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/provider/stepper_index_handler.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/provider/stepper_index_handler.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/drawing/path_painter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/drawing/path_painter.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a_controller.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,5 +128,21 @@
     <MESSAGE value="ReadMe file updated" />
     <MESSAGE value="Stepper step update" />
     <option name="LAST_COMMIT_MESSAGE" value="Stepper step update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/drawing/path_painter.dart</url>
+          <line>112</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/drawing/path_painter.dart</url>
+          <line>104</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -103,9 +103,9 @@ class _ExampleTwoState extends State<ExampleTwo> {
                         // loadingWidget: CircularProgressIndicator(color: Colors.green,),
                         margin: EdgeInsets.all(5)),
                     stepperBodyWidget: [
+                      StepOne(controller: _notifier.controller,notifier: _notifier,),
                       StepTwo(controller: _notifier.controller),
                       StepThree(controller: _notifier.controller),
-                      StepOne(controller: _notifier.controller,notifier: _notifier,),
                       if(_notifier.index) StepFour(controller: _notifier.controller),
 
                     ]),

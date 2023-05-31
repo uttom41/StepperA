@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/drawing/path_draw.dart';
+import 'package:stepper_a/src/utils/stepper_model.dart';
 import 'calculate_perfect_size.dart';
 import 'dash_draw.dart';
 import 'path_draw_animation.dart';
@@ -107,8 +108,14 @@ class PathPainters extends CustomPainter {
           percent: animationPercent,
         ).drawAnimation();
 
-        canvas.drawPath(currentPath, line);
-      }
+         if(StepperModel().notifier.loadingPage){
+           canvas.drawPath(currentPath, line);
+           StepperModel().notifier.loadingPage= false;
+         }else{
+           canvas.drawPath(originalPath, line);
+         }
+
+       }
     }
   }
 

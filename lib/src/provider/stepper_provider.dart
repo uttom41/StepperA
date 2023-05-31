@@ -22,7 +22,7 @@ class StepperNotifier extends ChangeNotifier {
   ///default index is 0
   int _currentIndex = 0;
 
-  bool loadingPage = false;
+  bool loadingPage = true;
 
   ///Step animation direction
   AnimationDirection _direction = AnimationDirection.clockwise;
@@ -89,13 +89,12 @@ class StepperNotifier extends ChangeNotifier {
     } else {
       _direction = AnimationDirection.clockwise;
     }
-
+    loadingPage = true;
     if(checkFormKeyValidation(index)){
       _currentIndex = index;
       controller.animateToPage(_currentIndex,
           duration: const Duration(milliseconds: durationTime),
           curve: Curves.easeOut);
-      loadingPage = true;
       notifyListeners();
     }else {
       controller.animateToPage(_currentIndex,
@@ -103,13 +102,13 @@ class StepperNotifier extends ChangeNotifier {
           curve: Curves.easeOut);
       notifyListeners();
     }
-
   }
 
   ScrollController getStepScrollController(
       {required double itemWidth,
         required double lineWidth,
         required double screenWidth}) {
+    loadingPage = true;
      double scrollAmount =
         ((_currentIndex + 1) * (lineWidth + lineWidth  +16+ itemWidth)) - screenWidth;
     if (scrollAmount < 0) scrollAmount=0.0;
