@@ -225,6 +225,7 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
   void didUpdateWidget(covariant StepperA oldWidget) {
     totalSteps = widget.stepperBodyWidget.length;
     _pageController = PageController();
+    _notifier.loadingPage = false;
     StepperModel.init(
         lineThickness: widget.lineThickness,
         stepperSize:  widget.stepperSize,

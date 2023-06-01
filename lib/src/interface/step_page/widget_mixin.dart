@@ -28,7 +28,7 @@ mixin WidgetMixin on IWidget {
           radius: StepperModel().radius,
           pathColor: getBorderColor(index),
           strokeWidth: 3.0,
-          taskType: index == StepperModel().notifier.currentIndex
+          taskType: (index == StepperModel().notifier.currentIndex && StepperModel().notifier.loadingPage)
               ? TaskType.inProgress
               : TaskType.pending,
           animationDirection: StepperModel().notifier.direction,

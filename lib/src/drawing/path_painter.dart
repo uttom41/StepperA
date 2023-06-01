@@ -108,12 +108,13 @@ class PathPainters extends CustomPainter {
           percent: animationPercent,
         ).drawAnimation();
 
-         if(StepperModel().notifier.loadingPage){
-           canvas.drawPath(currentPath, line);
-           StepperModel().notifier.loadingPage= false;
-         }else{
-           canvas.drawPath(originalPath, line);
-         }
+        canvas.drawPath(currentPath, line);
+         // if(StepperModel().notifier.loadingPage){
+         //   canvas.drawPath(currentPath, line);
+         //   StepperModel().notifier.loadingPage= false;
+         // }else{
+         //   canvas.drawPath(originalPath, line);
+         // }
 
        }
     }
