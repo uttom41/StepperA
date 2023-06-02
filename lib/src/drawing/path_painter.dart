@@ -5,7 +5,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/drawing/path_draw.dart';
-import 'package:stepper_a/src/utils/stepper_model.dart';
 import 'calculate_perfect_size.dart';
 import 'dash_draw.dart';
 import 'path_draw_animation.dart';

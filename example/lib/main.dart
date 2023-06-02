@@ -1,11 +1,9 @@
 import 'package:example/step_four.dart';
-import 'package:example/step_one.dart';
 import 'package:example/step_three.dart';
 import 'package:example/step_two.dart';
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
-import 'example_two.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ExampleTwo(),
+      home: const StepperExample(),
     );
   }
 }
@@ -119,11 +117,11 @@ class _StepperExampleState extends State<StepperExample> {
               //         style:
               //             TextStyle(fontSize: 14, color: Colors.white)),
             ),
-            customSteps: [
-              const CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
-              const CustomSteps(stepsIcon: Icons.home, title: "Home"),
-              const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
-              CustomSteps(image: Image.asset("assets/pic/pay.png", color: Colors.white), title: "Payment"),
+            customSteps: const [
+              CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
+              CustomSteps(stepsIcon: Icons.home, title: "Home"),
+              CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
+            //  CustomSteps(image: Image.asset("assets/pic/pay.png", color: Colors.white), title: "Payment"),
             ],
             step: const StepA(
                 currentStepColor: Colors.green,
@@ -132,7 +130,7 @@ class _StepperExampleState extends State<StepperExample> {
                 // loadingWidget: CircularProgressIndicator(color: Colors.green,),
                 margin: EdgeInsets.all(5)),
             stepperBodyWidget: [
-              // StepOne(controller: controller),
+             // StepOne(controller: controller),
               StepTwo(controller: controller),
               StepThree(controller: controller),
               StepFour(controller: controller),

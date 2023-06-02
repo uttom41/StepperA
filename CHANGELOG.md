@@ -32,3 +32,7 @@
 - Vertical stepper code refactoring.
 - Bug fix.
 
+## 1.2.3
+
+- Vertical step UI update.
+- Bug fix.

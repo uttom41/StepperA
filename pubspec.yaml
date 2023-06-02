@@ -1,6 +1,6 @@
 name: stepper_a
 description: StepperA is a simple and robust Flutter package which is making it possible to use FormKey validation and easy access your own button press control.
-version: 1.2.2
+version: 1.2.3
 homepage: https://github.com/uttom41/StepperA
 
 environment:

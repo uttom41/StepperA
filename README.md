@@ -75,6 +75,9 @@ import 'package:stepper_a/stepper_a.dart';
         previousButton: (int index) => StepperAButton(
             width: 90,
             height: 40,
+            onTap: (int currentIndex){
+            
+            },
             buttonWidget: const Icon(
             Icons.arrow_back,
             color: Colors.white,
@@ -83,6 +86,9 @@ import 'package:stepper_a/stepper_a.dart';
         forwardButton: (index) => StepperAButton(
             width: index == 0 ? 200 : 90,
             height: 40,
+            onTap: (int currentIndex){
+            
+            },
             buttonWidget: index == 3
             ? const Text('Complete', style: TextStyle(fontSize: 14, color: Colors.white))
                 : const Text('Next', style: TextStyle(fontSize: 14, color: Colors.white)),
@@ -112,18 +118,20 @@ import 'package:stepper_a/stepper_a.dart';
 ## ScreenShot
 
 ## FormKey validation
-![Horizontal rectangle ](https://github.com/amit-hassan/Basic-Task/assets/23728430/b706bb85-5421-43ed-901a-f323a3a62dd0.gif)
+![Horizontal rectangle ](https://github.com/amit-hassan/Basic-Task/assets/23728430/b706bb85-5421-43ed-901a-f323a3a62dd0)
+
+![Screenshot_20230602_233154](https://github.com/amit-hassan/BMIMeasure/assets/44666275/93235a6f-c706-41fb-874f-3eebda1ea93e)
 
 ## Custom Steps
 
-![vertical circle](https://github.com/amit-hassan/Basic-Task/assets/23728430/3babe4f6-541c-4df7-964f-fe2b64b4d679.gif)
+![vertical circle](https://github.com/amit-hassan/Basic-Task/assets/23728430/3babe4f6-541c-4df7-964f-fe2b64b4d679)
 
 ## Others
-![vertical circle](https://github.com/amit-hassan/Basic-Task/assets/23728430/1d788024-9a96-494e-9568-e44e062fbec5.gif)
+![vertical circle](https://github.com/amit-hassan/Basic-Task/assets/23728430/1d788024-9a96-494e-9568-e44e062fbec5)
 
-![Horizontal circle](https://github.com/amit-hassan/Basic-Task/assets/23728430/284ea3b1-7d8e-431a-8efa-fc29f93c5c60.gif)
+![Horizontal circle](https://github.com/amit-hassan/Basic-Task/assets/23728430/284ea3b1-7d8e-431a-8efa-fc29f93c5c60)
 
-![Horizontal rectangle](https://github.com/amit-hassan/Basic-Task/assets/23728430/29347e50-7523-4f44-b88e-3892a83b07f6.gif)
+![Horizontal rectangle](https://github.com/amit-hassan/Basic-Task/assets/23728430/29347e50-7523-4f44-b88e-3892a83b07f6)
 
 
 
