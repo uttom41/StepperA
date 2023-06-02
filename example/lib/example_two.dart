@@ -38,12 +38,12 @@ class _ExampleTwoState extends State<ExampleTwo> {
                 right: 0,
                 bottom: 0, //MediaQuery.of(context).size.height-240
                 child: StepperA(
-                    stepperSize: const Size(60, 300),
+                    stepperSize: const Size(70, 300),
                    // stepperSize: const Size(300, 95),
                     borderShape: BorderShape.circle,
                     borderType: BorderType.straight,
                     stepperAxis: Axis.vertical,
-                    lineType: LineType.dotted,
+                    lineType: LineType.straight,
                     stepperBackgroundColor: Colors.transparent,
                     stepperAController: _notifier.controller,
                     stepHeight: 40,
@@ -97,6 +97,9 @@ class _ExampleTwoState extends State<ExampleTwo> {
                       const CustomSteps(stepsIcon: Icons.home, title: "Home sdsfdsfdsf"),
                       const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
                       CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
+                      CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
+                      CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
+                      CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
                     ],
                     step: const StepA(
                         currentStepColor: Colors.green,
@@ -108,6 +111,9 @@ class _ExampleTwoState extends State<ExampleTwo> {
                       StepOne(controller: _notifier.controller,notifier: _notifier,),
                       StepTwo(controller: _notifier.controller),
                       StepThree(controller: _notifier.controller),
+                      StepFour(controller: _notifier.controller),
+                      StepFour(controller: _notifier.controller),
+                      StepFour(controller: _notifier.controller),
                       StepFour(controller: _notifier.controller),
 
                     ]),

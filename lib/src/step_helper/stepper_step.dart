@@ -114,7 +114,7 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
         width: StepperModel().stepWidth,
         height: StepperModel().stepHeight,
         stepSize: StepperModel().notifier.getTotalSteps)
-        .length());
+        .length()+StepperModel().stepHeight);
     return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

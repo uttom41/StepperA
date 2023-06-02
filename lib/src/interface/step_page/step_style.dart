@@ -63,12 +63,11 @@ mixin StepStyle on IStepPage {
           ),
           if(StepperModel().customSteps![index].title != null)Container(
             padding: const EdgeInsets.only(top: 3),
-            alignment: Alignment.center,
-           // width: StepperModel().stepWidth +10,
+            alignment: Alignment.centerLeft,
+            width: StepperModel().stepWidth +10,
             child: Text(
               StepperModel().customSteps![index].title??"",
               softWrap: true,
-
               maxLines: 1,
               style: TextStyle(
                   fontSize: index ==  StepperModel().notifier.currentIndex ? 14 : 12,
@@ -98,7 +97,7 @@ mixin StepStyle on IStepPage {
                       index ==  StepperModel().notifier.currentIndex
                           ? StepperModel().step.currentStepColor
                           : getBorderColor(index)
-                  ),
+                  ,2),
                 if(StepperModel().customSteps![index].title != null)Text(
                   StepperModel().customSteps![index].title??"",
                   maxLines: 2,
@@ -111,7 +110,7 @@ mixin StepStyle on IStepPage {
                           ? getBorderColor(index)
                           : StepperModel().step.inactiveStepColor),
                 ),
-                if (index != StepperModel().notifier.getTotalSteps - 1)buildLine(index, StepperModel().stepperSize.width,getLineColor(index)),
+                if (index != StepperModel().notifier.getTotalSteps - 1)buildLine(index, StepperModel().stepperSize.width,getLineColor(index),2),
               ],
             ),
 

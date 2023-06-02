@@ -36,7 +36,8 @@ mixin WidgetMixin on IWidget {
   }
 
   @override
-  Widget buildLine(int index, double size,Color color) {
+  Widget buildLine(int index, double size,Color color,[int? s]) {
+    int newS = (s==null)?1:s;
     return StepperLine(
       lineColor: color,
       length: CalculateLength(
@@ -44,7 +45,7 @@ mixin WidgetMixin on IWidget {
           width: StepperModel().stepWidth,
           height: StepperModel().stepHeight,
           stepSize: StepperModel().notifier.getTotalSteps)
-          .length(),
+          .length()/newS,
       lineThickness: StepperModel().lineThickness,
       lineType: StepperModel().lineType,
       axis: StepperModel().stepperAxis,
