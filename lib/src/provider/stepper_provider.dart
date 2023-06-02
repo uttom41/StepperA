@@ -24,12 +24,11 @@ class StepperNotifier extends ChangeNotifier {
 
   bool loadingPage = true;
 
+  double _scrollSize = 0.0;
+
   ///Step animation direction
   AnimationDirection _direction = AnimationDirection.clockwise;
 
-  ///next Page index
-  ///default set next page index is 0
-  int nextPageIndex = 0;
 
   ///Total page length
   ///default page index set is 1
@@ -49,7 +48,6 @@ class StepperNotifier extends ChangeNotifier {
     required TickerProviderStateMixin vsync,
   }) {
     _currentIndex = initialPage;
-    nextPageIndex = initialPage;
     singleTickerProviderStateMixin = vsync;
     stepperController = AnimationController(
         vsync: vsync, duration: const Duration(milliseconds: 1000));
@@ -86,35 +84,40 @@ class StepperNotifier extends ChangeNotifier {
   set currentIndex(int index) {
     if (_currentIndex > index) {
       _direction = AnimationDirection.anticlockwise;
-    } else {
+    } else if(_currentIndex < index){
       _direction = AnimationDirection.clockwise;
     }
 
-    if(checkFormKeyValidation(index)){
+    if(checkFormKeyValidation(index) && _currentIndex != index){
       loadingPage = true;
       _currentIndex = index;
       controller.animateToPage(_currentIndex,
           duration: const Duration(milliseconds: durationTime),
           curve: Curves.easeOut);
       notifyListeners();
-    }else {
-      loadingPage = true;
-      controller.animateToPage(_currentIndex,
-          duration: const Duration(milliseconds: durationTime),
-          curve: Curves.easeOut);
-      notifyListeners();
     }
+    // else {
+    //   loadingPage = true;
+    //   controller.animateToPage(_currentIndex,
+    //       duration: const Duration(milliseconds: durationTime),
+    //       curve: Curves.easeOut);
+    //   notifyListeners();
+    // }
+  }
+
+  void totalScrollSize({required double lineWidth} ){
+    _scrollSize = (lineWidth + StepperModel().stepWidth);
   }
 
   ScrollController getStepScrollController(
       {required double itemWidth,
         required double lineWidth,
         required double screenWidth}) {
-     double scrollAmount =
-        ((_currentIndex + 1) * (lineWidth + lineWidth  +16+ itemWidth)) - screenWidth;
-    if (scrollAmount < 0) scrollAmount=0.0;
+     double scrollAmount = ((_currentIndex + 1) * _scrollSize) - screenWidth;
+    // double scrollAmount = ((_currentIndex + 1) * (lineWidth + lineWidth  +16+ itemWidth)) - screenWidth;
+   // if (scrollAmount < 0) scrollAmount=0.0;
 
-    if(_currentIndex > 0){
+    if(scrollAmount > 0 ){
       _stepController.animateTo(scrollAmount,
           duration: const Duration(milliseconds: durationTime),
           curve: Curves.easeIn);}

@@ -48,9 +48,7 @@ mixin MainStyle on IMainPage {
               axis:  StepperModel().stepperAxis,
               buttonIconColor:  prevBtn.buttonIconColor,
               onTap: () {
-                if(StepperIndex(
-                    notifier:StepperModel().notifier)
-                    .back(StepperModel().notifier.currentIndex))prevBtn?.onTap(StepperModel().notifier.currentIndex);
+                if(StepperIndex().back(StepperModel().notifier.currentIndex))prevBtn?.onTap(StepperModel().notifier.currentIndex);
               },
               heroTag: "tag1",
               buttonIcon: Icons.arrow_back_ios_sharp),
@@ -61,9 +59,7 @@ mixin MainStyle on IMainPage {
             axis:  StepperModel().stepperAxis,
             buttonIconColor:  forWardBtn.buttonIconColor,
             onTap: () {
-              if(StepperIndex(
-                  notifier: StepperModel().notifier)
-                  .next(StepperModel().notifier.currentIndex,
+              if(StepperIndex().next(StepperModel().notifier.currentIndex,
                   StepperModel().totalSteps - 1))forWardBtn?.onTap(StepperModel().notifier.currentIndex);
             },
             heroTag: "tag2",
@@ -95,7 +91,7 @@ mixin MainStyle on IMainPage {
               axis:  StepperModel().stepperAxis,
               buttonIconColor:  StepperModel().floatingPreviousButton!.buttonIconColor,
               onTap: () {
-                StepperIndex(notifier: StepperModel().notifier).back(StepperModel().notifier.currentIndex);
+                StepperIndex().back(StepperModel().notifier.currentIndex);
               },
               heroTag: "tag1",
               buttonIcon:  StepperModel().stepperAxis == Axis.horizontal
@@ -108,7 +104,7 @@ mixin MainStyle on IMainPage {
             axis:  StepperModel().stepperAxis,
             buttonIconColor:  StepperModel().floatingForwardButton!.buttonIconColor,
             onTap: () {
-              StepperIndex(notifier: StepperModel().notifier)
+              StepperIndex()
                   .next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
             },
             heroTag: "tag2",
@@ -145,7 +141,9 @@ mixin MainStyle on IMainPage {
             if (prevBtn != null)
               StepperAButtonWidget(
                 onTap: () {
-                  if(StepperIndex(notifier: StepperModel().notifier).back(StepperModel().notifier.currentIndex))prevBtn?.onTap(StepperModel().notifier.currentIndex);
+                  if(StepperIndex().back(StepperModel().notifier.currentIndex)) {
+                    prevBtn?.onTap(StepperModel().notifier.currentIndex);
+                  }
                 },
                 stepperAButton:  prevBtn,
                 child:  prevBtn.buttonWidget,
@@ -154,7 +152,9 @@ mixin MainStyle on IMainPage {
             if ( forwardBtn != null)
               StepperAButtonWidget(
                 onTap: () {
-                  if(StepperIndex(notifier: StepperModel().notifier).next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1))forwardBtn?.onTap(StepperModel().notifier.currentIndex);
+                  if(StepperIndex().next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1)){
+                    forwardBtn?.onTap(StepperModel().notifier.currentIndex);
+                    }
                 },
                 stepperAButton:  forwardBtn,
                 child: forwardBtn.buttonWidget
@@ -186,9 +186,7 @@ mixin MainStyle on IMainPage {
             if(prevBtn !=null)
               StepperAButtonWidget(
                 onTap: () {
-                  if(StepperIndex(notifier: StepperModel().notifier).next(
-                      StepperModel().notifier.currentIndex,
-                      StepperModel().notifier.getTotalSteps)) prevBtn?.onTap(StepperModel().notifier.currentIndex);
+                  if(StepperIndex().back(StepperModel().notifier.currentIndex)) prevBtn?.onTap(StepperModel().notifier.currentIndex);
                   //StepperIndex(notifier: StepperModel().notifier).back(StepperModel().notifier.currentIndex);
                 },
                 stepperAButton:  prevBtn,
@@ -202,9 +200,7 @@ mixin MainStyle on IMainPage {
             if (forwardBtn != null)
               StepperAButtonWidget(
                 onTap: () {
-                  if(StepperIndex(
-                      notifier: StepperModel().notifier)
-                      .next(StepperModel().notifier.currentIndex,
+                  if(StepperIndex().next(StepperModel().notifier.currentIndex,
                       StepperModel().totalSteps - 1))prevBtn?.onTap(StepperModel().notifier.currentIndex);
                 },
                 stepperAButton:  StepperModel().forwardButton!(StepperModel().notifier.currentIndex),

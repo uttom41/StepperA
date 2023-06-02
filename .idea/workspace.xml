@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ea8df3b-0688-4257-bfe5-8f8530d592d5" name="Changes" comment="step shape update">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_5_23_10_39_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_5_23_10_39_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/example_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/example_two.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/drawing/path_painter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/drawing/path_painter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/widget_mixin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/widget_mixin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/interface/main_page/main_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/main_page/main_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/provider/stepper_index_handler.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/provider/stepper_index_handler.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a_controller.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,9 +137,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/stepper_a.dart</url>
-          <line>203</line>
-          <option name="timeStamp" value="59" />
+          <url>file://$PROJECT_DIR$/lib/src/provider/stepper_provider.dart</url>
+          <line>119</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

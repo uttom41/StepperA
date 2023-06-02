@@ -67,6 +67,12 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
   }
 
   Widget buildHorizontalStep() {
+    StepperModel().notifier.totalScrollSize(lineWidth: CalculateLength(
+        size:  stepperSizeCalculate().width,
+        width: StepperModel().stepWidth,
+        height: StepperModel().stepHeight,
+        stepSize: StepperModel().notifier.getTotalSteps)
+        .length());
     return Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -75,6 +81,12 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
   }
 
   Widget buildVerticalStep() {
+    StepperModel().notifier.totalScrollSize(lineWidth: CalculateLength(
+        size:  stepperSizeCalculate().width,
+        width: StepperModel().stepWidth,
+        height: StepperModel().stepHeight,
+        stepSize: StepperModel().notifier.getTotalSteps)
+        .length());
     return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -83,6 +95,12 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
   }
 
   Widget buildHorizontalCustomStep() {
+    StepperModel().notifier.totalScrollSize(lineWidth: CalculateLength(
+        size:  stepperSizeCalculate().width,
+        width: StepperModel().stepWidth,
+        height: StepperModel().stepHeight,
+        stepSize: StepperModel().notifier.getTotalSteps)
+        .length());
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -91,6 +109,12 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
   }
 
   Widget buildVerticalCustomStep() {
+    StepperModel().notifier.totalScrollSize(lineWidth: CalculateLength(
+        size:  stepperSizeCalculate().width,
+        width: StepperModel().stepWidth,
+        height: StepperModel().stepHeight,
+        stepSize: StepperModel().notifier.getTotalSteps)
+        .length());
     return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

@@ -109,13 +109,6 @@ class PathPainters extends CustomPainter {
         ).drawAnimation();
 
         canvas.drawPath(currentPath, line);
-         // if(StepperModel().notifier.loadingPage){
-         //   canvas.drawPath(currentPath, line);
-         //   StepperModel().notifier.loadingPage= false;
-         // }else{
-         //   canvas.drawPath(originalPath, line);
-         // }
-
        }
     }
   }

@@ -38,10 +38,11 @@ class _ExampleTwoState extends State<ExampleTwo> {
                 right: 0,
                 bottom: 0, //MediaQuery.of(context).size.height-240
                 child: StepperA(
-                    stepperSize: const Size(300, 95),
+                    stepperSize: const Size(60, 300),
+                   // stepperSize: const Size(300, 95),
                     borderShape: BorderShape.circle,
                     borderType: BorderType.straight,
-                    stepperAxis: Axis.horizontal,
+                    stepperAxis: Axis.vertical,
                     lineType: LineType.dotted,
                     stepperBackgroundColor: Colors.transparent,
                     stepperAController: _notifier.controller,
@@ -80,7 +81,8 @@ class _ExampleTwoState extends State<ExampleTwo> {
                         margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12)
                     ),
                     forwardButton: (index) => StepperAButton(
-                      width: index == 0 ? MediaQuery.of(context).size.width-24 : 40,
+                      width: 40,
+                    //  width: index == 0 ? MediaQuery.of(context).size.width-24 : 40,
                       height: 40, buttonWidget: const Icon(Icons.arrow_forward, color: Colors.white),
                       onTap: (int currentIndex){
                         print(currentIndex);
@@ -94,7 +96,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                       const CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
                       const CustomSteps(stepsIcon: Icons.home, title: "Home sdsfdsfdsf"),
                       const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
-                      if(_notifier.index) CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
+                      CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
                     ],
                     step: const StepA(
                         currentStepColor: Colors.green,
@@ -106,7 +108,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                       StepOne(controller: _notifier.controller,notifier: _notifier,),
                       StepTwo(controller: _notifier.controller),
                       StepThree(controller: _notifier.controller),
-                      if(_notifier.index) StepFour(controller: _notifier.controller),
+                      StepFour(controller: _notifier.controller),
 
                     ]),
               ),

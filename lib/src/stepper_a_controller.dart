@@ -11,10 +11,10 @@ import 'package:stepper_a/src/utils/stepper_model.dart';
 class StepperAController {
 
   void next({required Function(int currentIndex) onTap}) {
-    if(StepperIndex(notifier: StepperModel().notifier).next(StepperModel().notifier.currentIndex, StepperModel().notifier.getTotalSteps)) onTap(StepperModel().notifier.currentIndex);
+    if(StepperIndex().next(StepperModel().notifier.currentIndex, StepperModel().notifier.getTotalSteps)) onTap(StepperModel().notifier.currentIndex);
   }
 
   void back({required Function(int currentIndex) onTap}) {
-    if(StepperIndex(notifier: StepperModel().notifier).back(StepperModel().notifier.currentIndex))onTap(StepperModel().notifier.currentIndex);
+    if(StepperIndex().back(StepperModel().notifier.currentIndex))onTap(StepperModel().notifier.currentIndex);
   }
 }
