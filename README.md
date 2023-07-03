@@ -55,23 +55,6 @@ import 'package:stepper_a/stepper_a.dart';
         stepBorder: true,
         pageSwipe: false,
         formValidation: true,
-
-        // floatingPreviousButton: FloatingButton(
-        //     buttonIconColor: Colors.white,
-        //     backgroundColor:  Colors.blueAccent,
-        //     position: Position(//
-        //         left: 10,
-        //         bottom: 10
-        //     )
-        // ),
-        // floatingForwardButton: FloatingButton(
-        //     buttonIconColor: Colors.white,
-        //     backgroundColor:  Colors.blueAccent,
-        //     position: Position(
-        //         right: 10,
-        //         bottom: 20
-        //     )
-        // ),
         previousButton: (int index) => StepperAButton(
             width: 90,
             height: 40,
@@ -88,6 +71,9 @@ import 'package:stepper_a/stepper_a.dart';
             height: 40,
             onTap: (int currentIndex){
             
+            },
+            onComplete: (){
+              debugPrint("Forward Button click complete step call back!");
             },
             buttonWidget: index == 3
             ? const Text('Complete', style: TextStyle(fontSize: 14, color: Colors.white))

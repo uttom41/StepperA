@@ -60,7 +60,9 @@ mixin MainStyle on IMainPage {
             axis:  StepperModel().stepperAxis,
             buttonIconColor:  forWardBtn.buttonIconColor,
             onTap: () {
-              StepperIndex().next(StepperModel().notifier.currentIndex, StepperModel().totalSteps - 1);
+              if(!StepperIndex().next(StepperModel().notifier.currentIndex, StepperModel().totalSteps - 1)){
+                if(forWardBtn?.onComplete !=null)forWardBtn?.onComplete!();
+              }
               forWardBtn?.onTap(StepperModel().notifier.currentIndex);
             },
             heroTag: "tag2",
@@ -114,7 +116,9 @@ mixin MainStyle on IMainPage {
             axis:  StepperModel().stepperAxis,
             buttonIconColor:  forWardBtn.buttonIconColor,
             onTap: () {
-              StepperIndex().next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
+              if(!StepperIndex().next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1)){
+                if(forWardBtn?.onComplete !=null)forWardBtn?.onComplete!();
+              }
               forWardBtn!.onTap(StepperModel().notifier.currentIndex);
             },
             heroTag: "tag2",
@@ -161,7 +165,9 @@ mixin MainStyle on IMainPage {
             if ( forwardBtn != null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex().next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1);
+                  if(!StepperIndex().next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1)){
+                    if(forwardBtn?.onComplete !=null)forwardBtn?.onComplete!();
+                  }
                   forwardBtn?.onTap(StepperModel().notifier.currentIndex);
                 },
                 stepperAButton:  forwardBtn,
@@ -209,7 +215,9 @@ mixin MainStyle on IMainPage {
             if (forwardBtn != null)
               StepperAButtonWidget(
                 onTap: () {
-                  StepperIndex().next(StepperModel().notifier.currentIndex,StepperModel().totalSteps - 1);
+                  if(!StepperIndex().next(StepperModel().notifier.currentIndex,StepperModel().totalSteps - 1)){
+                    if(forwardBtn?.onComplete !=null)forwardBtn?.onComplete!();
+                  }
                   forwardBtn?.onTap(StepperModel().notifier.currentIndex);
                 },
                 stepperAButton:  StepperModel().forwardButton!(StepperModel().notifier.currentIndex),

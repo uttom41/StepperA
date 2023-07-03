@@ -83,7 +83,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                         color: Colors.white,
                       ),
                       onTap: (int currentIndex){
-                        print("Previous Button $currentIndex");
+                        debugPrint("Previous Button $currentIndex");
                       },
                         margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12)
                     ),
@@ -92,7 +92,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     //  width: index == 0 ? MediaQuery.of(context).size.width-24 : 40,
                       height: 40, buttonWidget: const Icon(Icons.arrow_forward, color: Colors.white),
                       onTap: (int currentIndex){
-                        print("Forward button $currentIndex");
+                        debugPrint("Forward button $currentIndex");
                       },
                       margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12)
                       // index == 3
@@ -101,7 +101,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     ),
                     customSteps: [
                       const CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
-                      const CustomSteps(stepsIcon: Icons.home, title: "Home sdsfdsfdsf"),
+                      const CustomSteps(stepsIcon: Icons.home, title: "Home"),
                       const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
                       CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
                       CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),

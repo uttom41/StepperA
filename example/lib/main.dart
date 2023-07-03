@@ -4,8 +4,6 @@ import 'package:example/step_two.dart';
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
-import 'example_two.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ExampleTwo(),
+      home: const StepperExample(),
     );
   }
 }
@@ -57,6 +55,7 @@ class _StepperExampleState extends State<StepperExample> {
           //MediaQuery.of(context).size.height-240
           child: StepperA(
             stepperSize: const Size(70, 350),
+            //stepperSize: const Size(300, 95),
             borderShape: BorderShape.circle,
             borderType: BorderType.straight,
             stepperAxis: Axis.vertical,
@@ -75,7 +74,10 @@ class _StepperExampleState extends State<StepperExample> {
             //     position: Position(//
             //         left: 10,
             //         bottom: 10
-            //     )
+            //     ),
+            //     onTap: (int currentIndex) {
+            //
+            //     }
             // ),
             // floatingForwardButton: FloatingButton(
             //     buttonIconColor: Colors.white,
@@ -83,25 +85,33 @@ class _StepperExampleState extends State<StepperExample> {
             //     position: Position(
             //         right: 10,
             //         bottom: 20
-            //     )
+            //     ),
+            //     onTap: (int currentIndex) {  },
+            //   onComplete: (){
+            //     debugPrint("Forward Button click complete step call back!");
+            //   },
             // ),
             previousButton: (int index) => StepperAButton(
               width: 40,
               height: 40,
               onTap: (int currentIndex){
-
+                debugPrint("Previous Button Current Index $currentIndex");
               },
               buttonWidget: const Icon(
                 Icons.arrow_back,
                 color: Colors.white,
               ),
             ),
+
             forwardButton: (index) => StepperAButton(
+              onComplete: (){
+                debugPrint("Forward Button click complete step call back!");
+              },
               width: 40,
               // width: index == 0 ? MediaQuery.of(context).size.width-25 : MediaQuery.of(context).size.width-140,
               height: 40,
               onTap: (int currentIndex){
-
+                debugPrint("Forward Button Current Index $currentIndex");
               },
               boxDecoration: BoxDecoration(
                   color: index == 3?Colors.indigo: Colors.green,
