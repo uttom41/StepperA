@@ -4,6 +4,8 @@ import 'package:example/step_two.dart';
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
+import 'example_two.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const StepperExample(),
+      home: const ExampleTwo(),
     );
   }
 }

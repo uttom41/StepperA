@@ -58,7 +58,10 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     //     position: Position(//
                     //         left: 10,
                     //         bottom: 10
-                    //     )
+                    //     ),
+                    //     onTap: (int currentIndex) {
+                    //       print("Previous Button $currentIndex");
+                    //     }
                     // ),
                     // floatingForwardButton: FloatingButton(
                     //     buttonIconColor: Colors.white,
@@ -66,8 +69,12 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     //     position: Position(
                     //         right: 10,
                     //         bottom: 20
-                    //     )
+                    //     ),
+                    //     onTap: (int currentIndex) {
+                    //       print("Forward button $currentIndex");
+                    // }
                     // ),
+
                     previousButton: (int index) => StepperAButton(
                       width: 40,
                       height: 40,
@@ -76,7 +83,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                         color: Colors.white,
                       ),
                       onTap: (int currentIndex){
-                        print(currentIndex);
+                        print("Previous Button $currentIndex");
                       },
                         margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12)
                     ),
@@ -85,7 +92,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     //  width: index == 0 ? MediaQuery.of(context).size.width-24 : 40,
                       height: 40, buttonWidget: const Icon(Icons.arrow_forward, color: Colors.white),
                       onTap: (int currentIndex){
-                        print(currentIndex);
+                        print("Forward button $currentIndex");
                       },
                       margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12)
                       // index == 3
