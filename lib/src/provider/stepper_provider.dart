@@ -88,21 +88,23 @@ class StepperNotifier extends ChangeNotifier {
       _direction = AnimationDirection.clockwise;
     }
 
-    if(checkFormKeyValidation(index) && _currentIndex != index){
-      loadingPage = true;
-      _currentIndex = index;
-      controller.animateToPage(_currentIndex,
-          duration: const Duration(milliseconds: durationTime),
-          curve: Curves.easeOut);
-      notifyListeners();
+    if(_currentIndex != index){
+      if(checkFormKeyValidation(index)){
+        loadingPage = true;
+        _currentIndex = index;
+        controller.animateToPage(_currentIndex,
+            duration: const Duration(milliseconds: durationTime),
+            curve: Curves.easeOut);
+        notifyListeners();
+      } else {
+        loadingPage = false;
+        controller.animateToPage(_currentIndex,
+            duration: const Duration(milliseconds: durationTime),
+            curve: Curves.easeOut);
+        notifyListeners();
+      }
     }
-    // else {
-    //   loadingPage = true;
-    //   controller.animateToPage(_currentIndex,
-    //       duration: const Duration(milliseconds: durationTime),
-    //       curve: Curves.easeOut);
-    //   notifyListeners();
-    // }
+
   }
 
   void totalScrollSize({required double lineWidth} ){

@@ -38,11 +38,11 @@ class _ExampleTwoState extends State<ExampleTwo> {
                 right: 0,
                 bottom: 0, //MediaQuery.of(context).size.height-240
                 child: StepperA(
-                    stepperSize: const Size(70, 300),
-                   // stepperSize: const Size(300, 95),
+                   // stepperSize: const Size(70, 300),
+                    stepperSize: const Size(300, 95),
                     borderShape: BorderShape.circle,
                     borderType: BorderType.straight,
-                    stepperAxis: Axis.vertical,
+                    stepperAxis: Axis.horizontal,
                     lineType: LineType.straight,
                     stepperBackgroundColor: Colors.transparent,
                     stepperAController: _notifier.controller,
@@ -50,7 +50,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     stepWidth: 40,
                     stepBorder: true,
                     pageSwipe: true,
-                    formValidation: false,
+                    formValidation: true,
 
                     // floatingPreviousButton: FloatingButton(
                     //     buttonIconColor: Colors.white,

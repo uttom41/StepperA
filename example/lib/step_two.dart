@@ -50,6 +50,11 @@ class _StepTwoState extends State<StepTwo> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
+                onChanged: (c){
+                  setState(() {
+
+                  });
+                },
                 obscureText: false,
                 validator:  (value) {
                   if (value == null || value.isEmpty) {
