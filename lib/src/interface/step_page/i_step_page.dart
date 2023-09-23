@@ -1,4 +1,3 @@
-
 /// /*** Uttam kumar mitra ***/
 /// create date 25/05/2023; 10:36 PM
 ///
@@ -13,11 +12,10 @@ import 'a_widget.dart';
 
 abstract class IStepPageComponent extends IWidget {}
 
-abstract class IStepPage extends IStepPageComponent with WidgetMixin,CalculateSize{
-
+abstract class IStepPage extends IStepPageComponent
+    with WidgetMixin, CalculateSize {
   List<Widget> buildNumberStep();
   List<Widget> buildCustomStep();
   Widget buildInnerElementOfStepper(index);
   Widget buildCustomInnerElementOfStepper(index);
-
 }

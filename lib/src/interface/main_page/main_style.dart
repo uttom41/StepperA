@@ -1,4 +1,3 @@
-
 /// /*** Uttam kumar mitra ***/
 /// create date 25/05/2023; 10:36 PM
 ///
@@ -17,16 +16,15 @@ import '../../step_helper/stepper_step.dart';
 import 'i_main_page.dart';
 
 mixin MainStyle on IMainPage {
-
   @override
   Widget buildFloatingHorizontalStepper() {
     FloatingButton? prevBtn;
     FloatingButton? forWardBtn;
     if (StepperModel().notifier.currentIndex != 0 &&
-        StepperModel().floatingPreviousButton != null){
+        StepperModel().floatingPreviousButton != null) {
       prevBtn = StepperModel().floatingPreviousButton;
     }
-    if(StepperModel().floatingForwardButton != null){
+    if (StepperModel().floatingForwardButton != null) {
       forWardBtn = StepperModel().floatingForwardButton;
     }
 
@@ -40,33 +38,34 @@ mixin MainStyle on IMainPage {
             )
           ],
         ),
-
         if (prevBtn != null)
           StepperFloatingButton(
-              position:  prevBtn.position,
-              buttonColor:  prevBtn.backgroundColor,
-              axis:  StepperModel().stepperAxis,
-              buttonIconColor:  prevBtn.buttonIconColor,
+              position: prevBtn.position,
+              buttonColor: prevBtn.backgroundColor,
+              axis: StepperModel().stepperAxis,
+              buttonIconColor: prevBtn.buttonIconColor,
               onTap: () {
                 StepperIndex().back(StepperModel().notifier.currentIndex);
                 prevBtn?.onTap(StepperModel().notifier.currentIndex);
               },
               heroTag: "tag1",
               buttonIcon: Icons.arrow_back_ios_sharp),
-        if ( forWardBtn != null)
+        if (forWardBtn != null)
           StepperFloatingButton(
-            position:  forWardBtn.position,
+            position: forWardBtn.position,
             buttonColor: forWardBtn.backgroundColor,
-            axis:  StepperModel().stepperAxis,
-            buttonIconColor:  forWardBtn.buttonIconColor,
+            axis: StepperModel().stepperAxis,
+            buttonIconColor: forWardBtn.buttonIconColor,
             onTap: () {
-              if(!StepperIndex().next(StepperModel().notifier.currentIndex, StepperModel().totalSteps - 1)){
-                if(forWardBtn?.onComplete !=null)forWardBtn?.onComplete!();
+              if (!StepperIndex().next(StepperModel().notifier.currentIndex,
+                  StepperModel().totalSteps - 1)) {
+                if (forWardBtn?.onComplete != null) forWardBtn?.onComplete!();
               }
               forWardBtn?.onTap(StepperModel().notifier.currentIndex);
             },
             heroTag: "tag2",
-            buttonIcon: StepperModel().notifier.currentIndex != StepperModel().notifier.getTotalSteps - 1
+            buttonIcon: StepperModel().notifier.currentIndex !=
+                    StepperModel().notifier.getTotalSteps - 1
                 ? Icons.arrow_forward_ios_sharp
                 : Icons.check,
           ),
@@ -79,10 +78,10 @@ mixin MainStyle on IMainPage {
     FloatingButton? prevBtn;
     FloatingButton? forWardBtn;
     if (StepperModel().notifier.currentIndex != 0 &&
-        StepperModel().floatingPreviousButton != null){
+        StepperModel().floatingPreviousButton != null) {
       prevBtn = StepperModel().floatingPreviousButton;
     }
-    if(StepperModel().floatingForwardButton != null){
+    if (StepperModel().floatingForwardButton != null) {
       forWardBtn = StepperModel().floatingForwardButton;
     }
     return Stack(
@@ -90,42 +89,44 @@ mixin MainStyle on IMainPage {
         Row(
           children: [
             StepperStep(),
-             Expanded(
+            Expanded(
               child: StepperBody().build(),
             )
           ],
         ),
         if (prevBtn != null)
           StepperFloatingButton(
-              position:  prevBtn.position,
-              buttonColor:  prevBtn.backgroundColor,
-              axis:  StepperModel().stepperAxis,
-              buttonIconColor:  prevBtn.buttonIconColor,
+              position: prevBtn.position,
+              buttonColor: prevBtn.backgroundColor,
+              axis: StepperModel().stepperAxis,
+              buttonIconColor: prevBtn.buttonIconColor,
               onTap: () {
                 StepperIndex().back(StepperModel().notifier.currentIndex);
                 prevBtn?.onTap(StepperModel().notifier.currentIndex);
               },
               heroTag: "tag1",
-              buttonIcon:  StepperModel().stepperAxis == Axis.horizontal
+              buttonIcon: StepperModel().stepperAxis == Axis.horizontal
                   ? Icons.arrow_back_ios_sharp
                   : Icons.keyboard_arrow_up),
         if (forWardBtn != null)
           StepperFloatingButton(
-            position:  forWardBtn.position,
-            buttonColor:  forWardBtn.backgroundColor,
-            axis:  StepperModel().stepperAxis,
-            buttonIconColor:  forWardBtn.buttonIconColor,
+            position: forWardBtn.position,
+            buttonColor: forWardBtn.backgroundColor,
+            axis: StepperModel().stepperAxis,
+            buttonIconColor: forWardBtn.buttonIconColor,
             onTap: () {
-              if(!StepperIndex().next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1)){
-                if(forWardBtn?.onComplete !=null)forWardBtn?.onComplete!();
+              if (!StepperIndex().next(StepperModel().notifier.currentIndex,
+                  StepperModel().totalSteps - 1)) {
+                if (forWardBtn?.onComplete != null) forWardBtn?.onComplete!();
               }
               forWardBtn!.onTap(StepperModel().notifier.currentIndex);
             },
             heroTag: "tag2",
-            buttonIcon: StepperModel().notifier.currentIndex != StepperModel().notifier.getTotalSteps - 1
-                ?  StepperModel().stepperAxis == Axis.horizontal
-                ? Icons.arrow_forward_ios_sharp
-                : Icons.keyboard_arrow_down
+            buttonIcon: StepperModel().notifier.currentIndex !=
+                    StepperModel().notifier.getTotalSteps - 1
+                ? StepperModel().stepperAxis == Axis.horizontal
+                    ? Icons.arrow_forward_ios_sharp
+                    : Icons.keyboard_arrow_down
                 : Icons.check,
           ),
       ],
@@ -136,17 +137,20 @@ mixin MainStyle on IMainPage {
   Widget buildNormalHorizontalStepper() {
     StepperAButton? prevBtn;
     StepperAButton? forwardBtn;
-    if ( StepperModel().forwardButton != null){
-      forwardBtn =  StepperModel().forwardButton!(StepperModel().notifier.currentIndex);
+    if (StepperModel().forwardButton != null) {
+      forwardBtn =
+          StepperModel().forwardButton!(StepperModel().notifier.currentIndex);
     }
-    if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null){
-      prevBtn = StepperModel().previousButton!(StepperModel().notifier.currentIndex);
+    if (StepperModel().notifier.currentIndex != 0 &&
+        StepperModel().previousButton != null) {
+      prevBtn =
+          StepperModel().previousButton!(StepperModel().notifier.currentIndex);
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         StepperStep(),
-         Expanded(
+        Expanded(
           child: StepperBody().build(),
         ),
         Row(
@@ -155,27 +159,30 @@ mixin MainStyle on IMainPage {
             if (prevBtn != null)
               StepperAButtonWidget(
                 onTap: () {
-                 StepperIndex().back(StepperModel().notifier.currentIndex);
-                 prevBtn?.onTap(StepperModel().notifier.currentIndex);
+                  StepperIndex().back(StepperModel().notifier.currentIndex);
+                  prevBtn?.onTap(StepperModel().notifier.currentIndex);
                 },
-                stepperAButton:  prevBtn,
-                child:  prevBtn.buttonWidget,
+                stepperAButton: prevBtn,
+                child: prevBtn.buttonWidget,
               ),
             Container(),
-            if ( forwardBtn != null)
+            if (forwardBtn != null)
               StepperAButtonWidget(
-                onTap: () {
-                  if(!StepperIndex().next(StepperModel().notifier.currentIndex,  StepperModel().totalSteps - 1)){
-                    if(forwardBtn?.onComplete !=null)forwardBtn?.onComplete!();
-                  }
-                  forwardBtn?.onTap(StepperModel().notifier.currentIndex);
-                },
-                stepperAButton:  forwardBtn,
-                child: forwardBtn.buttonWidget
-                // StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
-                //     ?  StepperModel().forwardButton!.buttonWidget
-                //     :  StepperModel().forwardButton!.completeButtonWidget,
-              ),
+                  onTap: () {
+                    if (!StepperIndex().next(
+                        StepperModel().notifier.currentIndex,
+                        StepperModel().totalSteps - 1)) {
+                      if (forwardBtn?.onComplete != null)
+                        forwardBtn?.onComplete!();
+                    }
+                    forwardBtn?.onTap(StepperModel().notifier.currentIndex);
+                  },
+                  stepperAButton: forwardBtn,
+                  child: forwardBtn.buttonWidget
+                  // StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
+                  //     ?  StepperModel().forwardButton!.buttonWidget
+                  //     :  StepperModel().forwardButton!.completeButtonWidget,
+                  ),
           ],
         )
       ],
@@ -186,53 +193,59 @@ mixin MainStyle on IMainPage {
   Widget buildNormalVerticalStepper() {
     StepperAButton? prevBtn;
     StepperAButton? forwardBtn;
-    if ( StepperModel().forwardButton != null){
-      forwardBtn =  StepperModel().forwardButton!(StepperModel().notifier.currentIndex);
+    if (StepperModel().forwardButton != null) {
+      forwardBtn =
+          StepperModel().forwardButton!(StepperModel().notifier.currentIndex);
     }
-    if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null){
-       prevBtn = StepperModel().previousButton!(StepperModel().notifier.currentIndex);
+    if (StepperModel().notifier.currentIndex != 0 &&
+        StepperModel().previousButton != null) {
+      prevBtn =
+          StepperModel().previousButton!(StepperModel().notifier.currentIndex);
     }
     return Row(
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if(prevBtn !=null)
+            if (prevBtn != null)
               StepperAButtonWidget(
                 onTap: () {
                   StepperIndex().back(StepperModel().notifier.currentIndex);
                   prevBtn?.onTap(StepperModel().notifier.currentIndex);
                   //StepperIndex(notifier: StepperModel().notifier).back(StepperModel().notifier.currentIndex);
                 },
-                stepperAButton:  prevBtn,
-                child:  prevBtn.buttonWidget,
+                stepperAButton: prevBtn,
+                child: prevBtn.buttonWidget,
               ),
             //if (StepperModel().notifier.currentIndex != 0 &&  StepperModel().previousButton != null)
             //  const SizedBox(height: 8),
             StepperStep(),
             //if ( StepperModel().forwardButton != null)
-             // const SizedBox(height: 8),
+            // const SizedBox(height: 8),
             if (forwardBtn != null)
               StepperAButtonWidget(
-                onTap: () {
-                  if(!StepperIndex().next(StepperModel().notifier.currentIndex,StepperModel().totalSteps - 1)){
-                    if(forwardBtn?.onComplete !=null)forwardBtn?.onComplete!();
-                  }
-                  forwardBtn?.onTap(StepperModel().notifier.currentIndex);
-                },
-                stepperAButton:  StepperModel().forwardButton!(StepperModel().notifier.currentIndex),
-                child: forwardBtn.buttonWidget
-                // StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
-                //     ?  StepperModel().forwardButton!.buttonWidget
-                //     :  StepperModel().forwardButton!.completeButtonWidget,
-              ),
+                  onTap: () {
+                    if (!StepperIndex().next(
+                        StepperModel().notifier.currentIndex,
+                        StepperModel().totalSteps - 1)) {
+                      if (forwardBtn?.onComplete != null)
+                        forwardBtn?.onComplete!();
+                    }
+                    forwardBtn?.onTap(StepperModel().notifier.currentIndex);
+                  },
+                  stepperAButton: StepperModel()
+                      .forwardButton!(StepperModel().notifier.currentIndex),
+                  child: forwardBtn.buttonWidget
+                  // StepperModel().notifier.currentIndex != StepperModel().notifier.totalIndex - 1
+                  //     ?  StepperModel().forwardButton!.buttonWidget
+                  //     :  StepperModel().forwardButton!.completeButtonWidget,
+                  ),
           ],
         ),
-         Expanded(
+        Expanded(
           child: StepperBody().build(),
         )
       ],
     );
   }
-
 }

@@ -10,11 +10,10 @@ import 'package:stepper_a/src/utils/stepper_model.dart';
 
 /// this class for stepper index calculation
 class StepperIndex {
-
   /// this method  using  for stepper forward index update.
   bool next(int x, int y) {
     if (x < y) {
-     StepperModel().notifier.currentIndex = (x + 1);
+      StepperModel().notifier.currentIndex = (x + 1);
       return true;
     } else {
       StepperModel().notifier.currentIndex = x;
@@ -25,10 +24,10 @@ class StepperIndex {
   /// this method using for stepper previous index update
   bool back(int x) {
     if (x > 0) {
-       StepperModel().notifier.currentIndex = (x - 1);
+      StepperModel().notifier.currentIndex = (x - 1);
       return true;
     } else {
-     StepperModel().notifier.currentIndex = x;
+      StepperModel().notifier.currentIndex = x;
       return false;
     }
   }

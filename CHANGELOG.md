@@ -1,3 +1,6 @@
+##1.3.0
+
+- Dart sdk version update
 
 ## 1.2.4
 

@@ -90,12 +90,12 @@ class StepperA extends StatefulWidget {
   /// If you need a custom button than use this.
   /// This Button pass all time provided traverse previous page.
   ///This button is shown always left side on the page.
-  final StepperAButton Function (int index)? previousButton;
+  final StepperAButton Function(int index)? previousButton;
 
   /// If you need a custom button than use this.
   /// This Button pass all time provided traverse forward page.
   /// This button is shown always right side on the page.
-  final StepperAButton Function (int index)? forwardButton;
+  final StepperAButton Function(int index)? forwardButton;
 
   /// If you need a own button than use this.
   /// and control your button click
@@ -121,43 +121,44 @@ class StepperA extends StatefulWidget {
 
   const StepperA(
       {Key? key,
-        this.lineThickness = 2,
-        required this.stepperSize,
-        required this.stepperBodyWidget,
-        this.stepperBackgroundColor = Colors.white,
-        this.padding = const EdgeInsets.all(5),
-        this.margin = const EdgeInsets.all(5),
-        this.stepPadding = const EdgeInsets.all(5),
-        this.radius = const Radius.circular(10),
-        this.borderType = BorderType.straight,
-        this.lineType = LineType.straight,
-        this.borderShape = BorderShape.circle,
-        this.dashPattern = const <double>[3, 5],
-        this.stepHeight = 50,
-        this.stepWidth = 50,
-        this.stepperAxis = Axis.horizontal,
-        this.formValidation =false,
-        this.floatingForwardButton,
-        this.floatingPreviousButton,
-        this.forwardButton,
-        this.previousButton,
-        this.stepperAController,
-        required this.stepBorder,
-        this.customSteps,
-        required this.step,
-        this.pageSwipe = true
-      })
-      : _floatingButton = (floatingForwardButton != null && floatingPreviousButton != null),
+      this.lineThickness = 2,
+      required this.stepperSize,
+      required this.stepperBodyWidget,
+      this.stepperBackgroundColor = Colors.white,
+      this.padding = const EdgeInsets.all(5),
+      this.margin = const EdgeInsets.all(5),
+      this.stepPadding = const EdgeInsets.all(5),
+      this.radius = const Radius.circular(10),
+      this.borderType = BorderType.straight,
+      this.lineType = LineType.straight,
+      this.borderShape = BorderShape.circle,
+      this.dashPattern = const <double>[3, 5],
+      this.stepHeight = 50,
+      this.stepWidth = 50,
+      this.stepperAxis = Axis.horizontal,
+      this.formValidation = false,
+      this.floatingForwardButton,
+      this.floatingPreviousButton,
+      this.forwardButton,
+      this.previousButton,
+      this.stepperAController,
+      required this.stepBorder,
+      this.customSteps,
+      required this.step,
+      this.pageSwipe = true})
+      : _floatingButton =
+            (floatingForwardButton != null && floatingPreviousButton != null),
         super(key: key);
 
   @override
   State<StepperA> createState() => _StepperAStateModel();
 }
 
+abstract class _StepperAState<TWidget extends StepperA> extends State<TWidget>
+    implements IMainPage {}
 
-abstract class _StepperAState <TWidget extends StepperA> extends State<TWidget> implements IMainPage{}
-
-class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,MainStyle {
+class _StepperAStateModel extends _StepperAState
+    with TickerProviderStateMixin, MainStyle {
   ///default set total step size in stepper.
   int totalSteps = 0;
 
@@ -171,9 +172,11 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
   @override
   void initState() {
     _pageController = PageController();
+
     ///total steps size update
     ///
     totalSteps = widget.stepperBodyWidget.length;
+
     ///init StepperNotifier
     _notifier = StepperNotifier(
       initialPage: 0,
@@ -207,8 +210,8 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
           return Scaffold(
               backgroundColor: Colors.transparent,
               body: (widget.customSteps != null &&
-                  widget.stepperBodyWidget.length !=
-                      widget.customSteps?.length)
+                      widget.stepperBodyWidget.length !=
+                          widget.customSteps?.length)
                   ? throw ("customSteps and stepperBodyWidget length must be provide equals")
                   : buildStepper());
         });
@@ -228,34 +231,33 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
     _notifier.loadingPage = false;
     StepperModel.init(
         lineThickness: widget.lineThickness,
-        stepperSize:  widget.stepperSize,
-        stepperBodyWidget:  widget.stepperBodyWidget,
-        stepperBackgroundColor:  widget.stepperBackgroundColor,
-        padding:  widget.padding,
-        margin:  widget.margin,
-        stepPadding:  widget.stepPadding,
-        radius:  widget.radius,
-        borderType:  widget.borderType,
-        lineType:  widget.lineType,
-        borderShape:  widget.borderShape,
-        dashPattern:  widget.dashPattern,
-        stepHeight:  widget.stepHeight,
-        stepWidth:  widget.stepWidth,
-        stepperAxis:  widget.stepperAxis,
+        stepperSize: widget.stepperSize,
+        stepperBodyWidget: widget.stepperBodyWidget,
+        stepperBackgroundColor: widget.stepperBackgroundColor,
+        padding: widget.padding,
+        margin: widget.margin,
+        stepPadding: widget.stepPadding,
+        radius: widget.radius,
+        borderType: widget.borderType,
+        lineType: widget.lineType,
+        borderShape: widget.borderShape,
+        dashPattern: widget.dashPattern,
+        stepHeight: widget.stepHeight,
+        stepWidth: widget.stepWidth,
+        stepperAxis: widget.stepperAxis,
         formValidation: widget.formValidation,
         floatingForwardButton: widget.floatingForwardButton,
         floatingPreviousButton: widget.floatingPreviousButton,
         forwardButton: widget.forwardButton,
         previousButton: widget.previousButton,
         stepperAController: widget.stepperAController,
-        floatingButton:  widget._floatingButton,
-        stepBorder:  widget.stepBorder,
+        floatingButton: widget._floatingButton,
+        stepBorder: widget.stepBorder,
         customSteps: widget.customSteps,
-        step:  widget.step,
+        step: widget.step,
         totalSteps: totalSteps,
         notifier: _notifier,
-        pageSwipe:widget.pageSwipe
-    );
+        pageSwipe: widget.pageSwipe);
 
     super.didUpdateWidget(oldWidget);
   }
@@ -266,36 +268,34 @@ class _StepperAStateModel  extends _StepperAState with TickerProviderStateMixin,
     _pageController = PageController();
     StepperModel.init(
         lineThickness: widget.lineThickness,
-        stepperSize:  widget.stepperSize,
-        stepperBodyWidget:  widget.stepperBodyWidget,
-        stepperBackgroundColor:  widget.stepperBackgroundColor,
-        padding:  widget.padding,
-        margin:  widget.margin,
-        stepPadding:  widget.stepPadding,
-        radius:  widget.radius,
-        borderType:  widget.borderType,
-        lineType:  widget.lineType,
-        borderShape:  widget.borderShape,
-        dashPattern:  widget.dashPattern,
-        stepHeight:  widget.stepHeight,
-        stepWidth:  widget.stepWidth,
-        stepperAxis:  widget.stepperAxis,
+        stepperSize: widget.stepperSize,
+        stepperBodyWidget: widget.stepperBodyWidget,
+        stepperBackgroundColor: widget.stepperBackgroundColor,
+        padding: widget.padding,
+        margin: widget.margin,
+        stepPadding: widget.stepPadding,
+        radius: widget.radius,
+        borderType: widget.borderType,
+        lineType: widget.lineType,
+        borderShape: widget.borderShape,
+        dashPattern: widget.dashPattern,
+        stepHeight: widget.stepHeight,
+        stepWidth: widget.stepWidth,
+        stepperAxis: widget.stepperAxis,
         formValidation: widget.formValidation,
         floatingForwardButton: widget.floatingForwardButton,
         floatingPreviousButton: widget.floatingPreviousButton,
         forwardButton: widget.forwardButton,
         previousButton: widget.previousButton,
         stepperAController: widget.stepperAController,
-        floatingButton:  widget._floatingButton,
-        stepBorder:  widget.stepBorder,
+        floatingButton: widget._floatingButton,
+        stepBorder: widget.stepBorder,
         customSteps: widget.customSteps,
-        step:  widget.step,
+        step: widget.step,
         totalSteps: totalSteps,
         notifier: _notifier,
-        pageSwipe:widget.pageSwipe
-    );
+        pageSwipe: widget.pageSwipe);
 
     super.didChangeDependencies();
   }
-
 }

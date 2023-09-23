@@ -108,7 +108,7 @@ class PathPainters extends CustomPainter {
         ).drawAnimation();
 
         canvas.drawPath(currentPath, line);
-       }
+      }
     }
   }
 

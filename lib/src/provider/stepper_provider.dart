@@ -9,7 +9,6 @@ import 'package:stepper_a/src/utils/stepper_model.dart';
 import '../../stepper_a.dart';
 
 class StepperNotifier extends ChangeNotifier {
-
   /// An object that can be used to control the position to which this page
   /// view is scrolled.
   PageController controller;
@@ -29,12 +28,11 @@ class StepperNotifier extends ChangeNotifier {
   ///Step animation direction
   AnimationDirection _direction = AnimationDirection.clockwise;
 
-
   ///Total page length
   ///default page index set is 1
   int _totalIndex = 0;
 
-  List<GlobalKey<FormState>> globalKeyList =[];
+  List<GlobalKey<FormState>> globalKeyList = [];
 
   ///Ticker Provider from [StepperA], cause need to use it in [AnimationSlide]
   late TickerProviderStateMixin singleTickerProviderStateMixin;
@@ -59,9 +57,10 @@ class StepperNotifier extends ChangeNotifier {
 
     if (!StepperModel().formValidation) return true;
 
-     globalKeyList[_currentIndex].currentState?.save();
+    globalKeyList[_currentIndex].currentState?.save();
 
-    if (globalKeyList[_currentIndex].currentState != null && globalKeyList[_currentIndex].currentState!.validate()) {
+    if (globalKeyList[_currentIndex].currentState != null &&
+        globalKeyList[_currentIndex].currentState!.validate()) {
       return true;
     }
 
@@ -84,12 +83,12 @@ class StepperNotifier extends ChangeNotifier {
   set currentIndex(int index) {
     if (_currentIndex > index) {
       _direction = AnimationDirection.anticlockwise;
-    } else if(_currentIndex < index){
+    } else if (_currentIndex < index) {
       _direction = AnimationDirection.clockwise;
     }
 
-    if(_currentIndex != index){
-      if(checkFormKeyValidation(index)){
+    if (_currentIndex != index) {
+      if (checkFormKeyValidation(index)) {
         loadingPage = true;
         _currentIndex = index;
         controller.animateToPage(_currentIndex,
@@ -104,26 +103,25 @@ class StepperNotifier extends ChangeNotifier {
         notifyListeners();
       }
     }
-
   }
 
-  void totalScrollSize({required double lineWidth} ){
+  void totalScrollSize({required double lineWidth}) {
     _scrollSize = (lineWidth + StepperModel().stepWidth);
   }
 
   ScrollController getStepScrollController(
       {required double itemWidth,
-        required double lineWidth,
-        required double screenWidth}) {
-     double scrollAmount = ((_currentIndex + 1) * _scrollSize) - screenWidth;
+      required double lineWidth,
+      required double screenWidth}) {
+    double scrollAmount = ((_currentIndex + 1) * _scrollSize) - screenWidth;
     // double scrollAmount = ((_currentIndex + 1) * (lineWidth + lineWidth  +16+ itemWidth)) - screenWidth;
-   // if (scrollAmount < 0) scrollAmount=0.0;
+    // if (scrollAmount < 0) scrollAmount=0.0;
 
-    if(_currentIndex > 0 ){
+    if (_currentIndex > 0) {
       double position = _stepController.position.pixels;
-      if(scrollAmount<0){
-        double cu = position -screenWidth;
-        if(cu<0)scrollAmount=0.0;
+      if (scrollAmount < 0) {
+        double cu = position - screenWidth;
+        if (cu < 0) scrollAmount = 0.0;
       }
 
       _stepController.animateTo(scrollAmount,
@@ -134,22 +132,22 @@ class StepperNotifier extends ChangeNotifier {
     return _stepController;
   }
 
-  void keyList(){
-    for(int i =1;i <= getTotalSteps; i++){
+  void keyList() {
+    for (int i = 1; i <= getTotalSteps; i++) {
       globalKeyList.add(GlobalKey<FormState>());
     }
   }
 
   int get getTotalSteps {
-    if(StepperModel().totalSteps == _totalIndex) {
+    if (StepperModel().totalSteps == _totalIndex) {
       return _totalIndex;
     } else {
-      _totalIndex =StepperModel().totalSteps;
-      if(globalKeyList.isEmpty) {
+      _totalIndex = StepperModel().totalSteps;
+      if (globalKeyList.isEmpty) {
         keyList();
-      }else{
+      } else {
         keyList();
-       // notifyListeners();
+        // notifyListeners();
       }
       return _totalIndex;
     }

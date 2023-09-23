@@ -33,11 +33,10 @@ class StepA {
 
   const StepA(
       {required this.currentStepColor,
-        required this.completeStepColor,
-        required this.inactiveStepColor,
-        required this.margin,
-        this.completeStepIcon,
-        this.numberStepTextStyle,
-        this.loadingWidget
-      });
+      required this.completeStepColor,
+      required this.inactiveStepColor,
+      required this.margin,
+      this.completeStepIcon,
+      this.numberStepTextStyle,
+      this.loadingWidget});
 }

@@ -14,34 +14,32 @@ import '../utils/stepper_model.dart';
 
 abstract class AStepperStep extends StatelessWidget implements IStepPage {
   const AStepperStep({super.key});
-
 }
 
-class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,WidgetMixin {
-
+class StepperStep extends AStepperStep
+    with StepStyle, CalculateSize, StyleMixin, WidgetMixin {
   StepperStep({super.key});
-
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      color:  StepperModel().stepperBackgroundColor,
+      color: StepperModel().stepperBackgroundColor,
       height: stepperSizeCalculate().height,
-      width:  stepperSizeCalculate().width,
+      width: stepperSizeCalculate().width,
       child: SingleChildScrollView(
         scrollDirection: StepperModel().stepperAxis,
         controller: StepperModel().notifier.getStepScrollController(
             itemWidth: StepperModel().stepWidth,
             lineWidth: CalculateLength(
-                size:  stepperSizeCalculate().width,
-                width: StepperModel().stepWidth,
-                height: StepperModel().stepHeight,
-                stepSize: StepperModel().notifier.getTotalSteps)
+                    size: stepperSizeCalculate().width,
+                    width: StepperModel().stepWidth,
+                    height: StepperModel().stepHeight,
+                    stepSize: StepperModel().notifier.getTotalSteps)
                 .length(),
             screenWidth: StepperModel().stepperAxis == Axis.horizontal
                 ? stepperSizeCalculate().width
-                :  stepperSizeCalculate().height),
+                : stepperSizeCalculate().height),
         child: Container(
           padding: StepperModel().padding,
           margin: StepperModel().margin,
@@ -67,40 +65,41 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
   }
 
   Widget buildHorizontalStep() {
-    StepperModel().notifier.totalScrollSize(lineWidth: CalculateLength(
-        size:  stepperSizeCalculate().width,
-        width: StepperModel().stepWidth,
-        height: StepperModel().stepHeight,
-        stepSize: StepperModel().notifier.getTotalSteps)
-        .length());
+    StepperModel().notifier.totalScrollSize(
+        lineWidth: CalculateLength(
+                size: stepperSizeCalculate().width,
+                width: StepperModel().stepWidth,
+                height: StepperModel().stepHeight,
+                stepSize: StepperModel().notifier.getTotalSteps)
+            .length());
     return Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: buildNumberStep()
-    );
+        children: buildNumberStep());
   }
 
   Widget buildVerticalStep() {
-    StepperModel().notifier.totalScrollSize(lineWidth: CalculateLength(
-        size:  stepperSizeCalculate().width,
-        width: StepperModel().stepWidth,
-        height: StepperModel().stepHeight,
-        stepSize: StepperModel().notifier.getTotalSteps)
-        .length());
+    StepperModel().notifier.totalScrollSize(
+        lineWidth: CalculateLength(
+                size: stepperSizeCalculate().width,
+                width: StepperModel().stepWidth,
+                height: StepperModel().stepHeight,
+                stepSize: StepperModel().notifier.getTotalSteps)
+            .length());
     return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: buildNumberStep()
-    );
+        children: buildNumberStep());
   }
 
   Widget buildHorizontalCustomStep() {
-    StepperModel().notifier.totalScrollSize(lineWidth: CalculateLength(
-        size:  stepperSizeCalculate().width,
-        width: StepperModel().stepWidth,
-        height: StepperModel().stepHeight,
-        stepSize: StepperModel().notifier.getTotalSteps)
-        .length());
+    StepperModel().notifier.totalScrollSize(
+        lineWidth: CalculateLength(
+                size: stepperSizeCalculate().width,
+                width: StepperModel().stepWidth,
+                height: StepperModel().stepHeight,
+                stepSize: StepperModel().notifier.getTotalSteps)
+            .length());
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -109,17 +108,17 @@ class StepperStep extends AStepperStep with StepStyle,CalculateSize,StyleMixin,W
   }
 
   Widget buildVerticalCustomStep() {
-    StepperModel().notifier.totalScrollSize(lineWidth: CalculateLength(
-        size:  stepperSizeCalculate().width,
-        width: StepperModel().stepWidth,
-        height: StepperModel().stepHeight,
-        stepSize: StepperModel().notifier.getTotalSteps)
-        .length()+StepperModel().stepHeight);
+    StepperModel().notifier.totalScrollSize(
+        lineWidth: CalculateLength(
+                    size: stepperSizeCalculate().width,
+                    width: StepperModel().stepWidth,
+                    height: StepperModel().stepHeight,
+                    stepSize: StepperModel().notifier.getTotalSteps)
+                .length() +
+            StepperModel().stepHeight);
     return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: buildCustomStep()
-    );
+        children: buildCustomStep());
   }
-
 }

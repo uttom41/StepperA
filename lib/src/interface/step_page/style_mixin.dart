@@ -1,4 +1,3 @@
-
 /// /*** Uttam kumar mitra ***/
 /// create date 25/05/2023; 10:36 PM
 ///
@@ -19,11 +18,10 @@ mixin StyleMixin {
       // (StepperModel().customSteps != null && StepperModel().customSteps![i].image != null)
       //     ?Colors.transparent
       //     :StepperModel().step.completeStepColor;
-
     } else if (i == StepperModel().notifier.currentIndex) {
       color = (StepperModel().step.loadingWidget != null)
-          ?Colors.transparent
-          :StepperModel().step.currentStepColor;
+          ? Colors.transparent
+          : StepperModel().step.currentStepColor;
     } else {
       color = StepperModel().step.inactiveStepColor;
     }
@@ -55,5 +53,4 @@ mixin StyleMixin {
     }
     return color;
   }
-
 }

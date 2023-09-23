@@ -4,7 +4,6 @@
 ///
 ///
 
-
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/button/stepper_a_button_style.dart';
 
@@ -13,7 +12,7 @@ import 'package:stepper_a/src/button/stepper_a_button_style.dart';
 class StepperAButtonWidget extends StatelessWidget {
   ///It is used to create stepper custom buttons Style,
   ///
-  final StepperAButton  _stepperAButton;
+  final StepperAButton _stepperAButton;
 
   ///click event handle
   final Function onTap;
@@ -24,21 +23,20 @@ class StepperAButtonWidget extends StatelessWidget {
 
   const StepperAButtonWidget(
       {Key? key,
-        required StepperAButton stepperAButton,
-        required this.onTap,
-        required this.child})
+      required StepperAButton stepperAButton,
+      required this.onTap,
+      required this.child})
       : _stepperAButton = stepperAButton,
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return InkWell(
       onTap: () {
         onTap();
       },
       child: Container(
-        margin:_stepperAButton.margin,
+        margin: _stepperAButton.margin,
         // Platform.isAndroid
         //     ?const EdgeInsets.only(bottom: 12, left: 12, right: 12)
         //     :const EdgeInsets.only(bottom: 20, left: 12, right: 12),

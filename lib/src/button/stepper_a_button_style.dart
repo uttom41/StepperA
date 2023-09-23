@@ -21,24 +21,23 @@ class StepperAButton {
   final EdgeInsets? margin;
 
   /// Button onTap provide current index for build your functionality.
-  final Function (int currentIndex) onTap;
+  final Function(int currentIndex) onTap;
 
   ///This function only trigger [Forward Button] click when all step completed.
-  final Function ()? onComplete;
+  final Function()? onComplete;
+
   ///
   /// Button text for back and next
   final Widget buttonWidget;
 
-
-
   StepperAButton(
       {required this.width,
-        required this.height,
-        this.boxDecoration,
-        this.margin,
-        required this.buttonWidget,
-        required this.onTap,
-        ///This function only trigger [Forward Button] click when all step completed.
-        this.onComplete
-      });
+      required this.height,
+      this.boxDecoration,
+      this.margin,
+      required this.buttonWidget,
+      required this.onTap,
+
+      ///This function only trigger [Forward Button] click when all step completed.
+      this.onComplete});
 }

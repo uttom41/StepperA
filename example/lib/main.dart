@@ -4,7 +4,6 @@ import 'package:example/step_two.dart';
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -94,7 +93,7 @@ class _StepperExampleState extends State<StepperExample> {
             previousButton: (int index) => StepperAButton(
               width: 40,
               height: 40,
-              onTap: (int currentIndex){
+              onTap: (int currentIndex) {
                 debugPrint("Previous Button Current Index $currentIndex");
               },
               buttonWidget: const Icon(
@@ -104,21 +103,19 @@ class _StepperExampleState extends State<StepperExample> {
             ),
 
             forwardButton: (index) => StepperAButton(
-              onComplete: (){
+              onComplete: () {
                 debugPrint("Forward Button click complete step call back!");
               },
               width: 40,
               // width: index == 0 ? MediaQuery.of(context).size.width-25 : MediaQuery.of(context).size.width-140,
               height: 40,
-              onTap: (int currentIndex){
+              onTap: (int currentIndex) {
                 debugPrint("Forward Button Current Index $currentIndex");
               },
               boxDecoration: BoxDecoration(
-                  color: index == 3?Colors.indigo: Colors.green,
-                  borderRadius: const BorderRadius.all(Radius.circular(10))
-              ),
-              buttonWidget:
-              const Icon(
+                  color: index == 3 ? Colors.indigo : Colors.green,
+                  borderRadius: const BorderRadius.all(Radius.circular(10))),
+              buttonWidget: const Icon(
                 Icons.arrow_forward,
                 color: Colors.white,
               ),
@@ -133,7 +130,7 @@ class _StepperExampleState extends State<StepperExample> {
               CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
               CustomSteps(stepsIcon: Icons.home, title: "Home"),
               CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
-            //  CustomSteps(image: Image.asset("assets/pic/pay.png", color: Colors.white), title: "Payment"),
+              //  CustomSteps(image: Image.asset("assets/pic/pay.png", color: Colors.white), title: "Payment"),
             ],
             step: const StepA(
                 currentStepColor: Colors.green,
@@ -142,7 +139,7 @@ class _StepperExampleState extends State<StepperExample> {
                 // loadingWidget: CircularProgressIndicator(color: Colors.green,),
                 margin: EdgeInsets.all(5)),
             stepperBodyWidget: [
-             // StepOne(controller: controller),
+              // StepOne(controller: controller),
               StepTwo(controller: controller),
               StepThree(controller: controller),
               StepFour(controller: controller),

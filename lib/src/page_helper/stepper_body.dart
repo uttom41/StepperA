@@ -6,20 +6,22 @@
 import 'package:flutter/material.dart';
 import '../utils/stepper_model.dart';
 
-class StepperBody  {
-
+class StepperBody {
   Widget build() {
     return PageView.builder(
-        physics: !StepperModel().pageSwipe?const NeverScrollableScrollPhysics():null,
+        physics: !StepperModel().pageSwipe
+            ? const NeverScrollableScrollPhysics()
+            : null,
         controller: StepperModel().notifier.controller,
         scrollDirection: Axis.horizontal,
         itemCount: StepperModel().notifier.getTotalSteps,
         onPageChanged: (index) {
-          Future.delayed(Duration.zero,()=>StepperModel().notifier.currentIndex = index);
+          Future.delayed(Duration.zero,
+              () => StepperModel().notifier.currentIndex = index);
         },
         itemBuilder: (BuildContext context, int index) {
           return Form(
-            key:StepperModel().notifier.globalKeyList[index] ,
+              key: StepperModel().notifier.globalKeyList[index],
               child: StepperModel().stepperBodyWidget[index]);
         });
   }

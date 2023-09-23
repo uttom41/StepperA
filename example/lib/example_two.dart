@@ -15,7 +15,6 @@ class ExampleTwo extends StatefulWidget {
 class _ExampleTwoState extends State<ExampleTwo> {
   late final ExampleNotifier _notifier = ExampleNotifier();
 
-
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -38,7 +37,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
                 right: 0,
                 bottom: 0, //MediaQuery.of(context).size.height-240
                 child: StepperA(
-                   // stepperSize: const Size(70, 300),
+                    // stepperSize: const Size(70, 300),
                     stepperSize: const Size(300, 95),
                     borderShape: BorderShape.circle,
                     borderType: BorderType.straight,
@@ -76,37 +75,61 @@ class _ExampleTwoState extends State<ExampleTwo> {
                     // ),
 
                     previousButton: (int index) => StepperAButton(
-                      width: 40,
-                      height: 40,
-                      buttonWidget: const Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                      ),
-                      onTap: (int currentIndex){
-                        debugPrint("Previous Button $currentIndex");
-                      },
-                        margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12)
-                    ),
+                        width: 40,
+                        height: 40,
+                        buttonWidget: const Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                        ),
+                        onTap: (int currentIndex) {
+                          debugPrint("Previous Button $currentIndex");
+                        },
+                        margin: const EdgeInsets.only(
+                            bottom: 12, left: 12, right: 12)),
                     forwardButton: (index) => StepperAButton(
-                      width: 40,
-                    //  width: index == 0 ? MediaQuery.of(context).size.width-24 : 40,
-                      height: 40, buttonWidget: const Icon(Icons.arrow_forward, color: Colors.white),
-                      onTap: (int currentIndex){
-                        debugPrint("Forward button $currentIndex");
-                      },
-                      margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12)
-                      // index == 3
-                      //     ? const Text('Complete', style: TextStyle(fontSize: 14, color: Colors.white))
-                      //     : const Text('Next', style: TextStyle(fontSize: 14, color: Colors.white)),
-                    ),
+                        width: 40,
+                        //  width: index == 0 ? MediaQuery.of(context).size.width-24 : 40,
+                        height: 40,
+                        buttonWidget: const Icon(Icons.arrow_forward,
+                            color: Colors.white),
+                        onTap: (int currentIndex) {
+                          debugPrint("Forward button $currentIndex");
+                        },
+                        margin: const EdgeInsets.only(
+                            bottom: 12, left: 12, right: 12)
+                        // index == 3
+                        //     ? const Text('Complete', style: TextStyle(fontSize: 14, color: Colors.white))
+                        //     : const Text('Next', style: TextStyle(fontSize: 14, color: Colors.white)),
+                        ),
                     customSteps: [
                       const CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
                       const CustomSteps(stepsIcon: Icons.home, title: "Home"),
-                      const CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
-                      CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
-                      CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
-                      CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
-                      CustomSteps(image: Image.asset("assets/pic/pay.png",color: Colors.white,), title: "Payment"),
+                      const CustomSteps(
+                          stepsIcon: Icons.account_circle, title: "Account"),
+                      CustomSteps(
+                          image: Image.asset(
+                            "assets/pic/pay.png",
+                            color: Colors.white,
+                          ),
+                          title: "Payment"),
+                      CustomSteps(
+                          image: Image.asset(
+                            "assets/pic/pay.png",
+                            color: Colors.white,
+                          ),
+                          title: "Payment"),
+                      CustomSteps(
+                          image: Image.asset(
+                            "assets/pic/pay.png",
+                            color: Colors.white,
+                          ),
+                          title: "Payment"),
+                      CustomSteps(
+                          image: Image.asset(
+                            "assets/pic/pay.png",
+                            color: Colors.white,
+                          ),
+                          title: "Payment"),
                     ],
                     step: const StepA(
                         currentStepColor: Colors.green,
@@ -115,30 +138,29 @@ class _ExampleTwoState extends State<ExampleTwo> {
                         // loadingWidget: CircularProgressIndicator(color: Colors.green,),
                         margin: EdgeInsets.all(5)),
                     stepperBodyWidget: [
-                      StepOne(controller: _notifier.controller,notifier: _notifier,),
+                      StepOne(
+                        controller: _notifier.controller,
+                        notifier: _notifier,
+                      ),
                       StepTwo(controller: _notifier.controller),
                       StepThree(controller: _notifier.controller),
                       StepFour(controller: _notifier.controller),
                       StepFour(controller: _notifier.controller),
                       StepFour(controller: _notifier.controller),
                       StepFour(controller: _notifier.controller),
-
                     ]),
               ),
             ],
           );
         });
-
-
   }
 }
 
-class ExampleNotifier extends ChangeNotifier{
+class ExampleNotifier extends ChangeNotifier {
   final StepperAController controller = StepperAController();
   bool index = false;
-  void onUpdate(){
+  void onUpdate() {
     index = !index;
     notifyListeners();
   }
-
 }
