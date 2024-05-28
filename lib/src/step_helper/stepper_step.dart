@@ -17,7 +17,7 @@ abstract class AStepperStep extends StatelessWidget implements IStepPage {
 }
 
 class StepperStep extends AStepperStep
-    with StepStyle, CalculateSize, StyleMixin, WidgetMixin {
+    with CustomStepStyle, CalculateSize, StyleMixin, WidgetMixin {
   StepperStep({super.key});
 
   @override
@@ -44,24 +44,19 @@ class StepperStep extends AStepperStep
           padding: StepperModel().padding,
           margin: StepperModel().margin,
           alignment: Alignment.center,
-          child: StepperModel().stepperAxis == Axis.horizontal
-              ? buildHorizontal()
-              : buildVertical(),
+          child:
+              StepperModel().stepperAxis == Axis.horizontal ? buildHorizontal() : buildVertical(),
         ),
       ),
     );
   }
 
   Widget buildHorizontal() {
-    return StepperModel().customSteps == null
-        ? buildHorizontalStep()
-        : buildHorizontalCustomStep();
+    return StepperModel().customSteps == null ? buildHorizontalStep() : buildHorizontalCustomStep();
   }
 
   Widget buildVertical() {
-    return StepperModel().customSteps == null
-        ? buildVerticalStep()
-        : buildVerticalCustomStep();
+    return StepperModel().customSteps == null ? buildVerticalStep() : buildVerticalCustomStep();
   }
 
   Widget buildHorizontalStep() {
