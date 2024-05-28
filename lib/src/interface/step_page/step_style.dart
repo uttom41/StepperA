@@ -9,13 +9,11 @@ import 'package:flutter/material.dart';
 import 'i_step_page.dart';
 import '../../utils/stepper_model.dart';
 
-mixin StepStyle on IStepPage {
+mixin CustomStepStyle on IStepPage {
   @override
   List<Widget> buildNumberStep() {
     List<Widget> steps = [];
-    for (int index = 0;
-        index < StepperModel().notifier.getTotalSteps;
-        index++) {
+    for (int index = 0; index < StepperModel().notifier.getTotalSteps; index++) {
       /// step circles
       steps.add(
         Stack(children: [
@@ -30,8 +28,7 @@ mixin StepStyle on IStepPage {
 
       ///line between step circles
       if (index != StepperModel().notifier.getTotalSteps - 1) {
-        steps.add(buildLine(
-            index, StepperModel().stepperSize.width, getLineColor(index)));
+        steps.add(buildLine(index, StepperModel().stepperSize.width, getLineColor(index)));
       }
     }
     return steps;
@@ -41,9 +38,7 @@ mixin StepStyle on IStepPage {
   @override
   List<Widget> buildCustomStep() {
     List<Widget> steps = [];
-    for (int index = 0;
-        index < StepperModel().notifier.getTotalSteps;
-        index++) {
+    for (int index = 0; index < StepperModel().notifier.getTotalSteps; index++) {
       steps.add(StepperModel().stepperAxis == Axis.horizontal
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,8 +54,7 @@ mixin StepStyle on IStepPage {
                       )
                     ]),
                     if (index != StepperModel().notifier.getTotalSteps - 1)
-                      buildLine(index, StepperModel().stepperSize.width,
-                          getLineColor(index)),
+                      buildLine(index, StepperModel().stepperSize.width, getLineColor(index)),
                   ],
                 ),
                 if (StepperModel().customSteps![index].title != null)
@@ -73,10 +67,7 @@ mixin StepStyle on IStepPage {
                       softWrap: true,
                       maxLines: 1,
                       style: TextStyle(
-                          fontSize:
-                              index == StepperModel().notifier.currentIndex
-                                  ? 14
-                                  : 12,
+                          fontSize: index == StepperModel().notifier.currentIndex ? 14 : 12,
                           color: index == StepperModel().notifier.currentIndex
                               ? getBorderColor(index)
                               : StepperModel().step.inactiveStepColor),
@@ -114,17 +105,13 @@ mixin StepStyle on IStepPage {
                         overflow: TextOverflow.ellipsis,
                         softWrap: true,
                         style: TextStyle(
-                            fontSize:
-                                index == StepperModel().notifier.currentIndex
-                                    ? 14
-                                    : 12,
+                            fontSize: index == StepperModel().notifier.currentIndex ? 14 : 12,
                             color: index == StepperModel().notifier.currentIndex
                                 ? getBorderColor(index)
                                 : StepperModel().step.inactiveStepColor),
                       ),
                     if (index != StepperModel().notifier.getTotalSteps - 1)
-                      buildLine(index, StepperModel().stepperSize.width,
-                          getLineColor(index), 2),
+                      buildLine(index, StepperModel().stepperSize.width, getLineColor(index), 2),
                   ],
                 ),
               ],
