@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'i_step_page.dart';
 import '../../utils/stepper_model.dart';
 
-mixin StepStyle on IStepPage {
+mixin StepStyleA on IStepPage {
   @override
   List<Widget> buildNumberStep() {
     List<Widget> steps = [];

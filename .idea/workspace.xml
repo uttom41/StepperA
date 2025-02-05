@@ -8,46 +8,33 @@
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_3_23,_10_20_AM/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_3_23__10_20_AM.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/example_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/example_two.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/step_four.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/step_four.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/step_one.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/step_one.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/step_two.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/step_two.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/example/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/example/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/example/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/button/floating_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/floating_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/button/stepper_a_button_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/stepper_a_button_style.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/button/stepper_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/button/stepper_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/drawing/path_painter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/drawing/path_painter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/calculate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/calculate.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/main_page/i_main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/main_page/i_main_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/main_page/main_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/main_page/main_style.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/a_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/a_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/i_step_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/i_step_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugins.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/step_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/step_style.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/style_mixin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/style_mixin.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/interface/step_page/widget_mixin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/interface/step_page/widget_mixin.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/page_helper/stepper_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/page_helper/stepper_body.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/provider/stepper_index_handler.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/provider/stepper_index_handler.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/provider/stepper_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/step_helper/step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/step.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/step_helper/stepper_step.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/stepper_a_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/stepper_a_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/utils/stepper_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/utils/stepper_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,23 +49,32 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2MgYm9fg1fxUmFw41FGkyxWHt93" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/snap/flutter/common/flutter/bin/cache/dart-sdk" />
-    <property name="settings.editor.selected.configurable" value="dart.settings" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flutter.main.dart.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "dart.settings",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="U:\project\StepperA\example\lib" />
