@@ -16,7 +16,8 @@ abstract class AStepperStep extends StatelessWidget implements IStepPage {
   const AStepperStep({super.key});
 }
 
-class StepperStep extends AStepperStep with StepStyleA, CalculateSize, StyleMixin, WidgetMixin {
+class StepperStep extends AStepperStep
+    with StepStyleA, CalculateSize, StyleMixin, WidgetMixin {
   StepperStep({super.key});
 
   @override

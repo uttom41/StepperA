@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:stepper_a/src/step_helper/step.dart';
 import 'package:stepper_a/stepper_a.dart';
 
 void main() {

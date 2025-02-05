@@ -5,8 +5,8 @@ import 'example_two.dart';
 
 class StepOne extends StatefulWidget {
   final StepperAController controller;
-  ExampleNotifier notifier;
-  StepOne({Key? key, required this.controller, required this.notifier})
+  final ExampleNotifier notifier;
+  const StepOne({Key? key, required this.controller, required this.notifier})
       : super(key: key);
 
   @override
@@ -63,7 +63,7 @@ class _StepOneState extends State<StepOne> {
             InkWell(
               onTap: () {
                 widget.controller.next(onTap: (int currentIndex) {
-                  print(currentIndex);
+                  // print(currentIndex);
                 });
               },
               child: Container(

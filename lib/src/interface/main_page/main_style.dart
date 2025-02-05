@@ -172,8 +172,9 @@ mixin MainStyle on IMainPage {
                     if (!StepperIndex().next(
                         StepperModel().notifier.currentIndex,
                         StepperModel().totalSteps - 1)) {
-                      if (forwardBtn?.onComplete != null)
+                      if (forwardBtn?.onComplete != null) {
                         forwardBtn?.onComplete!();
+                      }
                     }
                     forwardBtn?.onTap(StepperModel().notifier.currentIndex);
                   },
@@ -228,8 +229,9 @@ mixin MainStyle on IMainPage {
                     if (!StepperIndex().next(
                         StepperModel().notifier.currentIndex,
                         StepperModel().totalSteps - 1)) {
-                      if (forwardBtn?.onComplete != null)
+                      if (forwardBtn?.onComplete != null) {
                         forwardBtn?.onComplete!();
+                      }
                     }
                     forwardBtn?.onTap(StepperModel().notifier.currentIndex);
                   },

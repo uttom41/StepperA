@@ -17,10 +17,10 @@ class _StepThreeState extends State<StepThree> {
       body: Container(
         margin: const EdgeInsets.all(10),
         alignment: Alignment.center,
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               "Steps three",
               textAlign: TextAlign.center,
